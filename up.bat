@@ -1,4 +1,5 @@
 #!/bin/bash
-git add .
-git commit -m "$*"
+read -p "Commit description: " desc
+git add . && \
+git commit -m "$desc" && \
 git push
