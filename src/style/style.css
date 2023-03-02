@@ -187,7 +187,9 @@
   flex: none;
   order: 0;
   flex-grow: 0;
-  border: 1px solid black;
+
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
 }
 
 .mailPasswordInputField input {
@@ -196,7 +198,7 @@
   height: 100%;
 
   /* Version 2/t6 */
-
+  color: black;
   font-weight: 400;
   font-size: 21px;
   line-height: 120%;
@@ -204,14 +206,12 @@
 
   /* Style */
 
-  color: #d1d1d1;
-
   /* Inside auto layout */
 
   flex: none;
   order: 0;
   flex-grow: 0;
-  border: none;
+  outline: none;
 }
 
 .mailPasswordInputField img {
