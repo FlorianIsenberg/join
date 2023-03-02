@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    font-family: 'Inter';
+}
+
+.mastercontactcl {
+    background-color: white;
+    /* muss geprüft werden, muesste #F5F5F5 sein */
+}
+
+.contactleftframecl {
+
+    position: absolute;
+    width: 453px;
+    height: 935px;
+    left: 232px;
+    top: 89px;
+    /* white */
+
+    background: #FFFFFF;
+    box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.08);
+}
+
+.contactrightframecl {
+
+    background: #F5F5F5;
+}
+
+.contactsheadercl {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+    gap: 30px;
+    position: absolute;
+    width: 569px;
+    height: 73px;
+    /* left: 743px; */
+    left: 908px;
+    top: 171px;
+}
+
+.contactstextleftcl {
+    width: 274px;
+    height: 73px;
+    /* Version 2/t1 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+    /* or 73px */
+    color: #000000;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.dividinglinecl {
+    width: 0px;
+    height: 59px;
+
+    border: 3px solid #29ABE2;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.contactstextrightcl {
+    width: 235px;
+    height: 32px;
+    /* Version 2/t5 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 120%;
+    /* or 32px */
+    color: #2A3647;
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.addcontactcl {
+    /* Secondary contact V1 */
+
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 50px 14px 10px;
+    gap: 10px;
+    
+    position: absolute;
+    width: 193px;
+    height: 53px;
+    /* left: 1195px; */
+    left: 1380px;
+    top: 904px;
+
+    background: #2A3647;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+
+}
+
+.addnewcontactcl {
+    /* New contact */
+
+    width: 130px;
+    height: 25px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
+
+    /* white */
+
+    color: #FFFFFF;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.newcontactheadcl {
+    /* Vector */
+
+    position: absolute;
+    left: 80.13%;
+    right: 11.48%;
+    top: 21.98%;
+    bottom: 47.45%;
+
+    /* white */
+
+    background: #2A3647;
+}
+
+.newcontactshouldercl {
+    /* Vector */
+    position: absolute;
+    left: 77.72%;
+    right: 11.92%;
+    top: 54.25%;
+    bottom: 21.98%;
+    /* white */
+    background: #2A3647;
+}
+
+.newcontactpluscl {
+    /* Vector */
+
+
+    position: absolute;
+    left: 87.36%;
+    right: 5.18%;
+    top: 50.85%;
+    bottom: 21.98%;
+
+    /* white */
+
+    background: #2A3647;
+}
