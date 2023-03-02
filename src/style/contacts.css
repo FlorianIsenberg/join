@@ -36,7 +36,8 @@ body {
     position: absolute;
     width: 569px;
     height: 73px;
-    left: 743px;
+    /* left: 743px; */
+    left: 908px;
     top: 171px;
 }
 
@@ -99,13 +100,14 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 18px 50px 18px 10px;
+    padding: 14px 50px 14px 10px;
     gap: 10px;
     
     position: absolute;
     width: 193px;
     height: 53px;
-    left: 1195px;
+    /* left: 1195px; */
+    left: 1380px;
     top: 904px;
 
     background: #2A3647;
