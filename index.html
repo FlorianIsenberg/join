@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join - Gruppe3</title>
+    <link rel="stylesheet" type="text/css" href="src/style/style.css" />
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="src/js/main.js"
+    ></script>
+  </head>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Join - Gruppe3</title>
-        <link rel="stylesheet" type="text/css" href="src/style/style.css">
-        <script language="JavaScript" type="text/javascript" src="src/js/main.js"></script>
-    </head>
-
-    <body onload="init()">
-
-        Test
-
-    </body>
-
+  <body onload="init()">
+    <header class="loginHeader">
+      <img class="capa" src="src/img/join-logo.svg" alt="" />
+      <div class="UserSignUp">
+        <p class="NotJoinUser">Not a Join user?</p>
+        <button class="btnSignUp">Sing up</button>
+      </div>
+    </header>
+    <form>
+      <div class="headlineLogIn">
+        <h1>Log in</h1>
+        <div class="loginInputFlied">
+          <input required type="email" placeholder="Email" />
+          <img src="src/img/icons/icon-mail-user.svg" alt="" />
+        </div>
+        <div class="loginInputFlied">
+          <input required type="password" placeholder="Password" />
+          <img src="src/img/password_input.svg" alt="" />
+        </div>
+      </div>
+    </form>
+  </body>
 </html>
