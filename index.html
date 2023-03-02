@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Join - Gruppe3</title>
     <link rel="stylesheet" type="text/css" href="src/style/style.css" />
+    <link rel="stylesheet" href="src/style/fonts.css" />
     <script
       language="JavaScript"
       type="text/javascript"
@@ -13,25 +14,45 @@
   </head>
 
   <body onload="init()">
-    <header class="loginHeader">
+    <header class="HeaderLogin">
       <img class="capa" src="src/img/join-logo.svg" alt="" />
       <div class="UserSignUp">
         <p class="NotJoinUser">Not a Join user?</p>
         <button class="btnSignUp">Sing up</button>
       </div>
     </header>
-    <form>
-      <div class="headlineLogIn">
-        <h1>Log in</h1>
-        <div class="loginInputFlied">
-          <input required type="email" placeholder="Email" />
-          <img src="src/img/icons/icon-mail-user.svg" alt="" />
+    <section class="content">
+      <div class="login">
+        <div class="headlineBox">
+          <div class="headline">
+            <span> Log in</span>
+            <div class="loginBoxUnderline"></div>
+          </div>
         </div>
-        <div class="loginInputFlied">
-          <input required type="password" placeholder="Password" />
-          <img src="src/img/password_input.svg" alt="" />
+
+        <form>
+          <div class="emailPasswordField">
+            <div class="mailPasswordInputField">
+              <input required type="email" placeholder="Email" />
+              <img src="src/img/email_input.svg" alt="" />
+            </div>
+
+            <div class="mailPasswordInputField">
+              <input required type="password" placeholder="Password" />
+              <img src="src/img/password_input.svg" alt="" />
+            </div>
+          </div>
+        </form>
+        <div class="RememberMe">
+          <input class="checkBox" type="checkbox" />
+          <div>Remember me</div>
+          <div><a class="ForgotPassword" href="#">Forgot my password</a></div>
+        </div>
+        <div class="btnLogGuest">
+          <button class="btnLogIn">Log in</button>
+          <button class="btnGuestLog">Guest Log in</button>
         </div>
       </div>
-    </form>
+    </section>
   </body>
 </html>
