@@ -1,11 +1,11 @@
 function generateContactHTML() {
     return /*html*/`
     <div id="contactsheaderId" class="contactsheadercl">
-                <div id="contactstextleftId" class="contactstextleftcl">Contacts</div>
-                <div id="dividinglineId" class="dividinglinecl"></div>
-                <div id="contactstextrightId" class="contactstextrightcl">Better with a team</div>
-            </div> <!-- Frame 40 -->
-            <div id="addcontactId" class="addcontactcl">
+        <div id="contactstextleftId" class="contactstextleftcl">Contacts</div>
+        <div id="dividinglineId" class="dividinglinecl"></div>
+        <div id="contactstextrightId" class="contactstextrightcl">Better with a team</div>
+    </div> <!-- Frame 40 -->
+            <div id="addcontactId" class="addcontactcl" onclick="overlayAddContact()">
                 <div id="addnewcontactId" class="addnewcontactcl">New Contact</div>
 
                 <svg class="newcontactheadcl" width="17" height="17" viewBox="0 0 17 17" fill="none"

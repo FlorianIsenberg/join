@@ -71,7 +71,7 @@ body {
 }
 
 .contactstextrightcl {
-    width: 235px;
+    width: 245px;
     height: 32px;
     /* Version 2/t5 */
     font-family: 'Inter';
@@ -108,6 +108,25 @@ body {
     background: #2A3647;
     border: 1px solid #2A3647;
     border-radius: 10px;
+}
+
+.addcontactcl:hover {
+    cursor: pointer;
+    background-color: #29ABE2;
+    border-color:#29ABE2;
+    box-shadow: 0px 10px 10px -5px grey;
+}
+
+.addcontactcl:hover .newcontactheadcl {
+    background-color: #29ABE2;
+}
+
+.addcontactcl:hover .newcontactshouldercl {
+    background-color: #29ABE2;
+} 
+
+.addcontactcl:hover .newcontactpluscl {
+    background-color: #29ABE2;
 }
 
 .addnewcontactcl {
