@@ -9,22 +9,24 @@ body {
 }
 
 .contactleftframecl {
-
     position: absolute;
     width: 453px;
     height: 935px;
     left: 232px;
     top: 89px;
     /* white */
-
     background: #FFFFFF;
     box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.08);
 }
 
-.contactrightframecl {
+/* NOTE -- Right frame */
 
+.contactrightframecl {
     background: #F5F5F5;
 }
+
+
+/* NOTE -- default side content */
 
 .contactsheadercl {
     display: flex;
@@ -61,11 +63,8 @@ body {
 .dividinglinecl {
     width: 0px;
     height: 59px;
-
     border: 3px solid #29ABE2;
-
     /* Inside auto layout */
-
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -88,53 +87,42 @@ body {
     flex-grow: 0;
 }
 
+/* NOTE -- Add-Contact-Button */
+
 .addcontactcl {
     /* Secondary contact V1 */
-
-
     box-sizing: border-box;
-
     /* Auto layout */
-
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 14px 50px 14px 10px;
     gap: 10px;
-    
     position: absolute;
     width: 193px;
     height: 53px;
     /* left: 1195px; */
     left: 1380px;
     top: 904px;
-
     background: #2A3647;
     border: 1px solid #2A3647;
     border-radius: 10px;
-
 }
 
 .addnewcontactcl {
     /* New contact */
-
     width: 130px;
     height: 25px;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 21px;
     line-height: 120%;
     /* or 25px */
-
     /* white */
-
     color: #FFFFFF;
-
     /* Inside auto layout */
-
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -142,15 +130,12 @@ body {
 
 .newcontactheadcl {
     /* Vector */
-
     position: absolute;
     left: 80.13%;
     right: 11.48%;
     top: 21.98%;
     bottom: 47.45%;
-
     /* white */
-
     background: #2A3647;
 }
 
@@ -167,15 +152,11 @@ body {
 
 .newcontactpluscl {
     /* Vector */
-
-
     position: absolute;
     left: 87.36%;
     right: 5.18%;
     top: 50.85%;
     bottom: 21.98%;
-
     /* white */
-
     background: #2A3647;
 }
