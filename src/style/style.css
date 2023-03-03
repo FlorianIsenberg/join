@@ -73,7 +73,7 @@
   cursor: pointer;
 }
 
-.content {
+section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,7 +81,7 @@
   height: 100vh;
 }
 
-.login {
+.contentBox {
   /* Auto layout */
 
   display: flex;
@@ -120,34 +120,25 @@
   flex-grow: 0;
 }
 
-.headline {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 315px;
+.headlineBox p {
+  width: 627px;
   height: 73px;
 
   /* Version 2/t1 */
+
   font-weight: 700;
   font-size: 61px;
   line-height: 120%;
   /* or 73px */
-  gap: 24px;
 
   text-align: center;
 
   color: #000000;
-}
 
-.loginBoxUnderline {
-  width: 150px;
-  height: 0px;
-
-  border: 3px solid #29abe2;
-  /* transform: rotate(90deg); */
+  /* Inside auto layout */
 
   flex: none;
-  order: 1;
+  order: 0;
   flex-grow: 0;
 }
 
