@@ -8,14 +8,14 @@
   display: flex;
   justify-content: flex-end;
 }
-.capa {
+.headiconJoin {
   position: absolute;
   left: 5.35%;
   right: 87.71%;
   top: 7.81%;
   bottom: 80.28%;
-  height: 100px;
-  width: 122px;
+  height: 122px;
+  width: 100px;
 }
 
 .UserSignUp {
