@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board</title>
+    <link rel="stylesheet" href="src/style/board.css">
+    <link rel="stylesheet" type="text/css" href="./src/style/fonts.css">
+    <script src="js/board.js"></script>
+</head>
+<body>
+    <div class="maincontainer">
+        <div class="boardsection">
+            <div class="insertboard">
+            <span class="tboard">
+            <img src="./src/img/icons/Board.svg" alt="Board"></span>
+                <div class="tasks">
+                    <div class="inputfieldandicons">
+                    <input class="findtask" id="taskfield" type="text" placeholder="Find Task"\>
+                    <img src="./src/img/icons/Vector3line.svg" alt="verticalline">
+                    <img src="./src/img/icons/icon-magnifying-glass.svg" alt="magnifiying class">
+                    </div>
+                        <div class="addtaskarea">
+                        <img src="./src/img/icons/addtask.svg"onclick="addTask()" class="btnaddtask" id="addTaskButton">
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="draganddropsection">
+            <div class="todoboard">
+                <div class="dropdowncontainer">
+                    <div class="todoplus">
+                    <span class="progressbar">
+                    <img class="progresssections" src="src/img/icons/To do.svg" alt="To Do"></span>
+                    <img class="plusbtnblack" src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
+                </div>
+                <div class="notesmain">
+                    <div class="notesection">
+                    <img src="./src/img/icons/design.svg" alt="Designlabel">
+                </div>
+                        <div class="noteheadlinecontainer">
+                        <h2 class="noteheadline">Website redesign</h2>
+                    </div>
+                        <div class="note">
+                            <span class="tmodifythecontents">Modify the contents of the main website..</span> 
+                                <div class="loadingbarandspan">
+                                    <div class="progressloadingbar">
+                                        <img class="progressloadingbarimage" src="./src/img/icons/progress.svg" alt="Progressbar">
+                                        <span class="halfdone">1/2 Done</span>
+                                    </div>    
+                    </div>
+                </div>
+                        <div class="usericons">
+                            <img src="./src/img/icons/sm.svg" alt="User SM">
+                            <img src="./src/img/icons/mv.svg" alt="User MV" class="iconsinicons">
+                            <img src="./src/img/icons/ef.svg" alt="User EF" class="iconsinicons">
+                            <img class="greenarrowdown" src="./src/img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
+                        </div>
+                </div>
+                    </div>
+                <div class="dropdowncontainer">
+                    <div class="todoplus">
+                    <span class="progressbar">
+                    <img class="progresssections" src="./src/img/icons/Inprogress.svg" alt="In progress"></span>
+                    <img class="plusbtnblack" src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
+                    </div>
+                    <div class="notesmain">
+                        <div class="notesection">
+                        <img src="./src/img/icons/sales.svg" alt="Saleslabel">
+                    </div>
+                            <div class="noteheadlinecontainer">
+                            <h2 class="noteheadline">Call potential clients</h2>
+                        </div>
+                            <div class="note">
+                                <span class="tmodifythecontents">Make the product presentation to prospective buyers</span> 
+                                    <div class="loadingbarandspan">
+                                        <div class="progressloadingbar">
+                                            
+                                        </div>    
+                        </div>
+                    </div>
+                            <div class="usericons">
+                                <img src="./src/img/icons/as.svg" alt="User AS">
+                                <img src="./src/img/icons/de.svg" alt="User DE" class="iconsinicons">
+                                <img src="./src/img/icons/plus2.svg" alt="Plus 2" class="iconsinicons">
+                                <img class="redarrowup" src="./src/img/icons/arrowsuporange.svg" alt="doublea arrow green down">
+                            </div>
+                    </div>
+                </div>   
+                <div class="dropdowncontainer">
+                    <div class="todoplus">
+                    <span class="progressbar">
+                    <img class="progresssections" src="./src/img/icons/AwaitingFeedback.svg" alt="Awaiting Feedback"></span>
+                    <img class="plusbtnblack" src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
+                    </div>
+                    <div class="notesmain">
+                        <div class="notesection">
+                        <img src="./src/img/icons/backoffice.svg" alt="Backofficelabel">
+                    </div>
+                            <div class="noteheadlinecontainer">
+                            <h2 class="noteheadline">Accounting invoices</h2>
+                        </div>
+                            <div class="note">
+                                <span class="tmodifythecontents">Write open invoices for customer</span> 
+                                    <div class="loadingbarandspan">
+                                        <div class="progressloadingbar">
+                                        </div>    
+                        </div>
+                    </div>
+                            <div class="usericons">
+                                <img src="./src/img/icons/mb.svg" alt="User MB">
+                                <img src="./src/img/icons/am.svg" alt="User AM" class="iconsinicons">
+                                <img src="./src/img/icons/plus3.svg" alt="Plus 3" class="iconsinicons">
+                                <img class="yellowsum" src="./src/img/icons/sumyellow.svg" alt="doublea arrow green down">
+                            </div>
+                    </div>
+                    <div class="notesmain">
+                        <div class="notesection">
+                        <img src="./src/img/icons/media.svg" alt=">Medialabel">
+                    </div>
+                            <div class="noteheadlinecontainer">
+                            <h2 class="noteheadline">Video cut</h2>
+                        </div>
+                            <div class="note">
+                                <span class="tmodifythecontents">Edit the new company video</span> 
+                                    <div class="loadingbarandspan">
+                                        <div class="progressloadingbar">
+                                            
+                                        </div>    
+                        </div>
+                    </div>
+                            <div class="usericons">
+                                <img src="./src/img/icons/hk.svg" alt="User HK">
+        
+                                <img class="yellowsum2" src="./src/img/icons/sumyellow.svg" alt="Summary icon yellow">
+                            </div>
+                    </div>
+                </div>
+                <div class="dropdowncontainer">
+                    <div class="todoplus">
+                    <span class="progressbar">
+                    <img class="progresssections" src="./src/img/icons/Done.svg" alt="Done"> </span>
+                    <img class="plusbtnblack" src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
+                    </div>
+                    <div class="notesmain">
+                        <div class="notesection">
+                        <img src="./src/img/icons/marketing.svg" alt="Marketinglabel">
+                    </div>
+                            <div class="noteheadlinecontainer">
+                            <h2 class="noteheadline">Social media strategy</h2>
+                        </div>
+                            <div class="note">
+                                <span class="tmodifythecontents">Develop an ad campaign for brand positioning</span> 
+                                    <div class="loadingbarandspan">
+                                        <div class="progressloadingbar">
+                                            <img class="progressloadingbarimage" src="./src/img/icons/loadingbarcomplete.svg" alt="Progressbar">
+                                            <span class="halfdone">3/3 Done</span>
+                                        </div>    
+                        </div>
+                    </div>
+                            <div class="usericons">
+                                <img src="./src/img/icons/BZ.svg" alt="User BZ">
+                                <img src="./src/img/icons/RS.svg" alt="User RS" class="iconsinicons">
+                                <img class="greenarrowdown2" src="./src/img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+</body>
+</html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Join - Gruppe3</title>
+    <title>Join</title>
     <link rel="stylesheet" type="text/css" href="src/style/style.css" />
     <link rel="stylesheet" href="src/style/fonts.css" />
     <script
@@ -15,19 +15,20 @@
 
   <body onload="init()">
     <header class="HeaderLogin">
-      <img class="capa" src="src/img/join-logo.svg" alt="" />
+      <img class="headiconJoin" src="src/img/join-logo.svg" alt="" />
       <div class="UserSignUp">
         <p class="NotJoinUser">Not a Join user?</p>
-        <button class="btnSignUp">Sing up</button>
+        <a href="src/templates/signUp.html">
+          <button class="btnSignUp">Sign up</button>
+        </a>
       </div>
     </header>
-    <section class="content">
-      <div class="login">
+
+    <section>
+      <div class="contentBox">
         <div class="headlineBox">
-          <div class="headline">
-            <span> Log in</span>
-            <div class="loginBoxUnderline"></div>
-          </div>
+          <p>Log in</p>
+          <img src="src/img/icons/blueUnderline.svg" alt="" />
         </div>
 
         <form>
@@ -43,10 +44,15 @@
             </div>
           </div>
         </form>
+
         <div class="RememberMe">
           <input class="checkBox" type="checkbox" />
           <div>Remember me</div>
-          <div><a class="ForgotPassword" href="#">Forgot my password</a></div>
+          <div>
+            <a class="ForgotPassword" href="src/templates/forgotPassword.html"
+              >Forgot my password</a
+            >
+          </div>
         </div>
         <div class="btnLogGuest">
           <button class="btnLogIn">Log in</button>
