@@ -9,30 +9,38 @@
     <title>Sign up</title>
   </head>
   <body>
-    <div class="headerJoinIcon">
-      <img class="headiconJoin" src="../img/join-logo.svg" alt="" />
-    </div>
-
     <section>
-      <div class="forgotPasswordBox">
-        <a href="../../index.html"
-          ><img class="returnArrowBox" src="../img/arrow-left-line.svg" alt=""
-        /></a>
-        <div class="headlinebox">
-          <p class="forgotPassword">Sign up</p>
+      <div class="headIcon">
+        <img src="../img/join-logo.svg" alt="" />
+      </div>
+      <div class="contentBox">
+        <div class="backArrow">
+          <a href="../../index.html"
+            ><img src="../img/arrow-left-line.svg" alt=""
+          /></a>
+        </div>
+        <div class="headlineBox">
+          <p class="headline">Sign up</p>
           <img src="../img/icons/blueUnderline.svg" alt="" />
         </div>
+        <form>
+          <div class="inputFieldBox">
+            <div class="nameMailPasswordInputField">
+              <input required type="text" placeholder="Name" />
+              <img src="../img/name_input.svg" alt="" />
+            </div>
 
-        <div class="SignUpInput">
-          <input required type="text" placeholder="Name" />
-        </div>
-        <div class="SignUpInput">
-          <input required type="email" placeholder="New password" />
-        </div>
-        <div class="SignUpInput">
-          <input required type="password" placeholder="New password" />
-        </div>
+            <div class="nameMailPasswordInputField">
+              <input required type="email" placeholder="Email" />
+              <img src="../img/email_input.svg" alt="" />
+            </div>
 
+            <div class="nameMailPasswordInputField">
+              <input required type="password" placeholder="Password" />
+              <img src="../img/password_input.svg" alt="" />
+            </div>
+          </div>
+        </form>
         <button class="signUpBtn">Sign up</button>
       </div>
     </section>
