@@ -45,6 +45,7 @@ body {
     display: flex;
     align-items: center;
     gap: 30px;
+    padding-left: 274px;
 }
 
 .inputfieldandicons {
@@ -58,6 +59,7 @@ body {
     padding-right: 5px;
     padding-left: 5px;
     gap: 10px;
+
 }
 
 .findtask {
@@ -98,7 +100,7 @@ body {
     display: flex;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-left:25px;
+    margin-left: 25px;
 }
 
 .progressbar {
@@ -143,7 +145,7 @@ body {
     padding-bottom: 10px;
     box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
     border-radius: 30px;
-    margin-top:20px;
+    margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
@@ -175,19 +177,29 @@ body {
     font-size: 16px;
     line-height: 120%;
     color: #A8A8A8;
+    margin-top: 20px;
+    padding-top: 20px;
 }
-
 
 .progressloadingbar {
     display: flex;
     justify-content: flex-start;
     gap: 40px;
+    padding-top: 20px;
+    align-items: center;
+}
+
+.progressloadingbarimage {
+    margin-bottom: 20px;
 }
 
 .usericons {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding-bottom: 18px;
+    width: 35px;
+    height: 35px;
 }
 
 .greenarrowdown {
@@ -197,6 +209,7 @@ body {
 .greenarrowdown2 {
     padding-left: 130px;
 }
+
 .redarrowup {
     padding-left: 100px;
 }
@@ -215,3 +228,15 @@ body {
     height: 661px;
 }
 
+.tmodifythecontents {
+    padding-bottom: 20px;
+}
+
+.halfdone {
+    padding-bottom: 20px;
+}
+
+.iconsinicons {
+z-index: 232;
+margin-left: -8px;
+}
