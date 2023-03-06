@@ -82,12 +82,12 @@ body {
     padding-top: 34px;
 }
 
+
 .descriptioninput {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 18px 21px;
     gap: 10px;
     width: 422px;
     height: 119px;
@@ -101,7 +101,8 @@ body {
     font-weight: 400;
     font-size: 21px;
     line-height: 120%;
-    color: #D1D1D1;
+    color: #000000;
+    padding-bottom:80px;
 }
 
 .threelinesdropdown {
