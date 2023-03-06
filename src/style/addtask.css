@@ -107,7 +107,8 @@ body {
 .threelinesdropdown {
     width: 18.9px;
     height: 18.9px;
-    padding-top: 118px;
+    padding-top: 116px;
+    margin-right:-18px;
 
 
 }
@@ -179,7 +180,7 @@ body {
 }
 
 .blackarrowdown {
-    padding-left: 145px;
+    padding-left: 100px;
 }
 
 .verticalline {
@@ -229,6 +230,8 @@ body {
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
     border-radius: 10px;
+    margin-top: 8px;
+    margin-bottom: 34px;
 }
 
 .datecalendarsymbol {
@@ -245,7 +248,6 @@ body {
     font-size: 21px;
     line-height: 120%;
     color: #000000;
-
 }
 
 .prio-selections {
@@ -256,7 +258,6 @@ body {
 }
 
 .subtasktitle {
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -279,6 +280,8 @@ body {
     border: 1px solid #D1D1D1;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .subtask {
@@ -293,7 +296,7 @@ body {
 }
 
 .blackplusbuttonsubtasks {
-    padding-left: 130px
+    padding-left: 100px
 }
 
 .rectangleandsubtask1 {
@@ -314,6 +317,7 @@ body {
     display: flex;
     padding-top: 270px;
     gap: 20px;
+    padding-left: 130px;
 }
 
 
