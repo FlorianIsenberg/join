@@ -1,6 +1,6 @@
 // NOTE -- smallest_backend_ever
 
-setURL('gruppe-07i.developerakademie.net/smallest_backend_ever')
+setURL('http://gruppe-07i.developerakademie.net/smallest_backend_ever')
 let users = [];
 
 async function init() {
