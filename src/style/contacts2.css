@@ -275,30 +275,28 @@
     flex-grow: 0;
 }
 
+/* NOTE -- Success Button */
+
 .successButtonmaincl {
-/* Frame 73 */
-
-
-/* Auto layout */
-
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 0px;
-
-width: 326px;
-height: 74px;
-
-background: #2A3647;
-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
-border-radius: 20px;
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
+    /* Frame 73 */
+    /* Auto layout */
+    position: absolute;
+    top: 700px;
+    left: 797px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 326px;
+    height: 74px;
+    background: #2A3647;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
 .successButtoncontentcl {
@@ -317,4 +315,32 @@ flex-grow: 0;
     flex: none;
     order: 0;
     flex-grow: 0;
+}
+
+.showSuccessbuttonincl {
+    animation: toup 1s ease-in;
+}
+
+.showSuccessbuttonoutcl {
+    animation: todown 1s linear;
+}
+
+@keyframes toup {
+    0% {
+        transform: translate(0px,0px)
+    }
+
+    100% {
+        transform: translate(0px,-599px);
+    }
+}
+
+@keyframes todown {
+    0% {
+        transform: translate(0px, 0px)
+    }
+
+    100% {
+        transform: translate(0px, 1099px);
+    }
 }

@@ -7,10 +7,10 @@ function generateContactHTML() {
         <div id="dividinglineId" class="dividinglinecl"></div>
         <div id="contactstextrightId" class="contactstextrightcl">Better with a team</div>
     </div> <!-- Frame 40 -->
-    <!-- <div id="addcontactId" class="addcontactcl" onclick="overlayAddContact()"> -->
+    <div id="addcontactId" class="addcontactcl" onclick="overlayAddContact()">
     <!-- <div id="addcontactId" class="addcontactcl" onclick="overlayEditContact()">    -->
     <!-- <div id="addcontactId" class="addcontactcl" onclick="contactShowContact()"> -->
-    <div id="addcontactId" class="addcontactcl" onclick="contactSuccesButton()">
+    <!-- <div id="addcontactId" class="addcontactcl" onclick="contactSuccesButton()"> -->
         <div id="addnewcontactId" class="addnewcontactcl">New Contact</div>
             <div id="addnewcontactpicId" class="addnewcontactpiccl">
                 <svg width="33" height="31" viewBox="0 0 33 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +108,7 @@ function generateOverlayAddContactHTML() {
                 </svg>
             </div>
         </div>
-        <div id="subbuttoncreateId" class="subbuttoncreatecl" onclick="AddCreateContact()"> <!-- Cancel-Button -->
+        <div id="subbuttoncreateId" class="subbuttoncreatecl" onclick="AddCreateContact()"> <!-- Create-Button -->
             <div id="addcontactcreatetextId" class="addcontactcreatetextcl">Create contact</div>
             <div id="addcontactcreateokId" class="addcontactcreateokcl">
                 <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -249,12 +249,35 @@ function generateOverlayShowContactHTML() {
     `;
 }
 
+// NOTE -- Success button
+
 function generateSuccessbuttonHTML() {
     return /*html*/`
     <div id="successButttonmainId" class="successButtonmaincl">
     <div id="successButtoncontentId" class="successButtoncontentcl">Contact successfully created</div>
     </div>
-
     `;
  
+}
+
+// NOTE -- Show Contacts 
+
+function generateShowRegisterHTML() {
+    return /*html*/ `
+    <div id="" class="">Alphabet</div>
+    
+    `;
+
+}
+
+function generateShowContactsHTML() {
+    return /*html*/ `
+    <div id="" class="">
+        <div id="" class="">avatar</div>
+        <div id="" class="">
+            <div id="" class="">Name</div>
+            <div id="" class="">mailAdresse</div>
+        </div>
+    </div>
+    `;
 }

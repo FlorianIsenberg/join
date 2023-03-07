@@ -1,8 +1,7 @@
 // NOTE -- smallest_backend_ever
 
-setURL('gruppe-07i.developerakademie.net/src/js/mini_backend.js')
+setURL('gruppe-07i.developerakademie.net/smallest_backend_ever')
 let users = [];
-
 
 async function init() {
     await downloadFromServer();
@@ -116,4 +115,31 @@ function contactShowContact() {
 
 function contactSuccesButton() {
     document.getElementById('showSuccessbuttonId').innerHTML += generateSuccessbuttonHTML();
+}
+
+// NOTE -- Create Contact sign
+
+function AddCreateContact() {
+    document.getElementById('showSuccessbuttonId').innerHTML += generateSuccessbuttonHTML();
+    document.getElementById('showSuccessbuttonId').classList.remove('d-none');
+    document.getElementById('showSuccessbuttonId').classList.remove('showSuccessbuttonoutcl');
+    document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonincl');
+    setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 1000);
+    setTimeout(contactShowContact(), 1000);
+    
+    setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonincl')}, 1000);
+
+    setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonoutcl')}, 2000);
+
+    setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('d-none')}, 2250);
+}
+
+function showIndexContacts() {
+    
+    document.getElementById('contactleftframeId').innerHTML += generateShowRegisterHTML();
+    showContacts();
+}
+
+function showContacts() {
+    document.getElementById('contactleftframeId').innerHTML += generateShowContactsHTML();
 }
