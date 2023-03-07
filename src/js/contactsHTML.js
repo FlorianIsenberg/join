@@ -264,7 +264,7 @@ function generateSuccessbuttonHTML() {
 
 function generateShowRegisterHTML() {
     return /*html*/ `
-    <div id="" class="">Alphabet</div>
+    <div id="showRegisterId" class="showRegistercl">Alphabet</div>
     
     `;
 
@@ -272,11 +272,11 @@ function generateShowRegisterHTML() {
 
 function generateShowContactsHTML() {
     return /*html*/ `
-    <div id="" class="">
-        <div id="" class="">avatar</div>
-        <div id="" class="">
-            <div id="" class="">Name</div>
-            <div id="" class="">mailAdresse</div>
+    <div id="showContactsId" class="showContactscl">
+        <div id="showContactsAvatarId" class="showContactsAvatarcl">avatar</div>
+        <div id="showContactsDataId" class="showContactsDatacl">
+            <div id="showContactsDataNameId" class="showContactsDataNamecl">Name</div>
+            <div id="showContactsDataMailId" class="showContactsDataMailcl">mailAdresse</div>
         </div>
     </div>
     `;
