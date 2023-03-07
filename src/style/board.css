@@ -8,9 +8,8 @@ body {
     flex-direction: column;
     gap: 150px;
     width: 1440px;
-    height: 1024px;
-    Top: -4536px;
-    Left: 1304px;
+    height: 324px;
+    
 }
 
 .boardsection {
@@ -101,6 +100,7 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-left: 25px;
+    z-index: 232;
 }
 
 .progressbar {
@@ -115,13 +115,11 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    padding: 0px;
     gap: 26px;
-    position: absolute;
-    width: 1078px;
-    left: 302px;
-    top: 343px;
+    width: 1278px;
     height: 661px;
+    z-index:231;
+    padding-left: 195px;
 }
 
 .plusbtnblack {
