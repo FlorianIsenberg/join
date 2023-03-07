@@ -1,0 +1,346 @@
+.showcontactmaincl {
+    /* Floating contact v2 */
+    /* Auto layout */
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start; */
+    /* padding: 0px;
+    gap: 21px; */
+    left: 895px;
+    top: 349px;
+    position: absolute;
+    width: 461px;
+    height: 364px;
+}
+
+.showcontacttopcl {
+    /* Frame 105 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 34px;
+    width: 461px;
+    height: 120px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.showcontactavatarcl {
+    /* Frame 79 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    width: 120px;
+    height: 120px;
+    /* background: #FFFFFF; */
+    /* white */
+    border: 3px solid #FFFFFF;
+    /* nuevo */
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 70px;
+    /* Inside auto layout */
+    background: #FF7A00;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 47px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+
+.showcontactavatarcl svg {
+
+    /* Ellipse 5 */
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    /* left: 0px;
+    top: 0px; */
+    background: #FF7A00;
+}
+
+.showcontactnamecl {
+    /* Anton Mayer */
+    width: 287px;
+    height: 56px;
+    /* Version 2/t2 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 47px;
+    line-height: 120%;
+    /* or 56px */
+    display: flex;
+    align-items: center;
+    color: #000000;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.showcontactaddtaskcl {
+    /* Add Task */
+    width: 100px;
+    height: 19px;
+    margin-top: 13px;
+    /* Version 2/body */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+    display: flex;
+    align-items: center;
+    color: #29ABE2;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+}
+
+.showcontactaddtaskcl svg {
+    margin-right: .7em;
+}
+
+.showcontactmiddlecl {
+    /* Frame 106 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 59px;
+    margin-top: 2em;
+    width: 392.85px;
+    height: 74px;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.showcontactinfocl {
+    /* Contact Information */
+    width: 207px;
+    height: 74px;
+    /* Version 2/t6 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
+    display: flex;
+    align-items: center;
+    color: #000000;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.showcontacteditcontactcl {
+    /* Edit Contact */
+    width: 180px;
+    height: 19px;
+    /* Version 2/body */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    gap: 5px;
+    /* or 19px */
+    display: flex;
+    align-items: center;
+    color: #2A3647;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.showcontacteditcontactcl:hover {
+    cursor: pointer;
+    color: #29ABE2;
+}
+
+.showcontactbottomcl {
+    /* Frame 101 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    margin-top: 2em;
+    gap: 22px;
+    width: 140px;
+    height: 128px;
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.showcontactmailcl {
+    /* Email */
+    width: 43px;
+    height: 19px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-bottom: 1em;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.showcontactmaildatacl {
+    /* antom@gmail.com */
+    width: 240px;
+    height: 19px;
+    /* Version 2/body */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+    display: flex;
+    align-items: center;
+    color: #007CEE;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.showcontactphonecl {
+    /* Phone */
+    width: 50px;
+    height: 19px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-bottom: 1em;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.showcontactphonedatacl {
+    /* +49 1111 11 111 1 */
+    width: 224px;
+    height: 19px;
+    /* Version 2/body */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+    display: flex;
+    align-items: center;
+    color: #000000;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/* NOTE -- Success Button */
+
+.successButtonmaincl {
+    /* Frame 73 */
+    /* Auto layout */
+    position: absolute;
+    top: 700px;
+    left: 797px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 326px;
+    height: 74px;
+    background: #2A3647;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.successButtoncontentcl {
+    /* Contact succesfully created */
+    width: 299px;
+    height: 25px;
+    /* Version 2/t6 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
+    color: #FFFFFF;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.showSuccessbuttonincl {
+    animation: toup 1s ease-in;
+}
+
+.showSuccessbuttonoutcl {
+    animation: todown 1s linear;
+}
+
+@keyframes toup {
+    0% {
+        transform: translate(0px,0px)
+    }
+
+    100% {
+        transform: translate(0px,-599px);
+    }
+}
+
+@keyframes todown {
+    0% {
+        transform: translate(0px, 0px)
+    }
+
+    100% {
+        transform: translate(0px, 1099px);
+    }
+}

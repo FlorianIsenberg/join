@@ -4,25 +4,46 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacts</title>
-    <link rel="stylesheet" type="text/css" href="style/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="style/contacts.css" />
-    <script
-      language="JavaScript"
-      type="text/javascript"
-      src="js/contactsHTML.js"
-    ></script>
-    <script
-      language="JavaScript"
-      type="text/javascript"
-      src="js/contacts.js"
-    ></script>
-  </head>
+    <link rel="stylesheet" type="text/css" href="style/fonts.css">
+    <link rel="stylesheet" type="text/css" href="style/contacts.css">
+    <link rel="stylesheet" type="text/css" href="style/contacts2.css">
+    <script language="JavaScript" type="text/javascript" src="js/mini_backend.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/contactsHTML.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/contacts.js"></script>
+</head>
 
-  <body onload="builddefaultcontactpage()">
+<body onload="init(); builddefaultcontactpage(); showIndexContacts()">
+
+    <!-- NOTE Basic Side -->
+
     <div id="mastercontactID" class="mastercontactcl">
-      <div id="contactleftframeId" class="contactleftframecl"></div>
-      <!-- Frame 97 -->
-      <div id="contactrightframeId" class="contactrightframecl"></div>
+
+        <div id="contactleftframeId" class="contactleftframecl">
+
+        </div> <!-- Frame 97 -->
+        <div id="contactrightframeId" class="contactrightframecl"></div>
+
     </div>
-  </body>
+
+    <!-- NOTE END Basic Side -->
+
+    <!-- NOTE Overlay Add Card und Edit Card  -->
+    <!-- <div id="overlayAddContactId" class="overlayAddContactcl d-none"></div> -->
+    <div id="overlayAddContactId" class="overlayAddContactcl overlayAddContactincl d-none"></div>
+
+    <!-- <div id="overlayEditContactId" class="overlayEditContactcl d-none"></div> -->
+    <div id="overlayEditContactId" class="overlayEditContactcl overlayAddContactincl d-none"></div>
+
+   <!-- NOTE Overlay Show Card  -->
+    <!-- <div id="overlayShowContactId" class="overlayShowContactcl d-none"></div> -->
+    <div id="overlayShowContactId" class="overlayShowContactcl"></div>
+
+
+    <!-- NOTE Contact successfully created -->
+    <!-- div id="showSuccessbuttonId" class="showSuccessbuttoncl showSuccessbuttonincl d-none"></div> -->
+    <div id="showSuccessbuttonId" class="showSuccessbuttoncl showSuccessbuttonincl d-none"></div>
+
+</body>
+
 </html>
+

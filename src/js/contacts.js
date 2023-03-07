@@ -1,3 +1,48 @@
+// NOTE -- smallest_backend_ever
+
+setURL('gruppe-07i.developerakademie.net/smallest_backend_ever')
+let users = [];
+
+async function init() {
+    await downloadFromServer();
+    users = JSON.parse(backend.getItem('users')) || [];
+}
+
+// NOTE -- Save, load, delete Example
+
+// let users = [];
+
+// Save
+// Add a user with this function:
+
+// function addUser() {
+//     users.push('John');
+//     backend.setItem('users', JSON.stringify(users));
+// }
+
+// If you want to wait for the request you can add the await keyword as well:
+// Add a user with this function:
+
+// async function addUser() {
+//     users.push('John');
+//     await backend.setItem('users', JSON.stringify(users));
+// }
+
+// Load
+// Fill your empty array with users from the Server
+
+// async function init() {
+//     await downloadFromServer();
+//     users = JSON.parse(backend.getItem('users')) || [];
+// }
+
+// Delete
+// Delete all users from your array:
+
+// function deleteUser(name) {
+//   await backend.deleteItem('users');
+// }
+
 // NOTE -- close Card by pressing byside
 
 // function doNotClose(event){
@@ -15,6 +60,7 @@
 //     document.getElementById(`popupContainerId`).classList.add('hide');
 // }
 
+
 // NOTE -- Default page content
 
 function builddefaultcontactpage() {
@@ -25,11 +71,75 @@ function builddefaultcontactpage() {
 // NOTE -- Overlaycard: add contact
 
 function overlayAddContact() {
+    document.getElementById('overlayAddContactId').innerHTML += generateOverlayAddContactHTML();
+    document.getElementById('overlayAddContactId').classList.remove('overlayAddContactoutcl');
+    document.getElementById('overlayAddContactId').classList.add('overlayAddContactincl');
+    document.getElementById('overlayAddContactId').classList.remove('d-none');
+   
+}
 
+function AddContactCancel() {
+    // document.getElementById('overlayAddContactId').innerHTML += generateOverlayAddContactHTML();
+    document.getElementById('overlayAddContactId').classList.remove('overlayAddContactincl');
+    document.getElementById('overlayAddContactId').classList.add('overlayAddContactoutcl');
+    setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 999);
+    
 }
 
 // NOTE -- Overlaycard: edit contact
 
 function overlayEditContact() {
+    document.getElementById('overlayEditContactId').innerHTML += generateOverlayEditContactHTML();
+    document.getElementById('overlayEditContactId').classList.remove('overlayAddContactoutcl');
+    document.getElementById('overlayEditContactId').classList.add('overlayAddContactincl');
+    document.getElementById('overlayEditContactId').classList.remove('d-none');
+}
 
+function EditSaveContact() {
+    document.getElementById('overlayEditContactId').classList.add('d-none');
+}
+
+function EditContactCancel() {
+    document.getElementById('overlayAddContactId').innerHTML += generateOverlayEditContactHTML();
+    document.getElementById('overlayEditContactId').classList.remove('overlayAddContactincl');
+    document.getElementById('overlayEditContactId').classList.add('overlayAddContactoutcl');
+    setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 999);
+}
+
+// NOTE -- Show contact
+
+function contactShowContact() {
+    document.getElementById('overlayShowContactId').innerHTML += generateOverlayShowContactHTML();
+    document.getElementById('overlayShowContactId').classList.remove('d-none');
+}
+
+function contactSuccesButton() {
+    document.getElementById('showSuccessbuttonId').innerHTML += generateSuccessbuttonHTML();
+}
+
+// NOTE -- Create Contact sign
+
+function AddCreateContact() {
+    document.getElementById('showSuccessbuttonId').innerHTML += generateSuccessbuttonHTML();
+    document.getElementById('showSuccessbuttonId').classList.remove('d-none');
+    document.getElementById('showSuccessbuttonId').classList.remove('showSuccessbuttonoutcl');
+    document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonincl');
+    setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 1000);
+    setTimeout(contactShowContact(), 1000);
+    
+    setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonincl')}, 1000);
+
+    setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonoutcl')}, 2000);
+
+    setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('d-none')}, 2250);
+}
+
+function showIndexContacts() {
+    
+    document.getElementById('contactleftframeId').innerHTML += generateShowRegisterHTML();
+    showContacts();
+}
+
+function showContacts() {
+    document.getElementById('contactleftframeId').innerHTML += generateShowContactsHTML();
 }

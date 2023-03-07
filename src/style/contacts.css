@@ -1,7 +1,14 @@
 body {
     margin: 0;
+    background-color: #F5F5F5;
     font-family: 'Inter';
 }
+
+.d-none {
+    display: none !important;
+}
+
+/* NOTE -- contacts basic */
 
 .mastercontactcl {
     background-color: white;
@@ -97,7 +104,8 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 14px 50px 14px 10px;
+    /* padding: 18px 50px 14px 10px; */
+    padding: 18px 10px;
     gap: 10px;
     position: absolute;
     width: 193px;
@@ -113,20 +121,9 @@ body {
 .addcontactcl:hover {
     cursor: pointer;
     background-color: #29ABE2;
-    border-color:#29ABE2;
-    box-shadow: 0px 10px 10px -5px grey;
-}
-
-.addcontactcl:hover .newcontactheadcl {
-    background-color: #29ABE2;
-}
-
-.addcontactcl:hover .newcontactshouldercl {
-    background-color: #29ABE2;
-} 
-
-.addcontactcl:hover .newcontactpluscl {
-    background-color: #29ABE2;
+    border-color: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 2px 2px 10px 3px rgb(0 0 0 / 20%); */
 }
 
 .addnewcontactcl {
@@ -135,7 +132,7 @@ body {
     height: 25px;
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 21px;
     line-height: 120%;
     /* or 25px */
@@ -147,35 +144,643 @@ body {
     flex-grow: 0;
 }
 
-.newcontactheadcl {
-    /* Vector */
-    position: absolute;
-    left: 80.13%;
-    right: 11.48%;
-    top: 21.98%;
-    bottom: 47.45%;
-    /* white */
-    background: #2A3647;
+.addnewcontactpiccl {
+    /* Capa 1 */
+    width: 33px;
+    height: 29.71px;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
 
-.newcontactshouldercl {
-    /* Vector */
-    position: absolute;
-    left: 77.72%;
-    right: 11.92%;
-    top: 54.25%;
-    bottom: 21.98%;
-    /* white */
-    background: #2A3647;
+
+/* NOTE -- Overlay add contact Card */
+
+.overlayAddContactcl {
+    /* Overlay add contact */
+    /* border: 1px solid black; */
+    top: 213px;
+    /* mittig zentriert */
+    left: 354px;
+    /* mittig zentriert */
+    position: relative;
+    width: 1212px;
+    height: 594px;
+    background: #FFFFFF;
+    /* background: #FFFFFF; */
+    border-radius: 30px;
+    /* border-bottom-right-radius: 30px; */
+    /* animation: toleft 1s linear; */
 }
 
-.newcontactpluscl {
+.overlayEditContactcl {
+    /* Overlay add contact */
+    /* border: 1px solid black; */
+    top: 213px;
+    /* mittig zentriert */
+    left: 354px;
+    /* mittig zentriert */
+    position: relative;
+    width: 1212px;
+    height: 594px;
+    background: #FFFFFF;
+    /* background: #FFFFFF; */
+    border-radius: 30px;
+    /* border-bottom-right-radius: 30px; */
+    /* animation: toleft 1s linear; */
+}
+
+.overlayAddContactincl {
+    animation: toleft 1s linear;
+}
+
+.overlayAddContactoutcl {
+    animation: torightout 1s linear;
+}
+
+@keyframes toleft {
+    0% {
+        transform: translatex(1870px)
+    }
+
+    100% {
+        transform: translatex(0px);
+    }
+}
+
+@keyframes torightout {
+    0% {
+        transform: translatex(0px)
+    }
+
+    100% {
+        transform: translatex(1870px);
+    }
+}
+
+.addcontactleftcl {
+    /* Frame 194 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* padding: 66px 46px; */
+    padding-left: 46px;
+    gap: 12px;
+    isolation: isolate;
+    position: absolute;
+    /* original: 463 width */
+    width: 403px;
+    height: 594px;
+    left: 0px;
+    top: 0px;
+    /* Version 2/ main color */
+    background: #2A3647;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+
+
+.addcontactheadercl {
+    width: 366px;
+    height: 73px;
+    /* Version 2/t1 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+    /* or 73px */
+    /* white */
+    color: #FFFFFF;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    z-index: 0;
+}
+
+
+.addcontactsecheadercl {
+    /* Tasks are better with a team! */
+    width: 371px;
+    height: 32px;
+    /* Version 2/t5 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 120%;
+    /* or 32px */
+    /* white */
+    color: #FFFFFF;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    z-index: 1;
+}
+
+.addcontactlinecl {
+    /* Vector 5 */
+    width: 90px;
+    /* width and height changed  */
+    height: 0px;
+    border: 3px solid #29ABE2;
+    /* transform: rotate(90deg); */
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    z-index: 2;
+}
+
+
+.joinlogocl {
+    /* Capa 2 */
+    position: absolute;
+    left: 10.04%;
+    right: 78.05%;
+    top: 25.93%;
+    bottom: 62.88%;
+    /* Inside auto layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+    z-index: 3;
+}
+
+.avatarpiccl {
+    /* Group 13 */
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: 533px;
+    top: 204px;
+}
+
+
+
+/* NOTE -- Contact Card Right Side */
+
+.addcontactrightcl {
+
+    position: absolute;
+    width: 0px;
+    height: 21.65px;
+    /* left: 1148.82px; */
+    left: 1133.51px;
+    top: 49.11px;
+    /* top: 33.8px; */
+    /* transform: rotate(135deg); */
+
+}
+
+
+/* NOTE -- Inputfields */
+
+
+.addcontactrightinputfieldscl {
+    /* add contact text */
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 29px;
+    position: absolute;
+    width: 422px;
+    height: 271px;
+    left: 737px;
+    top: 139px;
+    /* top: 159px; */
+}
+
+
+.addcontactinputcl {
+    /* Frame 14 */
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 13px 21px;
+    gap: 10px;
+    width: 422px;
+    height: 51px;
+    background: #FFFFFF;
+    /* Style */
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.addcontactnameinputcl {
+    /* Frame 14 */
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 13px 21px;
+    /* Addition Input */
+    margin-bottom: 20px;
+    gap: 10px;
+    width: 422px;
+    height: 51px;
+    background: #FFFFFF;
+    /* Style */
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+
+.addcontactinputnamecl {
+    /* Name */
+    width: 370px;
+    height: 25px;
+    border: none;
+    /* border-radius: 10px; */
+    outline: none;
+    /* Version 2/t6 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
+    /* Style */
+    color: #2A3647;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    padding-right: 0px;
+    background: url("/src/img/icons/name-icon.svg") no-repeat right;
+    /* background-size: 20px; */
+}
+
+.addcontactemailinputcl {
+    /* Frame 14 */
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 13px 21px;
+    /* Addition Input */
+    margin-bottom: 20px;
+    gap: 10px;
+    width: 422px;
+    height: 51px;
+    background: #FFFFFF;
+    /* Style */
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.addcontactinputemailcl {
+    /* Email */
+    width: 370px;
+    height: 25px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    /* Version 2/t6 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
+    /* Style */
+    color: #2A3647;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    padding-right: 0px;
+    background: url("/src/img/icons/mail-icon.svg") no-repeat right;
+    /* background-size: 20px; */
+}
+
+/* NOTE contact - Input Phone */
+.addcontactphoneinputcl {
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 13px 21px;
+    gap: 10px;
+    width: 422px;
+    height: 51px;
+    background: #FFFFFF;
+    /* Style */
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.addcontactinputphonecl {
+    /* Phone */
+    width: 370px;
+    height: 25px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    /* Version 2/t6 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
+    /* Style */
+    color: #2A3647;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    padding-right: 0px;
+    background: url("/src/img/icons/phone-icon.svg") no-repeat right;
+    /* background-size: 20px; */
+}
+
+/* NOTE -- Sub-buttons - cancel and create  */
+
+.subbuttoncontainercl {
+    /* Frame 35 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+    position: absolute;
+    width: 369px;
+    height: 61px;
+    left: 737px;
+    top: 435px;
+
+}
+
+.subbuttoncancelcl {
+    /* Property 1=Default */
+
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 10px;
+    gap: 10px;
+
+    width: 136px;
+    height: 61px;
+
+    /* Version 2/ main color */
+
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.addcontactcanceltextcl {
+    /* Cancel */
+    /* changed width */
+    width: 109px;
+    height: 25px;
+    /* Version 2/t6 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
+    /* Version 2/ main color */
+    color: #2A3647;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.addcontactcancelcrosscl {
     /* Vector */
     position: absolute;
-    left: 87.36%;
-    right: 5.18%;
-    top: 50.85%;
-    bottom: 21.98%;
+    /* left: 28.16%;
+    right: 28.15%;
+    top: 28.15%;
+    bottom: 28.15%; */
+    top: 1em;
+    left: 6em;
+    /* Version 2/ main color */
+    /* border: 2px solid #2A3647; */
+}
+
+
+/* NOTE -- contact create button */
+
+.addcontactcreatetextcl {
+    /* New contact */
+    width: 154px;
+    height: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
     /* white */
+    color: #FFFFFF;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+
+.subbuttoncreatecl {
+    /* Property 1=Default */
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 10px;
+    gap: 10px;
+    /* Addition Input */
+    margin-left: 35px;
+    width: 193px;
+    height: 61px;
     background: #2A3647;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.subbuttoncreatecl:hover {
+    cursor: pointer;
+    background-color: #29ABE2;
+    border-color: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* NOTE -- Cancle:hover */
+
+.closecrosscl:hover {
+    cursor: pointer;
+}
+
+.subbuttoncancelcl:hover {
+    cursor: pointer;
+    /* Property 1=hover */
+    box-sizing: border-box;
+    /* Auto layout */
+    /* Ligth blue */
+    color: #29ABE2;
+    border: 2px solid #29ABE2;
+    /* stronger */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    /* Inside auto layout */
+
+
+}
+
+.addcontactcanceltextcl:hover {
+    /* Cancel */
+    /* changed width */
+    width: 109px;
+    height: 25px;
+    /* Version 2/t6 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
+    /* Version 2/ main color */
+    color: #29ABE2;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.addcontactcancelcrossclx:hover {
+    /* Vector */
+    position: absolute;
+    color: #29ABE2;
+    top: .8em;
+    left: 6em;
+    /* left: 28.16%;
+    right: 28.15%;
+    top: 28.15%;
+    bottom: 28.15%; */
+    /* Version 2/ main color */
+    /* border: 2px solid #2A3647; */
+}
+
+/* NOTE -- Save button */
+
+.subbuttonsavecl {
+    /* Property 1=Default */
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 10px;
+    gap: 10px;
+    /* Addition Input */
+    margin-left: 35px;
+    width: 143px;
+    height: 61px;
+    background: #2A3647;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.subbuttoncontainersavecl {
+    /* Frame 35 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+    position: absolute;
+    width: 143px;
+    height: 61px;
+    left: 877px;
+    top: 435px;
+}
+
+.editcontactsavecl {
+    /* Create Task */
+
+    width: 123px;
+    height: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
+    text-align: center;
+    color: #FFFFFF;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.subbuttonsavecl:hover {
+    cursor: pointer;
+    background-color: #29ABE2;
+    border-color: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
