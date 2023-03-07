@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="src/style/style-header.css">
+    <script src="src/js/main.js"></script>
+    <link rel="shortcut icon" href="img/join-logo" type="image/x-icon">
+
+    <title>header-sideMenu</title>
+    <style>
+        /* .sideMenu .navbar a:nth-child(1) {
+            border-bottom: 4px solid var(--btn-green);
+            background-color: #091931;
+        }
+        .sideMenu .navbar a:nth-child(2),
+        .sideMenu .navbar a:nth-child(2),
+        .sideMenu .navbar a:nth-child(3) {
+            border-bottom: 4px solid var(--btn-green);
+        } */
+    
+    </style>
+</head>
+<body>
+   
+     <header class="header" >
+        <div class="headerLeft">
+            <span class="toolName">Kanban Project Management Tool</span>
+        </div>
+        <div class="headerRight">
+            <img class="help" src="img/icon-help-head.svg">
+            <img class="profilImg" src="img/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash 1.png"> 
+        </div>
+     </header>
+        <section id="sideMenu" class="sideMenu" w3-include-html="sideMenu.html"> 
+            <div class="logo">
+                <img class="join-logo" src="/img/logo-white.svg">
+            </div>
+            <div class="navbar">
+                <div class="navbar-icon"> 
+                    <img class="navbar-img" src="img/icon-summary.svg">
+                    <a class="navbar-Element" href="Summary.html">Summary</a>
+                </div>
+                <div class="navbar-icon">
+                    <img src="img/Icon-board.svg">
+                    <a class="navbar-Element" href="board.html">Board</a>
+                </div>
+                <div class="navbar-icon">
+                    <img src="img/icon-add-task.svg">
+                    <a class="navbar-Element" href="addTask.html">Add Task</a>
+                </div> 
+                <div class="navbar-icon">
+                    <img src="img/icon-contacts 13.svg">
+                    <a class="navbar-Element" href="contacts.html">Contacts</a>
+                </div> 
+                    
+            </div>
+            <div class="navbar-icon">
+                <img src="img/icon-legal.svg">
+                <a class="navbar-Notice" href="legalNotice.html">Legal notice</a>
+            </div>   
+        </section> 
+        <div id="content" class="content">        
+            <section id="summarySection"   class="summarySection" w3-incluude-html="Summary.html">
+            </section>
+        </div>
+</body>
+</html>
