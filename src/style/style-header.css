@@ -1,0 +1,185 @@
+body {
+    margin: 0px;
+    position: relative;
+    /* width: 1440px;
+    height: 1024px; */
+    background: #F6F7F8;
+    font-family: 'Inter';
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 36px 15px 348px;
+    gap: 34px;
+    
+    /* position: absolute;
+    width: 1440px;
+    height: 89px; */
+    left: 0px;
+    top: 0px;    
+    background: #FFFFFF;    
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.toolName {
+    width: 335px;
+    height: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
+    color: #000000;
+}
+.headerRight {
+    display: flex;
+}
+.profilImg {
+    /* position: absolute;
+    width: 129px;
+    height: 225px;
+    left: -48.44px;
+    top: -44.94px;*/
+    border: 2px solid var(--bg-white);
+    border-radius: 559px; 
+    width: 49px;
+    height: 49px;
+    left: 0px;
+    top: 0px;
+    border: 3px solid #2A3647;
+    cursor:pointer;
+    /* background-image: url("img/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash.jpg");     */
+}
+.profilImg :hover{
+    border: 3px solid darkviolet;
+    cursor: position;
+}
+.help {
+    width: 31px;
+    height: 31px;
+    padding: 10px;
+    cursor: pointer;
+}
+.sideMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 66px 20px; */
+    gap: 103px;
+    position: absolute;
+    width: 232px;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    background: #2A3647;
+    /* nuevo */
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+}
+.logo {
+    display: flex;
+    padding-top: 66px;
+    /* flex-direction: column;
+    align-items: center; */
+    /* padding: 66px 20px; */
+    /* padding-left: 28.44%; */
+    /* gap: 103px;
+
+    position: absolute;
+    width: 232px;
+    height: 1024px;
+    left: 0px;
+    top: 0px; */
+
+    background: #2A3647;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+.navbar {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 15px;
+    
+    width: 232px;
+    height: 229px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 8px 53px;
+    gap: 20px;
+    width: 232px; */
+    /* height: 46px;
+    padding: 28.44%; */
+    /* padding-top: 10.96%; */
+}
+.header .navbar a:hover{
+    border-bottom: 4px solid var(--btn-green);
+    background: #091931;
+}
+.navbar-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 1px;
+    gap: 20px;
+
+    /* width: 232px; */
+    /* height: 46px; */
+}
+.navbar-Element {
+    text-decoration: none;
+    width: 72px;
+    height: 19px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+/* .navbar-img {
+    position: absolute;
+    left: 4.17%;
+    right: 4.16%;
+    top: 4.87%;
+    bottom: 3.46%;
+
+    background: #CDCDCD;
+} */
+.notice {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start; */
+    /* padding: 243px 0px 0px; */
+    gap: 15px;
+
+    width: 160px;
+    height: 289px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #FFFFFF;
+    /* or 19px */
+
+
+color: #CDCDCD;
+}
+.navbar-Notice {
+    text-decoration: none;
+    /* width: 72px; */
+    height: 19px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
