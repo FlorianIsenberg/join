@@ -1,12 +1,12 @@
 // NOTE -- smallest_backend_ever
 
-setURL('http://gruppe-07i.developerakademie.net/smallest_backend_ever')
-let users = [];
+// setURL('http://gruppe-07i.developerakademie.net/smallest_backend_ever')
+// let users = [];
 
-async function init() {
-    await downloadFromServer();
-    users = JSON.parse(backend.getItem('users')) || [];
-}
+// async function init() {
+//     await downloadFromServer();
+//     users = JSON.parse(backend.getItem('users')) || [];
+// }
 
 // NOTE -- Save, load, delete Example
 
@@ -62,6 +62,9 @@ async function init() {
 
 
 // NOTE -- Default page content
+
+// builddefaultcontactpage();
+
 
 function builddefaultcontactpage() {
     document.getElementById('contactrightframeId').innerHTML += generateContactHTML();

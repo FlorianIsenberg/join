@@ -4,14 +4,14 @@ body {
     /* width: 1440px;
     height: 1024px; */
     background: #F6F7F8;
-    
+    font-family: 'Inter';
 }
 .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 36px 20px 348px;
+    padding: 15px 36px 15px 348px;
     gap: 34px;
     
     /* position: absolute;
@@ -26,10 +26,10 @@ body {
     width: 335px;
     height: 25px;
     font-family: 'Inter';
-    /* font-style: normal;
+    font-style: normal;
     font-weight: 400;
     font-size: 21px;
-    line-height: 120%; */
+    line-height: 120%;
     /* or 25px */
     color: #000000;
 }
@@ -50,7 +50,7 @@ body {
     top: 0px;
     border: 3px solid #2A3647;
     cursor:pointer;
-    background-image: url("img/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash.jpg");    
+    /* background-image: url("img/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash.jpg");     */
 }
 .profilImg :hover{
     border: 3px solid darkviolet;
