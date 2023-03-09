@@ -6,6 +6,11 @@ body {
     background: #F6F7F8;
     font-family: 'Inter';
 }
+.MasterContainerInsidecl {
+    /* width: calc(100%  - 230px);
+    height: calc(100% - 100px); */
+    padding-left:100px;
+}
 .header {
     display: flex;
     flex-direction: row;
@@ -50,11 +55,29 @@ body {
     top: 0px;
     border: 3px solid #2A3647;
     cursor:pointer;
-    /* background-image: url("img/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash.jpg");     */
+    
+   
 }
 .profilImg :hover{
     border: 3px solid darkviolet;
     cursor: position;
+}
+.header-label {
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /* padding: 10px; */
+    /* position: relative; */
+    width: 130px;
+    height: 53px;
+    /* Version 2/ main color */
+    background: #2A3647;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 0px 20px 20px;
 }
 .help {
     width: 31px;
@@ -151,13 +174,13 @@ body {
 
     background: #CDCDCD;
 } */
-.notice {
+/* .notice { */
     /* display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start; */
     /* padding: 243px 0px 0px; */
-    gap: 15px;
+    /* gap: 15px;
 
     width: 160px;
     height: 289px;
@@ -167,11 +190,11 @@ body {
     font-size: 16px;
     line-height: 120%;
     color: #FFFFFF;
-    /* or 19px */
+    /* or 19px 
 
 
 color: #CDCDCD;
-}
+} */
 .navbar-Notice {
     text-decoration: none;
     /* width: 72px; */

@@ -5,4 +5,13 @@ async function init() {
   users = JSON.parse(backend.getItem("users")) || [];
 }
 
-function logIn() {}
+function logIn() {
+  let email = document.getElementById("email");
+  let password = document.getElementById("password");
+  let user = users.find(
+    (u) => u.email == email.value && u.password == password.value
+  );
+  if (user) {
+    window.location.href = "../../summary-complete.html";
+  }
+}

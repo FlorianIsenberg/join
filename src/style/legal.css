@@ -3,6 +3,7 @@
   font-style: normal;
   margin: 0;
   color: #000000;
+  /* padding-left: 180px; */
 }
 
 .notice {
@@ -11,6 +12,7 @@
   align-items: center;
   text-align: center;
   flex-direction: column;
+ 
 }
 
 .notice h1 {
