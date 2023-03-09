@@ -108,8 +108,6 @@ body {
     height: 40px;
 }
 
-
-
 .draganddropsection {
     display: flex;
     flex-direction: row;
@@ -117,7 +115,6 @@ body {
     align-items: flex-start;
     gap: 26px;
     width: 1278px;
-    height: 661px;
     z-index:231;
     padding-left: 195px;
 }
@@ -223,7 +220,11 @@ body {
 .dropdowncontainer {
     display: flex;
     flex-direction: column;
-    height: 661px;
+    height: 1000px;
+}
+
+.dropdowncontainer-highlight {
+    background-color: rgba(0,0,0,0.2);
 }
 
 .tmodifythecontents {

@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board</title>
+    
     <link rel="stylesheet" href="src/style/board.css">
     <link rel="stylesheet" type="text/css" href="./src/style/fonts.css">
-    <script src="js/board.js"></script>
+    <script src="./join/src/mini_backend.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/style/style-header.css">
+    <script src="./src/js/board.js"></script>
+
 </head>
 <body onload="updateHTMl()">
     <div class="maincontainer">
@@ -30,17 +34,17 @@
         </div>
         <div class="draganddropsection">
             <div class="todoboard">
-                <div class="dropdowncontainer">
+                <div class="dropdowncontainer drag-area" id="todo" class="drag-area" ondrop="moveTo('todo')" ondragover="allowDrop(event)" ondragenter="highlight('todo')" ondragleave="removeHighlight('todo')">
                     <div class="todoplus">
                     <span class="progressbar">
                     <img class="progresssections" src="src/img/icons/To do.svg" alt="To Do"></span>
                     <img class="plusbtnblack" src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
                 </div>
-                <div class="notesmain">
+                <div class="notesmain" id="note1" draggable="true" ondragstart="startDragging(0)">
                     <div class="notesection">
                     <img src="./src/img/icons/design.svg" alt="Designlabel">
-                </div>
-                        <div class="noteheadlinecontainer">
+                    </div>
+                    <div class="noteheadlinecontainer">
                         <h2 class="noteheadline">Website redesign</h2>
                     </div>
                         <div class="note">
@@ -60,13 +64,13 @@
                         </div>
                 </div>
                     </div>
-                <div class="dropdowncontainer">
+                <div class="dropdowncontainer drag-area" id="inprogress" ondrop="moveTo('inprogress')" ondragover="allowDrop(event)" ondragenter="highlight('inprogress')" ondragleave="removeHighlight('inprogress')">
                     <div class="todoplus">
                     <span class="progressbar">
                     <img class="progresssections" src="./src/img/icons/Inprogress.svg" alt="In progress"></span>
                     <img class="plusbtnblack" src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
                     </div>
-                    <div class="notesmain">
+                    <div class="notesmain" id="note2">
                         <div class="notesection">
                         <img src="./src/img/icons/sales.svg" alt="Saleslabel">
                     </div>
@@ -89,13 +93,13 @@
                             </div>
                     </div>
                 </div>   
-                <div class="dropdowncontainer">
+                <div class="dropdowncontainer drag-area" id="awaitingfeedback" ondrop="moveTo('awaitingfeedback')" ondragover="allowDrop(event)" ondragenter="highlight('awaitingfeedback')" ondragleave="removeHighlight('awaitingfeedback')">
                     <div class="todoplus">
                     <span class="progressbar">
                     <img class="progresssections" src="./src/img/icons/AwaitingFeedback.svg" alt="Awaiting Feedback"></span>
                     <img class="plusbtnblack" src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
                     </div>
-                    <div class="notesmain">
+                    <div class="notesmain" id="note3">
                         <div class="notesection">
                         <img src="./src/img/icons/backoffice.svg" alt="Backofficelabel">
                     </div>
@@ -116,7 +120,7 @@
                                 <img class="yellowsum" src="./src/img/icons/sumyellow.svg" alt="doublea arrow green down">
                             </div>
                     </div>
-                    <div class="notesmain">
+                    <div class="notesmain" id="note4">
                         <div class="notesection">
                         <img src="./src/img/icons/media.svg" alt=">Medialabel">
                     </div>
@@ -138,13 +142,13 @@
                             </div>
                     </div>
                 </div>
-                <div class="dropdowncontainer">
+                <div class="dropdowncontainer drag-area" id="done" ondrop="moveTo('done')" ondragover="allowDrop(event)" ondragenter="highlight('done')" ondragleave="removeHighlight('done')">
                     <div class="todoplus">
                     <span class="progressbar">
                     <img class="progresssections" src="./src/img/icons/Done.svg" alt="Done"> </span>
                     <img class="plusbtnblack" src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
                     </div>
-                    <div class="notesmain">
+                    <div class="notesmain" id="note5">
                         <div class="notesection">
                         <img src="./src/img/icons/marketing.svg" alt="Marketinglabel">
                     </div>
