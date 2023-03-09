@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="src/style/fonts.css">
+    <link rel="stylesheet" type="text/css" href="src/style/style-header.css">
+    <link rel="stylesheet" href="/src/style/style-summary.css">
+    <script language="JavaScript" type="text/javascript" src="src/js/referencePage.js"></script>
+
     <title>Join Summary</title>
     <!-- <link rel="stylesheet" href="./src/tstyle/style-summary.css"> -->
     <!-- <script src="src/js/main.js"></script>  -->
   <!-- <link rel="shortcut icon" href="img/join-logo.svg" type="image/x-icon"> -->
+ 
 
-  <style>
+  <!-- <style>
     /* .sideMenu .navbar a:nth-child(1),
     .sideMenu .navbar a:nth-child(2),
     .sideMenu .navbar a:nth-child(3),
@@ -466,8 +472,8 @@
         color: #29ABE2;
     
     }
-  </style>
-  <script>
+  </style> -->
+  <!-- <script>
     async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let i = 0; i < includeElements.length; i++) {
@@ -481,7 +487,7 @@
       }
     }
   }
-  </script>
+  </script> -->
 </head>
 <body onload="includeHTML()">
     <!-- <header class="header" w3-include-html="src/templates/header.html"></header> -->
@@ -494,22 +500,22 @@
         <div class="summary-content">
             <div class="summary-left">
                 <div class="summary-task">
-                  <div class="task-type" href="/board.html">
+                  <div class="task-type" href="src/templates/board.html">
                     <div class=task-counter id="task-counter-all">5</div>
                     <span class="task-description">Tasks in Board</span>
                   </div>
-                  <div href="src/board.html" class="task-type">
+                  <div href="src/templates/board.html" class="task-type">
                     <div class=task-counter id="task-counter-Inprogress">2</div>
                     <span class="task-description">Tasks In Progress</span>
                   </div>
-                  <div href="board.html" class="task-type">
+                  <div href="src/templates/board.html" class="task-type">
                     <div class=task-counter id="task-counter-awaiting">2</div>
                     <span class="task-description">Awaiting Feedback</span>
                   </div>
                 </div>
-                <div href="src/board.html" class="summary-task-deadline">
+                <div href="src/templates/board.html" class="summary-task-deadline">
                     <div class="urgent">
-                      <img class="urgent-img" src="img/urgent-color.svg">
+                      <img class="urgent-img" src="src/img/urgent-color.svg">
                       <div class="task-urgent">
                         <div class="urgent-counter">1</div>
                         <span class="urgent-description">Urgent</span>
@@ -523,14 +529,14 @@
                 </div>
                 <div class="summary-todo">
                   <div href="src/templates/board.html" class="task-todo">
-                      <img src="img/summary-pencil.svg" class="todo-img">
+                      <img src="src/img/summary-pencil.svg" class="todo-img">
                       <div class="summary-todo-right">
                           <div class="task-counter-todo" id="task-counter-todo">1</div>
                           <span class="todo-description">To-do</span>
                       </div>
                   </div>
                   <div href="src/templates/board.html" class="task-todo">
-                    <img src="img/summary-done.svg" class="todo-img">
+                    <img src="src/img/summary-done.svg" class="todo-img">
                     <div class="summary-todo-right">
                         <div class="task-counter-todo" id="task-counter-done">1</div>
                         <span class="todo-description">Done</span>
