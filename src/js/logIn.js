@@ -12,6 +12,6 @@ function logIn() {
     (u) => u.email == email.value && u.password == password.value
   );
   if (user) {
-    window.location.href = "src/templates/summary.html";
+    window.location.href = "../../summary-complete.html";
   }
 }
