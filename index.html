@@ -10,7 +10,13 @@
     <script
       language="JavaScript"
       type="text/javascript"
-      src="src/js/main.js"
+      src="./mini_backend.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="src/js/logIn.js"
     ></script>
   </head>
 
@@ -43,22 +49,26 @@
               <input required type="password" placeholder="Password" />
               <img src="src/img/password_input.svg" alt="" />
             </div>
+
+            <div class="RememberMe">
+              <div class="reMeBox">
+                <input class="checkBox" type="checkbox" />
+                <p>Remember me</p>
+              </div>
+              <p>
+                <a
+                  class="ForgotPassword"
+                  href="src/templates/forgotPassword.html"
+                  >Forgot my password
+                </a>
+              </p>
+            </div>
+            <div class="btnLogGuest">
+              <button class="btnLogIn">Log in</button>
+              <button class="btnGuestLog">Guest Log in</button>
+            </div>
           </div>
         </form>
-
-        <div class="RememberMe">
-          <input class="checkBox" type="checkbox" />
-          <div>Remember me</div>
-          <div>
-            <a class="ForgotPassword" href="src/templates/forgotPassword.html"
-              >Forgot my password
-            </a>
-          </div>
-        </div>
-        <div class="btnLogGuest">
-          <button class="btnLogIn">Log in</button>
-          <button class="btnGuestLog">Guest Log in</button>
-        </div>
       </div>
     </section>
   </body>

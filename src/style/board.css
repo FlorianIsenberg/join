@@ -111,8 +111,6 @@ body {
     height: 40px;
 }
 
-
-
 .draganddropsection {
     display: flex;
     flex-direction: row;
@@ -226,7 +224,11 @@ body {
 .dropdowncontainer {
     display: flex;
     flex-direction: column;
-    height: 661px;
+    height: 1000px;
+}
+
+.dropdowncontainer-highlight {
+    background-color: rgba(0,0,0,0.2);
 }
 
 .tmodifythecontents {

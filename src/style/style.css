@@ -42,11 +42,11 @@
   color: #000000;
 }
 
+.UserSignUp a {
+  text-decoration: none;
+}
+
 .btnSignUp {
-  /* Button wo icon v1 */
-
-  /* Auto layout */
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -55,14 +55,14 @@
   gap: 10px;
   background: #2a3647;
   border-radius: 8px;
-  /* Button */
+
   width: 91px;
   height: 51px;
 
   font-weight: 700;
   font-size: 16px;
   line-height: 120%;
-  /* or 19px */
+
   color: #ffffff;
   border: none;
   cursor: pointer;
@@ -82,8 +82,6 @@ section {
 }
 
 .contentBox {
-  /* Auto layout */
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,7 +90,6 @@ section {
   gap: 35px;
 
   width: 652px;
-  height: 513px;
 
   /* white */
 
@@ -147,12 +144,9 @@ section {
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 0px;
   gap: 29px;
-
-  width: 422px;
-  height: 171px;
 
   /* Inside auto layout */
 
@@ -170,9 +164,6 @@ section {
   padding: 13px 21px;
   gap: 10px;
 
-  width: 422px;
-  height: 51px;
-
   /* Inside auto layout */
 
   flex: none;
@@ -185,7 +176,7 @@ section {
 
 .mailPasswordInputField input {
   border: none;
-  width: 90%;
+
   height: 100%;
 
   /* Version 2/t6 */
@@ -208,9 +199,7 @@ section {
 .mailPasswordInputField img {
   width: 20px;
   height: 18px;
-  /* icon */
 
-  /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -218,16 +207,20 @@ section {
 
 .RememberMe {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
 
   font-weight: 400;
   font-size: 16px;
   line-height: 120%;
-  /* or 19px */
 
   color: #000000;
   width: 335px;
   height: 19px;
+}
+
+.reMeBox {
+  display: flex;
+  gap: 12px;
 }
 
 .ForgotPassword {
@@ -235,9 +228,6 @@ section {
   font-weight: 400;
   font-size: 16px;
   line-height: 120%;
-  /* or 19px */
-
-  /* Ligth blue */
 
   color: #29abe2;
 }
