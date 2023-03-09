@@ -239,3 +239,60 @@ body {
 z-index: 232;
 margin-left: -8px;
 }
+
+
+.overlayAddContactincl {
+    animation: toleft 1s linear;
+}
+
+.overlayAddContactoutcl {
+    animation: torightout 1s linear;
+}
+
+@keyframes toleft {
+    0% {
+        transform: translatex(1870px)
+    }
+
+    100% {
+        transform: translatex(0px);
+    }
+}
+
+@keyframes torightout {
+    0% {
+        transform: translatex(0px)
+    }
+
+    100% {
+        transform: translatex(1870px);
+    }
+}
+
+.showSuccessbuttonincl {
+    animation: toup 1s ease-in;
+}
+
+.showSuccessbuttonoutcl {
+    animation: todown 1s linear;
+}
+
+@keyframes toup {
+    0% {
+        transform: translate(0px,0px)
+    }
+
+    100% {
+        transform: translate(0px,-599px);
+    }
+}
+
+@keyframes todown {
+    0% {
+        transform: translate(0px, 0px)
+    }
+
+    100% {
+        transform: translate(0px, 1099px);
+    }
+}

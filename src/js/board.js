@@ -103,7 +103,7 @@ function startDragging(id) {
 }
 
 function generateTodoHTML(element) {
-    return `<div draggable="true" ondragstart="startDragging(${element['id']})" class="todo">${element.todos}</div>`;
+    return `<div draggable="true" ondragstart="startDragging(${element['id']})" class="todo">${element.title}</div>`;
 }
 
 function allowDrop(ev) {
@@ -126,3 +126,28 @@ function removeHighlight(id) {
 
 
 
+//function AddCreateContact() {
+    document.getElementById('addTaskButton').innerHTML += generateSuccessbuttonHTML();
+    document.getElementById('addTaskButton').classList.remove('d-none');
+    document.getElementById('addTaskButton').classList.remove('showSuccessbuttonoutcl');
+    document.getElementById('addTaskButton').classList.add('showSuccessbuttonincl');
+    setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 1000);
+    setTimeout(contactShowContact(), 1000);
+    
+    setTimeout(function(){document.getElementById('addTaskButton').classList.add('showSuccessbuttonincl')}, 1000);
+
+    setTimeout(function(){document.getElementById('addTaskButton').classList.add('showSuccessbuttonoutcl')}, 2000);
+
+    setTimeout(function(){document.getElementById('addTaskButton').classList.add('d-none')}, 2250);
+}
+
+function overlayAddContact() {
+    document.getElementById('overlayAddContactId').innerHTML += generateOverlayAddContactHTML();
+    document.getElementById('overlayAddContactId').classList.remove('overlayAddContactoutcl');
+    document.getElementById('overlayAddContactId').classList.add('overlayAddContactincl');
+    document.getElementById('overlayAddContactId').classList.remove('d-none');
+   
+}
+
+function addTask(i){
+    document.getElementById('popUpContainer').classList.remove('hide');
