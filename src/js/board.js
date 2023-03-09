@@ -131,7 +131,7 @@ function removeHighlight(id) {
     document.getElementById('addTaskButton').classList.remove('d-none');
     document.getElementById('addTaskButton').classList.remove('showSuccessbuttonoutcl');
     document.getElementById('addTaskButton').classList.add('showSuccessbuttonincl');
-    setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 1000);
+    setTimeout(function(){document.getElementById('mastercontainerid').classList.add('d-none')}, 1000);
     setTimeout(contactShowContact(), 1000);
     
     setTimeout(function(){document.getElementById('addTaskButton').classList.add('showSuccessbuttonincl')}, 1000);
@@ -142,12 +142,17 @@ function removeHighlight(id) {
 }
 
 function overlayAddContact() {
-    document.getElementById('overlayAddContactId').innerHTML += generateOverlayAddContactHTML();
-    document.getElementById('overlayAddContactId').classList.remove('overlayAddContactoutcl');
-    document.getElementById('overlayAddContactId').classList.add('overlayAddContactincl');
-    document.getElementById('overlayAddContactId').classList.remove('d-none');
+    document.getElementById('mastercontainerid').innerHTML += generateOverlayAddContactHTML();
+    document.getElementById('mastercontainerid').classList.remove('overlayAddContactoutcl');
+    document.getElementById('mastercontainerid').classList.add('overlayAddContactincl');
+    document.getElementById('mastercontainerid').classList.remove('d-none');
    
 }
 
-function addTask(i){
-    document.getElementById('popUpContainer').classList.remove('hide');
+function addTask(){
+    document.getElementById('mastercontainerid').classList.remove('hide');
+}
+
+function closeTask(){
+        document.getElementById('mastercontainerid').classList.add('hide');}
+       

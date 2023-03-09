@@ -7,6 +7,7 @@
     <title>Board</title>
     
     <link rel="stylesheet" href="src/style/board.css">
+    <link rel="stylesheet" href="src/style/addtask.css">
     <link rel="stylesheet" type="text/css" href="./src/style/fonts.css">
     <script language="JavaScript" type="text/javascript" src="mini_backend.js"></script>
     <script language="JavaScript" type="text/javascript" src="src/js/board.js"></script>
@@ -19,6 +20,61 @@
 </head>
 <body onload="updateHTML()">
     <div w3-include-html="header.html"></div>
+    <div class="mastercontainer hide" id="mastercontainerid">
+        <h1 class="taddtask">Add Task</h1>
+            <div class="container-selections">
+                <div class="container-left">
+                    <span class="title">Title</span>
+                    <input class="titleinput" placeholder="Enter a title" text="text" id="titleinput">
+                    <span class="description">Description</span>
+                        <div class="descriptionandimage">
+                            <input class="descriptioninput" placeholder="Enter a Description" text="text" id="descriptioninput">
+                            <img src="../img/icons/Recurso11.svg" alt="three lines drop down" class="threelinesdropdown">
+                        </div>
+                            <span class="category">Category</span>
+                                <div class="inputfieldandimage">
+                                <input class="categoryinput" placeholder="Select task category" text="text" id="categoryinput">
+                                <img src="../img/icons/Vector2blackarrowdown.svg" alt="black arrow down" class="blackarrowdown">
+                                </div> 
+                                <span class="assignedto">Assigned to</span>
+                                    <div class="inputfieldandimage">   
+                                    <input class="assignedinput" placeholder="Select contacts to assign" text="text" id="assignedinput">
+                                    <img src="../img/icons/Vector2blackarrowdown.svg" alt="black arrow down" class="blackarrowdown">
+                                    </div>
+                </div>
+                                        <img src="../img/icons/Vector4line.svg" alt="verticalline" class="verticalline">
+                <div class="container-right">
+                    <span class="duedate">Due date</span>
+                        <div class="dateinputandimage">
+                        <input class="dateinput" placeholder="dd/mm/yyyy" text="date" id="dateinput">
+                        <img src="../img/icons/Vectorkalender.svg" alt="datecalendarsymbol" class="datecalendarsymbol">
+                        </div>
+                            <div class="Prioritys">
+                                <span class="prio">Prio</span>
+                            </div>
+                                <div class="prio-selections">
+                                    <img src="../img/icons/urgent.svg" alt="urgent priority symbol">
+                                    <img src="../img/icons/medium.svg" alt="medium priority symbol"> 
+                                    <img src="../img/icons/low.svg" alt="low priority symbol">   
+                                </div>
+                                <div class="subtasks-selection">
+                                    <span class="subtasktitle">Subtasks</span>
+                                </div>
+                                    <div class="addnewsubtaskinputandimage">
+                                        <input text="text" placeholder="Add new subtask" class="subtask" id="subtask">
+                                        <img src="../img/icons/Vectorplusblack.svg" alt="blackplusbutton" class="blackplusbuttonsubtasks">
+                                    </div>
+                                    <div class="rectangleandsubtask1">
+                                        <img src="../img/icons/Rectangle5.svg" alt="rectangle">
+                                        <span class="subtask1">Subtask 1</span>
+                                    </div>
+                                        <div class="clearandcreatetask">
+                                            <img src="../img/icons/clearx.svg" alt="clear x button" class="clear x button">
+                                            <img src="../img/icons/createtaskbutton.svg" alt="button create task">
+                                        </div>
+                </div>
+            </div>
+    </div>
     <div class="maincontainer">
         <div class="boardsection">
             <div class="insertboard">

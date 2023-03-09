@@ -300,3 +300,11 @@ margin-left: -8px;
         transform: translate(0px, 1099px);
     }
 }
+
+.hide {
+    display: none;
+}
+
+.d-none {
+    display: none;
+}
