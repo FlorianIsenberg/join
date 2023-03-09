@@ -38,15 +38,20 @@
           <img src="src/img/icons/blueUnderline.svg" alt="" />
         </div>
 
-        <form onsubmit="logIn()">
+        <form onsubmit="logIn(); return false;">
           <div class="emailPasswordField">
             <div class="mailPasswordInputField">
-              <input required type="email" placeholder="Email" />
+              <input required type="email" placeholder="Email" id="email" />
               <img src="src/img/email_input.svg" alt="" />
             </div>
 
             <div class="mailPasswordInputField">
-              <input required type="password" placeholder="Password" />
+              <input
+                required
+                type="password"
+                placeholder="Password"
+                id="password"
+              />
               <img src="src/img/password_input.svg" alt="" />
             </div>
 
@@ -70,6 +75,8 @@
           </div>
         </form>
       </div>
+      <div class="msgBox" id="msgBox">test</div>
     </section>
+    <script src="src/js/signUpMsg.js"></script>
   </body>
 </html>
