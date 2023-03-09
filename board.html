@@ -8,9 +8,9 @@
     
     <link rel="stylesheet" href="src/style/board.css">
     <link rel="stylesheet" type="text/css" href="./src/style/fonts.css">
-    <script src="./join/src/mini_backend.js"></script>
+    <script language="JavaScript" type="text/javascript"src="./mini_backend.js"></script>
     <link rel="stylesheet" type="text/css" href="src/style/style-header.css">
-    <script src="./src/js/board.js"></script>
+   
 
 </head>
 <body onload="updateHTMl()">
@@ -70,7 +70,7 @@
                     <img class="progresssections" src="./src/img/icons/Inprogress.svg" alt="In progress"></span>
                     <img class="plusbtnblack" src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
                     </div>
-                    <div class="notesmain" id="note2">
+                    <div class="notesmain" id="note2" draggable="true" ondragstart="startDragging(1)">
                         <div class="notesection">
                         <img src="./src/img/icons/sales.svg" alt="Saleslabel">
                     </div>
@@ -99,7 +99,7 @@
                     <img class="progresssections" src="./src/img/icons/AwaitingFeedback.svg" alt="Awaiting Feedback"></span>
                     <img class="plusbtnblack" src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
                     </div>
-                    <div class="notesmain" id="note3">
+                    <div class="notesmain" id="note3" draggable="true" ondragstart="startDragging(2)">
                         <div class="notesection">
                         <img src="./src/img/icons/backoffice.svg" alt="Backofficelabel">
                     </div>
@@ -120,7 +120,7 @@
                                 <img class="yellowsum" src="./src/img/icons/sumyellow.svg" alt="doublea arrow green down">
                             </div>
                     </div>
-                    <div class="notesmain" id="note4">
+                    <div class="notesmain" id="note4" draggable="true" ondragstart="startDragging(3)">
                         <div class="notesection">
                         <img src="./src/img/icons/media.svg" alt=">Medialabel">
                     </div>
@@ -148,7 +148,7 @@
                     <img class="progresssections" src="./src/img/icons/Done.svg" alt="Done"> </span>
                     <img class="plusbtnblack" src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
                     </div>
-                    <div class="notesmain" id="note5">
+                    <div class="notesmain" id="note5" draggable="true" ondragstart="startDragging(4)">
                         <div class="notesection">
                         <img src="./src/img/icons/marketing.svg" alt="Marketinglabel">
                     </div>
