@@ -15,3 +15,7 @@ function logIn() {
     window.location.href = "../../summary-complete.html";
   }
 }
+
+function guestLogIn() {
+  window.location.href = "../../summary-complete.html";
+}
