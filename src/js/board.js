@@ -180,3 +180,38 @@ function openCategory() {
 function hoverUrgentPriority() {
     document.getElementById('urgent').innerHTML = `<img src="./src/img/icons/urgentbuttonorange">`;
 }
+
+
+    function urgentButtonChange() {
+        if (document.getElementById("urgent").src == "./src/img/icons/urgentbuttonorange.svg"){
+            document.getElementById("urgent").src = "./src/img/icons/urgent.svg";
+        } else {
+            document.getElementById("urgent").src = "./src/img/icons/urgentbuttonorange.svg";
+        }
+    }
+
+
+    function returnUrgentButtonChange(){
+        if (document.getElementById("urgent").src == "./src/img/icons/urgent.svg"){
+            document.getElementById("urgent").src = "./src/img/icons/urgentbuttonorange.svg";
+        } else {
+            document.getElementById("urgent").src = "./src/img/icons/urgent.svg";
+        }
+    }
+    
+
+    function mediumButtonChange() {
+        if (document.getElementById("medium").src == "./src/img/icons/mediumbuttonyellow.svg"){
+            document.getElementById("medium").src = "./src/img/icons/medium.svg";
+        } else {
+            document.getElementById("medium").src = "./src/img/icons/mediumbuttonyellow.svg";
+        }
+    }
+
+    function lowButtonChange() {
+        if (document.getElementById("low").src == "./src/img/icons/low.svg"){
+            document.getElementById("low").src = "./src/img/icons/lowbuttongreen.svg";
+        } else {
+            document.getElementById("low").src = "./src/img/low.svg";
+        }
+    }
