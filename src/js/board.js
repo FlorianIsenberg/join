@@ -103,7 +103,30 @@ function startDragging(id) {
 }
 
 function generateTodoHTML(element) {
-    return `<div draggable="true" ondragstart="startDragging(${element['id']})" class="todo">${element.title}</div>`;
+    return `<div draggable="true" ondragstart="startDragging(${element['id']})" class="todo">${element.title}</div> 
+    <div class="notesmain" id="note1" draggable="true" ondragstart="startDragging(0)">
+    <div class="notesection">
+    <img src="./src/img/icons/design.svg" alt="Designlabel">
+    </div>
+    <div class="noteheadlinecontainer">
+        <h2 class="noteheadline">Website redesign</h2>
+    </div>
+        <div class="note">
+            <span class="tmodifythecontents">Modify the contents of the main website..</span> 
+                <div class="loadingbarandspan">
+                    <div class="progressloadingbar">
+                        <img class="progressloadingbarimage" src="./src/img/icons/progress.svg" alt="Progressbar">
+                        <span class="halfdone">1/2 Done</span>
+                    </div>    
+    </div>
+</div>
+        <div class="usericons">
+            <img src="./src/img/icons/sm.svg" alt="User SM">
+            <img src="./src/img/icons/mv.svg" alt="User MV" class="iconsinicons">
+            <img src="./src/img/icons/ef.svg" alt="User EF" class="iconsinicons">
+            <img class="greenarrowdown" src="./src/img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
+        </div>
+</div>`;
 }
 
 function allowDrop(ev) {
@@ -125,34 +148,35 @@ function removeHighlight(id) {
 }
 
 
-
-//function AddCreateContact() {
-    document.getElementById('addTaskButton').innerHTML += generateSuccessbuttonHTML();
-    document.getElementById('addTaskButton').classList.remove('d-none');
-    document.getElementById('addTaskButton').classList.remove('showSuccessbuttonoutcl');
-    document.getElementById('addTaskButton').classList.add('showSuccessbuttonincl');
-    setTimeout(function(){document.getElementById('mastercontainerid').classList.add('d-none')}, 1000);
-    setTimeout(contactShowContact(), 1000);
-    
-    setTimeout(function(){document.getElementById('addTaskButton').classList.add('showSuccessbuttonincl')}, 1000);
-
-    setTimeout(function(){document.getElementById('addTaskButton').classList.add('showSuccessbuttonoutcl')}, 2000);
-
-    setTimeout(function(){document.getElementById('addTaskButton').classList.add('d-none')}, 2250);
-}
-
-function overlayAddContact() {
-    document.getElementById('mastercontainerid').innerHTML += generateOverlayAddContactHTML();
-    document.getElementById('mastercontainerid').classList.remove('overlayAddContactoutcl');
-    document.getElementById('mastercontainerid').classList.add('overlayAddContactincl');
-    document.getElementById('mastercontainerid').classList.remove('d-none');
+function addTask() {
+    document.getElementById('mastercontainerid').classList.add('hide');
+    //document.getElementById('mastercontainerid').classList.remove('overlayAddContactoutcl');
+    document.getElementById('mastercontainerid').classList.add('hide');
+    document.getElementById('mastercontainerid').classList.remove('hide');
    
 }
 
-function addTask(){
+function clearTask() {
+    document.getElementById('mastercontainerid').classList.add('hide');
+}
+
+function openNewTask() {
     document.getElementById('mastercontainerid').classList.remove('hide');
 }
 
-function closeTask(){
-        document.getElementById('mastercontainerid').classList.add('hide');}
-       
+function openCategory() {
+    document.getElementById('opencategory');
+    let category = innerHTML += `
+    <select class="categorylist" id="categorylistitem">
+        <ul>
+            <li>Select task category</li>
+            <li>New category</li>
+            <li>Sales</li>
+            <li>Backoffice</li>
+        </ul>    
+    </select>`;
+}
+
+function hoverUrgentPriority() {
+    document.getElementById('urgent').innerHTML = `<img src="./src/img/icons/urgentbuttonorange">`;
+}
