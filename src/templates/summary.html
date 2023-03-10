@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="src/style/style-header.css">
     <link rel="stylesheet" href="/src/style/style-summary.css">
     <script language="JavaScript" type="text/javascript" src="src/js/referencePage.js"></script>
+    <script language="JavaScript" type="text/javascript" src="src/js/summary.js"></script>
 
     <title>Join Summary</title>
     <!-- <link rel="stylesheet" href="./src/tstyle/style-summary.css"> -->
@@ -488,6 +489,7 @@
     }
   }
   </script> -->
+  
 </head>
 <body onload="includeHTML()">
     <!-- <header class="header" w3-include-html="src/templates/header.html"></header> -->
@@ -523,7 +525,7 @@
                     </div>
                     <div class="urgent-line"> </div>
                     <div class="deadline">
-                        <div class="deadline-day">October 16, 2022</div>
+                        <div id="deadline-day" class="deadline-day" >October 16, 2022</div>
                         <span class="deadline-description">Upcoming Deadline</span>
                     </div>
                 </div>
@@ -552,4 +554,7 @@
     </div>
     
 </body>
+<script>
+    document.getElementById("current_date").innerHTML = Date();
+  </script>
 </html>

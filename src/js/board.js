@@ -139,7 +139,7 @@ function removeHighlight(id) {
     setTimeout(function(){document.getElementById('addTaskButton').classList.add('showSuccessbuttonoutcl')}, 2000);
 
     setTimeout(function(){document.getElementById('addTaskButton').classList.add('d-none')}, 2250);
-}
+
 
 function overlayAddContact() {
     document.getElementById('mastercontainerid').innerHTML += generateOverlayAddContactHTML();
