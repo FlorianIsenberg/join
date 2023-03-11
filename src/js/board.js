@@ -103,20 +103,20 @@ function startDragging(id) {
 }
 
 function generateTodoHTML(element) {
-    return `<div draggable="true" ondragstart="startDragging(${element['id']})" class="todo">${element.title}</div> 
-    <div class="notesmain" id="note1" draggable="true" ondragstart="startDragging(0)">
+    return `
+    <div class="notesmain" id="note1" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit()">
     <div class="notesection">
     <img src="./src/img/icons/design.svg" alt="Designlabel">
     </div>
     <div class="noteheadlinecontainer">
-        <h2 class="noteheadline">Website redesign</h2>
+        <h2 class="noteheadline">${element.title}</h2>
     </div>
         <div class="note">
-            <span class="tmodifythecontents">Modify the contents of the main website..</span> 
+            <span class="tmodifythecontents">${element.description}</span> 
                 <div class="loadingbarandspan">
                     <div class="progressloadingbar">
                         <img class="progressloadingbarimage" src="./src/img/icons/progress.svg" alt="Progressbar">
-                        <span class="halfdone">1/2 Done</span>
+                        <span class="halfdone">${element.subtasksDone}</span>
                     </div>    
     </div>
 </div>
@@ -150,7 +150,6 @@ function removeHighlight(id) {
 
 function addTask() {
     document.getElementById('mastercontainerid').classList.add('hide');
-    //document.getElementById('mastercontainerid').classList.remove('overlayAddContactoutcl');
     document.getElementById('mastercontainerid').classList.add('hide');
     document.getElementById('mastercontainerid').classList.remove('hide');
    
@@ -164,22 +163,6 @@ function openNewTask() {
     document.getElementById('mastercontainerid').classList.remove('hide');
 }
 
-function openCategory() {
-    document.getElementById('opencategory');
-    let category = innerHTML += `
-    <select class="categorylist" id="categorylistitem">
-        <ul>
-            <li>Select task category</li>
-            <li>New category</li>
-            <li>Sales</li>
-            <li>Backoffice</li>
-        </ul>    
-    </select>`;
-}
-
-function hoverUrgentPriority() {
-    document.getElementById('urgent').innerHTML = `<img src="./src/img/icons/urgentbuttonorange">`;
-}
 
 
     function urgentButtonChange() {
@@ -209,9 +192,29 @@ function hoverUrgentPriority() {
     }
 
     function lowButtonChange() {
-        if (document.getElementById("low").src == "./src/img/icons/low.svg"){
+        if (document.getElementById("low").src == "./src/img/icons/lowbuttongreen.svg") {
+            document.getElementById("low").src = "./src/img/icons/low.svg";
+         } else {
             document.getElementById("low").src = "./src/img/icons/lowbuttongreen.svg";
-        } else {
-            document.getElementById("low").src = "./src/img/low.svg";
         }
     }
+
+
+  function opentoDoForEdit() {
+    document.getElementById('note1').classList.add('hide')
+    document.getElementById('taskcontainerid').classList.add('hide');
+    document.getElementById('taskcontainerid').classList.remove('hide');
+  }
+
+  function closetoDoForEdit() {
+    document.getElementById('taskcontainerid').classList.add('hide')
+    document.getElementById('note1').classList.add('hide');
+    document.getElementById('note1').classList.remove('hide');
+  }
+
+function okButtonCloseAndSafeNote() {
+    document.getElementById('taskcontainerid').classList.add('hide')
+    document.getElementById('note1').classList.add('hide');
+    document.getElementById('note1').classList.remove('hide');
+  }
+  

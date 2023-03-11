@@ -32,15 +32,32 @@
                             <img src="./src/img/icons/Recurso11.svg" alt="three lines drop down" class="threelinesdropdown">
                         </div>
                             <span class="category">Category</span>
-                                <div class="inputfieldandimage" onclick="openCategory()" type="dropdowncontainer" id="opencategory">
-                                <input class="categoryinput" placeholder="Select task category" text="text" id="categoryinput">
-                                <img src="./src/img/icons/Vector2blackarrowdown.svg" alt="black arrow down" class="blackarrowdown">
+                                <div class="inputfieldandimage"id="opencategory">
+                                    <select class="categoryinput">
+                                        <option disabled selected class="categoryinput"id="categoryinput">Select task category</option>
+                                        <option>New category</option>
+                                        <option>Sales<img src="" ></option>
+                                        <option>Backoffice</option>
+                                        <option>Marketing</option>
+                                        <option>Design</option>
+                                        <option>Media</option>
+                                        </select>
                                 </div> 
                                 <span class="assignedto">Assigned to</span>
-                                    <div class="inputfieldandimage">   
-                                    <input class="assignedinput" placeholder="Select contacts to assign" text="text" id="assignedinput">
-                                    <img src="./src/img/icons/Vector2blackarrowdown.svg" alt="black arrow down" class="blackarrowdown">
-                                    </div>
+                                    <div class="inputfieldandimage" id="inputselection">
+                                        <select class="dropdownassignedto">
+                                            <option disabled selected>Select contacts to assign</option>
+                                            <option>You</option> 
+                                            <option>Anton Meyer</option>
+                                            <option>Anja Schulz</option>
+                                            <option>David Eisenberg</option>
+                                            <option>Eva Fischer</option>
+                                            <option>Marius Müller</option>
+                                            <option>Peter Jackson</option>
+                                            </select>
+                                        </div>
+                                    
+                                   
                 </div>
                                         <img src="./src/img/icons/Vector4line.svg" alt="verticalline" class="verticalline">
                 <div class="container-right">
@@ -240,6 +257,51 @@
                 </div>
             </div>
         </div>
-       
+        <div class="taskcontainer hide" id="taskcontainerid">
+                <div class="containeropennote">
+                        <img src="./src/img/icons/closecross.svg" alt="close x button" onclick="closetoDoForEdit()" id="close" class="closebuttonx">
+                        <span class="title">Title</span>
+                        <input class="titleinput" placeholder="Enter a title" text="text" id="titleinput">
+                        <span class="description">Description</span>
+                            <div class="descriptionandimage">
+                                <input class="descriptioninput" placeholder="Enter a Description" text="text" id="descriptioninput">
+                                <img src="./src/img/icons/Recurso11.svg" alt="three lines drop down" class="threelinesdropdown">
+                            </div>
+                            <span class="duedate">Due date</span>
+                            <div class="dateinputandimage">
+                            <input class="dateinput" placeholder="dd/mm/yyyy" text="date" id="dateinput">
+                            <img src="./src/img/icons/Vectorkalender.svg" alt="datecalendarsymbol" class="datecalendarsymbol">
+                            </div>
+                                <div class="Prioritys">
+                                    <span class="prio">Prio</span>
+                                </div>
+                                    <div class="prio-selections">
+                                        <img src="./src/img/icons/urgent.svg" alt="urgent priority symbol" onclick="urgentButtonChange()" class="urgentpriority" id="urgent">
+                                        <img src="./src/img/icons/medium.svg" alt="medium priority symbol" onclick="mediumButtonChange()" class="mediumpriority" id="medium">  
+                                        <img src="./src/img/icons/low.svg" alt="low priority symbol" onclick="lowButtonChange()" class="lowpriority" id="low">   
+                                    </div>
+                                    <span class="assignedto">Assigned to</span>
+                                    <div class="inputfieldandimage" id="inputselection">
+                                        <select class="dropdownassignedto">
+                                            <option disabled selected>Select contacts to assign</option> 
+                                            <option>Anton Meyer</option>
+                                            <option>Anja Schulz</option>
+                                            <option>David Eisenberg</option>
+                                            <option>Eva Fischer</option>
+                                            <option>Marius Müller</option>
+                                            <option>Peter Jackson</option>
+                                            </select>
+                                        </div>
+                                        <div class="iconsfromusers">${element.userimages}</div>
+                                        <img src="./src/img/icons/okbutton.svg" alt="button ok" onclick="okButtonCloseAndSafeNote()" class="okbutton" id="okbuttonsafe">
+                                        
+                                           
+                                           
+                                        
+                    
+                    </div>
+            </div>
+            </div>
+    </div>
 </body>
 </html>
