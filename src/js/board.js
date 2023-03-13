@@ -154,7 +154,17 @@ function closeTask() {
 }
 
 function clearTask() {
-    document.getElementById('mastercontainerid').classList.add('hide');
+    document.getElementById('titleinput').value = '';
+    document.getElementById('descriptioninput').value = '';
+    document.getElementById('categoryinput').innerHTML = '';
+    document.getElementById('inputselection').value = '';
+    document.getElementById('dateinput').value = '';
+    document.getElementById('urgent').innerHTML = '';
+    document.getElementById('medium').innerHTML = '';
+    document.getElementById('low').innerHTML = '';
+    document.getElementById('subtask').value = '';
+    addTask();
+
 }
 
 function openNewTask() {
@@ -218,17 +228,10 @@ function okButtonCloseAndSafeNote() {
   
 function createNewToDo() {
 let todo = document.getElementById('titleinput').value;
-
 }
 
-function blurClose() {
-    document.getElementById('mastertaskcontainerid').classList.add('hide');
-    document.getElementById('note1').classList.add('hide');
-    document.getElementById('note1').classList.remove('hide');
-}
 
 function addTask() {
-    document.getElementById('mastercontainerid').classList.add('hide');
     document.getElementById('mastercontainerid').classList.add('hide');
     document.getElementById('mastercontainerid').classList.remove('hide');
    
@@ -308,3 +311,4 @@ function addTask() {
     </div></div>
     `;
 }
+
