@@ -103,7 +103,30 @@ function startDragging(id) {
 }
 
 function generateTodoHTML(element) {
-    return `<div draggable="true" ondragstart="startDragging(${element['id']})" class="todo">${element.todos}</div>`;
+    return `
+    <div class="notesmain" id="note1" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit()">
+    <div class="notesection">
+    <img src="./src/img/icons/design.svg" alt="Designlabel">
+    </div>
+    <div class="noteheadlinecontainer">
+        <h2 class="noteheadline">${element.title}</h2>
+    </div>
+        <div class="note">
+            <span class="tmodifythecontents">${element.description}</span> 
+                <div class="loadingbarandspan">
+                    <div class="progressloadingbar">
+                        <img class="progressloadingbarimage" src="./src/img/icons/progress.svg" alt="Progressbar">
+                        <span class="halfdone">${element.subtasksDone}</span>
+                    </div>    
+    </div>
+</div>
+        <div class="usericons">
+            <img src="./src/img/icons/sm.svg" alt="User SM">
+            <img src="./src/img/icons/mv.svg" alt="User MV" class="iconsinicons">
+            <img src="./src/img/icons/ef.svg" alt="User EF" class="iconsinicons">
+            <img class="greenarrowdown" src="./src/img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
+        </div>
+</div>`;
 }
 
 function allowDrop(ev) {
@@ -125,4 +148,73 @@ function removeHighlight(id) {
 }
 
 
+function addTask() {
+    document.getElementById('mastercontainerid').classList.add('hide');
+    document.getElementById('mastercontainerid').classList.add('hide');
+    document.getElementById('mastercontainerid').classList.remove('hide');
+   
+}
 
+function clearTask() {
+    document.getElementById('mastercontainerid').classList.add('hide');
+}
+
+function openNewTask() {
+    document.getElementById('mastercontainerid').classList.remove('hide');
+}
+
+
+
+    function urgentButtonChange() {
+        if (document.getElementById("urgent").src == "./src/img/icons/urgentbuttonorange.svg"){
+            document.getElementById("urgent").src = "./src/img/icons/urgent.svg";
+        } else {
+            document.getElementById("urgent").src = "./src/img/icons/urgentbuttonorange.svg";
+        }
+    }
+
+
+    function returnUrgentButtonChange(){
+        if (document.getElementById("urgent").src == "./src/img/icons/urgent.svg"){
+            document.getElementById("urgent").src = "./src/img/icons/urgentbuttonorange.svg";
+        } else {
+            document.getElementById("urgent").src = "./src/img/icons/urgent.svg";
+        }
+    }
+    
+
+    function mediumButtonChange() {
+        if (document.getElementById("medium").src == "./src/img/icons/mediumbuttonyellow.svg"){
+            document.getElementById("medium").src = "./src/img/icons/medium.svg";
+        } else {
+            document.getElementById("medium").src = "./src/img/icons/mediumbuttonyellow.svg";
+        }
+    }
+
+    function lowButtonChange() {
+        if (document.getElementById("low").src == "./src/img/icons/lowbuttongreen.svg") {
+            document.getElementById("low").src = "./src/img/icons/low.svg";
+         } else {
+            document.getElementById("low").src = "./src/img/icons/lowbuttongreen.svg";
+        }
+    }
+
+
+  function opentoDoForEdit() {
+    document.getElementById('note1').classList.add('hide')
+    document.getElementById('taskcontainerid').classList.add('hide');
+    document.getElementById('taskcontainerid').classList.remove('hide');
+  }
+
+  function closetoDoForEdit() {
+    document.getElementById('taskcontainerid').classList.add('hide')
+    document.getElementById('note1').classList.add('hide');
+    document.getElementById('note1').classList.remove('hide');
+  }
+
+function okButtonCloseAndSafeNote() {
+    document.getElementById('taskcontainerid').classList.add('hide')
+    document.getElementById('note1').classList.add('hide');
+    document.getElementById('note1').classList.remove('hide');
+  }
+  

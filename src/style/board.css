@@ -16,14 +16,11 @@ body {
 .boardsection {
     display: flex;
     justify-content: center;
-    position: absolute;
     width: 1145px;
     height: 225px;
-    /* height: 325px; */
-    /* left: 267px; */
-    left: 345px;
-    /* top: 57px; */
+   padding-left: 235px;
     background: #F6F7F8;
+
 }
 
 .tboard {
@@ -64,6 +61,10 @@ body {
 
 }
 
+.datecalendarsymbol {
+    cursor: pointer;
+}
+
 .findtask {
     border: none;
     background: #F5F5F5;
@@ -84,25 +85,22 @@ body {
 }
 
 .todoboard {
-    width: 1078px;
-    left: 45px;
-    top: 286px;
+    width: 1378px;
     border-radius: 0px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    gap:15px;
 }
 
 .todoplus {
     justify-content: flex-end;
     align-items: center;
-    gap: 10px;
     width: 250px;
     height: 40px;
     display: flex;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-left: 25px;
+    margin-left: 40px;
     z-index: 232;
 }
 
@@ -111,14 +109,22 @@ body {
     height: 40px;
 }
 
+.severaltodosection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 170px;
+
+}
+
+
 .draganddropsection {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     gap: 26px;
-    /* width: 1278px; */
-    height: 661px;
+    width: 1500px;
     z-index:231;
     padding-left: 195px;
 }
@@ -148,6 +154,7 @@ body {
     margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 
@@ -224,7 +231,9 @@ body {
 .dropdowncontainer {
     display: flex;
     flex-direction: column;
-    height: 1000px;
+    height: 1020px;
+    width:250px;
+    margin-left: 30px;
 }
 
 .dropdowncontainer-highlight {
@@ -242,4 +251,138 @@ body {
 .iconsinicons {
 z-index: 232;
 margin-left: -8px;
+}
+
+
+.overlayAddContactincl {
+    animation: toleft 1s linear;
+}
+
+.overlayAddContactoutcl {
+    animation: torightout 1s linear;
+}
+
+.overlayAddContactcl {
+    /* border: 1px solid black; */
+    top: 213px;
+    left: 354px;
+    position: relative;
+    width: 1212px;
+    height: 594px;
+    background: #FFFFFF;
+    /* background: #FFFFFF; */
+    border-radius: 30px;
+    /* border-bottom-right-radius: 30px; */
+    /* animation: toleft 1s linear; */
+}
+
+
+@keyframes toleft {
+    0% {
+        transform: translatex(1870px)
+    }
+
+    100% {
+        transform: translatex(0px);
+    }
+}
+
+@keyframes torightout {
+    0% {
+        transform: translatex(0px)
+    }
+
+    100% {
+        transform: translatex(1870px);
+    }
+}
+
+.showSuccessbuttonincl {
+    animation: toup 1s ease-in;
+}
+
+.showSuccessbuttonoutcl {
+    animation: todown 1s linear;
+}
+
+@keyframes toup {
+    0% {
+        transform: translate(0px,0px)
+    }
+
+    100% {
+        transform: translate(0px,-599px);
+    }
+}
+
+@keyframes todown {
+    0% {
+        transform: translate(0px, 0px)
+    }
+
+    100% {
+        transform: translate(0px, 1099px);
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.d-none {
+    display: none;
+}
+
+.closebuttonx {
+    width: 25px;
+    height: 25px;
+    padding-left: 500px;
+}
+
+.taskcontainer {
+    width: 623px;
+    height: 824px;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+}
+
+.containeropennote {
+justify-content: center;
+padding-left: 80px;
+padding-right: 100px;
+box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+border-radius: 30px;
+
+}
+
+.title {
+  
+}
+
+.titleinput {
+    margin-top: 8px;
+    margin-bottom: 34px;
+}
+
+.description {
+   padding-bottom: 8px;
+}
+
+.okbutton {
+    margin-left: 430px;
+    margin-top: 30px;
+}
+
+.closebuttonx {
+    margin-top: 20px;
+}
+
+.assignedto {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+}
+
+.iconsfromusers {
+    margin-top: 20px;
+    gap: 10px;
 }
