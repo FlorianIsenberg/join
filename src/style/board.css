@@ -10,7 +10,7 @@ body {
     /* width: 1440px; */
     /* height: 324px; */
     height: 200px;
-    
+
 }
 
 .boardsection {
@@ -18,7 +18,7 @@ body {
     justify-content: center;
     width: 1145px;
     height: 225px;
-   padding-left: 235px;
+    padding-left: 235px;
     background: #F6F7F8;
 
 }
@@ -89,7 +89,7 @@ body {
     border-radius: 0px;
     display: flex;
     align-items: center;
-    gap:15px;
+    gap: 15px;
 }
 
 .todoplus {
@@ -101,7 +101,7 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-left: 40px;
-    z-index: 232;
+    z-index: 10;
 }
 
 .progressbar {
@@ -125,7 +125,7 @@ body {
     align-items: flex-start;
     gap: 26px;
     width: 1500px;
-    z-index:231;
+    z-index: 231;
     padding-left: 195px;
 }
 
@@ -161,6 +161,19 @@ body {
 .noteheadline {
     font-size: 16px;
     font-family: 'Inter';
+}
+
+.departmentdesign {
+    width: 104px;
+    height: 27px;
+    background-color: #FF7A00;
+    color: white;
+    border-radius: 8px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-color: rgba(0,0,0,0.8) 
 }
 
 .inputnote {
@@ -232,12 +245,12 @@ body {
     display: flex;
     flex-direction: column;
     height: 1020px;
-    width:250px;
+    width: 250px;
     margin-left: 30px;
 }
 
 .dropdowncontainer-highlight {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .tmodifythecontents {
@@ -249,8 +262,8 @@ body {
 }
 
 .iconsinicons {
-z-index: 232;
-margin-left: -8px;
+    z-index: 30;
+    margin-left: -8px;
 }
 
 
@@ -263,17 +276,14 @@ margin-left: -8px;
 }
 
 .overlayAddContactcl {
-    /* border: 1px solid black; */
     top: 213px;
     left: 354px;
     position: relative;
     width: 1212px;
     height: 594px;
     background: #FFFFFF;
-    /* background: #FFFFFF; */
     border-radius: 30px;
-    /* border-bottom-right-radius: 30px; */
-    /* animation: toleft 1s linear; */
+
 }
 
 
@@ -297,21 +307,16 @@ margin-left: -8px;
     }
 }
 
-.showSuccessbuttonincl {
-    animation: toup 1s ease-in;
-}
 
-.showSuccessbuttonoutcl {
-    animation: todown 1s linear;
-}
+
 
 @keyframes toup {
     0% {
-        transform: translate(0px,0px)
+        transform: translate(0px, 0px)
     }
 
     100% {
-        transform: translate(0px,-599px);
+        transform: translate(0px, -599px);
     }
 }
 
@@ -347,16 +352,13 @@ margin-left: -8px;
 }
 
 .containeropennote {
-justify-content: center;
-padding-left: 80px;
-padding-right: 100px;
-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-border-radius: 30px;
-
-}
-
-.title {
-  
+    justify-content: center;
+    padding-left: 80px;
+    padding-right: 100px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    height: 924px;
+    background-color: #FFFFFF;
 }
 
 .titleinput {
@@ -365,7 +367,7 @@ border-radius: 30px;
 }
 
 .description {
-   padding-bottom: 8px;
+    padding-bottom: 8px;
 }
 
 .okbutton {
@@ -385,4 +387,24 @@ border-radius: 30px;
 .iconsfromusers {
     margin-top: 20px;
     gap: 10px;
+}
+
+.totalmastercontainer {
+    width: 100%;
+    height: 100%;
+}
+
+.mastertaskcontainer {
+    background: rgba(255, 255, 255, 0.2);
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

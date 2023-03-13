@@ -9,19 +9,37 @@ body {
     font-weight: 700;
     font-size: 61px;
     color: #000000;
-    /* padding-left: 355px; */
-    padding-left: 256px;
-    /* padding-top: 171px; */
+    padding-right: 250px;
+    padding-top: 30px;
 }
+
+.headaddtask {
+    display: flex;
+    align-items: center;
+    gap: 500px;
+    padding-top: 50px;
+}
+
+.closebuttonclassaddtask {
+    width: 30px;
+    height: 30px;
+    
+}
+
+
 
 .container-selections {
     display: flex;
+    padding-right: 256px;
+    padding-bottom: 134px;
+   
+
 }
 
 .container-left {
     display: flex;
     flex-direction: column;
-    /* padding-left: 355px; */
+   
     padding-left: 256px;
 }
 
@@ -121,7 +139,6 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0px 21px;
     gap: 10px;
     isolation: isolate;
     width: 468px;
@@ -165,6 +182,7 @@ body {
     outline: none;
     width: 468px;
     height: 45px;
+    padding-left: 20px;
 }
 
 .dropdownassignedto {
@@ -178,6 +196,7 @@ body {
     border: none;
     width: 468px;
     height: 45px;
+    padding-left: 20px
 }
 .assignedinput {
     border: none;
@@ -339,7 +358,7 @@ body {
 }
 
 .rectangleandsubtask1 {
-    padding-top: 8px;
+    padding-bottom: 20px;
 }
 
 .subtask1 {
@@ -354,10 +373,31 @@ body {
 
 .clearandcreatetask {
     display: flex;
-    padding-top: 270px;
+    padding-top: 10px;
     gap: 20px;
     padding-left: 130px;
+    z-index: 300;
 }
 
 
+.mastercontainer {
+}
 
+
+.movingcontainertoleftcl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4em;
+    position: absolute;
+    background-color: #FFFFFF;
+    width: 1116px;
+    height: 914px;
+    top: 184px;
+    left:294px;
+    animation: toleft 1s linear;
+    border-radius: 30px;
+    z-index: 100;
+    flex-direction: column;
+    /* transform: translatex(150px); */
+}
