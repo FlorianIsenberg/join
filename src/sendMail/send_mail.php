@@ -56,6 +56,6 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
         default: //Reject any non POST or OPTIONS requests.
         header("Allow: POST", true, 405);
-        exit;
+        exit; 
 }
 
