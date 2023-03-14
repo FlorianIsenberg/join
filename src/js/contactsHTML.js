@@ -264,20 +264,28 @@ function generateSuccessbuttonHTML() {
 
 function generateShowRegisterHTML() {
     return /*html*/ `
-    <div id="showRegisterId" class="showRegistercl">Alphabet</div>
-    
-    `;
-
-}
-
-function generateShowContactsHTML() {
-    return /*html*/ `
-    <div id="showContactsId" class="showContactscl">
-        <div id="showContactsAvatarId" class="showContactsAvatarcl">avatar</div>
-        <div id="showContactsDataId" class="showContactsDatacl">
-            <div id="showContactsDataNameId" class="showContactsDataNamecl">Name</div>
-            <div id="showContactsDataMailId" class="showContactsDataMailcl">mailAdresse</div>
-        </div>
+    <!-- <div id="showRegisterId" class="showRegistercl">Alphabet</div> -->
+    <div id="contactleftframeV1Id" class="contactleftframeV1cl">
+        <!-- <div id="showContactsDataId" class="showContactsDatacl">
+            <div id="elipse5Id" class="elipse5cl"></div>
+            <div id="datacontainerId" class="datacontainercl">
+                <div id="showContactsnameId" class="showContactsnamecl"></div>
+                <div id="showContactsmailId" class="showContactsmailcl"></div>  
+            </div>
+        </div> -->
     </div>
     `;
+
 }
+
+// function generateShowContactsHTML() {
+//     return /*html*/ `
+//     <div id="showContactsId" class="showContactscl">
+//         <div id="showContactsAvatarId" class="showContactsAvatarcl"></div>
+//         <div id="showContactsDataId" class="showContactsDatacl">
+//             <!-- <div id="showContactsDataNameId" class="showContactsDataNamecl">Name</div>
+//             <div id="showContactsDataMailId" class="showContactsDataMailcl">mailAdresse</div> -->
+//         </div>
+//     </div>
+//     `;
+// }
