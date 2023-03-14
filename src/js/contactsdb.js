@@ -37,9 +37,17 @@ async function init() {
     contactdata = JSON.parse(backend.getItem('cData')) || [];
     cDataCounter = (contactdata.length / 5);
 
-    await sortedListbyName();
+    sortedListbyName();
 }
 
+async function writeIntoBackend(contactdata) {
+    await backend.setItem(`cData`, JSON.stringify(contactdata));
+}
+
+async function loadFromBackend() {
+    contactdata = JSON.parse(backend.getItem('cData')) || [];
+    cDataCounter = (contactdata.length / 5);
+}
 
 // NOTE -- Read the first letter of all words in a string
 
@@ -54,8 +62,8 @@ function allFirstLetter(string) {
 
 // NOTE -- DB Algorythm
 
-async function sortedListbyName() {
-
+function sortedListbyName() {
+    loadFromBackend()
     // NOTE -- List
 
     let string = contactdata[0];
@@ -90,6 +98,8 @@ async function sortedListbyName() {
         showAlphabet = [...new Set(alpha)];
     }
 
+    document.getElementById('contactleftframeV1Id').innerHTML = '';
+
     //  NOTE -- show Alphabet and Contacts
 
     for (m = 0; m < showAlphabet.length; m++) {      // if loop through showAlphabet
@@ -100,38 +110,55 @@ async function sortedListbyName() {
                 if (charFound == 0) {
                     document.getElementById('contactleftframeV1Id').innerHTML += /*html*/`
                         <div id="alpha${showAlphabet[m]}" class="alpha${showAlphabet[m]}">${showAlphabet[m]}</div>
-                        <div id="alphafootId" class="alphafootcl"></div >
+                        <div id="alphafoot${usl}Id" class="alphafootcl"></div >
                     `;
             charFound = 1;      // yes, the Alphabet character was already found!
                     // document.getElementById('showContactsId').innerHTML += /*html*/ contactdata[4 + (usl * 5)];
                 }
+                
                 document.getElementById('contactleftframeV1Id').innerHTML +=/*html*/ `
-                <div id="showContactsDatacl" class="showContactsDatacl">
-                <div id="elipse5Id" class="elipse5cl"><span>${contactdata[4 + (usl * 5)]}</span></div>
-                    <div id="datacontainerId" class="datacontainercl">
-                        <div id="showContactsnameId" class="showContactsnamecl">${contactdata[0 + (usl * 5)]}</div>
-                        <div id="showContactsmailId" class="showContactsmailcl">${contactdata[1 + (usl * 5)]}</div>
+                <div id="showContactsData${usl}Id" class="showContactsDatacl">
+                <div id="elipse5${usl}Id" class="elipse5cl ${contactdata[3 + (usl * 5)]}"><span>${contactdata[4 + (usl * 5)]}</span></div>
+                    <div id="datacontainer${usl}Id" class="datacontainercl">
+                        <div id="showContactsname${usl}Id" class="showContactsnamecl">${contactdata[0 + (usl * 5)]}</div>
+                        <div id="showContactsmail${usl}Id" class="showContactsmailcl">${contactdata[1 + (usl * 5)]}</div>
                     </div>
                 </div>                    
-                `;
-                document.getElementById('elipse5Id').classList.add(`${contactdata[3 + (usl * 5)]}`);
+                `;           
             }
-        }
+        }        
     }
 }
 
 
-// document.getElementById('contactleftframeV1Id').innerHTML +=/*html*/ `
-// <div id="showContactsDatacl" class="showContactsDatacl">
-// <div id="elipse5Id" class="elipse5cl"></div>`;
-// document.getElementById('elipse5Id').classList.add(`${contactdata[3 + (usl * 5)]}`);
-// document.getElementById('elipse5Id').innerHTML +=/*html*/ `
-// <div><span>${contactdata[4 + (usl * 5)]}</span></div>`;
-// document.getElementById('contactleftframeV1Id').innerHTML +=/*html*/ `
-//     <div id="datacontainerId" class="datacontainercl">
-//         <div id="showContactsnameId" class="showContactsnamecl">${contactdata[0 + (usl * 5)]}</div>
-//         <div id="showContactsmailId" class="showContactsmailcl">${contactdata[1 + (usl * 5)]}</div>
-//     </div>
-// </div>
-                   
-// `;
+function randomColor() {
+    let colorNr = Math.floor(Math.random() * 15);
+    return `color${colorNr}`;
+}
+
+// NOTE -- Save Button
+
+// function saveButton() {
+function AddCreateContact2() {    
+    let cname = document.getElementById('addcontactinputnameId').value;
+    let cmail = document.getElementById('addcontactinputemailId').value;
+    let cphone = document.getElementById('addcontactinputphoneId').value;
+    addUser(cname, cmail, cphone);
+}
+
+function addUser(cname, cmail, cphone) {
+    let cfirstLetter = allFirstLetter(cname);
+    let ccolorNr = randomColor();
+
+    contactdata.push(cname, cmail, cphone, ccolorNr, cfirstLetter);
+    // console.log(contactdata);
+    writeIntoBackend(contactdata);
+    // backend.setItem(`cData`, JSON.stringify(contactdata));  // cData == Datensatzname && contacdaten = value
+
+    // document.getElementById('addcontactinputnameId').value = '';
+    // document.getElementById('addcontactinputemailId').value = '';
+    // document.getElementById('addcontactinputphoneId').value = '';
+    AddContactCancel();
+    AddCreateContact(); // <- zeigt Successbutton;
+    sortedListbyName();
+}

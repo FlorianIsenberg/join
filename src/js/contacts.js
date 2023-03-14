@@ -13,6 +13,11 @@ function builddefaultcontactpage() {
 
 function overlayAddContact() {
     document.getElementById('overlayAddContactId').innerHTML += generateOverlayAddContactHTML();
+
+     document.getElementById('addcontactinputnameId').value = '';
+     document.getElementById('addcontactinputemailId').value = '';
+     document.getElementById('addcontactinputphoneId').value = '';
+
     document.getElementById('overlayAddContactId').classList.remove('overlayAddContactoutcl');
     document.getElementById('overlayAddContactId').classList.add('overlayAddContactincl');
     document.getElementById('overlayAddContactId').classList.remove('d-none');
@@ -65,8 +70,9 @@ function AddCreateContact() {
     document.getElementById('showSuccessbuttonId').classList.remove('d-none');
     document.getElementById('showSuccessbuttonId').classList.remove('showSuccessbuttonoutcl');
     document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonincl');
-    setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 1000);
-    setTimeout(contactShowContact(), 1000);  // PRÜFEN !!
+
+    // setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 1000);
+    // setTimeout(contactShowContact(), 1000);  // PRÜFEN !!
     
     setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonincl')}, 1000);
 
@@ -81,7 +87,5 @@ function showIndexContacts() {
     // showContacts();
 }
 
-// function showContacts() {
-//     document.getElementById('contactleftframeId').innerHTML += generateShowContactsHTML();
-// }
+
 
