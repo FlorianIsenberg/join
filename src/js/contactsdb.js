@@ -114,6 +114,7 @@ async function sortedListbyName() {
                     </div>
                 </div>                    
                 `;
+                document.getElementById('elipse5Id').classList.add(`${contactdata[3 + (usl * 5)]}`);
             }
         }
     }
