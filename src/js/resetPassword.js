@@ -6,13 +6,13 @@ async function init() {
 }
 
 async function resetPassword() {
+  let newPassword = document.getElementById("newPassword");
+  let confirmPassword = document.getElementById("confirmPassword");
   let email = getEmailUrLParameter();
-  let newPassword = document.getElementById("newPassword").value;
-  let confirmPassword = document.getElementById("confirmPassword").value;
 
   let user = users.find((u) => u.email === email);
   if (user.email === email) {
-    if (newPassword === confirmPassword) {
+    if (newPassword.value === confirmPassword.value) {
       user.password = newPassword.value;
       await backend.setItem("users", JSON.stringify(users));
       console.log("Password reset successful!");
@@ -29,7 +29,7 @@ async function resetPassword() {
 }
 
 function getEmailUrLParameter() {
-  const queryString = Window.location.search;
+  const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const email = urlParams.get("email");
   return email;
