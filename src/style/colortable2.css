@@ -1,0 +1,483 @@
+/* NOTE -- RGB Basisfarbraum */
+
+.MediumAquaMarine, .color0 {background-color: #66CDAA;}
+.Kastanienbraun, .color1 {background-color: #800000; }
+.Schwarz, .color2 {background-color: #000000; }
+/* .blasgoldenerstab .color3 {color: #EEE8AA; } */
+.dunkelorange, .color3 {background-color: #FF8C00; }
+.Limette, .color4 {background-color: #00FF00; }
+.Blau, .color5 {background-color: #0000FF; }
+.Gelb, .color6 {background-color: #FFFF00; }
+.CyanAqua, .color7 {background-color: #00FFFF; }
+.MagentaFuchsia, .color8 {background-color: #FF00FF; }
+.Silber, .color9 {background-color: #C0C0C0; }
+.Grau, .color10 {background-color: #808080; }
+.Olive, .color11 {background-color:	#808000; }
+.Gruen, .color12 {background-color: #008000; }
+.Lila, .color13 {background-color: #800080; }
+.Blaugruen, .color14 {background-color: #008080; }
+.Marine, .color15 {background-color: #000080; }
+.Rot, .color16 {background-color: #FF0000; }
+
+/* .Schwarz, .color131 { color: #000000; }
+.Weiss, .color139 { color: #FFFFFF; }
+.Rot, .color6 { color: #FF0000; }
+.Limette, .color34 { color: #00FF00; }
+.Blau, .color69 { color: #0000FF; }
+.Gelb, .color24 { color: #FFFF00; }
+.CyanAqua, .color49 { color: #00FFFF; }
+.MagentaFuchsia, .color85 { color: #FF00FF; }
+.Silber, .color135 { color: #C0C0C0; }
+.Grau, .color133 { color: #808080; }
+.Kastanienbraun, .color1 { color: #800000; }
+.Olive, .color23 { color:	#808000; }
+.Gruen, .color32 { color: #008000; }
+.Lila, .color81 { color: #800080; }
+.Blaugruen, .color46 { color: #008080; }
+.Marine, .color66 { color: #000080; } */
+
+
+/* NOTE -- RGB erweiterter Farbraum */
+
+/* .kastanienbraun, .color1	{
+    color: #800000;
+}
+
+.Dunkelrot, .color2 {
+    color: #8B0000;
+}
+
+.braun, .color3 {
+    color: #A52A2A;
+	}
+    
+.Schamottestein, .color4	{
+    color: #B22222;
+	}
+
+.Purpur, .color5 {
+    color: #DC143C;
+}	
+
+.rot, .color6 {
+    color: #FF0000;
+}
+
+.Tomate, .color7 {
+    color: #FF6347 ;
+}
+
+.Koralle, .color8 {
+    color: #FF7F50;
+}
+
+.indisch, .color9 {
+    color: #CD5C5C;
+}
+
+.leichteKoralle, .color10 {
+    color: #F08080;
+}
+
+.dunklerLachs, .color11 {
+    color: #E9967A;
+}
+
+.Lachs, .color12 {
+    color: #FA8072;
+}
+
+.leichterLachs, .color13 {
+    color: #FFA07A;
+}
+
+.OrangeRot, .color14 {
+    color: #FF4500;
+}
+
+.dunkelorange, .color15 {
+    color: #FF8C00;
+}
+
+.Orange, .color16 {
+    color: #FFA500;
+}
+
+.Gold, .color17 {
+    color: #FFD700;
+}
+
+.dunkelgoldenerStab, .color18 {
+    color: #B8860B;
+}
+
+.goldenerStab, .color19 {
+    color: #DAA520;
+}
+
+.blassgoldenerStab, .color20 {
+    color: #EEE8AA;
+}
+
+.dunklesKhaki, .color21 {
+    color: #BDB76B;
+}
+
+.khaki, .color22 {
+    color: #F0E68C;
+}
+
+.Olive, .color23 {
+    color: #808000;
+}
+
+.Gelb, .color24 {
+    color: #FFFF00;
+}
+
+.Gelbgrün, .color25 {
+    color: #9ACD32;
+}
+
+.dunkelolivgruen, .color26 {
+    color: 	#556B2F;
+}
+.Olivgruen, .color27 {
+    color: 	#6B8E23;
+}
+.Rasengruen, .color28 {
+    color: 	#7CFC00;
+}
+.WiederverwendungvonDiagrammen, .color29 {
+    color: 	#7FFF00;
+}
+.GruenGelb, .color30 {
+    color: 	#ADFF2F;
+}
+.dunkelgruen, .color31 {
+    color: 	#006400;
+}
+.Gruen, .color32 {
+    color: 	#008000;
+}
+.Waldgruen, .color33 {
+    color: 	#228B22;
+}
+.Limette, .color34 {
+    color: 	#00FF00;
+}
+.lindgruen, .color35 {
+    color: 	#32CD32;
+}
+.hellgruen, .color36 {
+    color: 	#90EE90;
+}
+.blassesGruen, .color37 {
+    color: 	#98FB98;
+}
+.dunklesSeegruen, .color38 {
+    color: 	#8FBC8F;
+}
+.mittleresFruehlingsgruen, .color39 {
+    color: 	#00FA9A;
+}
+.Frühlingsgruen, .color40 {
+    color: 	#00FF7F;
+}
+.Meeresgruen, .color41 {
+    color: 	#2E8B57;
+}
+.MediumAquaMarine, .color42 {
+    color: 	#66CDAA;
+}
+.mittleresSeegruen, .color43 {
+    color: 	#3CB371;
+}
+.hellmeergruen, .color44 {
+    color: 	#20B2AA;
+}
+.dunklesschiefergrau, .color45 {
+    color: 	#2F4F4F;
+}
+.blaugruen, .color46 {
+    color: 	#008080;
+}
+.dunklesCyan, .color47 {
+    color: 	#008B8B;
+}
+.aqua, .color48 {
+    color: 	#00FFFF;
+}
+.Cyan, .color49 {
+    color: 	#00FFFF;
+}
+.hellesCyan, .color50 {
+    color: 	#E0FFFF;
+}
+.dunklesTuerkis, .color51 {
+    color: 	#00CED1;
+}
+.Tuerkis, .color52 {
+    color: 	#40E0D0;
+}
+.mittleresTuerkis, .color53 {
+    color: 	#48D1CC;
+}
+.blasstuerkis, .color54 {
+    color: 	#AFEEEE;
+}
+.aquamarine, .color55 {
+    color: 	#7FFFD4;
+}
+.puderblau, .color56 {
+    color: 	#B0E0E6;
+}
+.Kadettenblau, .color57 {
+    color: 	#5F9EA0;
+}
+.Stahlblau, .color58 {
+    color: 	#4682B4;
+}
+.Kornblumenblau, .color59 {
+    color: 	#6495ED;
+}
+.tiefesHimmelblau, .color60 {
+    color: 	#00BFFF;
+}
+.Dodgerblau, .color61 {
+    color: 	#1E90FF;
+}
+.hellblau, .color62 {
+    color: 	#ADD8E6;
+}
+.Himmelblau, .color63 {
+    color: 	#87CEEB;
+}
+.hellhimmelblau, .color64 {
+    color: 	#87CEFA;
+}
+.Mitternachtsblau, .color65 {
+    color: 	#191970;
+}
+.Marine, .color66 {
+    color: 	#000080;
+}
+.Dunkelblau, .color67 {
+    color: 	#00008B;
+}
+.Mittelblau, .color68 {
+    color: 	#0000CD;
+}
+.Blau, .color69 {
+    color: 	#0000FF;
+}
+.Königsblau, .color70 {
+    color: 	#4169E1;
+}
+.BlauViolett, .color71 {
+    color: 	#8A2BE2;
+}
+.Indigo, .color72 {
+    color: 	#4B0082;
+}
+.dunklesSchieferblau, .color73 {
+    color: 	#483D8B;
+}
+.schieferblau, .color74 {
+    color: 	#6A5ACD;
+}
+.mittelschieferblau, .color75 {
+    color: 	#7B68EE;
+}
+.mittelviolett, .color76 {
+    color: 	#9370DB;
+}
+.dunklesMagenta, .color77 {
+    color: 	#8B008B;
+}
+.dunkelviolett, .color78 {
+    color: 	#9400D3;
+}
+.dunkleOrchidee, .color79 {
+    color: 	#9932CC;
+}
+.mittlereOrchidee, .color80 {
+    color: 	#BA55D3;
+}
+.lila, .color81 {
+    color: 	#800080;
+}
+.Distel, .color82 {
+    color: 	#D8BFD8;
+}
+.Pflaume, .color83 {
+    color: 	#DDA0DD;
+}
+.violett, .color84 {
+    color: 	#EE82EE;
+}
+.MagentaFuchsia, .color85 {
+    color: 	#FF00FF;
+}
+.Orchidee, .color86 {
+    color: 	#DA70D6;
+}
+.mittelviolettrot, .color87 {
+    color: 	#C71585;
+}
+.hellviolettrot, .color88 {
+    color: 	#DB7093;
+}
+.Dunkelrosa, .color89 {
+    color: 	#FF1493;
+}
+.Pink, .color90 {
+    color: 	#FF69B4;
+}
+.HellPink, .color91 {
+    color: 	#FFB6C1;
+}
+.Rosa, .color92 {
+    color: 	#FFC0CB;
+}
+.Altweiß, .color93 {
+    color: 	#FAEBD7;
+}
+.Beige, .color94 {
+    color: 	#F5F5DC;
+}
+.Biskuit, .color95 {
+    color: 	#FFE4C4;
+}
+.blanchierteMandel, .color96 {
+    color: 	#FFEBCD;
+}
+.Weizen, .color97 {
+    color: 	#F5DEB3;
+}
+.Maisseide, .color98 {
+    color: 	#FFF8DC;
+}
+.ZitronenChiffon, .color99 {
+    color: 	#FFFACD;
+}
+.hellgoldenerStabgelb, .color100 {
+    color: 	#FAFAD2;
+}
+.hellgelb, .color101 {
+    color: 	#FFFFE0;
+}
+.Sattelbraun, .color102 {
+    color: 	#8B4513;
+}
+.sienna, .color103 {
+    color: 	#A0522D;
+}
+.Schokolade, .color104 {
+    color: 	#D2691E;
+}
+.Peru, .color105 {
+    color: 	#CD853F;
+}
+.sandbraun, .color106 {
+    color: 	#F4A460;
+}
+.kraeftigesHolz, .color107 {
+    color: 	#DEB887;
+}
+.tan, .color108 {
+    color: 	#D2B48C;
+}
+.rosigbraun, .color109 {
+    color: 	#BC8F8F;
+}
+.Mokassin, .color110 {
+    color: 	#FFE4B5;
+}
+.Navajoweiss, .color111 {
+    color: 	#FFDEAD;
+}
+.PfirsichBlaetterteig, .color112 {
+    color: 	#FFDAB9;
+}
+.nebligeRose, .color113 {
+    color: 	#FFE4E1;
+}
+.Lavendelerroeten, .color114 {
+    color: 	#FFF0F5;
+}
+.Leinen, .color115 {
+    color: 	#FAF0E6;
+}
+.alteSpitze, .color116 {
+    color: 	#FDF5E6;
+}
+.PapayaPeitsche, .color117 {
+    color: 	#FFEFD5;
+}
+.Muschel, .color118 {
+    color: 	#FFF5EE;
+}
+.Minzcreme, .color119 {
+    color: 	#F5FFFA;
+}
+.Schiefergrau, .color120 {
+    color: 	#708090;
+}
+.hellschiefergrau, .color121 {
+    color: 	#778899;
+}
+.hellstahlblau, .color122 {
+    color: 	#B0C4DE;
+}
+.Lavendel, .color123 {
+    color: 	#E6E6FA;
+}
+.Blumenweiss, .color124 {
+    color: 	#FFFAF0;
+}
+.Aliceblau, .color125 {
+    color: 	#F0F8FF;
+}
+.Geistweiss, .color126 {
+    color: 	#F8F8FF;
+}
+.Honigtau, .color127 {
+    color: 	#F0FFF0;
+}
+.Elfenbein, .color128 {
+    color: 	#FFFFF0;
+}
+.azurblau, .color129 {
+    color: 	#F0FFFF;
+}
+.Schnee, .color130 {
+    color: 	#FFFAFA;
+}
+.schwarz, .color131 {
+    color: 	#000000;
+}
+.dunkelgrau, .color132 {
+    color: 	#696969;
+}
+.grau, .color133 {
+    color: 	#808080;
+}
+.dunkelgrau2, .color134 {
+    color: 	#A9A9A9;
+}
+.Silber, .color135 {
+    color: 	#C0C0C0;
+}
+.hellgrau, .color136 {
+    color: 	#D3D3D3;
+}
+.Gainsboro, .color137 {
+    color: 	#DCDCDC;
+}
+.weißerRauch, .color138 {
+    color: 	#F5F5F5;
+}
+.Weiss, .color139 {
+    color: 	#FFFFFF;
+} */

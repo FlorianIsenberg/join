@@ -11,14 +11,21 @@
     line-height: 120%;
     
     padding: 0px;
-    width: 357px;
-    max-height: 772px;
+    width: 335px;
+    max-height: 779px;
     left: 1.5em;
-    top: 0px;
+    top: 5px;
     padding-right: 4em;
     background: #FFFFFF;
     overflow-x: hidden;
     overflow-y: auto;
+}
+.contactleftframeV1cl::-webkit-scrollbar-track {
+    background: white;
+}
+
+.contactleftframeV1cl::-webkit-scrollbar-thumb {
+    border: 1px solid white;
 }
 
 .alphaA, .alphaB, .alphaC,
@@ -95,7 +102,7 @@
     left: 0em;
     color: white;
     border-radius: 100%;
-    background: #FF7A00;
+    /* background: #FF7A00; */
     border: 1px solid #FFFFFF;
 }
 
