@@ -5,7 +5,7 @@ let todos = [{
     date: '',
     priority: 'low',
     assignedTo: ['Sven Müller'],
-    department: 'design',
+    department: 'Design', 
     taskStatus: 'todo',
     subtasks: [],
     subtasksDone: [0.5],
@@ -18,7 +18,7 @@ let todos = [{
     date: '',
     priority: 'high',
     assignedTo: ['Alex Sam'],
-    department: 'sales',
+    department: 'Sales',
     taskStatus: 'inprogress',
     subtasks: [],
     subtasksDone: [],
@@ -31,7 +31,7 @@ let todos = [{
     date: '',
     priority: 'medium',
     assignedTo: ['Mark Becker'],
-    department: 'backoffice',
+    department: 'Backoffice',
     taskStatus: 'awaitingfeedback',
     subtasks: [],
     subtasksDone: [],
@@ -44,7 +44,7 @@ let todos = [{
     date: '',
     priority: 'medium',
     assignedTo: ['Hans Kaiser'],
-    department: 'media',
+    department: 'Media',
     taskStatus: 'awaitingfeedback',
     subtasks: [],
     subtasksDone: [],
@@ -57,7 +57,7 @@ let todos = [{
     date: '',
     priority: 'low',
     assignedTo: ['Bernd Ziegler'],
-    department: 'marketing',
+    department: 'Marketing',
     taskStatus: 'done',
     subtasks: [],
     subtasksDone: [],
@@ -106,6 +106,7 @@ function generateTodoHTML(element) {
     return `
     <div class="notesmain" id="note1" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit()">
     <div class="notesection">
+    <span class="departmentdesign">${element.department}</span>
     <img src="./src/img/icons/design.svg" alt="Designlabel">
     </div>
     <div class="noteheadlinecontainer">
@@ -148,15 +149,22 @@ function removeHighlight(id) {
 }
 
 
-function addTask() {
+function closeTask() {
     document.getElementById('mastercontainerid').classList.add('hide');
-    document.getElementById('mastercontainerid').classList.add('hide');
-    document.getElementById('mastercontainerid').classList.remove('hide');
-   
 }
 
 function clearTask() {
-    document.getElementById('mastercontainerid').classList.add('hide');
+    document.getElementById('titleinput').value = '';
+    document.getElementById('descriptioninput').value = '';
+    document.getElementById('categoryinput').innerHTML = '';
+    document.getElementById('inputselection').value = '';
+    document.getElementById('dateinput').value = '';
+    document.getElementById('urgent').innerHTML = '';
+    document.getElementById('medium').innerHTML = '';
+    document.getElementById('low').innerHTML = '';
+    document.getElementById('subtask').value = '';
+    addTask();
+
 }
 
 function openNewTask() {
@@ -218,3 +226,89 @@ function okButtonCloseAndSafeNote() {
     document.getElementById('note1').classList.remove('hide');
   }
   
+function createNewToDo() {
+let todo = document.getElementById('titleinput').value;
+}
+
+
+function addTask() {
+    document.getElementById('mastercontainerid').classList.add('hide');
+    document.getElementById('mastercontainerid').classList.remove('hide');
+   
+    document.getElementById('mastercontainerid').innerHTML = `
+    <div class="mastercontainer hide movingcontainertoleftcl" id="mastercontainerid">
+    <div class="headaddtask">
+    <h1 class="taddtask">Add Task</h1>
+    <img src="./src/img/icons/closecross.svg" onclick="closeTask()" alt="close button x" id=closebuttonidaddtask class="closebuttonclassaddtask">
+    </div>
+            <div class="container-selections">
+                <div class="container-left">
+                    <span class="title">Title</span>
+                    <input class="titleinput" placeholder="Enter a title" text="text" id="titleinput">
+                    <span class="description">Description</span>
+                        <div class="descriptionandimage">
+                            <input class="descriptioninput" placeholder="Enter a Description" text="text" id="descriptioninput">
+                            <img src="./src/img/icons/Recurso11.svg" alt="three lines drop down" class="threelinesdropdown">
+                        </div>
+                            <span class="category">Category</span>
+                                <div class="inputfieldandimage"id="opencategory">
+                                    <select class="categoryinput">
+                                        <option disabled selected class="categoryinput"id="categoryinput">Select task category</option>
+                                        <option>New category</option>
+                                        <option>Sales<img src="" ></option>
+                                        <option>Backoffice</option>
+                                        <option>Marketing</option>
+                                        <option>Design</option>
+                                        <option>Media</option>
+                                        </select>
+                                </div> 
+                                <span class="assignedto">Assigned to</span>
+                                    <div class="inputfieldandimage" id="inputselection">
+                                        <select class="dropdownassignedto">
+                                            <option disabled selected>Select contacts to assign</option>
+                                            <option>You</option> 
+                                            <option>Anton Meyer</option>
+                                            <option>Anja Schulz</option>
+                                            <option>David Eisenberg</option>
+                                            <option>Eva Fischer</option>
+                                            <option>Marius Müller</option>
+                                            <option>Peter Jackson</option>
+                                            </select>
+                                        </div>              
+                </div>
+                                        <img src="./src/img/icons/Vector4line.svg" alt="verticalline" class="verticalline">
+                <div class="container-right">
+                    <span class="duedate">Due date</span>
+                        <div class="dateinputandimage">
+                        <input class="dateinput" placeholder="dd/mm/yyyy" text="date" id="dateinput">
+                        <img src="./src/img/icons/Vectorkalender.svg" alt="datecalendarsymbol" class="datecalendarsymbol">
+                        </div>
+                            <div class="Prioritys">
+                                <span class="prio">Prio</span>
+                            </div>
+                                <div class="prio-selections">
+                                    <img src="./src/img/icons/urgent.svg" alt="urgent priority symbol" onclick="urgentButtonChange()" class="urgentpriority" id="urgent">
+                                    <img src="./src/img/icons/medium.svg" alt="medium priority symbol" onclick="mediumButtonChange()" class="mediumpriority" id="medium">  
+                                    <img src="./src/img/icons/low.svg" alt="low priority symbol" onclick="lowButtonChange()" class="lowpriority" id="low">   
+                                </div>
+                                <div class="subtasks-selection">
+                                    <span class="subtasktitle">Subtasks</span>
+                                </div>
+                                    <div class="addnewsubtaskinputandimage">
+                                        <input text="text" placeholder="Add new subtask" class="subtask" id="subtask">
+                                        <img src="./src/img/icons/Vectorplusblack.svg" alt="blackplusbutton" class="blackplusbuttonsubtasks">
+                                    </div>
+                                    <div class="rectangleandsubtask1">
+                                        <img src="./src/img/icons/Rectangle5.svg" alt="rectangle">
+                                        <span class="subtask1">Subtask 1</span>
+                                    </div>
+                                        <div class="clearandcreatetask">
+                                            <img src="./src/img/icons/clearx.svg" alt="clear x button" onclick="clearTask()" id="clear" class="clearxbutton">
+                                            <img src="./src/img/icons/createtaskbutton.svg" alt="button create task">
+                                        </div>
+                </div>
+            </div>
+    </div></div>
+    `;
+}
+
