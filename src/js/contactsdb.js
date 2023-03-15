@@ -139,7 +139,7 @@ function randomColor() {
 // NOTE -- Save Button
 
 // function saveButton() {
-function AddCreateContact2() {    
+function AddCreateContact2() {    // open overlay addcontact
     let cname = document.getElementById('addcontactinputnameId').value;
     let cmail = document.getElementById('addcontactinputemailId').value;
     let cphone = document.getElementById('addcontactinputphoneId').value;
@@ -158,7 +158,7 @@ function addUser(cname, cmail, cphone) {
     // document.getElementById('addcontactinputnameId').value = '';
     // document.getElementById('addcontactinputemailId').value = '';
     // document.getElementById('addcontactinputphoneId').value = '';
-    AddContactCancel();
-    AddCreateContact(); // <- zeigt Successbutton;
-    sortedListbyName();
+    AddContactCancel(); // <- After Input an Create Button, slide overlay out;
+    AddCreateContact(); // <- shows Successbutton;
+    sortedListbyName(); // <- shows sorted NamesList;
 }

@@ -68,17 +68,18 @@ function contactSuccesButton() {
 function AddCreateContact() {
     document.getElementById('showSuccessbuttonId').innerHTML += generateSuccessbuttonHTML();
     document.getElementById('showSuccessbuttonId').classList.remove('d-none');
+    AddContactCancel();
     document.getElementById('showSuccessbuttonId').classList.remove('showSuccessbuttonoutcl');
     document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonincl');
 
     // setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 1000);
     // setTimeout(contactShowContact(), 1000);  // PRÜFEN !!
     
-    setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonincl')}, 1000);
+    // setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonincl')}, 1000);
 
     setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonoutcl')}, 2000);
 
-    setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('d-none')}, 2250);
+    setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('d-none')}, 2150);
 }
 
 function showIndexContacts() {

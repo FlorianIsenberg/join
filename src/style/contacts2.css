@@ -281,7 +281,7 @@
     /* Frame 73 */
     /* Auto layout */
     position: absolute;
-    top: 700px;
+    top: 500px;
     left: 797px;
     display: flex;
     flex-direction: row;
@@ -318,7 +318,7 @@
 }
 
 .showSuccessbuttonincl {
-    animation: toup 1s ease-in;
+    animation: toup .5s ease-in;
 }
 
 .showSuccessbuttonoutcl {
@@ -327,20 +327,20 @@
 
 @keyframes toup {
     0% {
-        transform: translate(0px,0px)
+        transform: translate(-100px,0px)
     }
 
     100% {
-        transform: translate(0px,-599px);
+        transform: translate(-100px,-699px);
     }
 }
 
 @keyframes todown {
     0% {
-        transform: translate(0px, 0px)
+        transform: translate(-100px, 0px)
     }
 
     100% {
-        transform: translate(0px, 1099px);
+        transform: translate(-100px, 1099px);
     }
 }

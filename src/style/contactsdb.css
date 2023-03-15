@@ -1,5 +1,5 @@
 .contactleftframeV1cl {
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,11 +10,12 @@
     font-size: 21px;
     line-height: 120%;
     
+    margin-left: 2em;
     padding: 0px;
     width: 335px;
     max-height: 779px;
-    left: 1.5em;
-    top: 5px;
+    /* left: 1.5em; */
+    /* top: 5px; */
     padding-right: 4em;
     background: #FFFFFF;
     overflow-x: hidden;
@@ -170,15 +171,15 @@
 .showContactsDatacl:hover {
     /* display: flex;
     flex-direction: row; */
-    position: relative;
+    /* position: relative; */
     top: .5em;
     border-radius: 10px;
     width: 330px;
     height: 4em;
-    left: .5em;
+    left: 2em;
     /* height: 2em; */
-    margin-top: 0em;
-    margin-left: 1em;  
+    /* margin-top: 1em; */
+    margin-left: 2em;  
     /* padding-left: 3em; */
     /* padding: 5px 5px; */
     /* gap: 35px; */
