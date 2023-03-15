@@ -1,14 +1,50 @@
-<header class="header" >
-    <div class="headerLeft">
-        <span class="toolName">Kanban Project Management Tool</span>
-    </div>
-    <div class="headerRight">
-        <!-- <img class="help" href="src/templates/help.html" src="src/img/icon-help-head.svg" title="help">
-        <img class="profilImg" src="src/img/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash 1.png" title="avatar">  -->
-        <a class="help" href="/help-comlplete.html"><img src="/src/img/icon-help-head.svg" title="Help"></a>
-        <img class="profilImg" src="/src/img/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash 1.png" title="avatar" > 
-        <label class="header-label" for="box">Log Out</label>
-        
-        <!-- <button class="header-logOut" onclick="src/templates/signUp.html"></button> -->
-    </div>
- </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="src/style/style-header.css">
+    <script src="src/js/refrenzpage.js"></script>
+    <link rel="shortcut icon" href="src/img/join-logo" type="image/x-icon">
+
+    <title>Header</title>
+    <style>
+    
+
+    </style>
+</head>
+ <body>
+    <header class="header" >
+        <div class="headerLeft">
+            <span class="toolName">Kanban Project Management Tool</span>
+        </div>
+        <div class="headerRight">
+            <a class="help" href="/help-comlplete.html"><img src="/src/img/icon-help-head.svg" title="Help"></a>
+            <div  onclick="genaretDropDown()">
+                <img  class="profilImg" id="profilImg" src="/src/img/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash 1.png" title="avatar" >  
+            </div>
+        </div>
+        <div class="dropdown-links dNon" id="dropdown-links">
+            <a  class="logOutDesk" href="/src/templates/signUp.html">Log out</a>
+      </div>
+    </header>
+    <header class="mobile-header">
+        <div class="mobile-headerLeft">
+            <img class="mobile-logo" src="/src/img/join-logo.svg">
+        </div>
+        <div onclick="genaretDropDownMobile()" class="mobile-headerRight"  >
+            <div class="mobile-profilImg">
+                <img  class="profilImg" id="profilImg" src="/src/img/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash 1.png"> 
+            </div>
+        <div class="mobile-dropdown-links dNon" id="mobile-dropdown-links">
+
+                <a class="mobile-dropdown " href="help-complete.html">Help</a>
+                <a class="mobile-dropdown " href="legal-complete">legal notice</a>
+                <a  class="mobile-dropdown" href="/src/templates/signUp.html">Log out</a>
+        </div>
+
+        </div>
+    </header>
+</body>
+</html>

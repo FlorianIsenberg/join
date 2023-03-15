@@ -3,16 +3,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 21px;
     line-height: 120%;
-    
+
+    /* margin-right: .5em; */
     margin-left: 2em;
     padding: 0px;
-    width: 335px;
+    /* width: 325px; */
     max-height: 779px;
     /* left: 1.5em; */
     /* top: 5px; */
@@ -20,14 +20,15 @@
     background: #FFFFFF;
     overflow-x: hidden;
     overflow-y: auto;
+    color: white;
 }
-.contactleftframeV1cl::-webkit-scrollbar-track {
+/* .contactleftframeV1cl::-webkit-scrollbar-track {
     background: white;
 }
 
 .contactleftframeV1cl::-webkit-scrollbar-thumb {
     border: 1px solid white;
-}
+} */
 
 .alphaA, .alphaB, .alphaC,
 .alphaD, .alphaE, .alphaF,
@@ -57,23 +58,7 @@
     margin-left: 2em;
 }
 
-.OldshowContactscl {
-    /* contact name v1 */
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 15px 25px;
-    gap: 35px;
-    width: 357px;
-    height: 79px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    /* Inside auto layout */
-    flex: none;
-    order: 2;
-    flex-grow: 0;
-}
+
 
 /* .showContactsAvatarcl {
     box-sizing: border-box;
@@ -158,37 +143,32 @@
 }
 
 .showContactsDatacl {
+    height: 3em;
+   
     display: flex;
     flex-direction: row;
     border-radius: 10%;
-    /* padding-left: 3em;
-    padding-right: 3em;
-    padding-bottom: .5em; */
-    /* border: 1px solid blue; */
     cursor: pointer;
 }
 
 .showContactsDatacl:hover {
-    /* display: flex;
-    flex-direction: row; */
-    /* position: relative; */
-    top: .5em;
+
     border-radius: 10px;
-    width: 330px;
+    width: 250px;
     height: 4em;
-    left: 2em;
+    
     /* height: 2em; */
-    /* margin-top: 1em; */
-    margin-left: 2em;  
-    /* padding-left: 3em; */
-    /* padding: 5px 5px; */
-    /* gap: 35px; */
+    margin-top: 0em;
+    margin-left: 2.3em;
+    margin-right: 2.5em;
+    padding-bottom: .5em; 
+    padding-left: .5em; 
 
     cursor: pointer;
-    
-    background-color: #FF7A00;
+    color: white !important;
+    background: #2A3647;
 }
 
-/* .contactleftframeV1Id:hover {
-    background-color: #FF7A00;
-} */
+.showContactsnamecl:hover {
+    color: white;
+}

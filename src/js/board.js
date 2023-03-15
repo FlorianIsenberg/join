@@ -153,8 +153,28 @@ function removeHighlight(id) {
 }
 
 
-function closeTask() {
-    document.getElementById('mastercontainerid').classList.add('hide');
+
+//function AddCreateContact() {
+    document.getElementById('addTaskButton').innerHTML += generateSuccessbuttonHTML();
+    document.getElementById('addTaskButton').classList.remove('d-none');
+    document.getElementById('addTaskButton').classList.remove('showSuccessbuttonoutcl');
+    document.getElementById('addTaskButton').classList.add('showSuccessbuttonincl');
+    setTimeout(function(){document.getElementById('mastercontainerid').classList.add('d-none')}, 1000);
+    setTimeout(contactShowContact(), 1000);
+    
+    setTimeout(function(){document.getElementById('addTaskButton').classList.add('showSuccessbuttonincl')}, 1000);
+
+    setTimeout(function(){document.getElementById('addTaskButton').classList.add('showSuccessbuttonoutcl')}, 2000);
+
+    setTimeout(function(){document.getElementById('addTaskButton').classList.add('d-none')}, 2250);
+
+
+function overlayAddContact() {
+    document.getElementById('mastercontainerid').innerHTML += generateOverlayAddContactHTML();
+    document.getElementById('mastercontainerid').classList.remove('overlayAddContactoutcl');
+    document.getElementById('mastercontainerid').classList.add('overlayAddContactincl');
+    document.getElementById('mastercontainerid').classList.remove('d-none');
+   
 }
 
 function clearTask() {

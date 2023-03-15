@@ -34,11 +34,13 @@ function AddContactCancel() {
 
 // NOTE -- Overlaycard: edit contact
 
-function overlayEditContact() {
-    document.getElementById('overlayEditContactId').innerHTML += generateOverlayEditContactHTML();
+function overlayEditContact(showId) {
+    document.getElementById('overlayEditContactId').innerHTML += generateOverlayEditContactHTML(showId);
     document.getElementById('overlayEditContactId').classList.remove('overlayAddContactoutcl');
     document.getElementById('overlayEditContactId').classList.add('overlayAddContactincl');
     document.getElementById('overlayEditContactId').classList.remove('d-none');
+    // console.log(contactdata[showId])
+    // document.getElementById('addcontactinputnameId').value = `${(contactdata[showId+1])}`;
 }
 
 function EditSaveContact() {
@@ -54,9 +56,12 @@ function EditContactCancel() {
 
 // NOTE -- Show contact
 
-function contactShowContact() {
-    document.getElementById('overlayShowContactId').innerHTML += generateOverlayShowContactHTML();
+function contactShowContact(showId) {
+    
+    document.getElementById('overlayShowContactId').innerHTML = '';
+    document.getElementById('overlayShowContactId').innerHTML += generateOverlayShowContactHTML(showId);
     document.getElementById('overlayShowContactId').classList.remove('d-none');
+    document.getElementById('overlayShowContactId').classList.add('overlayShowContactIncl');
 }
 
 function contactSuccesButton() {
@@ -71,14 +76,7 @@ function AddCreateContact() {
     AddContactCancel();
     document.getElementById('showSuccessbuttonId').classList.remove('showSuccessbuttonoutcl');
     document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonincl');
-
-    // setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 1000);
-    // setTimeout(contactShowContact(), 1000);  // PRÜFEN !!
-    
-    // setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonincl')}, 1000);
-
     setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonoutcl')}, 2000);
-
     setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('d-none')}, 2150);
 }
 
@@ -88,5 +86,23 @@ function showIndexContacts() {
     // showContacts();
 }
 
+// NOTE -- Name from list to edit
 
+function showNameToEdit(name) {
+    for ( let i = 0; i < contactdata.length; i = i + 5 ) {
+        if (contactdata[i] == name) {
+            showId = i;
+            contactShowContact(i);
+        }
+    }
+}
+
+function overlayEditContactPre(showId) {
+    console.log('1: ',showId);
+    // document.getElementById('overlayShowContactId').classList.remove('overlayShowContactIncl');
+    // document.getElementById('overlayShowContactId').classList.add('overlayShowContactOutcl');
+    // document.getElementById('overlayShowContactId').classList.add('d-none');
+    overlayEditContact(showId);
+
+}
 

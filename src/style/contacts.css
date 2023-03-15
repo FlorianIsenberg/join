@@ -185,10 +185,12 @@ body {
     width: 1212px;
     height: 594px;
     background: #FFFFFF;
+    background-color: white;
     /* background: #FFFFFF; */
     border-radius: 30px;
     /* border-bottom-right-radius: 30px; */
     /* animation: toleft 1s linear; */
+    z-index: 1;
 }
 
 .overlayAddContactincl {

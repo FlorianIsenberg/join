@@ -73,7 +73,7 @@
 
 .showcontactnamecl {
     /* Anton Mayer */
-    width: 287px;
+    width: 500px;
     height: 56px;
     /* Version 2/t2 */
     font-family: 'Inter';
@@ -342,5 +342,34 @@
 
     100% {
         transform: translate(-100px, 1099px);
+    }
+}
+
+
+.overlayShowContactIncl {
+    animation: showcontactToLeftin 1s linear;
+}
+
+.overlayShowContactOutcl {
+    animation: showcontactToRightout 1s linear;
+}
+
+@keyframes showcontactToLeftin {
+    0% {
+        transform: translate(1590px, -80px)
+    }
+
+    100% {
+        transform: translate(0px, -80px);
+    }
+}
+
+@keyframes showcontactToRightout {
+    0% {
+        transform: translate(0px, -80px)
+    }
+
+    100% {
+        transform: translate(1870px, -80px);
     }
 }

@@ -324,8 +324,12 @@ section {
 
   .contentBox {
     width: auto;
+    gap: 20px;
   }
 
+  .headlineBox {
+    gap: 0;
+  }
   .headlineBox p {
     width: auto;
     font-weight: 700;
@@ -334,15 +338,27 @@ section {
     text-align: center;
   }
 
+  .mailPasswordInputField {
+    gap: 0px;
+    width: 250px;
+  }
+
+  .emailPasswordField {
+    gap: 18px;
+  }
+
   .mailPasswordInputField input {
     font-size: 12px;
-    width: 100%;
+    width: 230px;
   }
 
   .rememberMe {
     flex-direction: column-reverse;
-    padding-top: 10px;
-    gap: 10px;
+
+    gap: 31px;
+
+    width: auto;
+    height: auto;
   }
 
   .btnLogGuest {
