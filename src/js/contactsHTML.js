@@ -123,7 +123,7 @@ function generateOverlayAddContactHTML() {
 
 // NOTE -- contact Edit page overlay
 
-function generateOverlayEditContactHTML() { 
+function generateOverlayEditContactHTML(showId) { 
     return /*html*/`
     <div id="addcontactleftId" class="addcontactleftcl"> <!-- Frame 194 -->
         <div id="joinlogoId" class="joinlogocl">  <!-- Join Logo left side-->
@@ -181,13 +181,13 @@ function generateOverlayEditContactHTML() {
         <!-- <div id="addcontactrightmainId" class="addcontactrightmaincl"> -->
             <div id="addcontactrightinputfieldsId" class="addcontactrightinputfieldscl">
                 <div id="addcontactnameinputId" class="addcontactnameinputcl">
-                    <input id="addcontactinputnameId" class="addcontactinputnamecl" required type="text" placeholder="Name">
+                    <input id="addcontactinputnameId" class="addcontactinputnamecl" required type="text" placeholder="Name" value="${contactdata[showId]}">
                 </div>
                 <div id="addcontactemailinputId" class="addcontactemailinputcl">
-                    <input id="addcontactinputemailId" class="addcontactinputemailcl" required type="email" placeholder="Email">
+                    <input id="addcontactinputemailId" class="addcontactinputemailcl" required type="email" placeholder="Email" value="${contactdata[showId+1]}">
                 </div>
                 <div id="addcontactphoneinputId" class="addcontactphoneinputcl">
-                    <input id="addcontactinputphoneId" class="addcontactinputphonecl" type="tel" placeholder="Phone">
+                    <input id="addcontactinputphoneId" class="addcontactinputphonecl" type="tel" placeholder="Phone"  value="${contactdata[showId+2]}">
                 </div>
             </div>
 
@@ -203,17 +203,17 @@ function generateOverlayEditContactHTML() {
     `;
 }
 
-function generateOverlayShowContactHTML() { 
+function generateOverlayShowContactHTML(showId) { 
     return /*html*/`
     <div id="showcontactmainId" class="showcontactmaincl">
 
         <div id="showcontacttopId" class="showcontacttopcl">
-            <div id="showcontactavatarId" class="showcontactavatarcl">AM</div> <!-- Hier die Buchstaben über eine Funktion einsetzten für die Anfangsbuchstaben aus der DB -->
+            <div id="showcontactavatarId" class="showcontactavatarcl ${contactdata[showId + 3]}">${contactdata[showId+4]}</div> <!-- Hier die Buchstaben über eine Funktion einsetzten für die Anfangsbuchstaben aus der DB -->
                 <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="60" cy="60" r="60" fill="#FF7A00"/>
                 </svg>
             <div>
-                <div id="showcontactnameId" class="showcontactnamecl">Anton Meyer</div>
+                <div id="showcontactnameId" class="showcontactnamecl">${contactdata[showId]}</div>
                 <div id="showcontactaddtaskId" class="showcontactaddtaskcl">
                     <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.5 1V16" stroke="#29ABE2" stroke-width="2" stroke-linecap="round"/>
@@ -226,7 +226,7 @@ function generateOverlayShowContactHTML() {
 
         <div id="showcontactmiddleId" class="showcontactmiddlecl">
             <div id="showcontactinfoId" class="showcontactinfocl">Contact Information</div>
-            <div id="showcontacteditcontactId" class="showcontacteditcontactcl" onclick="overlayEditContact()">
+            <div id="showcontacteditcontactId" class="showcontacteditcontactcl" onclick="overlayEditContactPre(showId)">
                 <svg width="21" height="30" viewBox="0 0 21 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.87121 22.0156L7.69054 24.9405L20.3337 4.10842C20.6203 3.63628 20.4698 3.02125 19.9977 2.73471L16.8881 0.847482C16.4159 0.56094 15.8009 0.711391 15.5144 1.18353L2.87121 22.0156Z" fill="#2A3647"/>
                 <path d="M2.28614 22.9794L7.10547 25.9043L2.37685 28.1892L2.28614 22.9794Z" fill="#2A3647"/>
@@ -237,11 +237,11 @@ function generateOverlayShowContactHTML() {
         <div id="showcontactbottomId" class="showcontactbottomcl">
             <div>
             <div id="showcontactmailId" class="showcontactmailcl">Email</div>
-            <div id="showcontactmaildataId" class="showcontactmaildatacl">Hier steht die @Mail-Adresse</div>
+            <div id="showcontactmaildataId" class="showcontactmaildatacl">${contactdata[showId+1]}</div>
             </div>
             <div>
             <div id="showcontactphoneId" class="showcontactphonecl">Phone</div>
-            <div id="showcontactphonedataId" class="showcontactphonedatacl">++100 0000 1234 5678 90</div> <!-- Planetenvorwahl nicht vergessen :-) -->
+            <div id="showcontactphonedataId" class="showcontactphonedatacl">${contactdata[showId+2]}</div> <!-- Planetenvorwahl nicht vergessen :-) -->
             </div>
         </div>
 

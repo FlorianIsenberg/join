@@ -6,6 +6,7 @@ let setcolor;                   // colorNr for css class
 let sorted = [];                // contains Last name as Elements in sorted row
 let unsorted = [];              // contains Last name as Elements in unsorted row
 let indexNr;
+let showId;                     // globale Variable for overall filestructure
 // let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 // let string = [];
 // let aString = [];
@@ -117,7 +118,7 @@ function sortedListbyName() {
                 }
                 
                 document.getElementById('contactleftframeV1Id').innerHTML +=/*html*/ `
-                <div id="showContactsData${usl}Id" class="showContactsDatacl">
+                <div id="showContactsData${usl}Id" class="showContactsDatacl" onclick="(showNameToEdit('${contactdata[0 + (usl * 5)]}'))">
                 <div id="elipse5${usl}Id" class="elipse5cl ${contactdata[3 + (usl * 5)]}"><span>${contactdata[4 + (usl * 5)]}</span></div>
                     <div id="datacontainer${usl}Id" class="datacontainercl">
                         <div id="showContactsname${usl}Id" class="showContactsnamecl">${contactdata[0 + (usl * 5)]}</div>
