@@ -173,6 +173,7 @@ body {
     border-radius: 30px;
     /* border-bottom-right-radius: 30px; */
     /* animation: toleft 1s linear; */
+    z-index: 3;
 }
 
 .overlayEditContactcl {
