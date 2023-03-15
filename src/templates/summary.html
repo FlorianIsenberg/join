@@ -1,493 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="src/style/fonts.css">
-    <link rel="stylesheet" type="text/css" href="src/style/style-header.css">
-    <link rel="stylesheet" href="/src/style/style-summary.css">
-    <script language="JavaScript" type="text/javascript" src="src/js/referencePage.js"></script>
 
-    <title>Join Summary</title>
-    <!-- <link rel="stylesheet" href="./src/tstyle/style-summary.css"> -->
-    <!-- <script src="src/js/main.js"></script>  -->
-  <!-- <link rel="shortcut icon" href="img/join-logo.svg" type="image/x-icon"> -->
- 
-
-  <!-- <style>
-    /* .sideMenu .navbar a:nth-child(1),
-    .sideMenu .navbar a:nth-child(2),
-    .sideMenu .navbar a:nth-child(3),
-    .sideMenu .navbar a:nth-child(4),
-    .sideMenu .navbar a:nth-child(5) {
-      border-bottom: 4px solid transparent;
-      color: black;
-    } */
-    .body{
-        /* V1 summary user */
-        /* position: relative;
-        width: 1440px;
-        height: 1024px; */
-        background: #F5F5F5;
-    }
-    
-    .summary-main{
-        padding-left: 100px;  
-    }
-    .summary-header{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 50px;
-        gap: 30px;
-        /* position: absolute; */
-        
-        height: 73px;
-        left: 355px;
-        top: 171px;
-    }
-    .summary-headline{
-        width: 315px;
-        height: 73px;
-        /* Version 2/t1 */
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 61px;
-        line-height: 120%;
-        /* or 73px */
-        color: #000000;
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-    }
-    .summary-line{
-        width: 0px;
-        height: 59px;
-        border: 3px solid #29ABE2;
-        /* Inside auto layout */
-        flex: none;
-        order: 1;
-        flex-grow: 0;
-    }
-    .summary-titelText{
-        /* Everything in a nutshell! */
-        width: 400px;
-        height: 32px;
-        /* Version 2/t5 */
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 27px;
-        line-height: 120%;
-        /* or 32px */
-        color: #2A3647;
-        /* Inside auto layout */
-        flex: none;
-        order: 2;
-        flex-grow: 0;
-    }
-    .summary-left{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
-        padding-left: 190px;
-        gap: 35px;
-        width: 580px;
-        height: 540px;
-        left: 355px;
-        top: 331px;
-        user-select: none;
-    }
-    .summary-content{
-        display: flex;
-        gap: 30px;
-        width: 100%;
-        max-width: 100%;
-        justify-content: center;
-    }
-    /* .summary-left{
-        height: 200px;
-    } */
-    .summary-task{
-        /* Frame 64 */
-        /* Auto layout */
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        padding: 0px;
-        gap: 35px;
-        width: 580px;
-        height: 170px;
-        /* Inside auto layout */
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-    }
-    .task-type{
-        /* square button v1 */
-        /* Auto layout */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 25px 0px;
-        gap: 13px;
-        width: 170px;
-        /* height: 170px; */
-        /* white */
-        background: #FFFFFF;
-        /* nuevo */
-        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 30px;
-        /* Inside auto layout */
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-        color: #000000;
-        text-align: center;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        line-height: 120%;
-        user-select: none;
-    }
-      /* .task-type{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px;
-        width: 87px;
-        height: 127px;
-    } */
-    .task-type:hover{
-        background: #2A3647;
-        /* stronger */
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        color: #FFFFFF;
-        cursor: pointer;
-    }
-    .task-type:active{
-        background: #FFFFFF;
-        color: #000000;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
   
-    .task-counter{
-        width: 41px;
-        height: 77px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 64px;
-        line-height: 120%;
-        text-align: center;
-    }
-    .task-description{
-        width: 87px;
-        height: 50px;
-        /* Version 2/t6 */
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 21px;
-        line-height: 120%;
-        /* or 25px */
-        text-align: center;
-    }
-    .summary-task-deadline{
-        
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;    
-        gap: 61px;
-        width: 580px;
-        height: 150px;
-        background: #FFFFFF;
-        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 30px;
-        flex: none;
-        order: 1;
-        flex-grow: 0;
-        color: #000000;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 47px;
-        line-height: 120%;
-        text-align: center;
-    }
-    .summary-task-deadline:hover{
-        background: #2A3647;
-        /* stronger */
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 30px;
-        color: #FFFFFF;
-        cursor: pointer;
-    }
-    .summary-task-deadline:active{
-        background: #FFFFFF;
-        /* stronger */
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        color: black;
-    }
-    
-    .urgent{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 0px;
-        gap: 18px;
-        width: 130px;
-        height: 75px;
-    }
-    .urgent-img{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 0px;
-        gap: 10px;
-        width: 60px;
-        height: 60px;
-        /* Inside auto layout */
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-    }
-    .urgent-counter{
-        width: 50px;
-        height: 56px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 47px;
-        line-height: 120%;
-        /* or 56px */
-        text-align: center;
-    }
-    .urgent-description{
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 120%;
-        /* or 19px */
-        
-    }
-    .task-urgent{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px;
-        width: 52px;
-        height: 75px;
-        /* Inside auto layout */
-        flex: none;
-        order: 1;
-        flex-grow: 0;
-    }
-    .urgent-line{
-        width: 0px;
-        height: 102.02px;
-        /* Style */
-        border: 2px solid #D1D1D1;
-        /* Inside auto layout */
-        flex: none;
-        order: 1;
-        flex-grow: 0;
-    }
-    .deadline{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
-        gap: 13px;
-        width: 178px;
-        height: 57px;
-        /* Inside auto layout */
-        flex: none;
-        order: 2;
-        flex-grow: 0;
-    }
-    .deadline-day{
-        width: 178px;
-        height: 25px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 21px;
-        line-height: 120%;
-    }
-    .deadline-description{
-        width: 148px;
-        height: 19px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 120%;
-    }
-    /* bottom task content */
-    .summary-todo{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 0px;
-        gap: 35px;
-        width: 580px;
-        height: 150px;
-        /* Inside auto layout */
-        flex: none;
-        order: 2;
-        flex-grow: 0;
-    }
-    
-    
-   
-    .task-todo{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 18px;
-        width: 272.5px;
-        height: 150px;
-        /* white */
-        background: #FFFFFF;
-        /* nuevo */ 
-        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 30px; 
-        /* Inside auto layout */ 
-        flex: none;
-        order: 1;
-        flex-grow: 0;
-    }
-    .summary-todo-right{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px;
-        width: 66px;
-        height: 102px;
-        flex: none;
-        order: 1;
-        flex-grow: 0;
-    }
-   
-    .task-counter-todo {
-        width: 41px;
-        height: 77px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 64px;
-        line-height: 120%;
-        text-align: center;
-    }
-   .todo-description {
-        width: 87px;
-        height: 50px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 21px;
-        line-height: 120%;
-        text-align: center;
-    }
-    
-    .task-todo:hover{
-        background: #2A3647;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 30px;
-        color: #FFFFFF;
-        cursor: pointer;
-    }
-    .task-todo .pencil{
-        filter: invert(1);
-        
-    }
-    .task-todo:hover .pencil{
-        filter: invert(0);  
-    }
-    .task-todo:active{
-        background: #FFFFFF;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 30px;
-        color: #000000;
-    }
-    
-    .task-todo:active .todo-img{
-        filter: invert(1);
-    }
-   
-    .summary-welcome-user{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-left: 30px;
-        width: 338px;
-        /* Version 2/t2 */
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 47px;
-        line-height: 120%;
-        /* or 56px */
-        color: #2A3647;
-        /* Inside auto layout */
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-    }
-    .good-morning{
-        width: 338px;
-         height: 56px;
-        /* Version 2/t2 */
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 47px;
-        line-height: 120%;
-        /* or 56px */
-        color: #2A3647;
-    }
-    .user-name{
-        width: 385px;
-        height: 77px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 64px;
-        line-height: 120%;
-        /* identical to box height, or 77px */
-        /* Ligth blue */
-        color: #29ABE2;
-    
-    }
-  </style> -->
-  <!-- <script>
-    async function includeHTML() {
-    let includeElements = document.querySelectorAll('[w3-include-html]');
-    for (let i = 0; i < includeElements.length; i++) {
-      const element = includeElements[i];
-      file = element.getAttribute("w3-include-html"); // "includes/header.html"
-      let resp = await fetch(file);
-      if (resp.ok) {
-        element.innerHTML = await resp.text();
-      } else {
-        element.innerHTML = 'Page not found';
-      }
-    }
-  }
-  </script> -->
 </head>
 <body onload="includeHTML()">
     <!-- <header class="header" w3-include-html="src/templates/header.html"></header> -->
@@ -497,23 +9,30 @@
             <span class="summary-line"> </span>
             <span class="summary-titelText">Everything in a nutshell!</span>
         </div>
+        <div class="mobile-summary-header">
+            <span class="mobile-toolName">Kanban Project Management Tool</span>
+            <span class="summary-headline">Summary</span>
+            <span class="summary-titelText">Everything in a nutshell!</span>
+            <span class="summary-line"> </span>            
+        </div>
+
         <div class="summary-content">
-            <div class="summary-left">
-                <div class="summary-task">
-                  <div class="task-type" href="src/templates/board.html">
-                    <div class=task-counter id="task-counter-all">5</div>
-                    <span class="task-description">Tasks in Board</span>
+            <div class="summary-left" >
+                <div class="summary-task" >
+                  <div class="task-type" href="/board-complete.html">
+                    <div class=task-counter id="task-counter-all" href="/board-complete.html">5</div>
+                    <span class="task-description" href="/board-complete.html">Tasks in Board</span>
                   </div>
-                  <div href="src/templates/board.html" class="task-type">
+                  <div  class="task-type" href="/board-complete.html">
                     <div class=task-counter id="task-counter-Inprogress">2</div>
                     <span class="task-description">Tasks In Progress</span>
                   </div>
-                  <div href="src/templates/board.html" class="task-type">
+                  <div  class="task-type" href="/board-complete.html">
                     <div class=task-counter id="task-counter-awaiting">2</div>
                     <span class="task-description">Awaiting Feedback</span>
                   </div>
                 </div>
-                <div href="src/templates/board.html" class="summary-task-deadline">
+                <div  class="summary-task-deadline" href="/board-complete.html">
                     <div class="urgent">
                       <img class="urgent-img" src="src/img/urgent-color.svg">
                       <div class="task-urgent">
@@ -523,19 +42,19 @@
                     </div>
                     <div class="urgent-line"> </div>
                     <div class="deadline">
-                        <div class="deadline-day">October 16, 2022</div>
+                        <div id="deadline-day" class="deadline-day" >October 16, 2022</div>
                         <span class="deadline-description">Upcoming Deadline</span>
                     </div>
                 </div>
                 <div class="summary-todo">
-                  <div href="src/templates/board.html" class="task-todo">
+                  <div  class="task-todo" href="/board-complete.html">
                       <img src="src/img/summary-pencil.svg" class="todo-img">
                       <div class="summary-todo-right">
                           <div class="task-counter-todo" id="task-counter-todo">1</div>
                           <span class="todo-description">To-do</span>
                       </div>
                   </div>
-                  <div href="src/templates/board.html" class="task-todo">
+                  <div  class="task-todo" href="/board-complete.html">
                     <img src="src/img/summary-done.svg" class="todo-img">
                     <div class="summary-todo-right">
                         <div class="task-counter-todo" id="task-counter-done">1</div>
@@ -546,10 +65,13 @@
             </div>
             <div class="summary-welcome-user"> 
               <span class="good-morning">Good Morning,</span>
-              <span class="user-name">Sofia Müller</span>
+              <span id="summary-userName" class="summary-userName">Müller</span>
           </div>
         </div>
     </div>
     
 </body>
+<script>
+    document.getElementById("current_date").innerHTML = Date();
+  </script>
 </html>
