@@ -53,8 +53,9 @@ function overlayEditContact(showId) {
     // document.getElementById('addcontactinputnameId').value = `${(contactdata[showId+1])}`;
 }
 
-function EditSaveContact() {
+function EditSaveContact(showId) {
     document.getElementById('overlayEditContactId').classList.add('d-none');
+    writeChangeToBackend(showId);
 }
 
 
@@ -109,12 +110,12 @@ function showNameToEdit(name) {
     }
 }
 
-function overlayEditContactPre(showId) {
-    console.log('1: ',showId);
-    // document.getElementById('overlayShowContactId').classList.remove('overlayShowContactIncl');
-    // document.getElementById('overlayShowContactId').classList.add('overlayShowContactOutcl');
-    // document.getElementById('overlayShowContactId').classList.add('d-none');
-    overlayEditContact(showId);
+// function overlayEditContactPre(showId) {
+//     console.log('1: ',showId);
+//     // document.getElementById('overlayShowContactId').classList.remove('overlayShowContactIncl');
+//     // document.getElementById('overlayShowContactId').classList.add('overlayShowContactOutcl');
+//     // document.getElementById('overlayShowContactId').classList.add('d-none');
+//     overlayEditContact(showId);
 
-}
+// }
 

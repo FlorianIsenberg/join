@@ -196,7 +196,7 @@ function generateOverlayEditContactHTML(showId) {
     <!-- NOTE -- Sub-buttons - cancel and create -->
 
     <div id="subbuttoncontainersaveId" class="subbuttoncontainersavecl">
-        <div id="subbuttonsaveId" class="subbuttonsavecl" onclick="EditSaveContact()"> <!-- Cancel-Button -->
+        <div id="subbuttonsaveId" class="subbuttonsavecl" onclick="EditSaveContact(showId)"> <!-- EditSaveContact() Cancel-Button -->
             <div id="editcontactsaveId" class="editcontactsavecl">Save</div>
         </div>
     </div>
@@ -226,7 +226,7 @@ function generateOverlayShowContactHTML(showId) {
 
         <div id="showcontactmiddleId" class="showcontactmiddlecl">
             <div id="showcontactinfoId" class="showcontactinfocl">Contact Information</div>
-            <div id="showcontacteditcontactId" class="showcontacteditcontactcl" onclick="overlayEditContactPre(showId)">
+            <div id="showcontacteditcontactId" class="showcontacteditcontactcl" onclick="overlayEditContact(showId)">
                 <svg width="21" height="30" viewBox="0 0 21 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.87121 22.0156L7.69054 24.9405L20.3337 4.10842C20.6203 3.63628 20.4698 3.02125 19.9977 2.73471L16.8881 0.847482C16.4159 0.56094 15.8009 0.711391 15.5144 1.18353L2.87121 22.0156Z" fill="#2A3647"/>
                 <path d="M2.28614 22.9794L7.10547 25.9043L2.37685 28.1892L2.28614 22.9794Z" fill="#2A3647"/>

@@ -50,6 +50,18 @@ async function loadFromBackend() {
     cDataCounter = (contactdata.length / 5);
 }
 
+async function writeChangeToBackend(showId) {
+    let cname = document.getElementById('addcontactinputnameId').value;
+    let cmail = document.getElementById('addcontactinputemailId').value;
+    let cphone = document.getElementById('addcontactinputphoneId').value;
+    console.log(showId,3 ,cname, cmail, cphone);
+    contactdata.splice(showId,3, cname, cmail, cphone);
+    console.log(contactdata);
+    writeIntoBackend(contactdata);
+    contactShowContact(showId);
+    sortedListbyName(); // <- shows sorted NamesList;
+}
+
 // NOTE -- Read the first letter of all words in a string
 
 function allFirstLetter(string) {

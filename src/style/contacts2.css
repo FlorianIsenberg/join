@@ -6,11 +6,13 @@
     align-items: flex-start; */
     /* padding: 0px;
     gap: 21px; */
-    left: 895px;
+    left: 1000px;
     top: 349px;
     position: absolute;
-    width: 461px;
+    width: 600px;
     height: 364px;
+
+    z-index: 0;
 }
 
 .showcontacttopcl {
