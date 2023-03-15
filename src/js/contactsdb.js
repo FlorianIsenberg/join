@@ -7,9 +7,7 @@ let sorted = [];                // contains Last name as Elements in sorted row
 let unsorted = [];              // contains Last name as Elements in unsorted row
 let indexNr;
 let showId;                     // globale Variable for overall filestructure
-// let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-// let string = [];
-// let aString = [];
+
 
 // NOTE -- Linus template.html loading modul
 
@@ -29,6 +27,7 @@ async function includeHTML() {
 
 setURL('https://gruppe-07i.developerakademie.net/smallest_backend_ever');
 
+
 // NOTE -- Initial DB
 
 async function init() {
@@ -41,14 +40,36 @@ async function init() {
     sortedListbyName();
 }
 
+
+// NOTE -- write array into backend
+
 async function writeIntoBackend(contactdata) {
     await backend.setItem(`cData`, JSON.stringify(contactdata));
 }
+
+
+// NOTE -- read Data from backend
 
 async function loadFromBackend() {
     contactdata = JSON.parse(backend.getItem('cData')) || [];
     cDataCounter = (contactdata.length / 5);
 }
+
+
+// NOTE -- write modified Data into array and into backend
+
+async function writeChangeToBackend(showId) {
+    let cname = document.getElementById('addcontactinputnameId').value;
+    let cmail = document.getElementById('addcontactinputemailId').value;
+    let cphone = document.getElementById('addcontactinputphoneId').value;
+    console.log(showId,3 ,cname, cmail, cphone);
+    contactdata.splice(showId,3, cname, cmail, cphone);
+    console.log(contactdata);
+    writeIntoBackend(contactdata);
+    contactShowContact(showId);
+    sortedListbyName(); // <- shows sorted NamesList;
+}
+
 
 // NOTE -- Read the first letter of all words in a string
 
@@ -79,7 +100,7 @@ function sortedListbyName() {
     // NOTE -- sorted List
     sorted = unsorted.sort();
 
-    // Do ist again for a unsorted List1
+    // NOTE -- Do ist again for a unsorted List1
 
     unsorted = [];
 
@@ -99,9 +120,10 @@ function sortedListbyName() {
         showAlphabet = [...new Set(alpha)];
     }
 
-    document.getElementById('contactleftframeV1Id').innerHTML = '';
-
+    
     //  NOTE -- show Alphabet and Contacts
+
+    document.getElementById('contactleftframeV1Id').innerHTML = '';
 
     for (m = 0; m < showAlphabet.length; m++) {      // if loop through showAlphabet
         let charFound = 0;      // was the Alphabet character found?
@@ -114,7 +136,6 @@ function sortedListbyName() {
                         <div id="alphafoot${usl}Id" class="alphafootcl"></div >
                     `;
             charFound = 1;      // yes, the Alphabet character was already found!
-                    // document.getElementById('showContactsId').innerHTML += /*html*/ contactdata[4 + (usl * 5)];
                 }
                 
                 document.getElementById('contactleftframeV1Id').innerHTML +=/*html*/ `
@@ -132,14 +153,16 @@ function sortedListbyName() {
 }
 
 
+// NOTE -- generate pseudo random number
+
 function randomColor() {
     let colorNr = Math.floor(Math.random() * 15);
     return `color${colorNr}`;
 }
 
+
 // NOTE -- Save Button
 
-// function saveButton() {
 function AddCreateContact2() {    // open overlay addcontact
     let cname = document.getElementById('addcontactinputnameId').value;
     let cmail = document.getElementById('addcontactinputemailId').value;
@@ -147,18 +170,15 @@ function AddCreateContact2() {    // open overlay addcontact
     addUser(cname, cmail, cphone);
 }
 
+
+//NOTE -- 
+
 function addUser(cname, cmail, cphone) {
     let cfirstLetter = allFirstLetter(cname);
     let ccolorNr = randomColor();
 
     contactdata.push(cname, cmail, cphone, ccolorNr, cfirstLetter);
-    // console.log(contactdata);
-    writeIntoBackend(contactdata);
-    // backend.setItem(`cData`, JSON.stringify(contactdata));  // cData == Datensatzname && contacdaten = value
-
-    // document.getElementById('addcontactinputnameId').value = '';
-    // document.getElementById('addcontactinputemailId').value = '';
-    // document.getElementById('addcontactinputphoneId').value = '';
+    writeIntoBackend(contactdata); // <- save array data into backend;
     AddContactCancel(); // <- After Input an Create Button, slide overlay out;
     AddCreateContact(); // <- shows Successbutton;
     sortedListbyName(); // <- shows sorted NamesList;

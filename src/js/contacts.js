@@ -13,24 +13,32 @@ function builddefaultcontactpage() {
 
 function overlayAddContact() {
     document.getElementById('overlayAddContactId').innerHTML += generateOverlayAddContactHTML();
-
-     document.getElementById('addcontactinputnameId').value = '';
-     document.getElementById('addcontactinputemailId').value = '';
-     document.getElementById('addcontactinputphoneId').value = '';
-
+    document.getElementById('addcontactinputnameId').value = '';
+    document.getElementById('addcontactinputemailId').value = '';
+    document.getElementById('addcontactinputphoneId').value = '';
     document.getElementById('overlayAddContactId').classList.remove('overlayAddContactoutcl');
     document.getElementById('overlayAddContactId').classList.add('overlayAddContactincl');
     document.getElementById('overlayAddContactId').classList.remove('d-none');
-   
 }
 
+
+// NOTE -- cancel -- Addcontact
+
 function AddContactCancel() {
-    // document.getElementById('overlayAddContactId').innerHTML += generateOverlayAddContactHTML();
     document.getElementById('overlayAddContactId').classList.remove('overlayAddContactincl');
     document.getElementById('overlayAddContactId').classList.add('overlayAddContactoutcl');
     setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 999);
-    
 }
+
+
+// NOTE -- cancel -- Editcontact
+
+function EditContactCancel2() {
+    document.getElementById('overlayEditContactId').classList.remove('overlayAddContactincl');
+    document.getElementById('overlayEditContactId').classList.add('overlayAddContactoutcl');
+    setTimeout(function(){document.getElementById('overlayEditContactId').classList.add('d-none')}, 999);
+}
+
 
 // NOTE -- Overlaycard: edit contact
 
@@ -39,20 +47,16 @@ function overlayEditContact(showId) {
     document.getElementById('overlayEditContactId').classList.remove('overlayAddContactoutcl');
     document.getElementById('overlayEditContactId').classList.add('overlayAddContactincl');
     document.getElementById('overlayEditContactId').classList.remove('d-none');
-    // console.log(contactdata[showId])
-    // document.getElementById('addcontactinputnameId').value = `${(contactdata[showId+1])}`;
 }
 
-function EditSaveContact() {
+
+// NOTE -- Save
+
+function EditSaveContact(showId) {
     document.getElementById('overlayEditContactId').classList.add('d-none');
+    writeChangeToBackend(showId);
 }
 
-function EditContactCancel() {
-    document.getElementById('overlayAddContactId').innerHTML += generateOverlayEditContactHTML();
-    document.getElementById('overlayEditContactId').classList.remove('overlayAddContactincl');
-    document.getElementById('overlayEditContactId').classList.add('overlayAddContactoutcl');
-    setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 999);
-}
 
 // NOTE -- Show contact
 
@@ -64,9 +68,13 @@ function contactShowContact(showId) {
     document.getElementById('overlayShowContactId').classList.add('overlayShowContactIncl');
 }
 
+
+// NOTE -- generate Success Button
+
 function contactSuccesButton() {
     document.getElementById('showSuccessbuttonId').innerHTML += generateSuccessbuttonHTML();
 }
+
 
 // NOTE -- Create Contact sign
 
@@ -80,11 +88,13 @@ function AddCreateContact() {
     setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('d-none')}, 2150);
 }
 
-function showIndexContacts() {
 
+// NOTE -- generate Index list of contacts
+
+function showIndexContacts() {
     document.getElementById('contactleftframeId').innerHTML += generateShowRegisterHTML();
-    // showContacts();
 }
+
 
 // NOTE -- Name from list to edit
 
@@ -96,13 +106,3 @@ function showNameToEdit(name) {
         }
     }
 }
-
-function overlayEditContactPre(showId) {
-    console.log('1: ',showId);
-    // document.getElementById('overlayShowContactId').classList.remove('overlayShowContactIncl');
-    // document.getElementById('overlayShowContactId').classList.add('overlayShowContactOutcl');
-    // document.getElementById('overlayShowContactId').classList.add('d-none');
-    overlayEditContact(showId);
-
-}
-
