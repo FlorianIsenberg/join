@@ -114,6 +114,11 @@ body {
     padding-left: 70px;
 }
 
+.dragging {
+    transform: rotate(10deg);
+    cursor: move;
+    opacity: 0.5;
+}
 
 .draganddropsection {
     display: flex;
@@ -396,13 +401,14 @@ body {
 }
 
 .popupnotemastercontainer {
-display: none;
+    display: none;
 }
 
 .show {
-display: flex;
+    display: flex;
 
 }
+
 .closenotebuttonx {
     width: 25px;
     height: 25px;
