@@ -277,33 +277,41 @@ function addTask() {
                             <input class="descriptioninput" placeholder="Enter a Description" text="text" id="descriptioninput">
                             <img src="./src/img/icons/Recurso11.svg" alt="three lines drop down" class="threelinesdropdown">
                         </div>
-                            <span class="category">Category</span>
-                                <div class="inputfieldandimage"id="opencategory">
-                                    <select class="categoryinput">
-                                        <option disabled selected class="categoryinput"id="categoryinput">Select task category</option>
-                                        <option>New category<input type="checkbox" id="checkboxcategory1"></option>
-                                        <option>Sales<input type="checkbox" id="checkboxcategory2"></option>
-                                        <option>Backoffice<input type="checkbox" id="checkboxcategory3"></option>
-                                        <option>Marketing<input type="checkbox" id="checkboxcategory4"></option>
-                                        <option>Design<input type="checkbox" id="checkboxcategory5"></option>
-                                        <option>Media<input type="checkbox" id="checkboxcategory6"></option>
-                                        </select>
-                                </div> 
-                                <span class="assignedto">Assigned to</span>
-                                    <div class="inputfieldandimage" id="inputselection">
-                                        <select class="dropdownassignedto">
-                                            <option disabled selected>Select contacts to assign</option>
-                                            <option>You<input type="checkbox" id="checkboxassignetto1"></option> 
-                                            <option>Anton Meyer<input type="checkbox" id="checkboxassignetto2"></option>
-                                            <option>Anja Schulz<input type="checkbox" id="checkboxassignetto3"></option>
-                                            <option>David Eisenberg<input type="checkbox" id="checkboxassignetto4"></option>
-                                            <option>Eva Fischer<input type="checkbox" id="checkboxassignetto5"></option>
-                                            <option>Marius Müller<input type="checkbox" id="checkboxassignetto6"></option>
-                                            <option>Peter Jackson<input type="checkbox" id="checkboxassignetto7"></option>
-                                            </select>
-                                        </div>              
-                </div>
-                                        <img src="./src/img/icons/Vector4line.svg" alt="verticalline" class="verticalline">
+                               
+                        <div class="dropdownmenucategory">
+                        <div class="onclickcategory" id="clickcategory"><span class="category">Category</span></div>
+                        <div class="dropdownc hide" onclick="hideCategory()">
+                        
+                        <label for="category">Select task category:</label>
+                          <label for="new-category">
+                          <span>New category</span>
+                            <input type="checkbox" id="new-category" class="checkbox1"> 
+                          </label>
+                          <label for="sales">
+                          <span>Sales</span>
+                            <input type="checkbox" id="sales" class="checkbox2">
+                          </label>
+                          <label for="backoffice">
+                          <span>Backoffice</span>
+                            <input type="checkbox" id="backoffice" class="checkbox3">
+                          </label>
+                          <label for="marketing">
+                          <span>Marketing</span>
+                            <input type="checkbox" id="marketing" class="checkbox4">
+                          </label>
+                          <label for="design">
+                          <span>Design</span>
+                            <input type="checkbox" id="design" class="checkbox5">
+                          </label>
+                          <label for="media">
+                          <span>Media</span>
+                            <input type="checkbox" id="media" class="checkbox6">
+                          </label>
+                        </div>
+                    </div> </div>  
+                                            
+            <img src="./src/img/icons/Vector4line.svg" alt="verticalline" class="verticalline">
+            
                 <div class="container-right">
                     <span class="duedate">Due date</span>
                         <div class="dateinputandimage">
@@ -326,7 +334,7 @@ function addTask() {
                                         <img src="./src/img/icons/Vectorplusblack.svg" alt="blackplusbutton" class="blackplusbuttonsubtasks">
                                     </div>
                                     <div class="rectangleandsubtask1">
-                                        <input type="checkbox"  alt="rectangle">
+                                        <input type="checkbox" alt="rectangle">
                                         <span class="subtask1">Subtask 1</span>
                                     </div>
                                         <div class="clearandcreatetask">
@@ -337,6 +345,17 @@ function addTask() {
             </div>
     </div></div>
     `;
+}
+
+let category = document.querySelector('category');
+let dropdown = document.querySelector('dropdownc');
+
+category.addEventListener('click', function() {
+  dropdown.classList.toggle('hide');
+});
+
+function hideCategory() {
+    document.getElementById('clickcategory').classList.remove('hide');
 }
 
 function deleteTasks() {
