@@ -29,7 +29,17 @@ function AddContactCancel() {
     document.getElementById('overlayAddContactId').classList.remove('overlayAddContactincl');
     document.getElementById('overlayAddContactId').classList.add('overlayAddContactoutcl');
     setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 999);
-    
+}
+
+function EditContactCancel2() {
+    // document.getElementById('overlayAddContactId').innerHTML += generateOverlayAddContactHTML();
+    document.getElementById('overlayEditContactId').classList.remove('overlayAddContactincl');
+    document.getElementById('overlayEditContactId').classList.add('overlayAddContactoutcl');
+    setTimeout(function(){document.getElementById('overlayEditContactId').classList.add('d-none')}, 999);
+    // document.getElementById('overlayEditContactId').classList.remove('overlayAddContactincl');
+    // document.getElementById('overlayEditContactId').classList.add('overlayAddContactoutcl');
+    // setTimeout(function(){document.getElementById('overlayEditContactId').classList.add('d-none')}, 999);
+    // document.getElementById('overlayEditContactId').classList.add('d-none');
 }
 
 // NOTE -- Overlaycard: edit contact
@@ -47,12 +57,14 @@ function EditSaveContact() {
     document.getElementById('overlayEditContactId').classList.add('d-none');
 }
 
-function EditContactCancel() {
-    document.getElementById('overlayAddContactId').innerHTML += generateOverlayEditContactHTML();
-    document.getElementById('overlayEditContactId').classList.remove('overlayAddContactincl');
-    document.getElementById('overlayEditContactId').classList.add('overlayAddContactoutcl');
-    setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 999);
-}
+
+
+// function EditContactCancel() {
+//     // document.getElementById('overlayAddContactId').innerHTML += generateOverlayEditContactHTML();
+//     document.getElementById('overlayEditContactId').classList.remove('overlayAddContactincl');
+//     document.getElementById('overlayEditContactId').classList.add('overlayAddContactoutcl');
+//     setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 999);
+// }
 
 // NOTE -- Show contact
 

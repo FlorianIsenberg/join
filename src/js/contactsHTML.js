@@ -142,7 +142,7 @@ function generateOverlayEditContactHTML(showId) {
     </div>
 
     <div id="addcontactrightId" class="addcontactrightcl">
-        <div id="closecrossId" class="closecrosscl"  onclick="EditContactCancel()">
+        <div id="closecrossId" class="closecrosscl"  onclick="EditContactCancel2()">
             <!-- NOTE -- Close Cross -->
             <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22.9616 7.65393L7.65388 22.9617" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
@@ -266,26 +266,7 @@ function generateShowRegisterHTML() {
     return /*html*/ `
     <!-- <div id="showRegisterId" class="showRegistercl">Alphabet</div> -->
     <div id="contactleftframeV1Id" class="contactleftframeV1cl">
-        <!-- <div id="showContactsDataId" class="showContactsDatacl">
-            <div id="elipse5Id" class="elipse5cl"></div>
-            <div id="datacontainerId" class="datacontainercl">
-                <div id="showContactsnameId" class="showContactsnamecl"></div>
-                <div id="showContactsmailId" class="showContactsmailcl"></div>  
-            </div>
-        </div> -->
+
     </div>
     `;
-
 }
-
-// function generateShowContactsHTML() {
-//     return /*html*/ `
-//     <div id="showContactsId" class="showContactscl">
-//         <div id="showContactsAvatarId" class="showContactsAvatarcl"></div>
-//         <div id="showContactsDataId" class="showContactsDatacl">
-//             <!-- <div id="showContactsDataNameId" class="showContactsDataNamecl">Name</div>
-//             <div id="showContactsDataMailId" class="showContactsDataMailcl">mailAdresse</div> -->
-//         </div>
-//     </div>
-//     `;
-// }
