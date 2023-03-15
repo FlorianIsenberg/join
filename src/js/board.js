@@ -69,6 +69,7 @@ let currentDraggedElement;
 let prios = [];
 let newPriority; 
 let searchedTaskArray = [];
+let noteIds = ['note1', 'note2', 'note3', 'note4','note6', 'note7','note8','note9','note10',];
 
 function updateHTML() {
     let todo = todos.filter(t => t['category'] == 'todo');
@@ -107,7 +108,7 @@ function startDragging(id) {
 
 function generateTodoHTML(element) {
     return `
-    <div class="notesmain" id="note1" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit(${element['id']})">
+    <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit(${element['id']})">
     <div class="notesection">
     <span class="departmentdesign">${element.department}</span>
     
@@ -219,7 +220,7 @@ function opentoDoForEdit(id) {
 
 function openNote() {
     document.getElementById('note1').classList.remove('hide');
-    document.getElementById('popupnoteid').classList.add('hide');
+    //document.getElementById('popupnoteid').classList.add('hide');
     document.getElementById('popupnoteid').classList.remove('hide');
 }
 
@@ -280,25 +281,25 @@ function addTask() {
                                 <div class="inputfieldandimage"id="opencategory">
                                     <select class="categoryinput">
                                         <option disabled selected class="categoryinput"id="categoryinput">Select task category</option>
-                                        <option>New category <input type="checkbox" id="checkboxcategory1"></option>
-                                        <option>Sales<img src="" ></option>
-                                        <option>Backoffice</option>
-                                        <option>Marketing</option>
-                                        <option>Design</option>
-                                        <option>Media</option>
+                                        <option>New category<input type="checkbox" id="checkboxcategory1"></option>
+                                        <option>Sales<input type="checkbox" id="checkboxcategory2"></option>
+                                        <option>Backoffice<input type="checkbox" id="checkboxcategory3"></option>
+                                        <option>Marketing<input type="checkbox" id="checkboxcategory4"></option>
+                                        <option>Design<input type="checkbox" id="checkboxcategory5"></option>
+                                        <option>Media<input type="checkbox" id="checkboxcategory6"></option>
                                         </select>
                                 </div> 
                                 <span class="assignedto">Assigned to</span>
                                     <div class="inputfieldandimage" id="inputselection">
                                         <select class="dropdownassignedto">
                                             <option disabled selected>Select contacts to assign</option>
-                                            <option>You</option> 
-                                            <option>Anton Meyer</option>
-                                            <option>Anja Schulz</option>
-                                            <option>David Eisenberg</option>
-                                            <option>Eva Fischer</option>
-                                            <option>Marius Müller</option>
-                                            <option>Peter Jackson</option>
+                                            <option>You<input type="checkbox" id="checkboxassignetto1"></option> 
+                                            <option>Anton Meyer<input type="checkbox" id="checkboxassignetto2"></option>
+                                            <option>Anja Schulz<input type="checkbox" id="checkboxassignetto3"></option>
+                                            <option>David Eisenberg<input type="checkbox" id="checkboxassignetto4"></option>
+                                            <option>Eva Fischer<input type="checkbox" id="checkboxassignetto5"></option>
+                                            <option>Marius Müller<input type="checkbox" id="checkboxassignetto6"></option>
+                                            <option>Peter Jackson<input type="checkbox" id="checkboxassignetto7"></option>
                                             </select>
                                         </div>              
                 </div>
@@ -413,12 +414,12 @@ function generateNotePagetwoHTML(element) {
             <div class="inputfieldandimage" id="inputselection">
               <select class="dropdownassignedto" id="assignedto">
                 <option disabled>Select contacts to assign</option>
-                <option ${todos.assignedTo}>Anton Meyer</option>
-                <option ${todos.assignedTo}>Anja Schulz</option>
-                <option ${todos.assignedTo}>David Eisenberg</option>
-                <option ${todos.assignedTo}>Eva Fischer</option>
-                <option ${todos.assignedTo}>Marius Müller</option>
-                <option ${todos.assignedTo}>Peter Jackson</option>
+                <option>Anton Meyer</option>
+                <option>Anja Schulz</option>
+                <option>David Eisenberg</option>
+                <option>Eva Fischer</option>
+                <option>Marius Müller</option>
+                <option>Peter Jackson</option>
               </select>
             </div>
                     <div class="iconsfromusers"></div>
@@ -428,3 +429,15 @@ function generateNotePagetwoHTML(element) {
             </div>`;
 }
 
+let note = document.getElementById('id');
+noteIds.forEach(id => {
+    const element = document.getElementById(id);
+  
+  note.addEventListener('dragstart', () => {
+    note.classList.add('dragging');
+  });
+
+  note.addEventListener('dragend', () => {
+    note.classList.remove('dragging');
+  });
+});
