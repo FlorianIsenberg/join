@@ -12,11 +12,11 @@ function logIn() {
     (u) => u.email == email.value && u.password == password.value
   );
   if (user) {
-    window.location.href = "../../summary-complete.html";
+    window.location.href = "/join/summary-complete.html";
   }
   greet();
 }
 
 function guestLogIn() {
-  window.location.href = "../../summary-complete.html";
+  window.location.href = "/join/summary-complete.html";
 }

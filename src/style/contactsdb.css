@@ -1,0 +1,194 @@
+.contactleftframeV1cl {
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    
+    margin-left: 2em;
+    padding: 0px;
+    width: 335px;
+    max-height: 779px;
+    /* left: 1.5em; */
+    /* top: 5px; */
+    padding-right: 4em;
+    background: #FFFFFF;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.contactleftframeV1cl::-webkit-scrollbar-track {
+    background: white;
+}
+
+.contactleftframeV1cl::-webkit-scrollbar-thumb {
+    border: 1px solid white;
+}
+
+.alphaA, .alphaB, .alphaC,
+.alphaD, .alphaE, .alphaF,
+.alphaG, .alphaH, .alphaI,
+.alphaJ, .alphaK, .alphaL,
+.alphaM, .alphaN, .alphaO,
+.alphaP, .alphaQ, .alphaR,
+.alphaS, .alphaT, .alphaU,
+.alphaV, .alphaW, .alphaX,
+.alphaY, .alphaZ, .alphaB {
+    /* display: flex;
+    justify-content: flex-start; */
+    width: 323px;
+    height: 20px;
+    margin-left: 5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-weight: 400;
+    color: #000000;
+}
+
+.alphafootcl {
+    border: 1px solid #D1D1D1;
+    border-radius: 3px;
+    width: 323px;
+    height: 0px;
+    margin-left: 2em;
+}
+
+.OldshowContactscl {
+    /* contact name v1 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 15px 25px;
+    gap: 35px;
+    width: 357px;
+    height: 79px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+/* .showContactsAvatarcl {
+    box-sizing: border-box;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    left: 0px;
+    top: 0px;
+    background: #FF7A00;
+    border: 1px solid #FFFFFF;   
+    } */
+
+
+
+.elipse5cl {
+    /* Ellipse 5 */
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 1em;
+    margin-left: 0px;
+    margin-right: 2em;
+    padding-top: .4em;
+    text-align: center;       
+    font-size: .8em;
+    width: 42px;
+    height: 42px;
+    left: 0em;
+    color: white;
+    border-radius: 100%;
+    /* background: #FF7A00; */
+    border: 1px solid #FFFFFF;
+}
+
+/* .elipse5cl:hover {
+
+} */
+
+.elipse5 span {
+    position: relative;
+    color: white;
+}
+
+.showContactsnamecl {
+       /* Anton Mayer */
+    width: 161px;
+    height: 1em;
+    margin-top: 1em;
+    /* Version 2/t6 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
+    display: flex;
+    align-items: center;
+    color: #000000;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.showContactsmailcl {
+      /* antom@gmail.com */
+    width: 169px;
+    height: 19px;
+    /* Version 2/body */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+    display: flex;
+    align-items: center;
+    color: #007CEE;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.showContactsDatacl {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10%;
+    /* padding-left: 3em;
+    padding-right: 3em;
+    padding-bottom: .5em; */
+    /* border: 1px solid blue; */
+    cursor: pointer;
+}
+
+.showContactsDatacl:hover {
+    /* display: flex;
+    flex-direction: row; */
+    /* position: relative; */
+    top: .5em;
+    border-radius: 10px;
+    width: 330px;
+    height: 4em;
+    left: 2em;
+    /* height: 2em; */
+    /* margin-top: 1em; */
+    margin-left: 2em;  
+    /* padding-left: 3em; */
+    /* padding: 5px 5px; */
+    /* gap: 35px; */
+
+    cursor: pointer;
+    
+    background-color: #FF7A00;
+}
+
+/* .contactleftframeV1Id:hover {
+    background-color: #FF7A00;
+} */

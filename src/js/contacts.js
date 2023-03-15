@@ -1,65 +1,3 @@
-// NOTE -- smallest_backend_ever
-
-// setURL('http://gruppe-07i.developerakademie.net/smallest_backend_ever')
-// let users = [];
-
-// async function init() {
-//     await downloadFromServer();
-//     users = JSON.parse(backend.getItem('users')) || [];
-// }
-
-// NOTE -- Save, load, delete Example
-
-// let users = [];
-
-// Save
-// Add a user with this function:
-
-// function addUser() {
-//     users.push('John');
-//     backend.setItem('users', JSON.stringify(users));
-// }
-
-// If you want to wait for the request you can add the await keyword as well:
-// Add a user with this function:
-
-// async function addUser() {
-//     users.push('John');
-//     await backend.setItem('users', JSON.stringify(users));
-// }
-
-// Load
-// Fill your empty array with users from the Server
-
-// async function init() {
-//     await downloadFromServer();
-//     users = JSON.parse(backend.getItem('users')) || [];
-// }
-
-// Delete
-// Delete all users from your array:
-
-// function deleteUser(name) {
-//   await backend.deleteItem('users');
-// }
-
-// NOTE -- close Card by pressing byside
-
-// function doNotClose(event){
-//     event.stopPropagation();//popup nur ausserhalb schließbar
-// }
-
-
-// function openPopup(i) {
-//     document.getElementById(`popupContainerId`).classList.remove('hide');
-//     overlayAddContact();
-// }
-
-
-// function closePopup() {
-//     document.getElementById(`popupContainerId`).classList.add('hide');
-// }
-
 
 // NOTE -- Default page content
 
@@ -75,6 +13,11 @@ function builddefaultcontactpage() {
 
 function overlayAddContact() {
     document.getElementById('overlayAddContactId').innerHTML += generateOverlayAddContactHTML();
+
+     document.getElementById('addcontactinputnameId').value = '';
+     document.getElementById('addcontactinputemailId').value = '';
+     document.getElementById('addcontactinputphoneId').value = '';
+
     document.getElementById('overlayAddContactId').classList.remove('overlayAddContactoutcl');
     document.getElementById('overlayAddContactId').classList.add('overlayAddContactincl');
     document.getElementById('overlayAddContactId').classList.remove('d-none');
@@ -125,24 +68,25 @@ function contactSuccesButton() {
 function AddCreateContact() {
     document.getElementById('showSuccessbuttonId').innerHTML += generateSuccessbuttonHTML();
     document.getElementById('showSuccessbuttonId').classList.remove('d-none');
+    AddContactCancel();
     document.getElementById('showSuccessbuttonId').classList.remove('showSuccessbuttonoutcl');
     document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonincl');
-    setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 1000);
-    setTimeout(contactShowContact(), 1000);
+
+    // setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 1000);
+    // setTimeout(contactShowContact(), 1000);  // PRÜFEN !!
     
-    setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonincl')}, 1000);
+    // setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonincl')}, 1000);
 
     setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('showSuccessbuttonoutcl')}, 2000);
 
-    setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('d-none')}, 2250);
+    setTimeout(function(){document.getElementById('showSuccessbuttonId').classList.add('d-none')}, 2150);
 }
 
 function showIndexContacts() {
-    
+
     document.getElementById('contactleftframeId').innerHTML += generateShowRegisterHTML();
-    showContacts();
+    // showContacts();
 }
 
-function showContacts() {
-    document.getElementById('contactleftframeId').innerHTML += generateShowContactsHTML();
-}
+
+

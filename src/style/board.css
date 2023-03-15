@@ -10,7 +10,6 @@ body {
     /* width: 1440px; */
     /* height: 324px; */
     height: 200px;
-    
 }
 
 .boardsection {
@@ -18,9 +17,8 @@ body {
     justify-content: center;
     width: 1145px;
     height: 225px;
-   padding-left: 235px;
+    padding-left: 204px;
     background: #F6F7F8;
-
 }
 
 .tboard {
@@ -61,6 +59,10 @@ body {
 
 }
 
+.datecalendarsymbol {
+    cursor: pointer;
+}
+
 .findtask {
     border: none;
     background: #F5F5F5;
@@ -85,7 +87,7 @@ body {
     border-radius: 0px;
     display: flex;
     align-items: center;
-    gap:15px;
+    gap: 15px;
 }
 
 .todoplus {
@@ -97,7 +99,7 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-left: 40px;
-    z-index: 232;
+    z-index: 10;
 }
 
 .progressbar {
@@ -109,10 +111,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 170px;
-
+    padding-left: 70px;
 }
 
+.dragging {
+    transform: rotate(10deg);
+    cursor: move;
+    opacity: 0.5;
+}
 
 .draganddropsection {
     display: flex;
@@ -120,9 +126,9 @@ body {
     justify-content: center;
     align-items: flex-start;
     gap: 26px;
-    width: 1500px;
-    z-index:231;
-    padding-left: 195px;
+    width: 1400px;
+    z-index: 231;
+    padding-left: 140px;
 }
 
 .plusbtnblack {
@@ -142,7 +148,7 @@ body {
     background: #FFFFFF;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 30px;
+    padding-top: 14px;
     padding-bottom: 10px;
     box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
     border-radius: 30px;
@@ -157,6 +163,19 @@ body {
 .noteheadline {
     font-size: 16px;
     font-family: 'Inter';
+}
+
+.departmentdesign {
+    width: 104px;
+    height: 27px;
+    background-color: #FF7A00;
+    color: white;
+    border-radius: 8px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-color: rgba(0, 0, 0, 0.8)
 }
 
 .inputnote {
@@ -228,12 +247,12 @@ body {
     display: flex;
     flex-direction: column;
     height: 1020px;
-    width:250px;
+    width: 250px;
     margin-left: 30px;
 }
 
 .dropdowncontainer-highlight {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .tmodifythecontents {
@@ -245,10 +264,9 @@ body {
 }
 
 .iconsinicons {
-z-index: 232;
-margin-left: -8px;
+    z-index: 30;
+    margin-left: -8px;
 }
-
 
 .overlayAddContactincl {
     animation: toleft 1s linear;
@@ -259,17 +277,13 @@ margin-left: -8px;
 }
 
 .overlayAddContactcl {
-    /* border: 1px solid black; */
     top: 213px;
     left: 354px;
     position: relative;
     width: 1212px;
     height: 594px;
     background: #FFFFFF;
-    /* background: #FFFFFF; */
     border-radius: 30px;
-    /* border-bottom-right-radius: 30px; */
-    /* animation: toleft 1s linear; */
 }
 
 
@@ -293,38 +307,220 @@ margin-left: -8px;
     }
 }
 
-.showSuccessbuttonincl {
-    animation: toup 1s ease-in;
-}
-
-.showSuccessbuttonoutcl {
-    animation: todown 1s linear;
-}
-
-@keyframes toup {
-    0% {
-        transform: translate(0px,0px)
-    }
-
-    100% {
-        transform: translate(0px,-599px);
-    }
-}
-
-@keyframes todown {
-    0% {
-        transform: translate(0px, 0px)
-    }
-
-    100% {
-        transform: translate(0px, 1099px);
-    }
-}
-
 .hide {
     display: none;
 }
 
 .d-none {
     display: none;
+}
+
+.closebuttonx {
+    width: 25px;
+    height: 25px;
+    padding-left: 500px;
+}
+
+.taskcontainer {
+    width: 623px;
+    height: 824px;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+}
+
+.containeropennote {
+    justify-content: center;
+    padding-left: 80px;
+    padding-right: 30px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    height: 1005px;
+    background-color: #FFFFFF;
+}
+
+.titleinput {
+    margin-top: 8px;
+    margin-bottom: 34px;
+}
+
+.description {
+    padding-bottom: 8px;
+}
+
+.okbutton {
+    margin-left: 430px;
+    margin-top: 30px;
+}
+
+.closebuttonx {
+    margin-top: 20px;
+}
+
+.assignedto {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+}
+
+.iconsfromusers {
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.totalmastercontainer {
+    width: 100%;
+    height: 100%;
+}
+
+.mastertaskcontainer {
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: #FFFFFF;
+    top: 184px;
+    left: 500px;
+    animation: toleft 255ms linear;
+    border-radius: 30px;
+    z-index: 100;
+    flex-direction: column;
+}
+
+.popupnote {
+    width: 623px;
+    height: 824px;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    position: absolute;
+    top: 184px;
+    left: 500px;
+    z-index: 99;
+    flex-direction: column;
+    display: flex;
+}
+
+.popupnotemastercontainer {
+    display: none;
+}
+
+.show {
+    display: flex;
+
+}
+
+.closenotebuttonx {
+    width: 25px;
+    height: 25px;
+    padding-left: 550px;
+    padding-top: 30px;
+}
+
+.tmodifythecontents2 {
+    font-family: 'Inter';
+    font-size: 21px;
+    font-weight: 400;
+    width: 518px;
+    height: 50px;
+    padding-left: 60px;
+}
+
+.labelimage {
+    width: 142px;
+    height: 40px;
+    padding-left: 60px;
+}
+
+.noteheadline2 {
+    width: 523px;
+    height: 106px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+    color: #2A3647;
+    padding-left: 60px;
+}
+
+.duedate2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 60px;
+    font-size: 21px;
+    font-weight: 700px;
+    padding-right: 30px;
+    padding-bottom: 29px;
+}
+
+
+.prio2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 60px;
+    font-size: 21px;
+    font-weight: 700px;
+    padding-right: 30px;
+    padding-bottom: 29px;
+}
+
+.urgentpriority2 {
+    width: 131px;
+    height: 33px;
+}
+
+.assignedto2 {
+    font-weight: 700;
+    font-size: 21px;
+    padding-left: 60px;
+}
+
+.chosenuser {
+    display: flex;
+}
+
+.usericonsnote {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 50px;
+    padding-top: 20px;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+}
+
+.names {
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+    padding-top: 32px;
+    align-items: center;
+    padding-left: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 30px;
+    font-size: 21px;
+    font-family: 'Inter';
+}
+
+.urgentpriority2 {
+    width: 131px;
+    height: 33px;
+}
+
+.noteheadline2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+}
+
+.editbutton {
+    padding-left: 520px;
+    padding-bottom: 20px;
+    height: 57px;
+    width: 57px;
 }

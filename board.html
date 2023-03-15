@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board</title>
-    
+
     <link rel="stylesheet" href="src/style/board.css">
     <link rel="stylesheet" href="src/style/addtask.css">
     <link rel="stylesheet" type="text/css" href="./src/style/fonts.css">
@@ -13,82 +14,34 @@
     <script language="JavaScript" type="text/javascript" src="src/js/board.js"></script>
     <link rel="icon" type="image/svg+xml" href="src/img/icons/favicon.svg" sizes="any">
     <link rel="icon" type="image/png" href="src/img/icons/favicon.ico">
-
+    <script language="JavaScript" text="text/javascript" src="src/js/referencePage.js"></script>
     <link rel="stylesheet" type="text/css" href="src/style/style-header.css">
-   
+
 
 </head>
+
 <body onload="updateHTML()">
-    <div w3-include-html="header.html"></div>
-    <div class="mastercontainer hide" id="mastercontainerid">
-        <h1 class="taddtask">Add Task</h1>
-            <div class="container-selections">
-                <div class="container-left">
-                    <span class="title">Title</span>
-                    <input class="titleinput" placeholder="Enter a title" text="text" id="titleinput">
-                    <span class="description">Description</span>
-                        <div class="descriptionandimage">
-                            <input class="descriptioninput" placeholder="Enter a Description" text="text" id="descriptioninput">
-                            <img src="./src/img/icons/Recurso11.svg" alt="three lines drop down" class="threelinesdropdown">
+    <div w3-include-html="./src/templates/header.html"></div>
+    <div class="totalmastercontainer" id="totalmastercontainerid">
+        <div class="mastercontainer hide" id="mastercontainerid">
+        </div>
+
+
+        <div class="maincontainer" id="maincontainer">
+            <div class="boardsection">
+                <div class="insertboard">
+                    <span class="tboard">
+                        <img src="./src/img/icons/Board.svg" alt="Board"></span>
+                    <div class="tasks">
+                        <div class="inputfieldandicons">
+                            <input class="findtask" id="taskfield" type="text" placeholder="Find Task" \>
+                            <img src="./src/img/icons/Vector3line.svg" alt="verticalline">
+                            <img src="./src/img/icons/icon-magnifying-glass.svg" alt="magnifiying class">
                         </div>
-                            <span class="category">Category</span>
-                                <div class="inputfieldandimage" onclick="openCategory()" type="dropdowncontainer" id="opencategory">
-                                <input class="categoryinput" placeholder="Select task category" text="text" id="categoryinput">
-                                <img src="./src/img/icons/Vector2blackarrowdown.svg" alt="black arrow down" class="blackarrowdown">
-                                </div> 
-                                <span class="assignedto">Assigned to</span>
-                                    <div class="inputfieldandimage">   
-                                    <input class="assignedinput" placeholder="Select contacts to assign" text="text" id="assignedinput">
-                                    <img src="./src/img/icons/Vector2blackarrowdown.svg" alt="black arrow down" class="blackarrowdown">
-                                    </div>
-                </div>
-                                        <img src="./src/img/icons/Vector4line.svg" alt="verticalline" class="verticalline">
-                <div class="container-right">
-                    <span class="duedate">Due date</span>
-                        <div class="dateinputandimage">
-                        <input class="dateinput" placeholder="dd/mm/yyyy" text="date" id="dateinput">
-                        <img src="./src/img/icons/Vectorkalender.svg" alt="datecalendarsymbol" class="datecalendarsymbol">
-                        </div>
-                            <div class="Prioritys">
-                                <span class="prio">Prio</span>
-                            </div>
-                                <div class="prio-selections">
-                                    <img src="./src/img/icons/urgent.svg" alt="urgent priority symbol" onclick="urgentButtonChange()" class="urgentpriority" id="urgent">
-                                    <img src="./src/img/icons/medium.svg" alt="medium priority symbol" onclick="mediumButtonChange()" class="mediumpriority" id="medium">  
-                                    <img src="./src/img/icons/low.svg" alt="low priority symbol" onclick="lowButtonChange()" class="lowpriority" id="low">   
-                                </div>
-                                <div class="subtasks-selection">
-                                    <span class="subtasktitle">Subtasks</span>
-                                </div>
-                                    <div class="addnewsubtaskinputandimage">
-                                        <input text="text" placeholder="Add new subtask" class="subtask" id="subtask">
-                                        <img src="./src/img/icons/Vectorplusblack.svg" alt="blackplusbutton" class="blackplusbuttonsubtasks">
-                                    </div>
-                                    <div class="rectangleandsubtask1">
-                                        <img src="./src/img/icons/Rectangle5.svg" alt="rectangle">
-                                        <span class="subtask1">Subtask 1</span>
-                                    </div>
-                                        <div class="clearandcreatetask">
-                                            <img src="./src/img/icons/clearx.svg" alt="clear x button" onclick="clearTask()" id="clear" class="clearxbutton">
-                                            <img src="./src/img/icons/createtaskbutton.svg" alt="button create task">
-                                        </div>
-                </div>
-            </div>
-    </div>
-    <div class="maincontainer" id="maincontainer">
-        <div class="boardsection">
-            <div class="insertboard">
-            <span class="tboard">
-            <img src="./src/img/icons/Board.svg" alt="Board"></span>
-                <div class="tasks">
-                    <div class="inputfieldandicons">
-                    <input class="findtask" id="taskfield" type="text" placeholder="Find Task"\>
-                    <img src="./src/img/icons/Vector3line.svg" alt="verticalline">
-                    <img src="./src/img/icons/icon-magnifying-glass.svg" alt="magnifiying class">
-                    </div>
                         <div class="addtaskarea">
-                        <img src="./src/img/icons/addtask.svg"onclick="addTask()" class="btnaddtask" id="addTaskButton">
-                        </div>    
+                            <img src="./src/img/icons/addtask.svg" onclick="addTask()" class="btnaddtask"
+                                id="addTaskButton">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -96,150 +49,182 @@
         <div class="severaltodosection">
             <div class="todoplus">
                 <span class="progressbar">
-                <img class="progresssections" src="src/img/icons/To do.svg" alt="To Do"></span>
-                <img class="plusbtnblack" onclick="openNewTask()" id="opennewtask"1 src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
+                    <img class="progresssections" src="src/img/icons/To do.svg" alt="To Do"></span>
+                <img class="plusbtnblack" onclick="openNewTask()" id="opennewtask" 1
+                    src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
             </div>
             <div class="todoplus">
                 <span class="progressbar">
-                <img class="progresssections" src="./src/img/icons/Inprogress.svg" alt="In progress"></span>
-                <img class="plusbtnblack" onclick="openNewTask()" id="opennewtask2" src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
+                    <img class="progresssections" src="./src/img/icons/Inprogress.svg" alt="In progress"></span>
+                <img class="plusbtnblack" onclick="openNewTask()" id="opennewtask2"
+                    src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
             </div>
             <div class="todoplus">
                 <span class="progressbar">
-                <img class="progresssections" src="./src/img/icons/AwaitingFeedback.svg" alt="Awaiting Feedback"></span>
-                <img class="plusbtnblack" onclick="openNewTask()" id="opennewtask3" src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
+                    <img class="progresssections" src="./src/img/icons/AwaitingFeedback.svg"
+                        alt="Awaiting Feedback"></span>
+                <img class="plusbtnblack" onclick="openNewTask()" id="opennewtask3"
+                    src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
             </div>
             <div class="todoplus">
                 <span class="progressbar">
-                <img class="progresssections" src="./src/img/icons/Done.svg" alt="Done"> </span>
-                <img class="plusbtnblack" onclick="openNewTask()" id="opennewtask4" src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
+                    <img class="progresssections" src="./src/img/icons/Done.svg" alt="Done"> </span>
+                <img class="plusbtnblack" onclick="openNewTask()" id="opennewtask4"
+                    src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
             </div>
         </div>
-        <div class="draganddropsection">
+        <div class="draganddropsection" id="draganddropsectionid">
             <div class="todoboard">
-                <div class="dropdowncontainer drag-area" id="todo" class="drag-area" ondrop="moveTo('todo')" ondragover="allowDrop(event)" ondragenter="highlight('todo')" ondragleave="removeHighlight('todo')">
-                    
-                <div class="notesmain" id="note1" draggable="true" ondragstart="startDragging(0)">
-                    <div class="notesection">
-                    <img src="./src/img/icons/design.svg" alt="Designlabel">
-                    </div>
-                    <div class="noteheadlinecontainer">
-                        <h2 class="noteheadline">Website redesign</h2>
-                    </div>
+                <div class="dropdowncontainer drag-area" id="todo" class="drag-area" ondrop="moveTo('todo')"
+                    ondragover="allowDrop(event)" ondragenter="highlight('todo')" ondragleave="removeHighlight('todo')">
+
+                    <div class="notesmain" id="note1" draggable="true" ondragstart="startDragging(0)"
+                        onclick="openNote()">
+                        <div class="notesection">
+                            <img src="./src/img/icons/design.svg" alt="Designlabel">
+                        </div>
+                        <div class="noteheadlinecontainer">
+                            <h2 class="noteheadline">Website redesign</h2>
+                        </div>
                         <div class="note">
-                            <span class="tmodifythecontents">Modify the contents of the main website..</span> 
-                                <div class="loadingbarandspan">
-                                    <div class="progressloadingbar">
-                                        <img class="progressloadingbarimage" src="./src/img/icons/progress.svg" alt="Progressbar">
-                                        <span class="halfdone">1/2 Done</span>
-                                    </div>    
-                    </div>
-                </div>
+                            <span class="tmodifythecontents">Modify the contents of the main website..</span>
+                            <div class="loadingbarandspan">
+                                <div class="progressloadingbar">
+                                    <img class="progressloadingbarimage" src="./src/img/icons/progress.svg"
+                                        alt="Progressbar">
+                                    <span class="halfdone">1/2 Done</span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="usericons">
                             <img src="./src/img/icons/sm.svg" alt="User SM">
                             <img src="./src/img/icons/mv.svg" alt="User MV" class="iconsinicons">
                             <img src="./src/img/icons/ef.svg" alt="User EF" class="iconsinicons">
-                            <img class="greenarrowdown" src="./src/img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
+                            <img class="greenarrowdown" src="./src/img/icons/greenarrowsdown.svg"
+                                alt="doublea arrow green down">
                         </div>
+                    </div>
                 </div>
-                    </div>
-                <div class="dropdowncontainer drag-area" id="inprogress" ondrop="moveTo('inprogress')" ondragover="allowDrop(event)" ondragenter="highlight('inprogress')" ondragleave="removeHighlight('inprogress')">
-                    
-                    <div class="notesmain" id="note2" draggable="true" ondragstart="startDragging(1)">
+                <div class="dropdowncontainer drag-area" id="inprogress" ondrop="moveTo('inprogress')"
+                    ondragover="allowDrop(event)" ondragenter="highlight('inprogress')"
+                    ondragleave="removeHighlight('inprogress')">
+
+                    <div class="notesmain" id="note2" onclick="openNote()" draggable="true"
+                        ondragstart="startDragging(1)">
                         <div class="notesection">
-                        <img src="./src/img/icons/sales.svg" alt="Saleslabel">
-                    </div>
-                            <div class="noteheadlinecontainer">
+                            <img src="./src/img/icons/sales.svg" alt="Saleslabel">
+                        </div>
+                        <div class="noteheadlinecontainer">
                             <h2 class="noteheadline">Call potential clients</h2>
                         </div>
-                            <div class="note">
-                                <span class="tmodifythecontents">Make the product presentation to prospective buyers</span> 
-                                    <div class="loadingbarandspan">
-                                        <div class="progressloadingbar">
-                                            
-                                        </div>    
-                        </div>
-                    </div>
-                            <div class="usericons">
-                                <img src="./src/img/icons/as.svg" alt="User AS">
-                                <img src="./src/img/icons/de.svg" alt="User DE" class="iconsinicons">
-                                <img src="./src/img/icons/plus2.svg" alt="Plus 2" class="iconsinicons">
-                                <img class="redarrowup" src="./src/img/icons/arrowsuporange.svg" alt="doublea arrow green down">
+                        <div class="note">
+                            <span class="tmodifythecontents">Make the product presentation to prospective buyers</span>
+                            <div class="loadingbarandspan">
+                                <div class="progressloadingbar">
+
+                                </div>
                             </div>
-                    </div>
-                </div>   
-                <div class="dropdowncontainer drag-area" id="awaitingfeedback" ondrop="moveTo('awaitingfeedback')" ondragover="allowDrop(event)" ondragenter="highlight('awaitingfeedback')" ondragleave="removeHighlight('awaitingfeedback')">
-                    
-                    <div class="notesmain" id="note3" draggable="true" ondragstart="startDragging(2)">
-                        <div class="notesection">
-                        <img src="./src/img/icons/backoffice.svg" alt="Backofficelabel">
-                    </div>
-                            <div class="noteheadlinecontainer">
-                            <h2 class="noteheadline">Accounting invoices</h2>
                         </div>
-                            <div class="note">
-                                <span class="tmodifythecontents">Write open invoices for customer</span> 
-                                    <div class="loadingbarandspan">
-                                        <div class="progressloadingbar">
-                                        </div>    
+                        <div class="usericons">
+                            <img src="./src/img/icons/as.svg" alt="User AS">
+                            <img src="./src/img/icons/de.svg" alt="User DE" class="iconsinicons">
+                            <img src="./src/img/icons/plus2.svg" alt="Plus 2" class="iconsinicons">
+                            <img class="redarrowup" src="./src/img/icons/arrowsuporange.svg"
+                                alt="doublea arrow green down">
                         </div>
-                    </div>
-                            <div class="usericons">
-                                <img src="./src/img/icons/mb.svg" alt="User MB">
-                                <img src="./src/img/icons/am.svg" alt="User AM" class="iconsinicons">
-                                <img src="./src/img/icons/plus3.svg" alt="Plus 3" class="iconsinicons">
-                                <img class="yellowsum" src="./src/img/icons/sumyellow.svg" alt="doublea arrow green down">
-                            </div>
-                    </div>
-                    <div class="notesmain" id="note4" draggable="true" ondragstart="startDragging(3)">
-                        <div class="notesection">
-                        <img src="./src/img/icons/media.svg" alt=">Medialabel">
-                    </div>
-                            <div class="noteheadlinecontainer">
-                            <h2 class="noteheadline">Video cut</h2>
-                        </div>
-                            <div class="note">
-                                <span class="tmodifythecontents">Edit the new company video</span> 
-                                    <div class="loadingbarandspan">
-                                        <div class="progressloadingbar">
-                                            
-                                        </div>    
-                        </div>
-                    </div>
-                            <div class="usericons">
-                                <img src="./src/img/icons/hk.svg" alt="User HK">
-        
-                                <img class="yellowsum2" src="./src/img/icons/sumyellow.svg" alt="Summary icon yellow">
-                            </div>
                     </div>
                 </div>
-                <div class="dropdowncontainer drag-area" id="done" ondrop="moveTo('done')" ondragover="allowDrop(event)" ondragenter="highlight('done')" ondragleave="removeHighlight('done')">
-                    
-                    <div class="notesmain" id="note5" draggable="true" ondragstart="startDragging(4)">
+                <div class="dropdowncontainer drag-area" id="awaitingfeedback" ondrop="moveTo('awaitingfeedback')"
+                    ondragover="allowDrop(event)" ondragenter="highlight('awaitingfeedback')"
+                    ondragleave="removeHighlight('awaitingfeedback')">
+
+                    <div class="notesmain" id="note3" onclick="openNote()" draggable="true"
+                        ondragstart="startDragging(2)">
                         <div class="notesection">
-                        <img src="./src/img/icons/marketing.svg" alt="Marketinglabel">
+                            <img src="./src/img/icons/backoffice.svg" alt="Backofficelabel">
+                        </div>
+                        <div class="noteheadlinecontainer">
+                            <h2 class="noteheadline">Accounting invoices</h2>
+                        </div>
+                        <div class="note">
+                            <span class="tmodifythecontents">Write open invoices for customer</span>
+                            <div class="loadingbarandspan">
+                                <div class="progressloadingbar">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="usericons">
+                            <img src="./src/img/icons/mb.svg" alt="User MB">
+                            <img src="./src/img/icons/am.svg" alt="User AM" class="iconsinicons">
+                            <img src="./src/img/icons/plus3.svg" alt="Plus 3" class="iconsinicons">
+                            <img class="yellowsum" src="./src/img/icons/sumyellow.svg" alt="doublea arrow green down">
+                        </div>
                     </div>
-                            <div class="noteheadlinecontainer">
+                    <div class="notesmain" id="note4" onclick="openNote()" draggable="true"
+                        ondragstart="startDragging(3)">
+                        <div class="notesection">
+                            <img src="./src/img/icons/media.svg" alt=">Medialabel">
+                        </div>
+                        <div class="noteheadlinecontainer">
+                            <h2 class="noteheadline">Video cut</h2>
+                        </div>
+                        <div class="note">
+                            <span class="tmodifythecontents">Edit the new company video</span>
+                            <div class="loadingbarandspan">
+                                <div class="progressloadingbar">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="usericons">
+                            <img src="./src/img/icons/hk.svg" alt="User HK">
+
+                            <img class="yellowsum2" src="./src/img/icons/sumyellow.svg" alt="Summary icon yellow">
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdowncontainer drag-area" id="done" ondrop="moveTo('done')" ondragover="allowDrop(event)"
+                    ondragenter="highlight('done')" ondragleave="removeHighlight('done')">
+
+                    <div class="notesmain" id="note5" onclick="openNote()" draggable="true"
+                        ondragstart="startDragging(4)">
+                        <div class="notesection">
+                            <img src="./src/img/icons/marketing.svg" alt="Marketinglabel">
+                        </div>
+                        <div class="noteheadlinecontainer">
                             <h2 class="noteheadline">Social media strategy</h2>
                         </div>
-                            <div class="note">
-                                <span class="tmodifythecontents">Develop an ad campaign for brand positioning</span> 
-                                    <div class="loadingbarandspan">
-                                        <div class="progressloadingbar">
-                                            <img class="progressloadingbarimage" src="./src/img/icons/loadingbarcomplete.svg" alt="Progressbar">
-                                            <span class="halfdone">3/3 Done</span>
-                                        </div>    
-                        </div>
-                    </div>
-                            <div class="usericons">
-                                <img src="./src/img/icons/BZ.svg" alt="User BZ">
-                                <img src="./src/img/icons/RS.svg" alt="User RS" class="iconsinicons">
-                                <img class="greenarrowdown2" src="./src/img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
+                        <div class="note">
+                            <span class="tmodifythecontents">Develop an ad campaign for brand positioning</span>
+                            <div class="loadingbarandspan">
+                                <div class="progressloadingbar">
+                                    <img class="progressloadingbarimage" src="./src/img/icons/loadingbarcomplete.svg"
+                                        alt="Progressbar">
+                                    <span class="halfdone">3/3 Done</span>
+                                </div>
                             </div>
+                        </div>
+                        <div class="usericons">
+                            <img src="./src/img/icons/BZ.svg" alt="User BZ">
+                            <img src="./src/img/icons/RS.svg" alt="User RS" class="iconsinicons">
+                            <img class="greenarrowdown2" src="./src/img/icons/greenarrowsdown.svg"
+                                alt="doublea arrow green down">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-       
+        <div class="mastertaskcontainer" id="mastertaskcontainerid">
+            <div class="taskcontainer hide" id="taskcontainerid">
+            </div>    
+        </div>
+    </div>
+    <div class="popupnotemastercontainer" id="popupnotemastercontainerid">
+        <div class="popupnote" id="popupnoteid">
+        </div>
+    </div>
+
+    </div>
 </body>
+
 </html>
