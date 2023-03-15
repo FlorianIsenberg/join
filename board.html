@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="./src/style/fonts.css">
     <script language="JavaScript" type="text/javascript" src="mini_backend.js"></script>
     <script language="JavaScript" type="text/javascript" src="src/js/board.js"></script>
+    <script language="JavaScript" type="text/javascript" src="src/js/board2.js"></script>
     <link rel="icon" type="image/svg+xml" href="src/img/icons/favicon.svg" sizes="any">
     <link rel="icon" type="image/png" href="src/img/icons/favicon.ico">
     <script language="JavaScript" text="text/javascript" src="src/js/referencePage.js"></script>
@@ -34,7 +35,7 @@
                         <img src="./src/img/icons/Board.svg" alt="Board"></span>
                     <div class="tasks">
                         <div class="inputfieldandicons">
-                            <input class="findtask" id="taskfield" type="text" placeholder="Find Task" \>
+                            <input class="findtask" type="text" id="search" onkeydown="filterNames()" placeholder="Find Task" \>
                             <img src="./src/img/icons/Vector3line.svg" alt="verticalline">
                             <img src="./src/img/icons/icon-magnifying-glass.svg" alt="magnifiying class">
                         </div>
@@ -77,7 +78,7 @@
             <div class="todoboard">
                 <div class="dropdowncontainer drag-area" id="todo" class="drag-area" ondrop="moveTo('todo')"
                     ondragover="allowDrop(event)" ondragenter="highlight('todo')" ondragleave="removeHighlight('todo')">
-
+                    
                     <div class="notesmain" id="note1" draggable="true" ondragstart="startDragging(0)"
                         onclick="openNote()">
                         <div class="notesection">
@@ -223,7 +224,7 @@
         <div class="popupnote" id="popupnoteid">
         </div>
     </div>
-
+    <ul id="list"></ul>
     </div>
 </body>
 

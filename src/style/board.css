@@ -524,3 +524,74 @@ body {
     height: 57px;
     width: 57px;
 }
+
+label {
+    font-size: 21px;
+    
+}
+
+label:hover {
+    background-color: aliceblue;
+}
+
+.dropdownc {
+    font-size: 21px;
+    font-weight: 400;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+}
+
+.dropdownmenucategory {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.dropdownmenucategory {
+    width: 465px;
+    height: 130px;
+}
+.category {
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.onclickcategory {
+    height: 31px;
+    width: 131px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.new-category {
+    padding-left: 50px;
+}
+
+.checkbox1 {
+    margin-left:250px;
+}
+.checkbox2 {
+    margin-left:336px;
+}
+.checkbox3 {
+    margin-left:285px;
+}
+.checkbox4 {
+    margin-left:291px;
+}
+.checkbox5 {
+    margin-left:321px;
+}
+.checkbox6 {
+    margin-left:329px;
+}
+.checkbox7 {
+    margin-left:360px;
+}
+

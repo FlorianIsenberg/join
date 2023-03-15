@@ -26,21 +26,22 @@ body {
     
 }
 
-
-
 .container-selections {
     display: flex;
     padding-right: 256px;
     padding-bottom: 134px;
-   
-
 }
 
 .container-left {
     display: flex;
     flex-direction: column;
-   
     padding-left: 256px;
+}
+
+.container-right {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .title {
@@ -241,7 +242,6 @@ body {
     font-size: 21px;
     line-height: 120%;
     color: #000000;
-    padding-top: 20px;
 }
 
 .dateinput {
@@ -359,6 +359,7 @@ body {
 
 .rectangleandsubtask1 {
     padding-bottom: 20px;
+    padding-top: 10px;
 }
 
 .subtask1 {
@@ -373,7 +374,7 @@ body {
 
 .clearandcreatetask {
     display: flex;
-    padding-top: 10px;
+    padding-top: 160px;
     gap: 20px;
     padding-left: 130px;
     z-index: 300;
@@ -384,7 +385,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4em;
     position: absolute;
     background-color: #FFFFFF;
     width: 1154px;
