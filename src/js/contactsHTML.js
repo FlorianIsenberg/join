@@ -24,6 +24,7 @@ function generateContactHTML() {
     `;
 }
 
+
 // NOTE -- contact Add page overlay
 
 function generateOverlayAddContactHTML() { 
@@ -81,7 +82,6 @@ function generateOverlayAddContactHTML() {
         <!-- NOTE -- Input Fields -->
 
         <!-- Inputfields Frame 14 -->
-        <!-- <div id="addcontactrightmainId" class="addcontactrightmaincl"> -->
             <div id="addcontactrightinputfieldsId" class="addcontactrightinputfieldscl">
                 <div id="addcontactnameinputId" class="addcontactnameinputcl">
                     <input id="addcontactinputnameId" class="addcontactinputnamecl" required type="text" placeholder="Name">
@@ -93,10 +93,10 @@ function generateOverlayAddContactHTML() {
                     <input id="addcontactinputphoneId" class="addcontactinputphonecl" type="tel" placeholder="Phone">
                 </div>
             </div>
-
     </div>
 
-    <!-- NOTE -- Sub-buttons - cancel and create -->
+
+<!-- NOTE -- Sub-buttons - cancel and create  -->
 
     <div id="subbuttoncontainerId" class="subbuttoncontainercl">
         <div id="subbuttoncancelId" class="subbuttoncancelcl" onclick="AddContactCancel()"> <!-- Cancel-Button -->
@@ -137,7 +137,6 @@ function generateOverlayEditContactHTML(showId) {
             </svg>
         </div>  
         <div id="addcontactheaderId" class="addcontactheadercl">Edit contact</div>
-        <!-- <div id="addcontactsecheaderId" class="addcontactsecheadercl">Task are better with a team!</div> -->
         <div id="addcontactlineId" class="addcontactlinecl"></div>
     </div>
 
@@ -178,7 +177,6 @@ function generateOverlayEditContactHTML(showId) {
         <!-- NOTE -- Input Fields -->
 
         <!-- Inputfields Frame 14 -->
-        <!-- <div id="addcontactrightmainId" class="addcontactrightmaincl"> -->
             <div id="addcontactrightinputfieldsId" class="addcontactrightinputfieldscl">
                 <div id="addcontactnameinputId" class="addcontactnameinputcl">
                     <input id="addcontactinputnameId" class="addcontactinputnamecl" required type="text" placeholder="Name" value="${contactdata[showId]}">
@@ -193,6 +191,7 @@ function generateOverlayEditContactHTML(showId) {
 
     </div>
 
+
     <!-- NOTE -- Sub-buttons - cancel and create -->
 
     <div id="subbuttoncontainersaveId" class="subbuttoncontainersavecl">
@@ -203,10 +202,12 @@ function generateOverlayEditContactHTML(showId) {
     `;
 }
 
+
+// NOTE -- show chosen contact 
+
 function generateOverlayShowContactHTML(showId) { 
     return /*html*/`
     <div id="showcontactmainId" class="showcontactmaincl">
-
         <div id="showcontacttopId" class="showcontacttopcl">
             <div id="showcontactavatarId" class="showcontactavatarcl ${contactdata[showId + 3]}">${contactdata[showId+4]}</div> <!-- Hier die Buchstaben über eine Funktion einsetzten für die Anfangsbuchstaben aus der DB -->
                 <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -249,6 +250,7 @@ function generateOverlayShowContactHTML(showId) {
     `;
 }
 
+
 // NOTE -- Success button
 
 function generateSuccessbuttonHTML() {
@@ -260,13 +262,11 @@ function generateSuccessbuttonHTML() {
  
 }
 
+
 // NOTE -- Show Contacts 
 
 function generateShowRegisterHTML() {
     return /*html*/ `
-    <!-- <div id="showRegisterId" class="showRegistercl">Alphabet</div> -->
-    <div id="contactleftframeV1Id" class="contactleftframeV1cl">
-
-    </div>
+        <div id="contactleftframeV1Id" class="contactleftframeV1cl"></div>
     `;
 }
