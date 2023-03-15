@@ -156,6 +156,14 @@ section {
   flex-grow: 0;
 }
 
+.inputBox {
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .mailPasswordInputField {
   /* Auto layout */
 
@@ -163,7 +171,6 @@ section {
   align-items: center;
   flex-direction: row;
   padding: 13px 21px;
-  gap: 10px;
 
   /* Inside auto layout */
 
@@ -177,24 +184,18 @@ section {
 
 .mailPasswordInputField input {
   border: none;
-
   height: 100%;
 
-  /* Version 2/t6 */
   color: black;
   font-weight: 400;
   font-size: 21px;
   line-height: 120%;
-  /* or 25px */
-
-  /* Style */
-
-  /* Inside auto layout */
 
   flex: none;
   order: 0;
   flex-grow: 0;
   outline: none;
+  width: 360px;
 }
 
 .mailPasswordInputField img {
@@ -204,6 +205,10 @@ section {
   flex: none;
   order: 1;
   flex-grow: 0;
+}
+
+.mailPasswordInputField img {
+  cursor: pointer;
 }
 
 .rememberMe {
@@ -250,7 +255,7 @@ section {
   padding: 4px 0px;
   gap: 10px;
 
-  width: 145px;
+  width: 188px;
   height: 51px;
 
   background: #2a3647;
@@ -259,7 +264,7 @@ section {
   color: #ffffff;
 
   font-weight: 700;
-  font-size: 21px;
+  font-size: 16px;
   line-height: 120%;
   /* or 25px */
 
@@ -283,10 +288,8 @@ section {
   padding: 4px 16px;
   gap: 10px;
 
-  width: 161px;
+  width: 188px;
   height: 51px;
-
-  /* Version 2/ main color */
 
   border: 1px solid #2a3647;
   border-radius: 8px;
@@ -294,11 +297,8 @@ section {
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  font-size: 21px;
+  font-size: 16px;
   line-height: 120%;
-  /* or 25px */
-
-  /* Version 2/ main color */
 
   color: #2a3647;
   cursor: pointer;
@@ -306,11 +306,9 @@ section {
 }
 .btnGuestLog:hover {
   cursor: pointer;
-  /* Ligth blue */
 
   border: 2px solid #29abe2;
   color: #29abe2;
-  /* stronger */
 
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 8px;
@@ -329,6 +327,8 @@ section {
 
   .headlineBox {
     gap: 0;
+    width: auto;
+    height: auto;
   }
   .headlineBox p {
     width: auto;
@@ -338,13 +338,17 @@ section {
     text-align: center;
   }
 
+  .inputBox {
+    align-items: flex-start;
+  }
+
   .mailPasswordInputField {
     gap: 0px;
     width: 285px;
   }
 
   .emailPasswordField {
-    gap: 18px;
+    gap: 28px;
   }
 
   .mailPasswordInputField input {
