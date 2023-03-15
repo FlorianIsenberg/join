@@ -14,6 +14,7 @@ function logIn() {
   if (user) {
     window.location.href = "../../summary-complete.html";
   }
+  greet();
 }
 
 function guestLogIn() {
