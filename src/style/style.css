@@ -324,6 +324,27 @@ section {
   line-height: 120%;
 }
 
+.shake {
+  border: 1px solid red;
+  position: relative;
+  animation: shake 0.2s;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    left: 0px;
+  }
+  20%,
+  80% {
+    left: -15px;
+  }
+  40%,
+  60% {
+    left: 15px;
+  }
+}
+
 @media (max-width: 700px) {
   .UserSignUp {
     left: calc(50% - 143.5px);

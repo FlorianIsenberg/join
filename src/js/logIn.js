@@ -13,8 +13,9 @@ function logIn() {
   );
   if (user) {
     window.location.href = "/join/summary-complete.html";
+  } else {
+    shakeInput();
   }
-  greet();
 }
 
 function guestLogIn() {
@@ -22,6 +23,24 @@ function guestLogIn() {
 }
 
 function showSignUp() {
-  document.getElementById("msgBox").classList.remove("msgBoxDnone");
-  document.getElementById("msgBox").classList.add("msgBox");
+  let showMassage = document.getElementById("msgBox");
+  setTimeout(function () {
+    showMassage.classList.add("msgBox");
+  }, 1005);
+  setTimeout(function () {
+    showMassage.classList.remove("msgBox");
+  }, 5000);
+
+  document.getElementById("msgBox").classList.add("msgBoxDnone");
+}
+
+function shakeInput() {
+  let shakeMails = document.getElementsById("shakeMail");
+  let shakePasswords = document.getElementById("shakePassword");
+  shakeMails.classList.add("shake");
+  shakePasswords.classList.remove("shake");
+  setTimeout(function () {
+    shakeMails.classList.remove("shake");
+    shakePasswords.classList.remove("shake");
+  }, 1000);
 }
