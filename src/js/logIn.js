@@ -20,3 +20,8 @@ function logIn() {
 function guestLogIn() {
   window.location.href = "/join/summary-complete.html";
 }
+
+function showSignUp() {
+  document.getElementById("msgBox").classList.remove("msgBoxDnone");
+  document.getElementById("msgBox").classList.add("msgBox");
+}
