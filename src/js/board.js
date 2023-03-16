@@ -113,10 +113,10 @@ function filterNames() {
     list.innerHTML = ``;
 
     for (let index = 0; index < todos.length; index++) {
-        let titel = todos[index];                         
-        if (titel.toLowerCase().includes(search)) {
-        list.innerHTML += `<li>${todos.titel}</li>`;
-    }
+      let titel = todos[index];                         
+      if (titel['title'].toLowerCase().includes(search)) {
+      list.innerHTML += `<li>${todos.title}</li>`;
+  }
 }
 }
 
@@ -282,7 +282,7 @@ function closetoDoForEdit() {
 
 
 function editNote(id) {
-    let element = todos[id];
+    let element = todos.find(t=> t.id == id);
     document.getElementById('popupnotemastercontainerid').classList.add('hide');
     document.getElementById('mastertaskcontainerid').classList.add('show');
     generateNotePagetwoHTML(element);
@@ -407,9 +407,9 @@ function searchNotesByTitle(id) {
   }
 
   function searchNotesByTitle(searchTerm) {
-    const notes = document.querySelectorAll('.notesmain');
+    const notes = document.querySelectorAll('notesmain');
     notes.forEach((note) => {
-      const title = note.querySelector('.noteheadline').textContent;
+      const title = note.querySelector('noteheadline').textContent;
       if (title.toLowerCase().includes(searchTerm.toLowerCase())) {
         note.style.display = 'block';
       } else {

@@ -1,32 +1,32 @@
-function generateNotePagetwoHTML() {
+function generateNotePagetwoHTML(task) {
     document.getElementById('mastertaskcontainerid').innerHTML = `
           <div class="containeropennote">
-            <img src="./src/img/icons/closecross.svg" alt="close x button" onclick="closetoDoForEdit(${todos['id']})" id="close" class="closebuttonx">
+            <img src="./src/img/icons/closecross.svg" alt="close x button" onclick="closetoDoForEdit(${task['id']})" id="close" class="closebuttonx">
             <div class="title">
               <span class="title">Titel</span>
             </div>
-            <input class="titleinput" placeholder="Enter a title" type="text" id="titleinput" value="${todos['title']}">${todos['title']}
+            <input class="titleinput" placeholder="Enter a title" type="text" id="titleinput" value="${task['title']}">${task['title']}
             <div class="description">
               <span class="description">Description</span>
             </div>
             <div class="descriptionandimage">
-              <input class="descriptioninput" placeholder="Enter a Description" text="text" id="descriptioninput" value="${todos['description']}">
+              <input class="descriptioninput" placeholder="Enter a Description" text="text" id="descriptioninput" value="${task['description']}">
               <img src="./src/img/icons/Recurso11.svg" alt="three lines drop down" class="threelinesdropdown">
             </div>
             <div class="duedate">
               <span class="duedate">Due date</span>
             </div>
             <div class="dateinputandimage">
-              <input class="dateinput" placeholder="dd/mm/yyyy" text="date" required id="dateinput" value="${todos.date}">
+              <input class="dateinput" placeholder="dd/mm/yyyy" text="date" required id="dateinput" value="${task.date}">
               <img src="./src/img/icons/Vectorkalender.svg" alt="datecalendarsymbol" class="datecalendarsymbol">
             </div>
             <div class="Prioritys">
               <span class="prio">Prio</span>
             </div>
             <div class="prio-selections">
-              <img src="./src/img/icons/urgent.svg" alt="urgent priority symbol" onclick="urgentButtonChange()" class="urgentpriority ${todos.priority === 'urgent' ? 'active' : ''}" id="urgent">
-              <img src="./src/img/icons/medium.svg" alt="medium priority symbol" onclick="mediumButtonChange()" class="mediumpriority ${todos.priority === 'medium' ? 'active' : ''}" id="medium">
-              <img src="./src/img/icons/low.svg" alt="low priority symbol" onclick="lowButtonChange()" class="lowpriority ${todos.priority === 'low' ? 'active' : ''}" id="low">
+              <img src="./src/img/icons/urgent.svg" alt="urgent priority symbol" onclick="urgentButtonChange()" class="urgentpriority ${task.priority === 'urgent' ? 'active' : ''}" id="urgent">
+              <img src="./src/img/icons/medium.svg" alt="medium priority symbol" onclick="mediumButtonChange()" class="mediumpriority ${task.priority === 'medium' ? 'active' : ''}" id="medium">
+              <img src="./src/img/icons/low.svg" alt="low priority symbol" onclick="lowButtonChange()" class="lowpriority ${task.priority === 'low' ? 'active' : ''}" id="low">
             </div>
             <div class="assignedto">
               <span class="assignedto">Assigned to</span>
@@ -78,7 +78,7 @@ function generateNoteHTML(element) {
                 <label>Stefanie Farber</label>
             </div>    
         </div>
-        <img src="src/img/icons/editbuttonpencil.svg" alt="edit button" onclick="editNote()" class="editbutton" id="editbuttonid">
+        <img src="src/img/icons/editbuttonpencil.svg" alt="edit button" onclick="editNote(${element.id})" class="editbutton" id="editbuttonid">
     </div>
     </div>
         `;
@@ -162,7 +162,7 @@ function addTask() {
                                         <span class="subtask1">Subtask 1</span>
                                     </div>
                                         <div class="clearandcreatetask">
-                                            <img src="./src/img/icons/clearx.svg" alt="clear x button" onclick="clearTask()" id="clear" class="clearxbutton">
+                                            <img src="./src/img/icons/clearx.svg" alt="clear x button" onclick="clearTask(id)" id="clear" class="clearxbutton">
                                             <img src="./src/img/icons/createtaskbutton.svg" alt="button create task" id="newnote" onclick="generateNewNoteHTML(element)">
                                         </div>
                 </div>
