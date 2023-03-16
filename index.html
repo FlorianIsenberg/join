@@ -18,6 +18,7 @@
       type="text/javascript"
       src="src/js/logIn.js"
     ></script>
+    <script src="/src/js/showPassword.js"></script>
   </head>
 
   <body onload="init()">
@@ -40,33 +41,39 @@
 
         <form onsubmit="logIn(); return false;">
           <div class="emailPasswordField">
-            <div class="mailPasswordInputField">
-              <input required type="email" placeholder="Email" id="email" />
-              <img src="src/img/email_input.svg" alt="" />
-            </div>
-
-            <div class="mailPasswordInputField">
-              <input
-                required
-                type="password"
-                placeholder="Password"
-                id="password"
-              />
-              <img src="src/img/password_input.svg" alt="" />
-            </div>
-
-            <div class="rememberMe">
-              <div class="reMeBox">
-                <input class="checkBox" type="checkbox" />
-                <p>Remember me</p>
+            <div class="inputBox">
+              <div class="mailPasswordInputField">
+                <input required type="email" placeholder="Email" id="email" />
+                <img src="src/img/email_input.svg" alt="" />
               </div>
-              <p>
-                <a
-                  class="ForgotPassword"
-                  href="src/templates/forgotPassword.html"
-                  >Forgot my password
-                </a>
-              </p>
+
+              <div class="mailPasswordInputField">
+                <input
+                  required
+                  type="password"
+                  placeholder="Password"
+                  id="password"
+                />
+                <img
+                  onclick="showPassword()"
+                  src="src/img/password_input.svg"
+                  alt=""
+                />
+              </div>
+
+              <div class="rememberMe">
+                <div class="reMeBox">
+                  <input class="checkBox" type="checkbox" />
+                  <p>Remember me</p>
+                </div>
+                <p>
+                  <a
+                    class="ForgotPassword"
+                    href="src/templates/forgotPassword.html"
+                    >Forgot my password
+                  </a>
+                </p>
+              </div>
             </div>
             <div class="btnLogGuest">
               <button class="btnLogIn">Log in</button>

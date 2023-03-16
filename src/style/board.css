@@ -150,15 +150,20 @@ body {
     padding-right: 10px;
     padding-top: 14px;
     padding-bottom: 10px;
-    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.08);
     border-radius: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
     cursor: pointer;
+    transition: 3s all ease-in-out;
 }
 
+notesmain:hover {
+    transform: scale(1.9);
+    animation: spin 2s forwards;
+}
 
 .noteheadline {
     font-size: 16px;
@@ -398,7 +403,15 @@ body {
     z-index: 99;
     flex-direction: column;
     display: flex;
+    animation: rotate 255ms ease-in-out;
+    animation-timing-function: cubic-bezier(1, 0, .5, 1);
 }
+
+@keyframes rotate {
+    from { -webkit-transform: rotate(0deg) }
+    to { -webkit-transform: rotate(360deg)} 
+}
+
 
 .popupnotemastercontainer {
     display: none;
@@ -414,7 +427,15 @@ body {
     height: 25px;
     padding-left: 550px;
     padding-top: 30px;
+    animation: rotate 500ms ease-in-out;
+    animation-timing-function: cubic-bezier(1, 0, .5, 1);
 }
+
+@keyframes rotate {
+    from { -webkit-transform: rotate(0deg) }
+    to { -webkit-transform: rotate(360deg)} 
+}
+
 
 .tmodifythecontents2 {
     font-family: 'Inter';
@@ -527,7 +548,7 @@ body {
 
 label {
     font-size: 21px;
-    
+
 }
 
 label:hover {
@@ -555,6 +576,7 @@ label:hover {
     width: 465px;
     height: 130px;
 }
+
 .category {
     font-size: 21px;
     font-weight: 600;
@@ -574,24 +596,29 @@ label:hover {
 }
 
 .checkbox1 {
-    margin-left:250px;
-}
-.checkbox2 {
-    margin-left:336px;
-}
-.checkbox3 {
-    margin-left:285px;
-}
-.checkbox4 {
-    margin-left:291px;
-}
-.checkbox5 {
-    margin-left:321px;
-}
-.checkbox6 {
-    margin-left:329px;
-}
-.checkbox7 {
-    margin-left:360px;
+    margin-left: 250px;
 }
 
+.checkbox2 {
+    margin-left: 336px;
+}
+
+.checkbox3 {
+    margin-left: 285px;
+}
+
+.checkbox4 {
+    margin-left: 291px;
+}
+
+.checkbox5 {
+    margin-left: 321px;
+}
+
+.checkbox6 {
+    margin-left: 329px;
+}
+
+.checkbox7 {
+    margin-left: 360px;
+}

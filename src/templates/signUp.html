@@ -12,16 +12,16 @@
       type="text/javascript"
       src="/mini_backend.js"
     ></script>
-    <script src="../js/signUp.js"></script>
+    <script src="/src/js/signUp.js"></script>
+    <script src="/src/js/showPassword.js"></script>
 
     <title>Sign up</title>
   </head>
 
   <body onload="init()">
     <section>
-      <div class="headIcon">
-        <img src="../img/join-logo.svg" alt="" />
-      </div>
+      <img class="headIcon" src="../img/join-logo.svg" alt="" />
+
       <div class="contentBox">
         <a href="../../index.html"
           ><img class="backArrow" src="../img/arrow-left-line.svg" alt=""
@@ -50,7 +50,11 @@
                 placeholder="Password"
                 id="passwords"
               />
-              <img src="../img/password_input.svg" alt="" />
+              <img
+                src="../img/password_input.svg"
+                onclick="showPassword()"
+                alt=""
+              />
             </div>
             <button class="signUpBtn">Sign up</button>
           </div>
