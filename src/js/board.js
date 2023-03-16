@@ -159,7 +159,7 @@ function allowDrop(ev) {
 }
 
 function moveTo(category) {
-    let task = todos[currentDraggedElement];
+    let task = todos.find(t=> t.id == currentDraggedElement);
     task.category = category;
     todos = todos.filter(t => t.id != task.id).concat(task);
     updateHTML();
@@ -418,6 +418,24 @@ function searchNotesByTitle(id) {
     });
   }
 
+  function searchNotesNew() {
+    
+    let search = document.getElementById('search').value;
+    search = search.toLowerCase();
+  
+    let searchs = document.getElementById('draganddropsectionid');
+    searchs.innerHTML = ``;
+  
+    for (let i = 0; i < currentDraggedElement.length; i++) {
+        let title = currentDraggedElement[i].title;
+        if (title.toLowerCase().includes(search)) {
+            searchNotesNew = currentDraggedElement[i]
+            document.getElementsByClassName("draganddropsectionid")[0].innerHTML += generateNewNoteHTML(searchNotesNew, i);
+            document.getElementById('draganddropsectionid').innerHTML ='';
+        }
+    }
+  }
+
 
   noteIds.forEach(id => {
     letnote = document.getElementById(id);
@@ -432,3 +450,25 @@ function searchNotesByTitle(id) {
       note.classList.remove('dragging');
     };
   });
+
+ 
+let element = document.querySelector('notesmain');
+
+
+element.ondragstart = function(event) {
+  event.target.classList.add('dragging');
+}
+
+element.ondragend = function(event) {
+  event.target.classList.remove('dragging');
+}
+
+function toggleCategory() {
+  const dropdown = document.getElementById("categoryhideid");
+  if (dropdown.classList.contains("hide")) {
+    dropdown.classList.remove("hide");
+  } else {
+    dropdown.classList.add("hide");
+  }
+}
+
