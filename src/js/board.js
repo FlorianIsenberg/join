@@ -304,10 +304,6 @@ function hideCategory() {
     document.getElementById('categoryhideid').classList.add('hide');
 }
 
-function deleteTasks() {
-    document.getElementById('draganddropsectionid').innerHTML = '';
-}
-
 
   function generateNewNoteHTML() {
     const title = document.getElementById('titleinput').value;
@@ -315,15 +311,7 @@ function deleteTasks() {
     const date = document.getElementById('dateinput').value;
     const priority = document.querySelector('.prio-selections .active').alt;
     const assignedTo = document.getElementById('assignedto').value;
-  
-    const newNote = {
-      id: generateUniqueId(), 
-      title: title,
-      description: description,
-      date: date,
-      priority: priority,
-      assignedTo: assignedTo
-    };
+
 
     function save() {
         let titlesAsText = JSON.stringify(title);
@@ -341,7 +329,7 @@ function deleteTasks() {
         }
       }
 
-      updateHTML();
+    
 
   document.getElementById('draganddropsectionid').innerHTML = `
   <div class="containeropennote">
@@ -378,12 +366,12 @@ function deleteTasks() {
   <div class="inputfieldandimage" id="inputselection">
     <select class="dropdownassignedto" id="assignedto">
       <option disabled>Select contacts to assign</option>
-      <option>Anton Meyer</option>
-      <option>Anja Schulz</option>
-      <option>David Eisenberg</option>
-      <option>Eva Fischer</option>
-      <option>Marius Müller</option>
-      <option>Peter Jackson</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
     </select>
   </div>
           <div class="iconsfromusers"></div>

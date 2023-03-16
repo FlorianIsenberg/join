@@ -241,17 +241,38 @@ function toggleCategory() {
       });
     
     alert('Neues To-Do wurde erstellt!');
+    
   }
-updateHTML();
+  
+
 
   function generateNewTask() {
-    document.getElementById('').innerHTML = `
+    document.getElementById('todo').innerHTML = `
+  <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit(${element['id']})">
+    <div class="notesection">
+    <span class="departmentdesign">${element.department}</span>
+    </div>
+    <div class="noteheadlinecontainer">
+    <h2 class="noteheadline">${element.title}</h2>
+    </div>
+    <div class="note">
+    <span class="tmodifythecontents">${element.description}</span> 
+    <div class="loadingbarandspan">
+      <div class="progressloadingbar">
+      <img class="progressloadingbarimage" src="./src/img/icons/progress.svg" alt="Progressbar">
+      <span class="halfdone">${element.subtasksDone}</span>
+      </div>    
+    </div>
+  </div>
+    <div class="usericons">
+    <img src="./src/img/icons/sm.svg" alt="User SM">
+    <img src="./src/img/icons/mv.svg" alt="User MV" class="iconsinicons">
+    <img src="./src/img/icons/ef.svg" alt="User EF" class="iconsinicons">
+    <img class="greenarrowdown" src="./src/img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
+    </div>
+`;
+}
+generateTodoHTML();
+    updateHTML();
     
     
-    
-    
-    
-    
-    
-    `;
-  }
