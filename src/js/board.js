@@ -30,7 +30,7 @@ let todos = [{
     description: 'Write open invoices for customer',
     date: '18.03.2023',
     priority: 'medium',
-    assignedTo: ['Mark Becker'],
+    assignedTo: ['Mark Becker',], 
     department: 'Backoffice',
     taskimage: './src/img/icons/backoffice.svg',
     subtasks: [],
@@ -113,10 +113,10 @@ function filterNames() {
     list.innerHTML = ``;
 
     for (let index = 0; index < todos.length; index++) {
-        let titel = todos[index];                         
-        if (titel.toLowerCase().includes(search)) {
-        list.innerHTML += `<li>${todos.titel}</li>`;
-    }
+      let titel = todos[index];                         
+      if (titel['title'].toLowerCase().includes(search)) {
+      list.innerHTML += `<li>${todos.title}</li>`;
+  }
 }
 }
 
@@ -129,29 +129,28 @@ function startDragging(id) {
 function generateTodoHTML(element) {
     return `
     <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit(${element['id']})">
-    <div class="notesection">
-    <span class="departmentdesign">${element.department}</span>
-    
+      <div class="notesection">
+      <span class="departmentdesign">${element.department}</span>
+      </div>
+      <div class="noteheadlinecontainer">
+      <h2 class="noteheadline">${element.title}</h2>
+      </div>
+      <div class="note">
+      <span class="tmodifythecontents">${element.description}</span> 
+      <div class="loadingbarandspan">
+        <div class="progressloadingbar">
+        <img class="progressloadingbarimage" src="./src/img/icons/progress.svg" alt="Progressbar">
+        <span class="halfdone">${element.subtasksDone}</span>
+        </div>    
+      </div>
     </div>
-    <div class="noteheadlinecontainer">
-        <h2 class="noteheadline">${element.title}</h2>
-    </div>
-        <div class="note">
-            <span class="tmodifythecontents">${element.description}</span> 
-                <div class="loadingbarandspan">
-                    <div class="progressloadingbar">
-                        <img class="progressloadingbarimage" src="./src/img/icons/progress.svg" alt="Progressbar">
-                        <span class="halfdone">${element.subtasksDone}</span>
-                    </div>    
-    </div>
-</div>
-        <div class="usericons">
-            <img src="./src/img/icons/sm.svg" alt="User SM">
-            <img src="./src/img/icons/mv.svg" alt="User MV" class="iconsinicons">
-            <img src="./src/img/icons/ef.svg" alt="User EF" class="iconsinicons">
-            <img class="greenarrowdown" src="./src/img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
-        </div>
-</div>`;
+      <div class="usericons">
+      <img src="./src/img/icons/sm.svg" alt="User SM">
+      <img src="./src/img/icons/mv.svg" alt="User MV" class="iconsinicons">
+      <img src="./src/img/icons/ef.svg" alt="User EF" class="iconsinicons">
+      <img class="greenarrowdown" src="./src/img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
+      </div>
+`;
 }
 
 function allowDrop(ev) {
@@ -282,7 +281,7 @@ function closetoDoForEdit() {
 
 
 function editNote(id) {
-    let element = todos[id];
+    let element = todos.find(t=> t.id == id);
     document.getElementById('popupnotemastercontainerid').classList.add('hide');
     document.getElementById('mastertaskcontainerid').classList.add('show');
     generateNotePagetwoHTML(element);
@@ -305,10 +304,6 @@ function hideCategory() {
     document.getElementById('categoryhideid').classList.add('hide');
 }
 
-function deleteTasks() {
-    document.getElementById('draganddropsectionid').innerHTML = '';
-}
-
 
   function generateNewNoteHTML() {
     const title = document.getElementById('titleinput').value;
@@ -316,15 +311,7 @@ function deleteTasks() {
     const date = document.getElementById('dateinput').value;
     const priority = document.querySelector('.prio-selections .active').alt;
     const assignedTo = document.getElementById('assignedto').value;
-  
-    const newNote = {
-      id: generateUniqueId(), 
-      title: title,
-      description: description,
-      date: date,
-      priority: priority,
-      assignedTo: assignedTo
-    };
+
 
     function save() {
         let titlesAsText = JSON.stringify(title);
@@ -342,7 +329,7 @@ function deleteTasks() {
         }
       }
 
-      updateHTML();
+    
 
   document.getElementById('draganddropsectionid').innerHTML = `
   <div class="containeropennote">
@@ -379,12 +366,12 @@ function deleteTasks() {
   <div class="inputfieldandimage" id="inputselection">
     <select class="dropdownassignedto" id="assignedto">
       <option disabled>Select contacts to assign</option>
-      <option>Anton Meyer</option>
-      <option>Anja Schulz</option>
-      <option>David Eisenberg</option>
-      <option>Eva Fischer</option>
-      <option>Marius Müller</option>
-      <option>Peter Jackson</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
     </select>
   </div>
           <div class="iconsfromusers"></div>
@@ -407,9 +394,9 @@ function searchNotesByTitle(id) {
   }
 
   function searchNotesByTitle(searchTerm) {
-    const notes = document.querySelectorAll('.notesmain');
+    const notes = document.querySelectorAll('notesmain');
     notes.forEach((note) => {
-      const title = note.querySelector('.noteheadline').textContent;
+      const title = note.querySelector('noteheadline').textContent;
       if (title.toLowerCase().includes(searchTerm.toLowerCase())) {
         note.style.display = 'block';
       } else {

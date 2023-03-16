@@ -72,7 +72,7 @@ body {
     font-weight: 400;
     font-size: 21px;
     line-height: 120%;
-    color: #D1D1D1;
+    color: #000000;
 }
 
 .descriptionandimage {
@@ -99,7 +99,7 @@ body {
     line-height: 120%;
     color: #000000;
     padding-bottom: 8px;
-    padding-top: 34px;
+    padding-top: 10px;
 }
 
 
@@ -142,7 +142,7 @@ body {
     gap: 10px;
     isolation: isolate;
     width: 468px;
-    height: 51px;
+    height: 187px;
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
     border-radius: 10px;
@@ -155,6 +155,7 @@ body {
     font-size: 21px;
     line-height: 120%;
     color: #000000;
+    outline: none;
 }
 
 
@@ -181,8 +182,214 @@ body {
     color: black;
     outline: none;
     width: 468px;
-    height: 45px;
+    height: 70px;
     padding-left: 20px;
+}
+
+
+.dropdownc {
+    font-size: 21px;
+    font-weight: 400;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    height: 70px;
+    margin-top: -10px;
+    padding-bottom: 30px;
+    margin-bottom: -10px;
+
+}
+
+.tmodifythecontents2 {
+    font-family: 'Inter';
+    font-size: 21px;
+    font-weight: 400;
+    width: 518px;
+    height: 50px;
+    padding-left: 60px;
+}
+
+.labelimage {
+    width: 142px;
+    height: 40px;
+    padding-left: 60px;
+}
+
+.noteheadline2 {
+    width: 523px;
+    height: 106px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+    color: #2A3647;
+    padding-left: 60px;
+}
+
+.duedate2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 60px;
+    font-size: 21px;
+    font-weight: 700px;
+    padding-right: 30px;
+    padding-bottom: 29px;
+}
+
+.duedate3 {
+    width: 105px;
+    height: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    color: #000000;
+    padding-top: 14px;
+}
+
+.prio2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 60px;
+    font-size: 21px;
+    font-weight: 700px;
+    padding-right: 30px;
+    padding-bottom: 29px;
+}
+
+.urgentpriority2 {
+    width: 131px;
+    height: 33px;
+}
+
+.assignedto2 {
+    font-weight: 700;
+    font-size: 21px;
+    padding-left: 60px;
+}
+
+.chosenuser {
+    display: flex;
+}
+
+.usericonsnote {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 50px;
+    padding-top: 20px;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+}
+
+.names {
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+    padding-top: 32px;
+    align-items: center;
+    padding-left: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 30px;
+    font-size: 21px;
+    font-family: 'Inter';
+}
+
+.urgentpriority2 {
+    width: 131px;
+    height: 33px;
+}
+
+.noteheadline2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+}
+
+.editbutton {
+    padding-left: 520px;
+    padding-bottom: 20px;
+    height: 57px;
+    width: 57px;
+}
+
+label {
+    font-size: 21px;
+
+}
+
+label:hover {
+    background-color: aliceblue;
+}
+
+
+.dropdownmenucategory {
+    display: flex;
+    flex-direction: column;
+    width: 465px;
+    height: 130px;
+    padding-top: 8px;
+}
+
+.category {
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.categoryselect {
+    color: rgb(170, 170, 170);
+    background-color: rgb(245, 235, 235);
+}
+
+
+.onclickcategory {
+    height: 31px;
+    width: 131px;
+    padding-top: 20px;
+    padding-bottom: 8px;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.new-category {
+    padding-left: 50px;
+}
+
+.checkbox1 {
+    margin-left: 250px;
+}
+
+.checkbox2 {
+    margin-left: 336px;
+}
+
+.checkbox3 {
+    margin-left: 285px;
+}
+
+.checkbox4 {
+    margin-left: 291px;
+}
+
+.checkbox5 {
+    margin-left: 321px;
+}
+
+.checkbox6 {
+    margin-left: 329px;
+}
+
+.checkbox7 {
+    margin-left: 360px;
 }
 
 .dropdownassignedto {
@@ -198,6 +405,7 @@ body {
     height: 45px;
     padding-left: 20px
 }
+
 .assignedinput {
     border: none;
     color: black;
@@ -212,6 +420,8 @@ body {
     height: 45px;
 }
 
+
+
 .assignedto {
     width: 165px;
     height: 25px;
@@ -221,8 +431,9 @@ body {
     font-size: 21px;
     line-height: 120%;
     color: #000000;
-    padding-bottom: 8px;
     padding-top: 34px;
+    padding-bottom:8px;
+    margin-bottom: 8px;
 }
 
 .blackarrowdown {
