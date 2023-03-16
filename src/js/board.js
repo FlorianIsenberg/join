@@ -260,7 +260,7 @@ function lowButtonChange() {
 
 
 function opentoDoForEdit(id) {
-    let element = todos[id];
+    let element = todos.find(t=> t.id == id);
     document.getElementById('popupnotemastercontainerid').classList.add('show');
     generateNoteHTML(element);
 }

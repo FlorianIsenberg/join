@@ -427,7 +427,7 @@ notesmain:hover {
     height: 25px;
     padding-left: 550px;
     padding-top: 30px;
-    animation: rotate 3s ease-in-out;
+    animation: rotate 500ms ease-in-out;
     animation-timing-function: cubic-bezier(1, 0, .5, 1);
 }
 
