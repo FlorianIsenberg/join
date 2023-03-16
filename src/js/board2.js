@@ -1,3 +1,5 @@
+let notes = [];
+
 function generateNotePagetwoHTML(task) {
     document.getElementById('mastertaskcontainerid').innerHTML = `
           <div class="containeropennote">
@@ -5,7 +7,7 @@ function generateNotePagetwoHTML(task) {
             <div class="title">
               <span class="title">Titel</span>
             </div>
-            <input class="titleinput" placeholder="Enter a title" type="text" id="titleinput" value="${task['title']}">${task['title']}
+            <input class="titleinput" placeholder="Enter a title" type="text" id="titleinput" value="${task['title']}">
             <div class="description">
               <span class="description">Description</span>
             </div>
@@ -13,8 +15,8 @@ function generateNotePagetwoHTML(task) {
               <input class="descriptioninput" placeholder="Enter a Description" text="text" id="descriptioninput" value="${task['description']}">
               <img src="./src/img/icons/Recurso11.svg" alt="three lines drop down" class="threelinesdropdown">
             </div>
-            <div class="duedate">
-              <span class="duedate">Due date</span>
+            <div class="duedate3">
+              <span class="duedate3">Due date</span>
             </div>
             <div class="dateinputandimage">
               <input class="dateinput" placeholder="dd/mm/yyyy" text="date" required id="dateinput" value="${task.date}">
@@ -34,12 +36,12 @@ function generateNotePagetwoHTML(task) {
             <div class="inputfieldandimage" id="inputselection">
               <select class="dropdownassignedto" id="assignedto">
                 <option disabled>Select contacts to assign</option>
-                <option>Anton Meyer</option>
-                <option>Anja Schulz</option>
-                <option>David Eisenberg</option>
-                <option>Eva Fischer</option>
-                <option>Marius Müller</option>
-                <option>Peter Jackson</option>
+                <option>${task.assignedTo}</option>
+                <option>${task.assignedTo}</option>
+                <option>${task.assignedTo}</option>
+                <option>${task.assignedTo}</option>
+                <option>${task.assignedTo}</option>
+                <option>${task.assignedTo}</option>
               </select>
             </div>
                     <div class="iconsfromusers"></div>
@@ -103,10 +105,12 @@ function addTask() {
                             <img src="./src/img/icons/Recurso11.svg" alt="three lines drop down" class="threelinesdropdown">
                         </div>
                                
-                        <div class="dropdownmenucategory">
-                        <div class="onclickcategory" id="clickcategory" onclick="toggleCategory()"><span class="category">Category</span></div>
+                      <div class="dropdownmenucategory">
+                        <div class="onclickcategory" id="clickcategory" onclick="toggleCategory()">
+                          <span class="category">Category</span>
+                        </div>
                         <div class="dropdownc hide" id="categoryhideid">
-                          <label for="category">Select task category:</label>
+                          <label for="category" disabled selected class="categoryselect">Select task category:</label>
                           <label for="new-category">
                             <span>New category</span>
                             <input type="checkbox" id="new-category" class="checkbox1"> 
@@ -133,7 +137,21 @@ function addTask() {
                           </label>
                         </div>
                       </div> 
-                     </div>                       
+                  <div class="assignedto">
+                  <span>Assigned to</span>
+                    <label for="inputselection" class="dropdownassignedto hide" id="assignetoid" onclick="hideAssignedTo()">Assigned to:</label>
+                    <select class="inputfieldandimage" id="inputselection" multiple>
+                      <option disabled selected>Select contacts to assign</option> 
+                      <option>Anton Meyer</option>
+                      <option>Anja Schulz</option>
+                      <option>David EIsenberg</option>
+                      <option>Eva Fischer</option>
+                      <option>Marius Müller</option>
+                      <option>Peter Jackson</option>
+                    </select>
+                  </div>
+                </div>
+	
             <img src="./src/img/icons/Vector4line.svg" alt="verticalline" class="verticalline">
             
                 <div class="container-right">
@@ -163,7 +181,7 @@ function addTask() {
                                     </div>
                                         <div class="clearandcreatetask">
                                             <img src="./src/img/icons/clearx.svg" alt="clear x button" onclick="clearTask(id)" id="clear" class="clearxbutton">
-                                            <img src="./src/img/icons/createtaskbutton.svg" alt="button create task" id="newnote" onclick="generateNewNoteHTML(element)">
+                                            <img src="./src/img/icons/createtaskbutton.svg" alt="button create task" id="newnote" onclick="addNewTask()">
                                         </div>
                 </div>
             </div>
@@ -180,5 +198,60 @@ function toggleCategory() {
     }
   }
 
+  function hideAssignedTo() {
+    document.getElementById('assignetoid').classList.remove('hide');
+
+  }
   
-  
+  function addNewTask() {
+      
+      let title = document.getElementById('titleinput').value;
+      let description = document.getElementById('descriptioninput').value;
+      let category = document.querySelector('input[type="checkbox"]:checked').nextSibling.textContent.trim();
+      let assignedTo = Array.from(document.getElementById('inputselection').options)
+                             .filter(option => option.selected)
+                             .map(option => option.text);
+      let dueDate = document.getElementById('dateinput').value;
+      let priorityImg = document.querySelector('.prioritys img.selected');
+      const priority = priorityImg ? priorityImg.alt : '';
+      const subtasks = Array.from(document.querySelectorAll('.rectangleandsubtask1 span'))
+                            .map(span => span.textContent);
+    
+      let newNote = {
+        title,
+        description,
+        category,
+        assignedTo,
+        dueDate,
+        priority,
+        subtasks,
+      };
+    
+      notes.push(newNote);
+    
+      let inputFields = document.querySelectorAll('#titleinput, #descriptioninput, .checkbox1, .checkbox2, .checkbox3, .checkbox4, .checkbox5, .checkbox6, #inputselection, #dateinput, .prioritys img, .rectangleandsubtask1 span');
+      inputFields.forEach(field => {
+        if (field.type === 'checkbox' || field.tagName === 'IMG') {
+          field.checked = false;
+        } else if (field.tagName === 'SELECT') {
+          field.selectedIndex = 0;
+        } else {
+          field.value = '';
+        }
+      });
+    
+    alert('Neues To-Do wurde erstellt!');
+  }
+updateHTML();
+
+  function generateNewTask() {
+    document.getElementById('').innerHTML = `
+    
+    
+    
+    
+    
+    
+    
+    `;
+  }
