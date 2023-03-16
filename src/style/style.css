@@ -244,8 +244,6 @@ section {
   align-items: flex-start;
   padding: 0px;
   gap: 35px;
-  width: 341px;
-  height: 51px;
 }
 .btnLogIn {
   display: flex;
@@ -255,7 +253,7 @@ section {
   padding: 4px 0px;
   gap: 10px;
 
-  width: 188px;
+  width: 145px;
   height: 51px;
 
   background: #2a3647;
@@ -264,7 +262,7 @@ section {
   color: #ffffff;
 
   font-weight: 700;
-  font-size: 16px;
+  font-size: 21px;
   line-height: 120%;
   /* or 25px */
 
@@ -288,7 +286,7 @@ section {
   padding: 4px 16px;
   gap: 10px;
 
-  width: 188px;
+  width: 161x;
   height: 51px;
 
   border: 1px solid #2a3647;
@@ -297,7 +295,7 @@ section {
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 21px;
   line-height: 120%;
 
   color: #2a3647;
@@ -368,5 +366,10 @@ section {
     flex-direction: column;
     align-items: center;
     height: auto;
+    font-size: 16px;
+  }
+
+  .btnLogIn {
+    font-size: 16px;
   }
 }
