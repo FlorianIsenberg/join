@@ -8,31 +8,34 @@
         
         
         <title>Default Page Join</title>
-        <link rel="stylesheet" type="text/css" href="src/style/fonts.css">
-        <link rel="stylesheet" type="text/css" href="src/style/style-header.css">
-        <script language="JavaScript" type="text/javascript" src="src/js/referencePage.js"></script>
+        <link rel="stylesheet" type="text/css" href="/src/style/fonts.css">
+        <link rel="stylesheet" type="text/css" href="/src/style/style-header.css">
+        <link rel="stylesheet" type="text/css" href="/src/style/board.css">
+        <link rel="stylesheet" href="src/style/addtask.css">
+        <script language="JavaScript" type="text/javascript" src="mini_backend.js"></script>
+        <script language="JavaScript" type="text/javascript" src="/src/js/referencePage.js"></script>
+        <script language="JavaScript" type="text/javascript" src="/src/js/board.js"></script>
+        
         
     </head>
 
-    <body onload="init()">
+    <body onload="init(), includeHTML()">
         <!-- NOTE -- Master Container  -->
         <div id="MasterContainerDefaultPageId" class="MasterContainerDefaultPagecl">
 
             
             <!-- NOTE -- Master Container Header -->
-            <div id="MasterContainerHeaderId" class="MasterContainerHeadercl" w3-include-html="src/templates/header.html">
+            <div id="MasterContainerHeaderId" class="MasterContainerHeadercl" w3-include-html="/src/templates/header.html">
                 <!-- Dieser Inhalt wird geladen [headerload.html] -->
             </div>
 
             <!-- NOTE -- Master Container Sidebar  -->
-            <div id="MasterContainerSidebarId" class="MasterContainerSidebarcl" w3-include-html="src/templates/sideMenu.html">
+            <div id="MasterContainerSidebarId" class="MasterContainerSidebarcl" w3-include-html="/src/templates/sideMenu.html">
                 <!-- Dieser Inhalt wird nachgeladen [sidebarload.html] -->
             </div>
 
             <!-- NOTE -- Master Container Inside -->
-            <div id="MasterContainerInsideId" class="MasterContainerInsidecl" w3-include-html="/board.html">
-
-                
+            <div id="MasterContainerInsideId" class="MasterContainerInsidecl" w3-include-html="/board.html">                
             </div>
 
         </div>
