@@ -71,7 +71,7 @@ let newPriority;
 let searchedTaskArray = [];
 let noteIds = ['note1', 'note2', 'note3', 'note4','note6', 'note7','note8','note9','note10',];
 let tasks=[];
-load();
+
 
 function updateHTML() {
     let todo = todos.filter(t => t['category'] == 'todo');
@@ -273,9 +273,12 @@ function closetoDoForEdit() {
     const closeButton = document.getElementById('close');
     closeButton.addEventListener('click', function() {
       const masterTaskContainer = document.getElementById('mastertaskcontainerid');
-      const taskContainer = document.getElementById('taskcontainerid');
+      const taskContainer = document.getElementById('mastertaskcontainerid');
       masterTaskContainer.style.display = "none";
       taskContainer.style.display = "none";
+      document.getElementById('popupnotemastercontainerid').classList.remove('show');
+      document.getElementById('popupnoteid').classList.add('hide');
+  
     });
   }
 
@@ -293,11 +296,9 @@ function closeNoteForEdit() {
 }
 
 function okButtonCloseAndSafeNote() {
-    document.getElementById('taskcontainerid').classList.add('hide')
-    document.getElementById('note1').classList.add('hide');
-    document.getElementById('note1').classList.remove('hide');
+    document.getElementById('mastertaskcontainerid').classList.remove('show');
+    document.getElementById('popupnoteid').classList.add('hide');
 }
-
 
 
 function hideCategory() {
@@ -311,25 +312,6 @@ function hideCategory() {
     const date = document.getElementById('dateinput').value;
     const priority = document.querySelector('.prio-selections .active').alt;
     const assignedTo = document.getElementById('assignedto').value;
-
-
-    function save() {
-        let titlesAsText = JSON.stringify(title);
-        localStorage.setItem("title", titlesAsText);
-        let descriptionAsText = JSON.stringify(description);
-        localStorage.setItem("description", descriptionAsText);
-      }
-      
-      function load() {
-        let titleAsText = localStorage.getItem("title");
-        let descriptionAsText = localStorage.getItem("description");
-        if (titleAsText && descriptionAsText) {
-          title = JSON.parse(titleAsText);
-          description = JSON.parse(descriptionAsText);
-        }
-      }
-
-    
 
   document.getElementById('draganddropsectionid').innerHTML = `
   <div class="containeropennote">
@@ -425,7 +407,7 @@ function searchNotesByTitle(id) {
 
 
   noteIds.forEach(id => {
-    letnote = document.getElementById(id);
+    let note = document.getElementById(id);
     
     note.setAttribute('draggable', 'true');
     

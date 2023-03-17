@@ -33,14 +33,9 @@ function generateNotePagetwoHTML(task) {
             <div class="assignedto">
               <span class="assignedto">Assigned to</span>
             </div>
-            <div class="inputfieldandimage" id="inputselection">
+            <div class="inputfieldandimage2" id="inputselection">
               <select class="dropdownassignedto" id="assignedto">
                 <option disabled>Select contacts to assign</option>
-                <option>${task.assignedTo}</option>
-                <option>${task.assignedTo}</option>
-                <option>${task.assignedTo}</option>
-                <option>${task.assignedTo}</option>
-                <option>${task.assignedTo}</option>
                 <option>${task.assignedTo}</option>
               </select>
             </div>
@@ -207,14 +202,19 @@ function toggleCategory() {
       
       let title = document.getElementById('titleinput').value;
       let description = document.getElementById('descriptioninput').value;
+      let department = document.getElementById('sales').value = "Sales";
+      document.getElementById('marketing').value = "Marketing";
+      document.getElementById('backoffice').value = "Backoffice";
+      document.getElementById('media').value = "Media";
+      document.getElementById('design').value = "Design";
       let category = document.querySelector('input[type="checkbox"]:checked').nextSibling.textContent.trim();
       let assignedTo = Array.from(document.getElementById('inputselection').options)
                              .filter(option => option.selected)
                              .map(option => option.text);
       let dueDate = document.getElementById('dateinput').value;
       let priorityImg = document.querySelector('.prioritys img.selected');
-      const priority = priorityImg ? priorityImg.alt : '';
-      const subtasks = Array.from(document.querySelectorAll('.rectangleandsubtask1 span'))
+      let priority = priorityImg ? priorityImg.alt : '';
+      let subtasks = Array.from(document.querySelectorAll('.rectangleandsubtask1 span'))
                             .map(span => span.textContent);
     
       let newNote = {
@@ -225,6 +225,7 @@ function toggleCategory() {
         dueDate,
         priority,
         subtasks,
+        department,
       };
     
       notes.push(newNote);
@@ -241,14 +242,14 @@ function toggleCategory() {
       });
     
     alert('Neues To-Do wurde erstellt!');
-    
+    generateNewTask(newNote); 
   }
   
 
 
-  function generateNewTask() {
-    document.getElementById('todo').innerHTML = `
-  <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit(${element['id']})">
+  function generateNewTask(element) {
+    document.getElementById('todo').innerHTML += `
+  <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
     <div class="notesection">
     <span class="departmentdesign">${element.department}</span>
     </div>
@@ -272,7 +273,82 @@ function toggleCategory() {
     </div>
 `;
 }
-generateTodoHTML();
-    updateHTML();
-    
+
+ 
+function EditedNote(element) {
+  let title = document.getElementById('titleinput').value;
+  let description = document.getElementById('descriptioninput').value;
+  let department = document.getElementById('sales').value = "Sales";
+  document.getElementById('marketing').value = "Marketing";
+  document.getElementById('backoffice').value = "Backoffice";
+  document.getElementById('media').value = "Media";
+  document.getElementById('design').value = "Design";
+  let category = document.querySelector('input[type="checkbox"]:checked').nextSibling.textContent.trim();
+  let assignedTo = Array.from(document.getElementById('inputselection').options)
+                         .filter(option => option.selected)
+                         .map(option => option.text);
+  let dueDate = document.getElementById('dateinput').value;
+  let priorityImg = document.querySelector('.prioritys img.selected');
+  let priority = priorityImg ? priorityImg.alt : '';
+  let subtasks = Array.from(document.querySelectorAll('.rectangleandsubtask1 span'))
+                        .map(span => span.textContent);
+
+  let newNote2 = {
+    title,
+    description,
+    category,
+    assignedTo,
+    dueDate,
+    priority,
+    subtasks,
+    department,
+  };
+
+  notes.push(newNote2);
+
+  let inputFields = document.querySelectorAll('#titleinput, #descriptioninput, .checkbox1, .checkbox2, .checkbox3, .checkbox4, .checkbox5, .checkbox6, #inputselection, #dateinput, .prioritys img, .rectangleandsubtask1 span');
+  inputFields.forEach(field => {
+    if (field.type === 'checkbox' || field.tagName === 'IMG') {
+      field.checked = false;
+    } else if (field.tagName === 'SELECT') {
+      field.selectedIndex = 0;
+    } else {
+      field.value = '';
+    }
+  });
+
+alert('To-Do wurde verändert gespeichert!');
+generateEditedNote(newNote2); 
+}
+
+
+
+function generateEditedNote(element) {
+document.getElementById('todo').innerHTML += `
+<div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
+<div class="notesection">
+<span class="departmentdesign"></span>
+</div>
+<div class="noteheadlinecontainer">
+<h2 class="noteheadline"></h2>
+</div>
+<div class="note">
+<span class="tmodifythecontents"></span> 
+<div class="loadingbarandspan">
+  <div class="progressloadingbar">
+  <img class="progressloadingbarimage" src="./src/img/icons/progress.svg" alt="Progressbar">
+  <span class="halfdone">}</span>
+  </div>    
+</div>
+</div>
+<div class="usericons">
+<img src="./src/img/icons/sm.svg" alt="User SM">
+<img src="./src/img/icons/mv.svg" alt="User MV" class="iconsinicons">
+<img src="./src/img/icons/ef.svg" alt="User EF" class="iconsinicons">
+<img class="greenarrowdown" src="./src/img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
+</div>
+`;
+}
+
+
     
