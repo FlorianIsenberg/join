@@ -27,7 +27,7 @@ function mailSend() {
 
   setTimeout(function () {
     showMsg.classList.remove("btnEmailSend");
-  }, 5000);
+  }, 4000);
 }
 
 function mailSendTo() {
@@ -45,7 +45,7 @@ function mailNotSend() {
 
   setTimeout(function () {
     showMsg.classList.remove("btnEmailSend");
-  }, 5000);
+  }, 3000);
 }
 
 function mailSendNotTo() {
