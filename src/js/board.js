@@ -106,13 +106,13 @@ function updateHTML() {
 
 function filterNames() {
   let search = document.getElementById('search').value;
-  
+  search = search.toLowerCase();
   console.log(search)
 
   let list = document.getElementById('list');
   list.innerHTML = ``;
-let searchResults = todos.filter(s => s.title.startsWith(search));
-    console.log(searchResults)
+  let searchResults = todos.filter(s => s.title.startsWith(search));
+    console.log(searchResults);
   
 }
 
