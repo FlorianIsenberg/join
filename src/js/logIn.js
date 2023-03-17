@@ -13,6 +13,7 @@ function logIn() {
   );
   if (user) {
     window.location.href = "/join/summary-complete.html";
+    greet();
   } else {
     shakeInput();
   }
@@ -35,7 +36,7 @@ function showSignUp() {
 }
 
 function shakeInput() {
-  let shakeMails = document.getElementsById("shakeMail");
+  let shakeMails = document.getElementById("shakeMail");
   let shakePasswords = document.getElementById("shakePassword");
   shakeMails.classList.add("shake");
   shakePasswords.classList.remove("shake");

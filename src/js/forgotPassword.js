@@ -3,7 +3,7 @@ async function sendMail(event) {
   let formData = new FormData(event.target);
   let response = await action(formData);
   if (response.ok) {
-    alert("E-Mail has been send!");
+    mailSend();
   } else {
     alert("E-Mail has not been send!");
   }
@@ -19,3 +19,33 @@ function action(formData) {
 
   return fetch(input, requestInit);
 }
+
+function mailSend() {
+  let showMsg = document.getElementById("sendMailMsg");
+  document.getElementById("sendMailMsg").classList.remove("dNone");
+  setTimeout(function mailSendTo() {
+    showMsg.classList.add("btnEmailSend");
+  }, 1005);
+  setTimeout(function () {
+    showMsg.classList.remove("btnEmailSend");
+  }, 5000);
+}
+
+function mailSendTo() {
+  let massage = document.getElementById("sendMailMsg");
+  massage.innerHTML += `
+  <img src="/src/img/icon-mail-flight.svg" alt="" />
+  An E-Mail has been sent to you 
+  `;
+}
+
+// function mailNotSend() {  {
+//     let showMsg = document.getElementById("send");
+//     setTimeout(function () {
+//       showMsg.classList.add("btnEmailSend");
+//     }, 1005);
+//     setTimeout(function () {
+//       showMsg.classList.remove("btnEmailSend");
+//     }, 5000);
+//   }
+// }
