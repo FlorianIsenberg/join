@@ -105,19 +105,15 @@ function updateHTML() {
 }
 
 function filterNames() {
-    let search = document.getElementById('search').value;
-    search = search.toLowerCase();
-    console.log(search)
+  let search = document.getElementById('search').value;
+  
+  console.log(search)
 
-    let list = document.getElementById('list');
-    list.innerHTML = ``;
-
-    for (let index = 0; index < todos.length; index++) {
-      let titel = todos[index];                         
-      if (titel['title'].toLowerCase().includes(search)) {
-      list.innerHTML += `<li>${todos.title}</li>`;
-  }
-}
+  let list = document.getElementById('list');
+  list.innerHTML = ``;
+let searchResults = todos.filter(s => s.title.startsWith(search));
+    console.log(searchResults)
+  
 }
 
 
@@ -273,9 +269,8 @@ function closetoDoForEdit() {
     const closeButton = document.getElementById('close');
     closeButton.addEventListener('click', function() {
       const masterTaskContainer = document.getElementById('mastertaskcontainerid');
-      const taskContainer = document.getElementById('mastertaskcontainerid');
       masterTaskContainer.style.display = "none";
-      taskContainer.style.display = "none";
+     
       document.getElementById('popupnotemastercontainerid').classList.remove('show');
       document.getElementById('popupnoteid').classList.add('hide');
   

@@ -18,9 +18,8 @@ function generateNotePagetwoHTML(task) {
             <div class="duedate3">
               <span class="duedate3">Due date</span>
             </div>
-            <div class="dateinputandimage">
-              <input class="dateinput" placeholder="dd/mm/yyyy" text="date" required id="dateinput" value="${task.date}">
-              <img src="./src/img/icons/Vectorkalender.svg" alt="datecalendarsymbol" class="datecalendarsymbol">
+            <div class="dateinput">
+            <input type="date" class="dateinputandimage4" value="2023-02-03" min="023-02-01" max="023-02-28" value="${task.date}">
             </div>
             <div class="Prioritys">
               <span class="prio">Prio</span>
@@ -151,9 +150,9 @@ function addTask() {
             
                 <div class="container-right">
                     <span class="duedate">Due date</span>
-                        <div class="dateinputandimage">
-                        <input class="dateinput" placeholder="dd/mm/yyyy" text="date" id="dateinput">
-                        <img src="./src/img/icons/Vectorkalender.svg" alt="datecalendarsymbol" class="datecalendarsymbol">
+                        <div class="dateinput">
+                        <input type="date" class="dateinputandimage4" value="2023-02-03" min="023-02-01" max="023-02-28">
+                        
                         </div>
                             <div class="Prioritys">
                                 <span class="prio">Prio</span>
