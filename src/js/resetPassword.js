@@ -15,13 +15,13 @@ async function resetPassword() {
     if (newPassword.value === confirmPassword.value) {
       user.password = newPassword.value;
       await backend.setItem("users", JSON.stringify(users));
-      console.log("Password reset successful!");
+      resetYourPassword();
       //BESTÄTIGUNGSANIMATION
       setTimeout(function () {
         window.location.href = "../../index.html";
       }, 3000);
     } else {
-      console.log("Passwords do not match");
+      PasswordNotMatch();
       newPassword.value = "";
       confirmPassword.value = "";
     }
@@ -33,4 +33,38 @@ function getEmailUrLParameter() {
   const urlParams = new URLSearchParams(queryString);
   const email = urlParams.get("email");
   return email;
+}
+
+function resetYourPassword() {
+  let showMsgs = document.getElementById("showMsg");
+  showMsgs.classList.add("btnEmailSend");
+  passwordReset();
+
+  setTimeout(function () {
+    showMsg.classList.remove("btnEmailSend");
+  }, 4000);
+}
+
+function passwordReset() {
+  let massage = document.getElementById("showMsg");
+  massage.innerHTML = `
+  You reset your password
+  `;
+}
+
+function PasswordNotMatch() {
+  let showMsg = document.getElementById("showMsg");
+  showMsg.classList.add("btnEmailSend");
+  passwordNo();
+
+  setTimeout(function () {
+    showMsg.classList.remove("btnEmailSend");
+  }, 3000);
+}
+
+function passwordNo() {
+  let massage = document.getElementById("sendMailMsg");
+  massage.innerHTML = `
+  your password not confirm
+`;
 }
