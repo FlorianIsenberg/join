@@ -1,11 +1,11 @@
 async function sendMail(event) {
-  // event.preventDefault();
+  event.preventDefault();
   let formData = new FormData(event.target);
   let response = await action(formData);
   if (response.ok) {
     mailSend();
   } else {
-    alert("E-Mail has not been send!");
+    mailNotSend();
   }
 }
 
@@ -22,10 +22,9 @@ function action(formData) {
 
 function mailSend() {
   let showMsg = document.getElementById("sendMailMsg");
-  document.getElementById("sendMailMsg").classList.remove("dNone");
-  setTimeout(function mailSendTo() {
-    showMsg.classList.add("btnEmailSend");
-  }, 1005);
+  showMsg.classList.add("btnEmailSend");
+  mailSendTo();
+
   setTimeout(function () {
     showMsg.classList.remove("btnEmailSend");
   }, 5000);
@@ -33,19 +32,25 @@ function mailSend() {
 
 function mailSendTo() {
   let massage = document.getElementById("sendMailMsg");
-  massage.innerHTML += `
+  massage.innerHTML = `
   <img src="/src/img/icon-mail-flight.svg" alt="" />
   An E-Mail has been sent to you 
   `;
 }
 
-// function mailNotSend() {  {
-//     let showMsg = document.getElementById("send");
-//     setTimeout(function () {
-//       showMsg.classList.add("btnEmailSend");
-//     }, 1005);
-//     setTimeout(function () {
-//       showMsg.classList.remove("btnEmailSend");
-//     }, 5000);
-//   }
-// }
+function mailNotSend() {
+  let showMsg = document.getElementById("send");
+  showMsg.classList.add("btnEmailSend");
+  mailSendNotTo();
+
+  setTimeout(function () {
+    showMsg.classList.remove("btnEmailSend");
+  }, 5000);
+}
+
+function mailSendNotTo() {
+  let massage = document.getElementById("sendMailMsg");
+  massage.innerHTML = `
+  An E-Mail has not been sent to you 
+`;
+}

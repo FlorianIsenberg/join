@@ -5,7 +5,8 @@ async function init() {
   users = JSON.parse(backend.getItem("users")) || [];
 }
 
-function logIn() {
+function logIn(event) {
+  event.preventDefault();
   let email = document.getElementById("email");
   let password = document.getElementById("password");
   let user = users.find(
@@ -39,7 +40,7 @@ function shakeInput() {
   let shakeMails = document.getElementById("shakeMail");
   let shakePasswords = document.getElementById("shakePassword");
   shakeMails.classList.add("shake");
-  shakePasswords.classList.remove("shake");
+  shakePasswords.classList.add("shake");
   setTimeout(function () {
     shakeMails.classList.remove("shake");
     shakePasswords.classList.remove("shake");
