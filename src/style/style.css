@@ -133,39 +133,36 @@ section {
 
   color: #000000;
 
-  /* Inside auto layout */
-
   flex: none;
   order: 0;
   flex-grow: 0;
 }
 
 .emailPasswordField {
-  /* Auto layout */
-
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0px;
   gap: 29px;
 
-  /* Inside auto layout */
-
   flex: none;
   order: 1;
   flex-grow: 0;
 }
 
-.mailPasswordInputField {
-  /* Auto layout */
+.inputBox {
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.mailPasswordInputField {
   display: flex;
   align-items: center;
   flex-direction: row;
   padding: 13px 21px;
-  gap: 10px;
-
-  /* Inside auto layout */
 
   flex: none;
   order: 0;
@@ -177,24 +174,18 @@ section {
 
 .mailPasswordInputField input {
   border: none;
-
   height: 100%;
 
-  /* Version 2/t6 */
   color: black;
   font-weight: 400;
   font-size: 21px;
   line-height: 120%;
-  /* or 25px */
-
-  /* Style */
-
-  /* Inside auto layout */
 
   flex: none;
   order: 0;
   flex-grow: 0;
   outline: none;
+  width: 360px;
 }
 
 .mailPasswordInputField img {
@@ -204,6 +195,10 @@ section {
   flex: none;
   order: 1;
   flex-grow: 0;
+}
+
+.mailPasswordInputField img {
+  cursor: pointer;
 }
 
 .rememberMe {
@@ -239,8 +234,6 @@ section {
   align-items: flex-start;
   padding: 0px;
   gap: 35px;
-  width: 341px;
-  height: 51px;
 }
 .btnLogIn {
   display: flex;
@@ -261,7 +254,6 @@ section {
   font-weight: 700;
   font-size: 21px;
   line-height: 120%;
-  /* or 25px */
 
   color: #ffffff;
 }
@@ -274,8 +266,6 @@ section {
   box-sizing: border-box;
   border: 0;
 
-  /* Auto layout */
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -286,8 +276,6 @@ section {
   width: 161px;
   height: 51px;
 
-  /* Version 2/ main color */
-
   border: 1px solid #2a3647;
   border-radius: 8px;
 
@@ -296,9 +284,6 @@ section {
   font-weight: 700;
   font-size: 21px;
   line-height: 120%;
-  /* or 25px */
-
-  /* Version 2/ main color */
 
   color: #2a3647;
   cursor: pointer;
@@ -306,29 +291,75 @@ section {
 }
 .btnGuestLog:hover {
   cursor: pointer;
-  /* Ligth blue */
 
   border: 2px solid #29abe2;
   color: #29abe2;
-  /* stronger */
 
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 8px;
 }
 
+.msgBoxDnone {
+  display: none;
+}
+
+.msgBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 64px;
+  padding: 4px 0px;
+
+  width: 400px;
+  height: 44px;
+
+  background: #2a3647;
+  border-radius: 8px;
+  border: 0;
+  color: #ffffff;
+
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 120%;
+}
+
+.shake {
+  border: 1px solid red;
+  position: relative;
+  animation: shake 0.2s;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    left: 0px;
+  }
+  20%,
+  80% {
+    left: -15px;
+  }
+  40%,
+  60% {
+    left: 15px;
+  }
+}
+
 @media (max-width: 700px) {
   .UserSignUp {
     left: calc(50% - 143.5px);
-    top: 790px;
+    top: 830px;
   }
 
   .contentBox {
-    width: auto;
+    width: 372px;
     gap: 20px;
   }
 
   .headlineBox {
     gap: 0;
+    width: auto;
+    height: auto;
   }
   .headlineBox p {
     width: auto;
@@ -338,18 +369,21 @@ section {
     text-align: center;
   }
 
+  .inputBox {
+    align-items: flex-start;
+  }
+
   .mailPasswordInputField {
     gap: 0px;
-    width: 250px;
+    width: 285px;
   }
 
   .emailPasswordField {
-    gap: 18px;
+    gap: 28px;
   }
 
   .mailPasswordInputField input {
-    font-size: 12px;
-    width: 230px;
+    width: 267px;
   }
 
   .rememberMe {
@@ -365,5 +399,10 @@ section {
     flex-direction: column;
     align-items: center;
     height: auto;
+    font-size: 16px;
+  }
+
+  .btnLogIn {
+    font-size: 16px;
   }
 }

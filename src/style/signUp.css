@@ -13,10 +13,6 @@ section {
   background: #f5f5f5;
 }
 .headIcon {
-  display: flex;
-}
-
-.headIcon img {
   position: absolute;
   left: 5.35%;
   width: 100.03px;
@@ -171,4 +167,36 @@ section {
 .signUpBtn:hover {
   background: #29abe2;
   cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .contentBox {
+    width: 372px;
+    gap: 20px;
+  }
+  .backArrow {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 31px;
+    top: 27px;
+    cursor: pointer;
+  }
+
+  .headline {
+    width: auto;
+  }
+
+  .inputFieldBox {
+    width: auto;
+  }
+
+  .nameMailPasswordInputField {
+    width: 285px;
+    gap: 0;
+  }
+
+  .nameMailPasswordInputField input {
+    width: 267px;
+  }
 }

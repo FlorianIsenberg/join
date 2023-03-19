@@ -148,17 +148,22 @@ body {
     background: #FFFFFF;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 14px;
+    padding-top: 30px;
     padding-bottom: 10px;
-    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.08);
     border-radius: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
     cursor: pointer;
+    transition: 3s all ease-in-out;
 }
 
+notesmain:hover {
+    transform: scale(1.9);
+    animation: spin 2s forwards;
+}
 
 .noteheadline {
     font-size: 16px;
@@ -319,7 +324,16 @@ body {
     width: 25px;
     height: 25px;
     padding-left: 500px;
+    animation: rotate 300ms ease-in-out;
+    animation-timing-function: cubic-bezier(1, 0, .5, 1);
 }
+
+@keyframes rotate {
+    from { -webkit-transform: rotate(0deg) }
+    to { -webkit-transform: rotate(360deg)} 
+}
+
+
 
 .taskcontainer {
     width: 623px;
@@ -345,6 +359,7 @@ body {
 
 .description {
     padding-bottom: 8px;
+
 }
 
 .okbutton {
@@ -398,7 +413,15 @@ body {
     z-index: 99;
     flex-direction: column;
     display: flex;
+    animation: rotate 255ms ease-in-out;
+    animation-timing-function: cubic-bezier(1, 0, .5, 1);
 }
+
+@keyframes rotate {
+    from { -webkit-transform: rotate(0deg) }
+    to { -webkit-transform: rotate(360deg)} 
+}
+
 
 .popupnotemastercontainer {
     display: none;
@@ -414,113 +437,13 @@ body {
     height: 25px;
     padding-left: 550px;
     padding-top: 30px;
+    animation: rotate 500ms ease-in-out;
+    animation-timing-function: cubic-bezier(1, 0, .5, 1);
 }
 
-.tmodifythecontents2 {
-    font-family: 'Inter';
-    font-size: 21px;
-    font-weight: 400;
-    width: 518px;
-    height: 50px;
-    padding-left: 60px;
-}
-
-.labelimage {
-    width: 142px;
-    height: 40px;
-    padding-left: 60px;
-}
-
-.noteheadline2 {
-    width: 523px;
-    height: 106px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 61px;
-    line-height: 120%;
-    color: #2A3647;
-    padding-left: 60px;
-}
-
-.duedate2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 60px;
-    font-size: 21px;
-    font-weight: 700px;
-    padding-right: 30px;
-    padding-bottom: 29px;
+@keyframes rotate {
+    from { -webkit-transform: rotate(0deg) }
+    to { -webkit-transform: rotate(360deg)} 
 }
 
 
-.prio2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 60px;
-    font-size: 21px;
-    font-weight: 700px;
-    padding-right: 30px;
-    padding-bottom: 29px;
-}
-
-.urgentpriority2 {
-    width: 131px;
-    height: 33px;
-}
-
-.assignedto2 {
-    font-weight: 700;
-    font-size: 21px;
-    padding-left: 60px;
-}
-
-.chosenuser {
-    display: flex;
-}
-
-.usericonsnote {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-left: 50px;
-    padding-top: 20px;
-    align-items: center;
-    width: 45px;
-    height: 45px;
-}
-
-.names {
-    display: flex;
-    flex-direction: column;
-    gap: 39px;
-    padding-top: 32px;
-    align-items: center;
-    padding-left: 20px;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-top: 30px;
-    font-size: 21px;
-    font-family: 'Inter';
-}
-
-.urgentpriority2 {
-    width: 131px;
-    height: 33px;
-}
-
-.noteheadline2 {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 61px;
-    line-height: 120%;
-}
-
-.editbutton {
-    padding-left: 520px;
-    padding-bottom: 20px;
-    height: 57px;
-    width: 57px;
-}

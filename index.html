@@ -13,6 +13,7 @@
       src="./mini_backend.js"
     ></script>
 
+    <script src="/src/js/showPassword.js"></script>
     <script
       language="JavaScript"
       type="text/javascript"
@@ -38,35 +39,41 @@
           <img src="src/img/icons/blueUnderline.svg" alt="" />
         </div>
 
-        <form onsubmit="logIn(); return false;">
+        <form onsubmit="logIn(event)">
           <div class="emailPasswordField">
-            <div class="mailPasswordInputField">
-              <input required type="email" placeholder="Email" id="email" />
-              <img src="src/img/email_input.svg" alt="" />
-            </div>
-
-            <div class="mailPasswordInputField">
-              <input
-                required
-                type="password"
-                placeholder="Password"
-                id="password"
-              />
-              <img src="src/img/password_input.svg" alt="" />
-            </div>
-
-            <div class="rememberMe">
-              <div class="reMeBox">
-                <input class="checkBox" type="checkbox" />
-                <p>Remember me</p>
+            <div class="inputBox">
+              <div class="mailPasswordInputField" id="shakeMail">
+                <input required type="email" placeholder="Email" id="email" />
+                <img src="src/img/email_input.svg" alt="" />
               </div>
-              <p>
-                <a
-                  class="ForgotPassword"
-                  href="src/templates/forgotPassword.html"
-                  >Forgot my password
-                </a>
-              </p>
+
+              <div class="mailPasswordInputField" id="shakePassword">
+                <input
+                  required
+                  type="password"
+                  placeholder="Password"
+                  id="password"
+                />
+                <img
+                  onclick="showPassword()"
+                  src="src/img/password_input.svg"
+                  alt=""
+                />
+              </div>
+
+              <div class="rememberMe">
+                <div class="reMeBox">
+                  <input class="checkBox" type="checkbox" />
+                  <p>Remember me</p>
+                </div>
+                <p>
+                  <a
+                    class="ForgotPassword"
+                    href="src/templates/forgotPassword.html"
+                    >Forgot my password
+                  </a>
+                </p>
+              </div>
             </div>
             <div class="btnLogGuest">
               <button class="btnLogIn">Log in</button>
@@ -77,7 +84,7 @@
           </div>
         </form>
       </div>
-      <div class="msgBox" id="msgBox"></div>
+      <div id="msgBox"></div>
     </section>
     <script src="src/js/signUpMsg.js"></script>
   </body>

@@ -14,13 +14,11 @@
     <link rel="stylesheet" type="text/css" href="style/colortable2.css">
     <link rel="stylesheet" type="text/css" href="style/contactsdb.css">
     <link rel="stylesheet" type="text/css" href="style/style-header.css">
+    <link rel="stylesheet" type="text/css" href="style/contactsRD.css">
     <script language="JavaScript" type="text/javascript" src="/mini_backend.js"></script>
-    
     <script language="JavaScript" type="text/javascript" src="js/contactsHTML.js"></script>
-    
     <script language="JavaScript" type="text/javascript" src="js/contacts.js"></script>
     <script language="JavaScript" type="text/javascript" src="js/contactsdb.js"></script>
-
     <link rel="icon" type="image/svg+xml" href="img/icons/favicon.svg" sizes="any">
     <link rel="icon" type="image/png" href="img/icons/favicon.png">
     <!-- favicon.ico im Stammverzeichnis, aber nicht verlinkt -->
@@ -28,63 +26,54 @@
 
 </head>
 
-<!-- <body onload="init(); builddefaultcontactpage(); showIndexContacts(); sortedListbyName();"> -->
-
 <body onload="includeHTML(); init(); builddefaultcontactpage(); showIndexContacts(); ">
+
     <!-- NOTE -- Master Container  -->
+
     <div id="MasterContainerDefaultPageId" class="MasterContainerDefaultPagecl">
 
-
         <!-- NOTE -- Master Container Header -->
+
         <div id="MasterContainerHeaderId" class="MasterContainerHeadercl" w3-include-html="/src/templates/header.html">
             <!-- Dieser Inhalt wird geladen [headerload.html] -->
         </div>
 
         <!-- NOTE -- Master Container Sidebar  -->
+
         <div id="MasterContainerSidebarId" class="MasterContainerSidebarcl" w3-include-html="/src/templates/sideMenu.html">
             <!-- Dieser Inhalt wird nachgeladen [sidebarload.html] -->
         </div>
 
         <!-- NOTE -- Master Container Inside -->
-        <!-- <div id="MasterContainerInsideId" class="MasterContainerInsidecl" w3-include-html="templates/contacts-div.html"> -->
+
         <div id="MasterContainerInsideId" class="MasterContainerInsidecl">
 
             <!-- NOTE Basic Side -->
 
             <div id="mastercontactID" class="mastercontactcl">
-
                 <div id="contactleftframeId" class="contactleftframecl">
-
                 </div> <!-- Frame 97 -->
                 <div id="contactrightframeId" class="contactrightframecl"></div>
-
             </div>
 
             <!-- NOTE END Basic Side -->
 
             <!-- NOTE Overlay Add Card und Edit Card  -->
-            <!-- <div id="overlayAddContactId" class="overlayAddContactcl d-none"></div> -->
+
             <div id="overlayAddContactId" class="overlayAddContactcl overlayAddContactincl d-none"></div>
 
-            <!-- <div id="overlayEditContactId" class="overlayEditContactcl d-none"></div> -->
             <div id="overlayEditContactId" class="overlayEditContactcl overlayAddContactincl d-none"></div>
 
             <!-- NOTE Overlay Show Card  -->
-            <!-- <div id="overlayShowContactId" class="overlayShowContactcl d-none"></div> -->
+
             <div id="overlayShowContactId" class="overlayShowContactcl"></div>
 
-
             <!-- NOTE Contact successfully created -->
-            <!-- div id="showSuccessbuttonId" class="showSuccessbuttoncl showSuccessbuttonincl d-none"></div> -->
+
             <div id="showSuccessbuttonId" class="showSuccessbuttoncl showSuccessbuttonincl d-none"></div>
-
-
-
 
         </div>
         <!-- NOTE Basic Side -->
-
-
 
     </div>
 
