@@ -39,7 +39,7 @@ function mailSendTo() {
 }
 
 function mailNotSend() {
-  let showMsg = document.getElementById("send");
+  let showMsg = document.getElementById("sendMailMsg");
   showMsg.classList.add("btnEmailSend");
   mailSendNotTo();
 
