@@ -30,7 +30,7 @@ let todos = [{
     description: 'Write open invoices for customer',
     date: '18.03.2023',
     priority: 'medium',
-    assignedTo: ['Mark Becker'],
+    assignedTo: ['Mark Becker',], 
     department: 'Backoffice',
     taskimage: './src/img/icons/backoffice.svg',
     subtasks: [],
@@ -71,7 +71,7 @@ let newPriority;
 let searchedTaskArray = [];
 let noteIds = ['note1', 'note2', 'note3', 'note4','note6', 'note7','note8','note9','note10',];
 let tasks=[];
-load();
+
 
 function updateHTML() {
     let todo = todos.filter(t => t['category'] == 'todo');
@@ -105,19 +105,15 @@ function updateHTML() {
 }
 
 function filterNames() {
-    let search = document.getElementById('search').value;
-    search = search.toLowerCase();
-    console.log(search)
+  let search = document.getElementById('search').value;
+  search = search.toLowerCase();
+  console.log(search)
 
-    let list = document.getElementById('list');
-    list.innerHTML = ``;
-
-    for (let index = 0; index < todos.length; index++) {
-        let titel = todos[index];                         
-        if (titel.toLowerCase().includes(search)) {
-        list.innerHTML += `<li>${todos.titel}</li>`;
-    }
-}
+  let list = document.getElementById('list');
+  list.innerHTML = ``;
+  let searchResults = todos.filter(s => s.title.startsWith(search));
+    console.log(searchResults);
+  
 }
 
 
@@ -129,29 +125,28 @@ function startDragging(id) {
 function generateTodoHTML(element) {
     return `
     <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit(${element['id']})">
-    <div class="notesection">
-    <span class="departmentdesign">${element.department}</span>
-    
+      <div class="notesection">
+      <span class="departmentdesign">${element.department}</span>
+      </div>
+      <div class="noteheadlinecontainer">
+      <h2 class="noteheadline">${element.title}</h2>
+      </div>
+      <div class="note">
+      <span class="tmodifythecontents">${element.description}</span> 
+      <div class="loadingbarandspan">
+        <div class="progressloadingbar">
+        <img class="progressloadingbarimage" src="./src/img/icons/progress.svg" alt="Progressbar">
+        <span class="halfdone">${element.subtasksDone}</span>
+        </div>    
+      </div>
     </div>
-    <div class="noteheadlinecontainer">
-        <h2 class="noteheadline">${element.title}</h2>
-    </div>
-        <div class="note">
-            <span class="tmodifythecontents">${element.description}</span> 
-                <div class="loadingbarandspan">
-                    <div class="progressloadingbar">
-                        <img class="progressloadingbarimage" src="./src/img/icons/progress.svg" alt="Progressbar">
-                        <span class="halfdone">${element.subtasksDone}</span>
-                    </div>    
-    </div>
-</div>
-        <div class="usericons">
-            <img src="./src/img/icons/sm.svg" alt="User SM">
-            <img src="./src/img/icons/mv.svg" alt="User MV" class="iconsinicons">
-            <img src="./src/img/icons/ef.svg" alt="User EF" class="iconsinicons">
-            <img class="greenarrowdown" src="./src/img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
-        </div>
-</div>`;
+      <div class="usericons">
+      <img src="./src/img/icons/sm.svg" alt="User SM">
+      <img src="./src/img/icons/mv.svg" alt="User MV" class="iconsinicons">
+      <img src="./src/img/icons/ef.svg" alt="User EF" class="iconsinicons">
+      <img class="greenarrowdown" src="./src/img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
+      </div>
+`;
 }
 
 function allowDrop(ev) {
@@ -274,15 +269,17 @@ function closetoDoForEdit() {
     const closeButton = document.getElementById('close');
     closeButton.addEventListener('click', function() {
       const masterTaskContainer = document.getElementById('mastertaskcontainerid');
-      const taskContainer = document.getElementById('taskcontainerid');
       masterTaskContainer.style.display = "none";
-      taskContainer.style.display = "none";
+     
+      document.getElementById('popupnotemastercontainerid').classList.remove('show');
+      document.getElementById('popupnoteid').classList.add('hide');
+  
     });
   }
 
 
 function editNote(id) {
-    let element = todos[id];
+    let element = todos.find(t=> t.id == id);
     document.getElementById('popupnotemastercontainerid').classList.add('hide');
     document.getElementById('mastertaskcontainerid').classList.add('show');
     generateNotePagetwoHTML(element);
@@ -294,19 +291,13 @@ function closeNoteForEdit() {
 }
 
 function okButtonCloseAndSafeNote() {
-    document.getElementById('taskcontainerid').classList.add('hide')
-    document.getElementById('note1').classList.add('hide');
-    document.getElementById('note1').classList.remove('hide');
+    document.getElementById('mastertaskcontainerid').classList.remove('show');
+    document.getElementById('popupnoteid').classList.add('hide');
 }
-
 
 
 function hideCategory() {
     document.getElementById('categoryhideid').classList.add('hide');
-}
-
-function deleteTasks() {
-    document.getElementById('draganddropsectionid').innerHTML = '';
 }
 
 
@@ -316,33 +307,6 @@ function deleteTasks() {
     const date = document.getElementById('dateinput').value;
     const priority = document.querySelector('.prio-selections .active').alt;
     const assignedTo = document.getElementById('assignedto').value;
-  
-    const newNote = {
-      id: generateUniqueId(), 
-      title: title,
-      description: description,
-      date: date,
-      priority: priority,
-      assignedTo: assignedTo
-    };
-
-    function save() {
-        let titlesAsText = JSON.stringify(title);
-        localStorage.setItem("title", titlesAsText);
-        let descriptionAsText = JSON.stringify(description);
-        localStorage.setItem("description", descriptionAsText);
-      }
-      
-      function load() {
-        let titleAsText = localStorage.getItem("title");
-        let descriptionAsText = localStorage.getItem("description");
-        if (titleAsText && descriptionAsText) {
-          title = JSON.parse(titleAsText);
-          description = JSON.parse(descriptionAsText);
-        }
-      }
-
-      updateHTML();
 
   document.getElementById('draganddropsectionid').innerHTML = `
   <div class="containeropennote">
@@ -379,12 +343,12 @@ function deleteTasks() {
   <div class="inputfieldandimage" id="inputselection">
     <select class="dropdownassignedto" id="assignedto">
       <option disabled>Select contacts to assign</option>
-      <option>Anton Meyer</option>
-      <option>Anja Schulz</option>
-      <option>David Eisenberg</option>
-      <option>Eva Fischer</option>
-      <option>Marius Müller</option>
-      <option>Peter Jackson</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
+      <option>${todos.assignedTo}</option>
     </select>
   </div>
           <div class="iconsfromusers"></div>
@@ -407,9 +371,9 @@ function searchNotesByTitle(id) {
   }
 
   function searchNotesByTitle(searchTerm) {
-    const notes = document.querySelectorAll('.notesmain');
+    const notes = document.querySelectorAll('notesmain');
     notes.forEach((note) => {
-      const title = note.querySelector('.noteheadline').textContent;
+      const title = note.querySelector('noteheadline').textContent;
       if (title.toLowerCase().includes(searchTerm.toLowerCase())) {
         note.style.display = 'block';
       } else {
@@ -438,7 +402,7 @@ function searchNotesByTitle(id) {
 
 
   noteIds.forEach(id => {
-    letnote = document.getElementById(id);
+    let note = document.getElementById(id);
     
     note.setAttribute('draggable', 'true');
     

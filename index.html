@@ -13,12 +13,12 @@
       src="./mini_backend.js"
     ></script>
 
+    <script src="/src/js/showPassword.js"></script>
     <script
       language="JavaScript"
       type="text/javascript"
       src="src/js/logIn.js"
     ></script>
-    <script src="/src/js/showPassword.js"></script>
   </head>
 
   <body onload="init()">
@@ -39,15 +39,15 @@
           <img src="src/img/icons/blueUnderline.svg" alt="" />
         </div>
 
-        <form onsubmit="logIn(); return false;">
+        <form onsubmit="logIn(event)">
           <div class="emailPasswordField">
             <div class="inputBox">
-              <div class="mailPasswordInputField">
+              <div class="mailPasswordInputField" id="shakeMail">
                 <input required type="email" placeholder="Email" id="email" />
                 <img src="src/img/email_input.svg" alt="" />
               </div>
 
-              <div class="mailPasswordInputField">
+              <div class="mailPasswordInputField" id="shakePassword">
                 <input
                   required
                   type="password"
@@ -84,7 +84,7 @@
           </div>
         </form>
       </div>
-      <div class="msgBox" id="msgBox"></div>
+      <div id="msgBox"></div>
     </section>
     <script src="src/js/signUpMsg.js"></script>
   </body>

@@ -133,23 +133,17 @@ section {
 
   color: #000000;
 
-  /* Inside auto layout */
-
   flex: none;
   order: 0;
   flex-grow: 0;
 }
 
 .emailPasswordField {
-  /* Auto layout */
-
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0px;
   gap: 29px;
-
-  /* Inside auto layout */
 
   flex: none;
   order: 1;
@@ -165,14 +159,10 @@ section {
 }
 
 .mailPasswordInputField {
-  /* Auto layout */
-
   display: flex;
   align-items: center;
   flex-direction: row;
   padding: 13px 21px;
-
-  /* Inside auto layout */
 
   flex: none;
   order: 0;
@@ -264,7 +254,6 @@ section {
   font-weight: 700;
   font-size: 21px;
   line-height: 120%;
-  /* or 25px */
 
   color: #ffffff;
 }
@@ -277,8 +266,6 @@ section {
   box-sizing: border-box;
   border: 0;
 
-  /* Auto layout */
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -286,7 +273,7 @@ section {
   padding: 4px 16px;
   gap: 10px;
 
-  width: 161x;
+  width: 161px;
   height: 51px;
 
   border: 1px solid #2a3647;
@@ -312,10 +299,56 @@ section {
   border-radius: 8px;
 }
 
+.msgBoxDnone {
+  display: none;
+}
+
+.msgBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 64px;
+  padding: 4px 0px;
+
+  width: 400px;
+  height: 44px;
+
+  background: #2a3647;
+  border-radius: 8px;
+  border: 0;
+  color: #ffffff;
+
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 120%;
+}
+
+.shake {
+  border: 1px solid red;
+  position: relative;
+  animation: shake 0.2s;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    left: 0px;
+  }
+  20%,
+  80% {
+    left: -15px;
+  }
+  40%,
+  60% {
+    left: 15px;
+  }
+}
+
 @media (max-width: 700px) {
   .UserSignUp {
     left: calc(50% - 143.5px);
-    top: 816px;
+    top: 830px;
   }
 
   .contentBox {

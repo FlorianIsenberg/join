@@ -17,12 +17,12 @@
     <link rel="icon" type="image/png" href="src/img/icons/favicon.ico">
     <script language="JavaScript" text="text/javascript" src="src/js/referencePage.js"></script>
     <link rel="stylesheet" type="text/css" href="src/style/style-header.css">
-
+    
 
 </head>
 
-<body onload="updateHTML()">
-    <div w3-include-html="./src/templates/header.html"></div>
+<body onload= "init() ; updateHTML()">
+     <!-- <header class="header" w3-include-html="../src/templates/board-complete.html"></header> -->
     <div class="totalmastercontainer" id="totalmastercontainerid">
         <div class="mastercontainer hide" id="mastercontainerid">
         </div>
@@ -35,7 +35,7 @@
                         <img src="./src/img/icons/Board.svg" alt="Board"></span>
                     <div class="tasks">
                         <div class="inputfieldandicons">
-                            <input class="findtask" type="text" id="search" onkeydown="filterNames()" placeholder="Find Task" \>
+                            <input class="findtask" type="text" id="search" onkeyup="filterNames()" placeholder="Find Task" \>
                             <img src="./src/img/icons/Vector3line.svg" alt="verticalline">
                             <img src="./src/img/icons/icon-magnifying-glass.svg" alt="magnifiying class">
                         </div>
@@ -78,98 +78,18 @@
             <div class="todoboard">
                 <div class="dropdowncontainer drag-area" id="todo" class="drag-area" ondrop="moveTo('todo')"
                     ondragover="allowDrop(event)" ondragenter="highlight('todo')" ondragleave="removeHighlight('todo')">
-                    
-                    <div class="notesmain" id="note1" draggable="true" ondragstart="startDragging(0)"
-                        onclick="openNote()">
-                        <div class="notesection"></div>
-                        <div class="noteheadlinecontainer"></div>
-                        <div class="note">
-                            <div class="loadingbarandspan">
-                                <div class="progressloadingbar">
-                                    <img class="progressloadingbarimage" src="./src/img/icons/progress.svg"
-                                        alt="Progressbar">
-                                    <span class="halfdone"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="usericons">
-                        </div>
-                    </div>
                 </div>
                 <div class="dropdowncontainer drag-area" id="inprogress" ondrop="moveTo('inprogress')"
                     ondragover="allowDrop(event)" ondragenter="highlight('inprogress')"
                     ondragleave="removeHighlight('inprogress')">
-
-                    <div class="notesmain" id="note2" onclick="openNote()" draggable="true"
-                        ondragstart="startDragging(1)">
-                        <div class="notesection"></div>
-                        <div class="noteheadlinecontainer"></div>
-                        <div class="note">
-                            <div class="loadingbarandspan">
-                                <div class="progressloadingbar"></div>
-                            </div>
-                        </div>
-                        <div class="usericons"></div>
-                    </div>
                 </div>
                 <div class="dropdowncontainer drag-area" id="awaitingfeedback" ondrop="moveTo('awaitingfeedback')"
                     ondragover="allowDrop(event)" ondragenter="highlight('awaitingfeedback')"
                     ondragleave="removeHighlight('awaitingfeedback')">
-
-                    <div class="notesmain" id="note3" onclick="openNote()" draggable="true"
-                        ondragstart="startDragging(2)">
-                        <div class="notesection"></div>
-                        <div class="noteheadlinecontainer"></div>
-                        <div class="note">
-                            <div class="loadingbarandspan">
-                                <div class="progressloadingbar">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="usericons"></div>
-                    </div>
-                    <div class="notesmain" id="note4" onclick="openNote()" draggable="true"
-                        ondragstart="startDragging(3)">
-                        <div class="notesection"></div>
-                        <div class="noteheadlinecontainer"></div>
-                        <div class="note">
-                            <div class="loadingbarandspan">
-                                <div class="progressloadingbar"></div>
-                            </div>
-                        </div>
-                        <div class="usericons"></div>
-                    </div>
                 </div>
                 <div class="dropdowncontainer drag-area" id="done" ondrop="moveTo('done')" ondragover="allowDrop(event)"
                     ondragenter="highlight('done')" ondragleave="removeHighlight('done')">
-
-                    <div class="notesmain" id="note5" onclick="openNote()" draggable="true"
-                        ondragstart="startDragging(4)">
-                        <div class="notesection">
-                            <img src="./src/img/icons/marketing.svg" alt="Marketinglabel">
-                        </div>
-                        <div class="noteheadlinecontainer">
-                            <h2 class="noteheadline">Social media strategy</h2>
-                        </div>
-                        <div class="note">
-                            <span class="tmodifythecontents">Develop an ad campaign for brand positioning</span>
-                            <div class="loadingbarandspan">
-                                <div class="progressloadingbar">
-                                    <img class="progressloadingbarimage" src="./src/img/icons/loadingbarcomplete.svg"
-                                        alt="Progressbar">
-                                    <span class="halfdone">3/3 Done</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="usericons">
-                            <img src="./src/img/icons/BZ.svg" alt="User BZ">
-                            <img src="./src/img/icons/RS.svg" alt="User RS" class="iconsinicons">
-                            <img class="greenarrowdown2" src="./src/img/icons/greenarrowsdown.svg"
-                                alt="doublea arrow green down">
-                        </div>
-                    </div>
                 </div>
-            </div>
         </div>
         <div class="mastertaskcontainer" id="mastertaskcontainerid">
             <div class="taskcontainer hide" id="taskcontainerid">
