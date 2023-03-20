@@ -91,19 +91,13 @@ section {
   gap: 35px;
 
   width: 652px;
-
-  /* white */
-
   background: #ffffff;
-  /* shadoe backlog box */
 
   box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
   border-radius: 30px;
 }
 
 .headlineBox {
-  /* Auto layout */
-
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -345,6 +339,60 @@ section {
   }
 }
 
+.startBackground {
+  height: 100vh;
+  width: 100%;
+  background-color: #f5f5f5;
+  position: absolute;
+  opacity: 0;
+  animation: fadeBackground 1500ms ease-in-out;
+  animation-direction: normal;
+  z-index: -10;
+}
+
+.logoAnimation {
+  animation: slideLogo 1000ms ease-in-out;
+  animation-direction: normal;
+  z-index: 15;
+}
+
+@keyframes slideLogo {
+  0% {
+    top: calc(50% - 122px);
+    left: calc(50% - 100px);
+    transform: translate(-50%, -50%);
+    transform: scale(2);
+  }
+  20% {
+    top: calc(50% - 122px);
+    left: calc(50% - 100px);
+    transform: translate(-50%, -50%);
+    transform: scale(2);
+  }
+  100% {
+    top: 7.81%;
+    left: 5.35%;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeBackground {
+  0% {
+    opacity: 100%;
+    z-index: 10;
+  }
+  50% {
+    opacity: 100%;
+  }
+  99% {
+    opacity: 0%;
+    z-index: 10;
+  }
+  100% {
+    z-index: -1;
+  }
+}
+
 @media (max-width: 700px) {
   .UserSignUp {
     left: calc(50% - 143.5px);
@@ -404,5 +452,37 @@ section {
 
   .btnLogIn {
     font-size: 16px;
+  }
+  .headiconJoin {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 60px;
+    height: auto;
+  }
+
+  .headiconJoin img {
+    width: 60px;
+  }
+
+  @keyframes slideLogo {
+    0% {
+      width: 60px;
+      top: calc(50% - 30px);
+      left: calc(50% - 36.5px);
+      transform: translate(-50%, -50%);
+    }
+    20% {
+      width: 60px;
+      top: calc(50% - 30px);
+      left: calc(50% - 36.5px);
+      transform: translate(-50%, -50%);
+    }
+    100% {
+      width: 60px;
+      top: 15px;
+      left: 15px;
+      height: auto;
+    }
   }
 }

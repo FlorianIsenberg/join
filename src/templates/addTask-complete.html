@@ -8,29 +8,29 @@
         
         
         <title>Default Page Join</title>
-        <link rel="stylesheet" type="text/css" href="src/style/fonts.css">
-        <link rel="stylesheet" type="text/css" href="src/style/style-header.css">
-        <script language="JavaScript" type="text/javascript" src="src/js/referencePage.js"></script>
+        <link rel="stylesheet" type="text/css" href="../style/fonts.css">
+        <link rel="stylesheet" type="text/css" href="../style/style-header.css">
+        <script language="JavaScript" type="text/javascript" src="../js/referencePage.js"></script>
         
     </head>
 
-    <body onload="init()">
+    <body onload="init(); includeHTML()">
         <!-- NOTE -- Master Container  -->
         <div id="MasterContainerDefaultPageId" class="MasterContainerDefaultPagecl">
 
             
             <!-- NOTE -- Master Container Header -->
-            <div id="MasterContainerHeaderId" class="MasterContainerHeadercl" w3-include-html="src/templates/header.html">
+            <div id="MasterContainerHeaderId" class="MasterContainerHeadercl" w3-include-html="../templates/header.html">
                 <!-- Dieser Inhalt wird geladen [headerload.html] -->
             </div>
 
             <!-- NOTE -- Master Container Sidebar  -->
-            <div id="MasterContainerSidebarId" class="MasterContainerSidebarcl" w3-include-html="src/templates/sideMenu.html">
+            <div id="MasterContainerSidebarId" class="MasterContainerSidebarcl" w3-include-html="../templates/sideMenu.html">
                 <!-- Dieser Inhalt wird nachgeladen [sidebarload.html] -->
             </div>
 
             <!-- NOTE -- Master Container Inside -->
-            <div id="MasterContainerInsideId" class="MasterContainerInsidecl" w3-include-html="src/templates/addTask.html">
+            <div id="MasterContainerInsideId" class="MasterContainerInsidecl" w3-include-html="../templates/addTask.html">
 
                 
             </div>
