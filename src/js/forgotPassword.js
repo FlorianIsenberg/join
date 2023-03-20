@@ -31,8 +31,8 @@ function mailSend() {
 }
 
 function mailSendTo() {
-  let massage = document.getElementById("sendMailMsg");
-  massage.innerHTML = `
+  let message = document.getElementById("sendMailMsg");
+  message.innerHTML = `
   <img src="/src/img/icon-mail-flight.svg" alt="" />
   An E-Mail has been sent to you 
   `;

@@ -41,13 +41,13 @@ function resetYourPassword() {
   passwordReset();
 
   setTimeout(function () {
-    showMsg.classList.remove("btnEmailSend");
+    showMsgs.classList.remove("btnEmailSend");
   }, 4000);
 }
 
 function passwordReset() {
-  let massage = document.getElementById("showMsg");
-  massage.innerHTML = `
+  let message = document.getElementById("showMsg");
+  message.innerHTML = `
   You reset your password
   `;
 }
