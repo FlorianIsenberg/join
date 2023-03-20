@@ -8,14 +8,9 @@
     font-weight: 400;
     font-size: 21px;
     line-height: 120%;
-
-    /* margin-right: .5em; */
     margin-left: 2em;
     padding: 0px;
-    /* width: 325px; */
-    max-height: 779px;
-    /* left: 1.5em; */
-    /* top: 5px; */
+    max-height: calc(95vh - 90px);
     padding-right: 4em;
     background: #FFFFFF;
     overflow-x: hidden;
