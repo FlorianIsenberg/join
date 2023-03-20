@@ -1,6 +1,6 @@
 
   
-</head>
+
 <body onload="includeHTML()">
     <!-- <header class="header" w3-include-html="src/templates/header.html"></header> -->
     <div class="summary">
@@ -19,59 +19,59 @@
         <div class="summary-content">
             <div class="summary-left" >
                 <div class="summary-task" >
-                  <div class="task-type" href="/board-complete.html">
-                    <div class=task-counter id="task-counter-all" href="/board-complete.html">5</div>
-                    <span class="task-description" href="/board-complete.html">Tasks in Board</span>
+                  <div class="task-type" onclick="toPageBoard()">
+                    <div class=task-counter id="sumTasksInBoard">5</div>
+                    <span class="task-description">Tasks in Board</span>
                   </div>
-                  <div  class="task-type" href="/board-complete.html">
-                    <div class=task-counter id="task-counter-Inprogress">2</div>
+                  <div  class="task-type" onclick="toPageBoard()">
+                    <div class=task-counter id="sumTasksInProgress">2</div>
                     <span class="task-description">Tasks In Progress</span>
                   </div>
-                  <div  class="task-type" href="/board-complete.html">
-                    <div class=task-counter id="task-counter-awaiting">2</div>
+                  <div  class="task-type" onclick="toPageBoard()">
+                    <div class=task-counter id="sumTasksAwaiting">2</div>
                     <span class="task-description">Awaiting Feedback</span>
                   </div>
                 </div>
-                <div  class="summary-task-deadline" href="/board-complete.html">
+                <div  class="summary-task-deadline" onclick="toPageBoard()">
                     <div class="urgent">
-                      <img class="urgent-img" src="src/img/urgent-color.svg">
+                      <img class="urgent-img" src="/src/img/urgent-color.svg">
                       <div class="task-urgent">
-                        <div class="urgent-counter">1</div>
+                        <div class="urgent-counter" id="sumTasksUrgent">1</div>
                         <span class="urgent-description">Urgent</span>
                       </div>
                     </div>
                     <div class="urgent-line"> </div>
                     <div class="deadline">
-                        <div id="deadline-day" class="deadline-day" >October 16, 2022</div>
+                        <div  class="deadline-day" id="deadline-day" >October 16, 2022</div>
                         <span class="deadline-description">Upcoming Deadline</span>
                     </div>
                 </div>
                 <div class="summary-todo">
-                  <div  class="task-todo" href="/board-complete.html">
-                      <img src="src/img/summary-pencil.svg" class="todo-img">
+                  <div  class="task-todo" onclick="toPageBoard()">
+                      <img src="/src/img/summary-pencil.svg" class="todo-img">
                       <div class="summary-todo-right">
-                          <div class="task-counter-todo" id="task-counter-todo">1</div>
+                          <div class="task-counter-todo" id="sumTasksTodo">1</div>
                           <span class="todo-description">To-do</span>
                       </div>
                   </div>
-                  <div  class="task-todo" href="/board-complete.html">
-                    <img src="src/img/summary-done.svg" class="todo-img">
+                  <div  class="task-todo" onclick="toPageBoard()">
+                    <img src="/src/img/summary-done.svg" class="todo-img">
                     <div class="summary-todo-right">
-                        <div class="task-counter-todo" id="task-counter-done">1</div>
+                        <div class="task-counter-todo" id="sumTasksDone">1</div>
                         <span class="todo-description">Done</span>
                     </div>
                   </div>
                 </div>
             </div>
             <div class="summary-welcome-user"> 
-              <span class="good-morning">Good Morning,</span>
-              <span id="summary-userName" class="summary-userName">Müller</span>
+              <span class="good-morning">Hello,</span>
+              <span id="summary-userName" class="summary-userName"> </span>
           </div>
         </div>
     </div>
     
 </body>
-<script>
+<!-- <script>
     document.getElementById("current_date").innerHTML = Date();
-  </script>
+  </script> -->
 </html>

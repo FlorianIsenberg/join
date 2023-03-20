@@ -4,6 +4,10 @@ body {
     font-family: 'Inter';
 }
 
+html {
+    overflow-x: hidden;
+}
+
 .d-none {
     display: none !important;
 }
@@ -18,7 +22,8 @@ body {
 .contactleftframecl {
     position: absolute;
     width: 453px;
-    height: 798px;
+    /* height: 798px; */
+    height: 90vh;
     left: 232px;
     top: 89px;
     /* white */

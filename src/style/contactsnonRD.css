@@ -1,0 +1,16 @@
+/* Hier stehen alle RD Elemente die in nonRD 
+    nicht erscheinen dürfen! */
+
+
+@media screen and (min-width: 1000px)  {
+/* NOTE RD New Contact button */
+
+
+.mobileButtonRDcl {
+    display: none !important;
+}
+
+
+
+
+} /* end of @media
