@@ -296,7 +296,7 @@ color: #CDCDCD;
     color: #CDCDCD;
 } */
 
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 999px){
     .MasterContainerInsidecl{
         padding:0%;
     }
@@ -308,10 +308,10 @@ color: #CDCDCD;
     }
     .mobile-header {        
         display: flex;
-        /* justify-content: space-between;   */
+        /* max-width: 89%; */
         box-sizing: border-box;         
     }
-    /* ------dropown Profilimage-----*/
+    
     .mobile-dropdown {
         display: block;
         font-family: 'Inter';
@@ -357,9 +357,7 @@ color: #CDCDCD;
         width: 32px;
         object-fit: fill;
     }
-    /* .summary-content {
-        margin-left: 0px;
-    } */
+    
     .mobile-navbar {
         display: flex;
         flex-direction: row;
@@ -367,6 +365,7 @@ color: #CDCDCD;
         align-items: center;
         padding: 0 12px;
         gap: 10px;
+        /* max-width: 89%; */
         position: fixed;
         height: 80px;
         bottom: 0;
@@ -390,4 +389,4 @@ color: #CDCDCD;
         width: 32px;
         object-fit: fill;
     }
-}
+ } 

@@ -6,6 +6,7 @@
 
 function builddefaultcontactpage() {
     document.getElementById('contactrightframeId').innerHTML += generateContactHTML();
+    document.getElementById('contactleftframeId').innerHTML += mobileNewContactButton();
 }
 
 
@@ -66,6 +67,7 @@ function contactShowContact(showId) {
     document.getElementById('overlayShowContactId').innerHTML += generateOverlayShowContactHTML(showId);
     document.getElementById('overlayShowContactId').classList.remove('d-none');
     document.getElementById('overlayShowContactId').classList.add('overlayShowContactIncl');
+   
 }
 
 
