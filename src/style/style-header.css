@@ -231,7 +231,7 @@ color: #CDCDCD;
     line-height: 120%;
     color: #FFFFFF;
 }
-.dNon {
+.d-none {
     display: none !important;
 }
 /* .dropdown-links {
@@ -342,6 +342,7 @@ color: #CDCDCD;
         font-size: 16px;
         line-height: 120%;
         color: #CDCDCD; 
+        gap: 15px;
      }
     .mobile-dropdown-links div {
         top: 79px;
