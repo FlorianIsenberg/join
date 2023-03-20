@@ -130,3 +130,11 @@
     line-height: 120%;
     color: #000000;
 }
+.mobile-header-help {
+    display: none;
+}
+@media screen and (max-width: 1100px){
+    .mobile-header-help {
+        display: flex;
+    }
+}

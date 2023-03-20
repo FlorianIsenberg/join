@@ -6,33 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join Help</title>
      <link rel="stylesheet" href="../style/style-help.css">
- 
+  <script src="src/js/main.js"></script>  -->
 
-    <script>
-    async function includeHTML() {
-    let includeElements = document.querySelectorAll('[w3-include-html]');
-    for (let i = 0; i < includeElements.length; i++) {
-      const element = includeElements[i];
-      file = element.getAttribute("w3-include-html"); // "includes/header.html"
-      let resp = await fetch(file);
-      if (resp.ok) {
-        element.innerHTML = await resp.text();
-      } else {
-        element.innerHTML = 'Page not found';
-      }
-    }
-  }
-    </script>
-</head> -->
+   
+<!-- </head> -->
 
 
 
-<body onload="includeHTML()">
+<!-- <body onload="includeHTML()">  -->
     <!-- <header class="header" w3-include-html="src/templates/header.html"></header> -->
     <div class="help">
+        <div class="mobile-header-help">
+            <span id="mobile-header-help">Kanban Project Management Tool</span>
+          </div>
         <div class="help-header">
             <span class="help-headline">Help</span>
-            <img class="help-arrow" src="img/arrow-left-black.svg">
+            <!-- <img class="help-arrow" src="src/img/arrow-left-black.svg" href="/src/templates/summary-complete" > -->
+            <a class="help-arrow" href="/src/templates/summary-complete" ><img class="help-arrow" src="/src/img/arrow-left-black.png"></a>
+            
+
         </div>
         <div class="help-content">
             <div class="help-info">
@@ -65,4 +57,4 @@
             </div>
         </div>
     </div>
-</body>
+<!-- </body> -->
