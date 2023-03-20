@@ -151,7 +151,7 @@ function addTask() {
                 <div class="container-right">
                     <span class="duedate">Due date</span>
                         <div class="dateinput">
-                        <input type="date" class="dateinputandimage4" value="2023-02-03" min="023-02-01" max="023-02-28">
+                        <input type="date" class="dateinputandimage4" value="2023-02-03" min="023-02-01" max="023-02-28" id="dateinput">
                         
                         </div>
                             <div class="Prioritys">
@@ -274,7 +274,7 @@ function toggleCategory() {
 }
 
  
-function EditedNote(element) {
+function EditedNote() {
   let title = document.getElementById('titleinput').value;
   let description = document.getElementById('descriptioninput').value;
   let department = document.getElementById('sales').value = "Sales";
@@ -323,20 +323,20 @@ generateEditedNote(newNote2);
 
 
 function generateEditedNote(element) {
-document.getElementById('todo').innerHTML += `
+document.getElementById('todo').innerHTML = `
 <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
 <div class="notesection">
-<span class="departmentdesign"></span>
+<span class="departmentdesign">${element.department}</span>
 </div>
 <div class="noteheadlinecontainer">
-<h2 class="noteheadline"></h2>
+<h2 class="noteheadline">${element.title}</h2>
 </div>
 <div class="note">
-<span class="tmodifythecontents"></span> 
+<span class="tmodifythecontents">${element.description}</span> 
 <div class="loadingbarandspan">
   <div class="progressloadingbar">
   <img class="progressloadingbarimage" src="./src/img/icons/progress.svg" alt="Progressbar">
-  <span class="halfdone">}</span>
+  <span class="halfdone">${element.subtasksDone}</span>
   </div>    
 </div>
 </div>
