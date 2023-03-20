@@ -13,7 +13,7 @@ function logIn(event) {
     (u) => u.email == email.value && u.password == password.value
   );
   if (user) {
-    window.location.href = "../templates/summary-complete.html";
+    window.location.href = "./src/templates/summary-complete.html";
     greet();
   } else {
     shakeInput();
@@ -21,7 +21,7 @@ function logIn(event) {
 }
 
 function guestLogIn() {
-  window.location.href = "../templates/summary-complete.html";
+  window.location.href = "./src/templates/summary-complete.html";
 }
 
 function showSignUp() {
