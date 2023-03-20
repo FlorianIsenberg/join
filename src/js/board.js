@@ -322,10 +322,6 @@ function closeNoteForEdit() {
     document.getElementById('popupnoteid').classList.add('hide');
 }
 
-function okButtonCloseAndSafeNote() {
-    document.getElementById('mastertaskcontainerid').classList.remove('show');
-    document.getElementById('popupnoteid').classList.add('hide');
-}
 
 
 function hideCategory() {

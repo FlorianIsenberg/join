@@ -39,8 +39,7 @@ function generateNotePagetwoHTML(task) {
               </select>
             </div>
                     <div class="iconsfromusers"></div>
-                    <img src="../img/icons/okbutton.svg" alt="button ok" onclick="okButtonCloseAndSafeNote()"
-                        class="okbutton" id="okbuttonsafe">
+                    <img src="../img/icons/okbutton.svg" alt="button ok" onclick="editedNote()" class="okbutton" id="okbuttonsafe">
                     </div>
             </div>`;
 }
@@ -274,10 +273,10 @@ function toggleCategory() {
 }
 
  
-function EditedNote() {
+function editedNote() {
   let title = document.getElementById('titleinput').value;
   let description = document.getElementById('descriptioninput').value;
-  let department = document.getElementById('sales').value = "Sales";
+  let department = document.getElementById('sales').value;
   document.getElementById('marketing').value = "Marketing";
   document.getElementById('backoffice').value = "Backoffice";
   document.getElementById('media').value = "Media";
