@@ -7,26 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board</title>
 
-    <link rel="stylesheet" href="src/style/board.css">
-    <link rel="stylesheet" href="src/style/addtask.css">
-    <link rel="stylesheet" type="text/css" href="./src/style/fonts.css">
-    <link rel="stylesheet" type="text/css" href="src/style/style-header.css">
-    <script language="JavaScript" type="text/javascript" src="mini_backend.js"></script>
-    <script language="JavaScript" text="text/javascript" src="src/js/referencePage.js"></script>
-    <script language="JavaScript" type="text/javascript" src="src/js/summary.js"></script>
-    <script language="JavaScript" type="text/javascript" src="src/js/board.js"></script>
-
-    <link rel="icon" type="image/svg+xml" href="src/img/icons/favicon.svg" sizes="any">
-    <link rel="icon" type="image/png" href="src/img/icons/favicon.ico">
+    <link rel="stylesheet" href="../style/board.css">
+    <link rel="stylesheet" href="../style/addtask.css">
+    <link rel="stylesheet" type="text/css" href="../style/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../style/style-header.css">
+    <script language="JavaScript" type="text/javascript" src="../js/board.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../js/board2.js"></script>
+    <link rel="icon" type="image/svg+xml" href="../img/icons/favicon.svg" sizes="any">
+    <link rel="icon" type="image/png" href="../src/img/icons/favicon.ico">
     
-    
-
-
 </head>
 
-<body onload= "init() ; updateHTML()">
-     <!-- <header class="header" w3-include-html="../src/templates/board-complete.html"></header> -->
-    <div class="totalmastercontainer" id="totalmastercontainerid">
+<body onload= "includeHTML(); init() ; updateHTML()">
+   <!-- NOTE -- Master Container  -->
+   <div id="MasterContainerDefaultPageId" class="MasterContainerDefaultPagecl">
+
+            
+    <!-- NOTE -- Master Container Header -->
+    <div id="MasterContainerHeaderId" class="MasterContainerHeadercl" w3-include-html="../templates/header.html">
+        <!-- Dieser Inhalt wird geladen [headerload.html] -->
+    </div>
+
+    <!-- NOTE -- Master Container Sidebar  -->
+    <div id="MasterContainerSidebarId" class="MasterContainerSidebarcl" w3-include-html="../templates/sideMenu.html">
+        <!-- Dieser Inhalt wird nachgeladen [sidebarload.html] -->
+    </div>
+
+    <!-- NOTE -- Master Container Inside -->
+    <!-- <div id="MasterContainerInsideId" class="MasterContainerInsidecl" w3-include-html="../templates/board.html">                 -->
+    <!-- </div> -->
+
+   </div>
+   <div class="overallcontainer">
         <div class="mastercontainer hide" id="mastercontainerid">
         </div>
 
@@ -35,15 +47,15 @@
             <div class="boardsection">
                 <div class="insertboard">
                     <span class="tboard">
-                        <img src="./src/img/icons/Board.svg" alt="Board"></span>
+                        <img src="../img/icons/Board.svg" alt="Board"></span>
                     <div class="tasks">
                         <div class="inputfieldandicons">
                             <input class="findtask" type="text" id="search" onkeyup="filterNames()" placeholder="Find Task" \>
-                            <img src="./src/img/icons/Vector3line.svg" alt="verticalline">
-                            <img src="./src/img/icons/icon-magnifying-glass.svg" alt="magnifiying class">
+                            <img src="../img/icons/Vector3line.svg" alt="verticalline">
+                            <img src="../img/icons/icon-magnifying-glass.svg" alt="magnifiying class">
                         </div>
                         <div class="addtaskarea">
-                            <img src="./src/img/icons/addtask.svg" onclick="addTask(), taskTotalplus()" class="btnaddtask"
+                            <img src="../img/icons/addtask.svg" onclick="addTask(), taskTotalplus()" class="btnaddtask"
                                 id="addTaskButton">
                         </div>
                     </div>
@@ -53,28 +65,28 @@
         <div class="severaltodosection">
             <div class="todoplus">
                 <span class="progressbar">
-                    <img class="progresssections" src="src/img/icons/To do.svg" alt="To Do"></span>
+                    <img class="progresssections" src="../img/icons/To do.svg" alt="To Do"></span>
                 <img class="plusbtnblack" onclick="openNewTask()" id="opennewtask" 1
-                    src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
+                    src="../img/icons/plusbuttonblack.svg" alt="plusbutton">
             </div>
             <div class="todoplus">
                 <span class="progressbar">
-                    <img class="progresssections" src="./src/img/icons/Inprogress.svg" alt="In progress"></span>
+                    <img class="progresssections" src="../img/icons/Inprogress.svg" alt="In progress"></span>
                 <img class="plusbtnblack" onclick="openNewTask()" id="opennewtask2"
-                    src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
+                    src="../img/icons/plusbuttonblack.svg" alt="plusbutton">
             </div>
             <div class="todoplus">
                 <span class="progressbar">
-                    <img class="progresssections" src="./src/img/icons/AwaitingFeedback.svg"
+                    <img class="progresssections" src="../img/icons/AwaitingFeedback.svg"
                         alt="Awaiting Feedback"></span>
                 <img class="plusbtnblack" onclick="openNewTask()" id="opennewtask3"
-                    src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
+                    src="../img/icons/plusbuttonblack.svg" alt="plusbutton">
             </div>
             <div class="todoplus">
                 <span class="progressbar">
-                    <img class="progresssections" src="./src/img/icons/Done.svg" alt="Done"> </span>
+                    <img class="progresssections" src="../img/icons/Done.svg" alt="Done"> </span>
                 <img class="plusbtnblack" onclick="openNewTask()" id="opennewtask4"
-                    src="./src/img/icons/plusbuttonblack.svg" alt="plusbutton">
+                    src="../img/icons/plusbuttonblack.svg" alt="plusbutton">
             </div>
         </div>
         <div class="draganddropsection" id="draganddropsectionid">
@@ -105,6 +117,7 @@
     </div>
     <ul id="list"></ul>
     </div>
+</div>    
 </body>
 
 </html>

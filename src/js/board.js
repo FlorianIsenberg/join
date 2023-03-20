@@ -65,6 +65,38 @@ let todos = [{
 }
 ];
 
+
+async function includeHTML() {
+  let includeElements = document.querySelectorAll('[w3-include-html]');
+  for (let i = 0; i < includeElements.length; i++) {
+      const element = includeElements[i];
+      file = element.getAttribute("w3-include-html"); // "includes/header.html"
+      let resp = await fetch(file);
+      if (resp.ok) {
+          element.innerHTML = await resp.text();
+      } else {
+          element.innerHTML = 'Page not found';
+      }
+  }
+};
+
+setURL('https://gruppe-07i.developerakademie.net/smallest_backend_ever%27');
+
+
+// NOTE -- Initial DB
+
+async function init() {
+
+    await downloadFromServer();
+    // fetch Data from Backend.cData
+   // contactdata = JSON.parse(backend.getItem('cData')) || [];
+   // cDataCounter = (contactdata.length / 5);
+
+    //sortedListbyName();
+}
+
+
+
 let currentDraggedElement;
 let prios = [];
 let newPriority; 
@@ -135,16 +167,16 @@ function generateTodoHTML(element) {
       <span class="tmodifythecontents">${element.description}</span> 
       <div class="loadingbarandspan">
         <div class="progressloadingbar">
-        <img class="progressloadingbarimage" src="./src/img/icons/progress.svg" alt="Progressbar">
+        <img class="progressloadingbarimage" src="../img/icons/progress.svg" alt="Progressbar">
         <span class="halfdone">${element.subtasksDone}</span>
         </div>    
       </div>
     </div>
       <div class="usericons">
-      <img src="./src/img/icons/sm.svg" alt="User SM">
-      <img src="./src/img/icons/mv.svg" alt="User MV" class="iconsinicons">
-      <img src="./src/img/icons/ef.svg" alt="User EF" class="iconsinicons">
-      <img class="greenarrowdown" src="./src/img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
+      <img src="../img/icons/sm.svg" alt="User SM">
+      <img src="../img/icons/mv.svg" alt="User MV" class="iconsinicons">
+      <img src="../img/icons/ef.svg" alt="User EF" class="iconsinicons">
+      <img class="greenarrowdown" src="../img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
       </div>
 `;
 }
@@ -220,36 +252,36 @@ function closepopupcontainer() {
 
 
 function urgentButtonChange() {
-    if (document.getElementById("urgent").src == "./src/img/icons/urgentbuttonorange.svg") {
-        document.getElementById("urgent").src = "./src/img/icons/urgent.svg";
+    if (document.getElementById("urgent").src == "../img/icons/urgentbuttonorange.svg") {
+        document.getElementById("urgent").src = "../img/icons/urgent.svg";
     } else {
-        document.getElementById("urgent").src = "./src/img/icons/urgentbuttonorange.svg";
+        document.getElementById("urgent").src = "../img/icons/urgentbuttonorange.svg";
     }
 }
 
 
 function returnUrgentButtonChange() {
-    if (document.getElementById("urgent").src == "./src/img/icons/urgent.svg") {
-        document.getElementById("urgent").src = "./src/img/icons/urgentbuttonorange.svg";
+    if (document.getElementById("urgent").src == "../img/icons/urgent.svg") {
+        document.getElementById("urgent").src = "../img/icons/urgentbuttonorange.svg";
     } else {
-        document.getElementById("urgent").src = "./src/img/icons/urgent.svg";
+        document.getElementById("urgent").src = "../img/icons/urgent.svg";
     }
 }
 
 
 function mediumButtonChange() {
-    if (document.getElementById("medium").src == "./src/img/icons/mediumbuttonyellow.svg") {
-        document.getElementById("medium").src = "./src/img/icons/medium.svg";
+    if (document.getElementById("medium").src == "../img/icons/mediumbuttonyellow.svg") {
+        document.getElementById("medium").src = "../img/icons/medium.svg";
     } else {
-        document.getElementById("medium").src = "./src/img/icons/mediumbuttonyellow.svg";
+        document.getElementById("medium").src = "../img/icons/mediumbuttonyellow.svg";
     }
 }
 
 function lowButtonChange() {
-    if (document.getElementById("low").src == "./src/img/icons/lowbuttongreen.svg") {
-        document.getElementById("low").src = "./src/img/icons/low.svg";
+    if (document.getElementById("low").src == "../img/icons/lowbuttongreen.svg") {
+        document.getElementById("low").src = "../img/icons/low.svg";
     } else {
-        document.getElementById("low").src = "./src/img/icons/lowbuttongreen.svg";
+        document.getElementById("low").src = "../img/icons/lowbuttongreen.svg";
     }
 }
 
@@ -310,7 +342,7 @@ function hideCategory() {
 
   document.getElementById('draganddropsectionid').innerHTML = `
   <div class="containeropennote">
-  <img src="./src/img/icons/closecross.svg" alt="close x button" onclick="closetoDoForEdit(${todos['id']})" id="close" class="closebuttonx">
+  <img src="../img/icons/closecross.svg" alt="close x button" onclick="closetoDoForEdit(${todos['id']})" id="close" class="closebuttonx">
   <div class="title">
     <span class="title">Titel</span>
   </div>
@@ -320,22 +352,22 @@ function hideCategory() {
   </div>
   <div class="descriptionandimage">
     <input class="descriptioninput" placeholder="Enter a Description" text="text" id="descriptioninput" value="${todos['description']}">
-    <img src="./src/img/icons/Recurso11.svg" alt="three lines drop down" class="threelinesdropdown">
+    <img src="../img/icons/Recurso11.svg" alt="three lines drop down" class="threelinesdropdown">
   </div>
   <div class="duedate">
     <span class="duedate">Due date</span>
   </div>
   <div class="dateinputandimage">
     <input class="dateinput" placeholder="dd/mm/yyyy" text="date" required id="dateinput" value="${todos.date}">
-    <img src="./src/img/icons/Vectorkalender.svg" alt="datecalendarsymbol" class="datecalendarsymbol">
+    <img src="../img/icons/Vectorkalender.svg" alt="datecalendarsymbol" class="datecalendarsymbol">
   </div>
   <div class="Prioritys">
     <span class="prio">Prio</span>
   </div>
   <div class="prio-selections">
-    <img src="./src/img/icons/urgent.svg" alt="urgent priority symbol" onclick="urgentButtonChange()" class="urgentpriority ${todos.priority === 'urgent' ? 'active' : ''}" id="urgent">
-    <img src="./src/img/icons/medium.svg" alt="medium priority symbol" onclick="mediumButtonChange()" class="mediumpriority ${todos.priority === 'medium' ? 'active' : ''}" id="medium">
-    <img src="./src/img/icons/low.svg" alt="low priority symbol" onclick="lowButtonChange()" class="lowpriority ${todos.priority === 'low' ? 'active' : ''}" id="low">
+    <img src="../img/icons/urgent.svg" alt="urgent priority symbol" onclick="urgentButtonChange()" class="urgentpriority ${todos.priority === 'urgent' ? 'active' : ''}" id="urgent">
+    <img src="../img/icons/medium.svg" alt="medium priority symbol" onclick="mediumButtonChange()" class="mediumpriority ${todos.priority === 'medium' ? 'active' : ''}" id="medium">
+    <img src="../img/icons/low.svg" alt="low priority symbol" onclick="lowButtonChange()" class="lowpriority ${todos.priority === 'low' ? 'active' : ''}" id="low">
   </div>
   <div class="assignedto">
     <span class="assignedto">Assigned to</span>
@@ -352,7 +384,7 @@ function hideCategory() {
     </select>
   </div>
           <div class="iconsfromusers"></div>
-          <img src="./src/img/icons/okbutton.svg" alt="button ok" onclick="okButtonCloseAndSafeNote()"
+          <img src="../img/icons/okbutton.svg" alt="button ok" onclick="okButtonCloseAndSafeNote()"
               class="okbutton" id="okbuttonsafe">
           </div>
   </div>`;

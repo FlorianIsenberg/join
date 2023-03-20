@@ -3,6 +3,11 @@ body {
     background: #F5F5F5;
 }
 
+.overallcontainer{
+    padding-left: 60px;
+}
+
+
 .maincontainer {
     display: flex;
     flex-direction: column;
@@ -111,7 +116,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 70px;
+    padding-left: 160px;
 }
 
 .dragging {
@@ -257,7 +262,7 @@ notesmain:hover {
 }
 
 .dropdowncontainer-highlight {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .tmodifythecontents {
