@@ -1,19 +1,9 @@
-/* .contactleftframecl { */
-    /* position: absolute; */
-    /* width: 453px; */
-    /* height: 798px; */
-    /* height: 90vh; */
-    /* left: 232px; */
-    /* top: 89px; */
-    /* white */
-    /* background: #FFFFFF;
-    box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.08); */
-/* } */
+@media screen and (min-width: 349px) and (max-width: 999px) {
+
+
 
 .MasterContainerDefaultPagecl {
-    /* position: unset; */
-    /* display: flex; */
-    /* flex-direction: column; */
+
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -36,17 +26,12 @@
 
 .helpcontainer2cl {
     width: 90%;
-    /* left: 50px;  */
     height: 400px;
     background: #2A3647;
     border: 30px;
     margin-top: 2em;
     border-top-left-radius: 30px;
-    /* border-bottom-left-radius: 30px; */
     border-top-right-radius: 30px;
-    /* border-bottom-right-radius: 30px; */
-
-    
 }
 
 
@@ -100,28 +85,16 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-    /* gap: 29px; */
-    /* position: absolute;
-    width: 422px;
-    height: 271px;
-    left: 737px;
-    top: 139px; */
-    /* top: 159px; */
 }
 
 .subbuttoncreate2cl {
-    /* Property 1=Default */
-    /* box-sizing: border-box; */
-    /* Auto layout */
+
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 18px 10px;
-    /* gap: 10px; */
-    /* Addition Input */
     margin-left: 35px;
-
     left: 10px;
     top: 250px;
     width: 193px;
@@ -129,7 +102,6 @@
     background: #2A3647;
     border: 1px solid #2A3647;
     border-radius: 10px;
-    /* Inside auto layout */
     z-index: 4;
 }
 
@@ -141,13 +113,9 @@
 }
 
 .subbuttoncontainer2cl {
-    /* Frame 35 */
-    /* Auto layout */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* justify-content: flex-end; */
-    /* align-items: center; */
     padding: 0px;
     margin-top: 4em;
 
@@ -155,13 +123,9 @@
 }
 
 .overlayAddContact2cl {
-    display: contents;
-    
-    background: #FFFFFF;
-    
+    display: contents; 
+    background: #FFFFFF;   
     border-radius: 30px;
-    
-    /* animation: toleft 1s linear; */
     z-index: 3;
 }
 
@@ -182,7 +146,7 @@
     width: 100%;
     height: 80vh;
     padding-top: 1em;
-    margin-left: 2.5em;
+    padding-left: 2.5em;
     z-index: 3;
     /* z-index: 12; */
     background-color: white;
@@ -254,35 +218,34 @@
 .showcontactaddtask2cl {
     margin-left: 1.5em;
     margin-top: 13px;
-    /* Version 2/body */
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 120%;
-    /* or 19px */
     display: flex;
     align-items: center;
     color: #29ABE2;
-    /* Inside auto layout */
     flex: none;
     order: 1;
 }
 
 .showcontacteditcontact2cl {
     
-    /* width: 190; */
-    margin-left: 37em;
-    margin-top: 5em;
+    margin-left: 25em;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 120%;
     gap: 5px;
-    /* or 19px */
     display: flex;
     color: #2A3647;
-    /* Inside auto layout */
     flex: none;
     order: 1;
     flex-grow: 0;
+}
+
+.showcontacteditcontact2cl:hover {
+    cursor: pointer;
+}
+
 }

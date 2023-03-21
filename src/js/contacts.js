@@ -88,16 +88,16 @@ function EditSaveContact(showId) {
 // NOTE -- Show contact
 
 function contactShowContact(showId) {
-    // document.getElementById('overlayShowContact2Id').classList.add('d-none');
+    document.getElementById('overlayShowContact2Id').classList.add('d-none');
     document.getElementById('overlayShowContactId').innerHTML = '';
     document.getElementById('overlayShowContactId').innerHTML += generateOverlayShowContactHTML(showId);
-    // document.getElementById('overlayShowContact2Id').classList.add('d-none');
+    document.getElementById('overlayShowContact2Id').classList.add('d-none');
     document.getElementById('overlayShowContactId').classList.remove('d-none');
     document.getElementById('overlayShowContactId').classList.add('overlayShowContactIncl');
 }
 
 function contactShowContact2(showId) {
-    // document.getElementById('overlayShowContactId').classList.add('d-none');
+    document.getElementById('overlayShowContactId').classList.add('d-none');
     document.getElementById('overlayShowContact2Id').innerHTML = '';
     document.getElementById('overlayShowContact2Id').innerHTML += generateOverlayShowContact2HTML(showId);
     document.getElementById('overlayShowContact2Id').classList.remove('d-none');
@@ -137,7 +137,7 @@ function showNameToEdit(name) {
     for ( let i = 0; i < contactdata.length; i = i + 5 ) {
         if (contactdata[i] == name) {
             showId = i;
-            // document.getElementById('overlayShowContact2Id').classList.add('d-none');
+            document.getElementById('overlayShowContact2Id').classList.add('d-none');
             contactShowContact(i);
         }
     }
@@ -147,7 +147,7 @@ function showNameToEdit2(name) {
     for ( let i = 0; i < contactdata.length; i = i + 5 ) {
         if (contactdata[i] == name) {
             showId = i;
-            // document.getElementById('overlayShowContactId').classList.add('d-none');
+            document.getElementById('overlayShowContactId').classList.add('d-none');
             contactShowContact2(i);
         }
     }
