@@ -10,6 +10,14 @@
         display: none;
     } */
 
+    .d-none {
+        display: none
+    }
+    
+    .mobile-header, .mobile-navbar {
+        display: none !important;
+    }
+
     .showcontactmaincl {
         display: none;
     }

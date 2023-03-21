@@ -70,6 +70,7 @@ function overlayEditContact(showId) {
 }
 
 function overlayEditContact2(showId) {
+    document.getElementById('overlayShowContact2Id').classList.add('d-none');
     document.getElementById('overlayEditContact2Id').innerHTML += generateOverlayEditContact2HTML(showId);
     document.getElementById('overlayEditContact2Id').classList.remove('overlayAddContactoutcl');
     document.getElementById('overlayEditContact2Id').classList.add('overlayAddContactincl');
@@ -101,7 +102,8 @@ function contactShowContact2(showId) {
     document.getElementById('overlayShowContact2Id').innerHTML = '';
     document.getElementById('overlayShowContact2Id').innerHTML += generateOverlayShowContact2HTML(showId);
     document.getElementById('overlayShowContact2Id').classList.remove('d-none');
-    document.getElementById('overlayShowContact2Id').classList.add('overlayShowContactIncl');
+    console.log('contactShowContact2:', showId)
+    // document.getElementById('overlayShowContact2Id').classList.add('overlayShowContactIncl');
 }
 
 // NOTE -- generate Success Button
@@ -137,7 +139,7 @@ function showNameToEdit(name) {
     for ( let i = 0; i < contactdata.length; i = i + 5 ) {
         if (contactdata[i] == name) {
             showId = i;
-            document.getElementById('overlayShowContact2Id').classList.add('d-none');
+            // document.getElementById('overlayShowContact2Id').classList.add('d-none');
             contactShowContact(i);
         }
     }
@@ -147,7 +149,8 @@ function showNameToEdit2(name) {
     for ( let i = 0; i < contactdata.length; i = i + 5 ) {
         if (contactdata[i] == name) {
             showId = i;
-            document.getElementById('overlayShowContactId').classList.add('d-none');
+            console.log('Edit-2 RD')
+            // document.getElementById('overlayShowContactId').classList.add('d-none');
             contactShowContact2(i);
         }
     }

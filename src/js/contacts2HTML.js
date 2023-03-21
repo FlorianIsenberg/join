@@ -20,7 +20,7 @@ function mobileNewContactButton() {
 
 function generateOverlayAddContact2HTML() {
     return /*html*/`
-    <div id="addcontactleft2Id" class="addcontactleft2cl"> <!-- Frame 194 -->
+    <div id="addcontactleft3Id" class="addcontactleft3cl"> <!-- Frame 194 -->
 
         <div id="helpcontainer2Id" class="helpcontainer2cl">
             <div id="closecross2Id" class="closecross2cl"  onclick="AddContactCancel2()">
@@ -133,8 +133,12 @@ function generateOverlayShowContact2HTML(showId){
                 <div id="showcontactphoneId" class="showcontactphonecl">Phone</div>
                 <div id="showcontactphonedataId" class="showcontactphonedatacl">${contactdata[showId+2]}</div> <!-- Planetenvorwahl nicht vergessen :-) -->
                 </div>
-            
-                <div id="showcontacteditcontact2Id" class="showcontacteditcontact2cl" onclick="overlayEditContact(showId);">
+               
+            </div>
+             
+        </div>
+            <div id="help2mainId" class="help2maincl">
+                <div id="showcontacteditcontact2Id" class="showcontacteditcontact2cl" onclick="overlayEditContact2(showId);">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="40" height="40" rx="10" fill="#2A3647"/>
                             <path d="M12.4454 27.0155L17.2648 29.9404L29.9079 9.10829C30.1945 8.63616 30.044 8.02113 29.5719 7.73459L26.4623 5.84736C25.9902 5.56082 25.3751 5.71127 25.0886 6.1834L12.4454 27.0155Z" fill="white"/>
@@ -142,6 +146,79 @@ function generateOverlayShowContact2HTML(showId){
                     </svg>
                 </div>
             </div>
-        </div>
         `;
     }
+
+
+    function generateOverlayEditContact2HTML(showId) {
+        return /*html*/`
+        <div id="addcontactleft2Id" class="addcontactleft2cl"> <!-- Frame 194 -->
+
+<div id="helpcontainer2Id" class="helpcontainer2cl">
+    <div id="closecross2Id" class="closecross2cl"  onclick="AddContactCancel2()">
+        <!-- NOTE -- Close Cross -->
+        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.9629 7.6543L7.65513 22.9621" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M22.8184 23.1064L7.5106 7.79868" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+
+    </div>
+    <div id="addcontactheader2Id" class="addcontactheader2cl">Edit contact</div>
+    <div id="addcontactsecheader2Id" class="addcontactsecheader2cl"><span>Task are</span> better with a team!</div>
+</div> 
+
+<!-- NOTE -- Avatar -->
+<div id="avatarpic2Id" class="avatarpic2cl">
+    <svg width="134" height="134" viewBox="0 0 134 134" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d_576_4834)">
+            <rect x="7" y="7" width="120" height="120" rx="60" fill="white" />
+            <circle cx="67" cy="67" r="60" fill="#D1D1D1" />
+            <path d="M46.3333 92.8334C46.3333 87.3522 48.5107 82.0956 52.3865 78.2198C56.2622 74.3441 61.5189 72.1667 67 72.1667C72.4811 72.1667 77.7378 74.3441 81.6135 78.2198C85.4893 82.0956 87.6667 87.3522 87.6667 92.8334H82.5C82.5 88.7225 80.867 84.78 77.9602 81.8732C75.0533 78.9664 71.1109 77.3334 67 77.3334C62.8891 77.3334 58.9467 78.9664 56.0398 81.8732C53.133 84.78 51.5 88.7225 51.5 92.8334H46.3333ZM67 69.5834C58.4363 69.5834 51.5 62.6471 51.5 54.0834C51.5 45.5196 58.4363 38.5834 67 38.5834C75.5638 38.5834 82.5 45.5196 82.5 54.0834C82.5 62.6471 75.5638 69.5834 67 69.5834ZM67 64.4167C72.7092 64.4167 77.3333 59.7925 77.3333 54.0834C77.3333 48.3742 72.7092 43.75 67 43.75C61.2908 43.75 56.6667 48.3742 56.6667 54.0834C56.6667 59.7925 61.2908 64.4167 67 64.4167Z" fill="white" />
+            <rect x="5.5" y="5.5" width="123" height="123" rx="61.5" stroke="white" stroke-width="3" />
+        </g>
+        <defs>
+            <filter id="filter0_d_576_4834" x="0" y="0" width="134" height="134" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feflood flood-opacity="0" result="BackgroundImageFix" />
+                <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                <feoffset />
+                <fegaussianblur stdDeviation="2" />
+                <fecolormatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                <feblend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_576_4834" />
+                <feblend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_576_4834" result="shape" />
+            </filter>
+        </defs>
+    </svg>
+</div>
+
+
+<!-- NOTE -- Input Fields -->
+
+<!-- Inputfields Frame 14 -->
+    <div id="addcontactrightinputfieldsId" class="addcontactrightinputfields2cl">
+        <div id="addcontactnameinputId" class="addcontactnameinputcl">
+        <input id="addcontactinputnameId" class="addcontactinputnamecl" required type="text" placeholder="Name" value="${contactdata[showId]}">
+        </div>
+        <div id="addcontactemailinputId" class="addcontactemailinputcl">
+        <input id="addcontactinputemailId" class="addcontactinputemailcl" required type="email" placeholder="Email" value="${contactdata[showId+1]}">
+        </div>
+        <div id="addcontactphoneinputId" class="addcontactphoneinputcl">
+        <input id="addcontactinputphoneId" class="addcontactinputphonecl" type="tel" placeholder="Phone"  value="${contactdata[showId+2]}">
+        </div>
+    </div>
+
+    <div id="subbuttoncontainer2Id" class="subbuttoncontainer2cl">
+
+        <div id="subbuttoncreate2Id" class="subbuttoncreate2cl" onclick="AddCreateContact2()"> 
+            <div id="addcontactcreatetext2Id" class="addcontactcreatetextcl">Create contact</div>
+             <div id="addcontactcreateok2Id" class="addcontactcreateok2cl">
+                <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 7.5L7 13.5L17 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                            
+            </div>
+        </div>
+    </div>
+</div>
+        `;
+    }
+
+
