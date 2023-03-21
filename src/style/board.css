@@ -165,7 +165,6 @@ body {
     transition: 0.75s all ease-in-out;
 }
 
-
 .noteheadline {
     font-size: 16px;
     font-family: 'Inter';
@@ -429,7 +428,7 @@ body {
 }
 
 .show {
-    display: flex;
+    display: flex !important;
 
 }
 

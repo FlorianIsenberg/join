@@ -1,12 +1,10 @@
 let currentDraggedElement;
-let prios = [];
-let newPriority; 
 let searchedTaskArray = [];
-let noteIds = ['note1', 'note2', 'note3', 'note4','note6', 'note7','note8','note9','note10',];
 let tasks = [];
 let colors = [];
 let categorys = ['marketing', 'sales', 'design', 'media' , 'backoffice' ,];
 let newTask = [];
+
 
 let todos = [{
     id: 0,
@@ -319,22 +317,24 @@ function openNote() {
 }
 
 function closetoDoForEdit() {
-    const closeButton = document.getElementById('close');
-    closeButton.addEventListener('click', function() {
-      const masterTaskContainer = document.getElementById('mastertaskcontainerid');
-      masterTaskContainer.style.display = "none";
-     
-      document.getElementById('popupnotemastercontainerid').classList.remove('show');
-      document.getElementById('popupnoteid').classList.add('hide');
+  const closeButton = document.getElementById('close');
+  closeButton.addEventListener('click', function() {
+    const masterTaskContainer = document.getElementById('mastertaskcontainerid');
+    masterTaskContainer.classList.add('hide');
+   
+    document.getElementById('popupnotemastercontainerid').classList.remove('show');
+    document.getElementById('popupnoteid').classList.add('hide');
+  });
   
-    });
-  }
-
-
+}
+   
+    
+  
 function editNote(id) {
     let element = todos.find(t=> t.id == id);
+    document.getElementById('popupnotemastercontainerid').classList.remove('hide');
+    document.getElementById('mastertaskcontainerid').classList.remove('show');
     document.getElementById('popupnotemastercontainerid').classList.add('hide');
-    document.getElementById('mastertaskcontainerid').classList.add('show');
     generateNotePagetwoHTML(element);
 }
 
@@ -343,11 +343,9 @@ function closeNoteForEdit() {
     document.getElementById('popupnoteid').classList.add('hide');
 }
 
-
 function hideCategory() {
     document.getElementById('categoryhideid').classList.add('hide');
 }
-
 
   function generateNewNoteHTML() {
     const title = document.getElementById('titleinput').value;
@@ -449,31 +447,6 @@ function searchNotesByTitle(id) {
   }
 
 
-  noteIds.forEach(id => {
-    let note = document.getElementById(id);
-    
-    note.setAttribute('draggable', 'true');
-    
-    note.ondragstart = function() {
-      note.classList.add('dragging');
-    };
-    
-    note.ondragend = function() {
-      note.classList.remove('dragging');
-    };
-  });
-
- 
-let element = document.querySelector('notesmain');
-
-
-element.ondragstart = function(event) {
-  event.target.classList.add('dragging');
-}
-
-element.ondragend = function(event) {
-  event.target.classList.remove('dragging');
-}
 
 function toggleCategory() {
   const dropdown = document.getElementById("categoryhideid");

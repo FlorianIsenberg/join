@@ -506,7 +506,7 @@ label:hover {
     align-items: center;
     gap: 10px;
     isolation: isolate;
-    width: 462px;
+    width: 422px;
     height: 51px;
     background: #FFFFFF;
     border-radius: 10px;
@@ -514,6 +514,8 @@ label:hover {
     margin-bottom: 34px;
     border: 1px solid #D1D1D1;
     outline:none;
+    padding-left: 20px;
+    padding-right: 20px;
     
 }
 
