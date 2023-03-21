@@ -10,6 +10,10 @@
         display: none;
     } */
 
+    .showcontactmaincl {
+        display: none;
+    }
+
     .contactrightframecl {
         display: none;
     } 

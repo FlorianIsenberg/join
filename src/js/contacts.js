@@ -88,7 +88,7 @@ function EditSaveContact(showId) {
 // NOTE -- Show contact
 
 function contactShowContact(showId) {
-    document.getElementById('overlayShowContact2Id').classList.add('d-none');
+    // document.getElementById('overlayShowContact2Id').classList.add('d-none');
     document.getElementById('overlayShowContactId').innerHTML = '';
     document.getElementById('overlayShowContactId').innerHTML += generateOverlayShowContactHTML(showId);
     document.getElementById('overlayShowContact2Id').classList.add('d-none');
@@ -97,7 +97,7 @@ function contactShowContact(showId) {
 }
 
 function contactShowContact2(showId) {
-    document.getElementById('overlayShowContactId').classList.add('d-none');
+    // document.getElementById('overlayShowContactId').classList.add('d-none');
     document.getElementById('overlayShowContact2Id').innerHTML = '';
     document.getElementById('overlayShowContact2Id').innerHTML += generateOverlayShowContact2HTML(showId);
     document.getElementById('overlayShowContact2Id').classList.remove('d-none');

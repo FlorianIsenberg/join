@@ -10,14 +10,17 @@
     display: none !important;
 }
 
-.overlayAddContactcl {
+/* .overlayAddContactcl {
     display: none !important;
-}
+} */
 
  /* .overlayShowContact2cl { 
     display: none !important;
 }  */
 
+.showcontactmain2cl {
+    display: none;
+}
 
 
 } /* end of @media
