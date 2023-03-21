@@ -28,7 +28,7 @@ function showSignUp() {
   let showMassage = document.getElementById("msgBox");
   setTimeout(function () {
     showMassage.classList.add("msgBox");
-  }, 1005);
+  }, 1500);
   setTimeout(function () {
     showMassage.classList.remove("msgBox");
   }, 5000);

@@ -170,6 +170,14 @@ section {
 }
 
 @media (max-width: 700px) {
+  .headIcon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 60px;
+    height: auto;
+  }
+
   .contentBox {
     width: 372px;
     gap: 20px;
@@ -198,5 +206,24 @@ section {
 
   .nameMailPasswordInputField input {
     width: 267px;
+  }
+}
+
+@media (max-width: 400px) {
+  .contentBox {
+    width: 90%;
+  }
+  .backArrow {
+    left: 15px;
+  }
+  .inputBox {
+    width: 90%;
+  }
+  .nameMailPasswordInputField {
+    width: 80%;
+    max-width: unset;
+  }
+  .nameMailPasswordInputField input {
+    width: 90%;
   }
 }

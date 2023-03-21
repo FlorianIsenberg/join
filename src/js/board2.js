@@ -3,7 +3,7 @@ let notes = [];
 function generateNotePagetwoHTML(task) {
     document.getElementById('mastertaskcontainerid').innerHTML = `
           <div class="containeropennote">
-            <img src="../img/icons/closecross.svg" alt="close x button" onclick="closetoDoForEdit(${task['id']})" id="close" class="closebuttonx">
+            <img src="../img/icons/closecross.svg" alt="close x button" onclick="closeBig(${task['id']})" id="close" class="closebuttonx">
             <div class="title">
               <span class="title">Titel</span>
             </div>
@@ -311,10 +311,16 @@ closeBig();
 generateEditedNote(newNote2); 
 }
 
-function closeBig() {
-document.getElementById('mastertaskcontainer').classList.remove('show');
+function closeBig(i) {
+document.getElementById('mastertaskcontainerid').classList.add('show');
+document.getElementById('mastertaskcontainerid').classList.remove('show');
+closeBigPopup();
 }
   
+function closeBigPopup(){
+  document.getElementById('popupnotemastercontainerid').classList.remove('show');
+  document.getElementById('popupnoteid').classList.add('hide');
+}
 
 function generateEditedNote(element) {
 document.getElementById('todo').innerHTML = `
