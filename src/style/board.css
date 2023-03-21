@@ -162,13 +162,9 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     cursor: pointer;
-    transition: 3s all ease-in-out;
+    transition: 0.75s all ease-in-out;
 }
 
-notesmain:hover {
-    transform: scale(1.9);
-    animation: spin 2s forwards;
-}
 
 .noteheadline {
     font-size: 16px;
@@ -452,3 +448,93 @@ notesmain:hover {
 }
 
 
+
+@media (max-width: 1435px) {
+
+    .tasks {
+
+        padding-left: 100px;
+    }
+
+}
+
+@media (max-width: 1345px) {
+
+    .tasks {
+        padding-left: 200px;
+    }
+.tboard {
+    padding: 0px;
+}
+.insertboard {
+    padding: 0px;
+    
+}
+}
+
+@media (max-width: 1305px) {
+
+    .tasks {
+        padding-left: 100px;
+    }
+.boardsection {
+    padding-left: 60px;
+}
+.tboard {
+    padding-right: 0px;
+    padding-left: 180px;
+}
+
+}
+
+
+@media (max-width: 1200px) {
+
+    .tasks {
+        padding-left: 100px;
+    }
+.boardsection {
+    padding-left: 30px;
+}
+
+.tboard {
+    padding-left: 20px;
+}
+}
+
+@media (max-width: 1100px) {
+
+    .tasks {
+        padding-left: 10px;
+        gap: 0;
+    }
+.boardsection {
+    padding-left: 0px;
+}
+
+.tboard {
+    padding-left: 0px;
+}
+
+}
+
+@media (max-width: 1000px) {
+
+    .tasks {
+        padding-left: 10px;
+        gap: 0;
+        align-items: center;
+    }
+.boardsection {
+    padding-top: 50px;
+    align-items: center;
+    
+}
+
+.tboard {
+    font-size: 40px;
+    padding-top: 20px;
+    
+}
+
+}

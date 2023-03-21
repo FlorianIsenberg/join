@@ -39,8 +39,7 @@ function generateNotePagetwoHTML(task) {
               </select>
             </div>
                     <div class="iconsfromusers"></div>
-                    <img src="../img/icons/okbutton.svg" alt="button ok" onclick="okButtonCloseAndSafeNote()"
-                        class="okbutton" id="okbuttonsafe">
+                    <img src="../img/icons/okbutton.svg" alt="button ok" onclick="editedNote()" class="okbutton" id="okbuttonsafe">
                     </div>
             </div>`;
 }
@@ -268,21 +267,16 @@ function toggleCategory() {
     <img src="../img/icons/sm.svg" alt="User SM">
     <img src="../img/icons/mv.svg" alt="User MV" class="iconsinicons">
     <img src="../img/icons/ef.svg" alt="User EF" class="iconsinicons">
-    <img class="greenarrowdown" src="../img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
+    <img class="greenarrowdown" src="../img/icons/greenarrowsdown.svg" value="${element.priorityImg}"alt="doublea arrow green down">
     </div>
 `;
 }
 
  
-function EditedNote() {
+function editedNote() {
   let title = document.getElementById('titleinput').value;
   let description = document.getElementById('descriptioninput').value;
-  let department = document.getElementById('sales').value = "Sales";
-  document.getElementById('marketing').value = "Marketing";
-  document.getElementById('backoffice').value = "Backoffice";
-  document.getElementById('media').value = "Media";
-  document.getElementById('design').value = "Design";
-  let category = document.querySelector('input[type="checkbox"]:checked').nextSibling.textContent.trim();
+  let category = document.querySelector('input[type="checkbox"]:checked');
   let assignedTo = Array.from(document.getElementById('inputselection').options)
                          .filter(option => option.selected)
                          .map(option => option.text);
@@ -326,7 +320,7 @@ function generateEditedNote(element) {
 document.getElementById('todo').innerHTML += `
 <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
 <div class="notesection">
-<span class="departmentdesign"></span>
+<span class="departmentdesign">${element.department}</span>
 </div>
 <div class="noteheadlinecontainer">
 <h2 class="noteheadline"></h2>
@@ -344,7 +338,7 @@ document.getElementById('todo').innerHTML += `
 <img src="../img/icons/sm.svg" alt="User SM">
 <img src="../img/icons/mv.svg" alt="User MV" class="iconsinicons">
 <img src="../img/icons/ef.svg" alt="User EF" class="iconsinicons">
-<img class="greenarrowdown" src="../img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
+<img class="greenarrowdown" src="${element.priorityimg} alt="doublea arrow green down">
 </div>
 `;
 }

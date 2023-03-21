@@ -89,7 +89,7 @@ section {
   justify-content: center;
   padding: 35px 0px;
   gap: 35px;
-
+  max-width: 100%;
   width: 652px;
   background: #ffffff;
 
@@ -116,12 +116,9 @@ section {
   width: 627px;
   height: 73px;
 
-  /* Version 2/t1 */
-
   font-weight: 700;
   font-size: 61px;
   line-height: 120%;
-  /* or 73px */
 
   text-align: center;
 
@@ -402,6 +399,7 @@ section {
   .contentBox {
     width: 372px;
     gap: 20px;
+    max-width: 100%;
   }
 
   .headlineBox {
@@ -424,6 +422,7 @@ section {
   .mailPasswordInputField {
     gap: 0px;
     width: 285px;
+    max-width: 100%;
   }
 
   .emailPasswordField {
