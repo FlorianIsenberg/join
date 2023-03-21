@@ -12,7 +12,7 @@
 
 .MasterContainerDefaultPagecl {
     /* position: unset; */
-    display: flex;
+    /* display: flex; */
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
@@ -25,18 +25,13 @@
     position:absolute;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     left: 0px;
     width: 100%;
     height: 100vh;
-    
     border: 1px solid green;
     z-index: 4;
     background-color: white;
-    /* Version 2/ main color */
-    
-
 }
 
 .helpcontainer2cl {
@@ -157,4 +152,137 @@
     margin-top: 4em;
 
 
+}
+
+.overlayAddContact2cl {
+    display: contents;
+    
+    background: #FFFFFF;
+    
+    border-radius: 30px;
+    
+    /* animation: toleft 1s linear; */
+    z-index: 3;
+}
+
+
+/* NOTE Edit contact - show page */
+
+/* .overlayShowContactcl {
+    display: none;
+} */
+
+.showcontactmain2cl {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    left: 0px;
+    top: 90px;
+    width: 100%;
+    height: 80vh;
+    padding-top: 1em;
+    margin-left: 2.5em;
+    z-index: 3;
+    /* z-index: 12; */
+    background-color: white;
+}
+
+.headslogancl {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #000000;
+}
+
+.pagesigncl {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 47px;
+    line-height: 120%;
+    margin-top: .5em;
+}
+
+.subtextcl {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.subtextcl span {
+    padding-bottom: 21px;
+    border-bottom: #29ABE2 solid 4px;
+}
+
+.showbothcl {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.backarrowcl {
+    align-items: baseline;
+    padding-top: 1em;
+}
+
+.showcontacttop2cl {
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.showcontactname2cl {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 47px;
+    line-height: 120%;
+    margin-left: .5em;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.showcontactaddtask2cl {
+    margin-left: 1.5em;
+    margin-top: 13px;
+    /* Version 2/body */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+    display: flex;
+    align-items: center;
+    color: #29ABE2;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+}
+
+.showcontacteditcontact2cl {
+    
+    /* width: 190; */
+    margin-left: 37em;
+    margin-top: 5em;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    gap: 5px;
+    /* or 19px */
+    display: flex;
+    color: #2A3647;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }

@@ -23,22 +23,18 @@ function generateOverlayAddContact2HTML() {
     <div id="addcontactleft2Id" class="addcontactleft2cl"> <!-- Frame 194 -->
 
         <div id="helpcontainer2Id" class="helpcontainer2cl">
-        <div id="closecross2Id" class="closecross2cl"  onclick="AddContactCancel2()">
-            <!-- NOTE -- Close Cross -->
-            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22.9629 7.6543L7.65513 22.9621" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                <path d="M22.8184 23.1064L7.5106 7.79868" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            <div id="closecross2Id" class="closecross2cl"  onclick="AddContactCancel2()">
+                <!-- NOTE -- Close Cross -->
+                <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.9629 7.6543L7.65513 22.9621" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M22.8184 23.1064L7.5106 7.79868" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
 
-        </div>
+            </div>
             <div id="addcontactheader2Id" class="addcontactheader2cl">Add contact</div>
             <div id="addcontactsecheader2Id" class="addcontactsecheader2cl"><span>Task are</span> better with a team!</div>
-            <!-- <div id="addcontactline2Id" class="addcontactline2cl"></div> -->
         </div> 
 
-
-
-     <!-- <div id="addcontactrightinside2Id" class="addcontactrightinside2cl"> -->
         <!-- NOTE -- Avatar -->
         <div id="avatarpic2Id" class="avatarpic2cl">
             <svg width="134" height="134" viewBox="0 0 134 134" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,16 +76,72 @@ function generateOverlayAddContact2HTML() {
 
             <div id="subbuttoncontainer2Id" class="subbuttoncontainer2cl">
         
-        <div id="subbuttoncreate2Id" class="subbuttoncreate2cl" onclick="AddCreateContact2()"> 
-            <div id="addcontactcreatetext2Id" class="addcontactcreatetextcl">Create contact</div>
-            <div id="addcontactcreateok2Id" class="addcontactcreateok2cl">
-                <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 7.5L7 13.5L17 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>                            
+                <div id="subbuttoncreate2Id" class="subbuttoncreate2cl" onclick="AddCreateContact2()"> 
+                    <div id="addcontactcreatetext2Id" class="addcontactcreatetextcl">Create contact</div>
+                     <div id="addcontactcreateok2Id" class="addcontactcreateok2cl">
+                        <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 7.5L7 13.5L17 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                            
+                    </div>
+                </div>
             </div>
-        </div>
     </div>
-  </div>
-    
     `;
 }
+
+
+
+function generateOverlayShowContact2HTML(showId){
+    return /*html*/`
+        <div id="showcontactmain2Id" class="showcontactmain2cl">
+            <div id="headsloganId" class="headslogancl">Kanban Project Management Tool</div>
+            <div id="showbothId" class="showbothcl">
+                <div id="pagesignId" class="pagesigncl">Contacts</div>
+                <div id="backarrowId" class="backarrowcl">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.828 7.00017H15C15.5523 7.00017 16 7.44788 16 8.00017C16 8.55245 15.5523 9.00017 15 9.00017H3.828L8.485 13.6572C8.87547 14.0476 8.87547 14.6807 8.485 15.0712C8.09453 15.4616 7.46147 15.4616 7.071 15.0712L0.707106 8.70727C0.316582 8.31675 0.316582 7.68359 0.707107 7.29306L7.071 0.929168C7.46147 0.538702 8.09453 0.538703 8.485 0.929168C8.87547 1.31963 8.87547 1.9527 8.485 2.34317L3.828 7.00017Z" fill="black"/>
+                    </svg>
+                </div>
+            </div>
+            <div id="subtextId" class="subtextcl"><span>Better wi</span>th a Team</div>
+            
+            
+            <div id="showcontacttop2Id" class="showcontacttop2cl">
+                <div id="showcontactavatarId" class="showcontactavatarcl ${contactdata[showId + 3]}">${contactdata[showId+4]}</div> <!-- Hier die Buchstaben über eine Funktion einsetzten für die Anfangsbuchstaben aus der DB -->
+                <div>
+                    <div id="showcontactname2Id" class="showcontactname2cl">${contactdata[showId]}</div>
+                    <div id="showcontactaddtask2Id" class="showcontactaddtask2cl">
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.5 1V16" stroke="#29ABE2" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M16 8.64148L1 8.64148" stroke="#29ABE2" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Add Task
+                    </div>
+                </div>
+            </div>
+
+            <div id="showcontactmiddleId" class="showcontactmiddlecl">
+                <div id="showcontactinfoId" class="showcontactinfocl">Contact Information</div>
+            </div>
+
+            <div id="showcontactbottomId" class="showcontactbottomcl">
+                <div>
+                <div id="showcontactmailId" class="showcontactmailcl">Email</div>
+                <div id="showcontactmaildataId" class="showcontactmaildatacl">${contactdata[showId+1]}</div>
+                </div>
+                <div>
+                <div id="showcontactphoneId" class="showcontactphonecl">Phone</div>
+                <div id="showcontactphonedataId" class="showcontactphonedatacl">${contactdata[showId+2]}</div> <!-- Planetenvorwahl nicht vergessen :-) -->
+                </div>
+            
+                <div id="showcontacteditcontact2Id" class="showcontacteditcontact2cl" onclick="overlayEditContact(showId);">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="10" fill="#2A3647"/>
+                            <path d="M12.4454 27.0155L17.2648 29.9404L29.9079 9.10829C30.1945 8.63616 30.044 8.02113 29.5719 7.73459L26.4623 5.84736C25.9902 5.56082 25.3751 5.71127 25.0886 6.1834L12.4454 27.0155Z" fill="white"/>
+                            <path d="M11.8604 27.9794L16.6797 30.9043L11.9511 33.1892L11.8604 27.9794Z" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        `;
+    }

@@ -23,10 +23,15 @@ function overlayAddContact() {
 }
 
 function overlayAddContact2() {
-    document.getElementById('MasterContainerDefaultPageId').innerHTML += generateOverlayAddContact2HTML();
+    document.getElementById('overlayAddContact2Id').innerHTML = '';
+    document.getElementById('overlayAddContact2Id').innerHTML += generateOverlayAddContact2HTML();
     document.getElementById('addcontactinputnameId').value = '';
     document.getElementById('addcontactinputemailId').value = '';
     document.getElementById('addcontactinputphoneId').value = '';
+    document.getElementById('overlayAddContact2Id').classList.remove('overlayAddContactout2cl');
+    document.getElementById('overlayAddContact2Id').classList.remove('d-none');
+    document.getElementById('overlayAddContact2Id').classList.add('overlayAddContactin2cl');
+
 }
 
 // NOTE -- cancel -- Addcontact
@@ -38,9 +43,9 @@ function AddContactCancel() {
 }
 
 function AddContactCancel2() {
-    document.getElementById('addcontactleft2Id').classList.remove('overlayAddContactincl');
-    document.getElementById('addcontactleft2Id').classList.add('overlayAddContactoutcl');
-    setTimeout(function(){document.getElementById('addcontactleft2Id').classList.add('d-none')}, 999);
+    document.getElementById('overlayAddContact2Id').classList.remove('overlayAddContactin2cl');
+    document.getElementById('overlayAddContact2Id').classList.add('overlayAddContactout2cl');
+    setTimeout(function(){document.getElementById('overlayAddContact2Id').classList.add('d-none')}, 999);
     // builddefaultcontactpage();
     // showIndexContacts();
 }
@@ -64,6 +69,13 @@ function overlayEditContact(showId) {
     document.getElementById('overlayEditContactId').classList.remove('d-none');
 }
 
+function overlayEditContact2(showId) {
+    document.getElementById('overlayEditContact2Id').innerHTML += generateOverlayEditContact2HTML(showId);
+    document.getElementById('overlayEditContact2Id').classList.remove('overlayAddContactoutcl');
+    document.getElementById('overlayEditContact2Id').classList.add('overlayAddContactincl');
+    document.getElementById('overlayEditContact2Id').classList.remove('d-none');
+}
+
 
 // NOTE -- Save
 
@@ -76,14 +88,21 @@ function EditSaveContact(showId) {
 // NOTE -- Show contact
 
 function contactShowContact(showId) {
-    
+    // document.getElementById('overlayShowContact2Id').classList.add('d-none');
     document.getElementById('overlayShowContactId').innerHTML = '';
     document.getElementById('overlayShowContactId').innerHTML += generateOverlayShowContactHTML(showId);
+    // document.getElementById('overlayShowContact2Id').classList.add('d-none');
     document.getElementById('overlayShowContactId').classList.remove('d-none');
     document.getElementById('overlayShowContactId').classList.add('overlayShowContactIncl');
-   
 }
 
+function contactShowContact2(showId) {
+    // document.getElementById('overlayShowContactId').classList.add('d-none');
+    document.getElementById('overlayShowContact2Id').innerHTML = '';
+    document.getElementById('overlayShowContact2Id').innerHTML += generateOverlayShowContact2HTML(showId);
+    document.getElementById('overlayShowContact2Id').classList.remove('d-none');
+    document.getElementById('overlayShowContact2Id').classList.add('overlayShowContactIncl');
+}
 
 // NOTE -- generate Success Button
 
@@ -118,7 +137,18 @@ function showNameToEdit(name) {
     for ( let i = 0; i < contactdata.length; i = i + 5 ) {
         if (contactdata[i] == name) {
             showId = i;
+            // document.getElementById('overlayShowContact2Id').classList.add('d-none');
             contactShowContact(i);
+        }
+    }
+}
+
+function showNameToEdit2(name) {
+    for ( let i = 0; i < contactdata.length; i = i + 5 ) {
+        if (contactdata[i] == name) {
+            showId = i;
+            // document.getElementById('overlayShowContactId').classList.add('d-none');
+            contactShowContact2(i);
         }
     }
 }

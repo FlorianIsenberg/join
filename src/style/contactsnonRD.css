@@ -11,8 +11,12 @@
 }
 
 .overlayAddContactcl {
-    display: nonem !important;
+    display: none !important;
 }
+
+ /* .overlayShowContact2cl { 
+    display: none !important;
+}  */
 
 
 

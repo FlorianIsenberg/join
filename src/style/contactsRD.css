@@ -113,8 +113,41 @@
 /* NOTE -- Overlay add contact Card */
 
 
+.overlayAddContactin2cl {
+    animation: toup 3s linear;
+}
+
+.overlayAddContactout2cl {
+    animation: torightout 1s linear;
+}
+
+@keyframes toup {
+    0% {
+        transform: translatey(200px)
+    }
+
+    100% {
+        transform: translatey(-100px);
+    }
+}
+
+@keyframes torightout {
+    0% {
+        transform: translatex(0px)
+    }
+
+    100% {
+        transform: translatex(1870px);
+    }
+}
 
 }
+
+
+
+
+
+
 
 @media screen and (min-width: 0px) and (max-width: 349px) {
 
