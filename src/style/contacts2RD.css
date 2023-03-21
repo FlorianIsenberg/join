@@ -1,0 +1,160 @@
+/* .contactleftframecl { */
+    /* position: absolute; */
+    /* width: 453px; */
+    /* height: 798px; */
+    /* height: 90vh; */
+    /* left: 232px; */
+    /* top: 89px; */
+    /* white */
+    /* background: #FFFFFF;
+    box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.08); */
+/* } */
+
+.MasterContainerDefaultPagecl {
+    /* position: unset; */
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+
+}
+
+.addcontactleft2cl {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    
+    border: 1px solid green;
+    z-index: 4;
+    background-color: white;
+    /* Version 2/ main color */
+    
+
+}
+
+.helpcontainer2cl {
+    width: 90%;
+    /* left: 50px;  */
+    height: 400px;
+    background: #2A3647;
+    border: 30px;
+    margin-top: 2em;
+    border-top-left-radius: 30px;
+    /* border-bottom-left-radius: 30px; */
+    border-top-right-radius: 30px;
+    /* border-bottom-right-radius: 30px; */
+
+    
+}
+
+
+.addcontactheader2cl {
+    margin-top: 1em;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;    
+    font-size: 61px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+
+.addcontactsecheader2cl {
+   
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 120%;
+    margin-top: .5em;
+    color: #FFFFFF;
+    flex: none; 
+}
+
+.addcontactsecheader2cl span {
+    padding-bottom: 5px;
+    border-bottom: #29ABE2 solid 4px;
+}
+
+.closecross2cl {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1em;
+    margin-top: 2em;
+}
+
+.closecross2cl:hover {
+    cursor: pointer;
+}
+
+.avatarpic2cl {
+    margin-top: -70px;
+}
+
+
+.addcontactrightinputfields2cl {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    /* gap: 29px; */
+    /* position: absolute;
+    width: 422px;
+    height: 271px;
+    left: 737px;
+    top: 139px; */
+    /* top: 159px; */
+}
+
+.subbuttoncreate2cl {
+    /* Property 1=Default */
+    /* box-sizing: border-box; */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 10px;
+    /* gap: 10px; */
+    /* Addition Input */
+    margin-left: 35px;
+
+    left: 10px;
+    top: 250px;
+    width: 193px;
+    height: 61px;
+    background: #2A3647;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    /* Inside auto layout */
+    z-index: 4;
+}
+
+.subbuttoncreate2cl:hover {
+    cursor: pointer;
+    background-color: #29ABE2;
+    border-color: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.subbuttoncontainer2cl {
+    /* Frame 35 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content: flex-end; */
+    /* align-items: center; */
+    padding: 0px;
+    margin-top: 4em;
+
+
+}

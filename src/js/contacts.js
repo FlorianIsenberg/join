@@ -22,6 +22,12 @@ function overlayAddContact() {
     document.getElementById('overlayAddContactId').classList.remove('d-none');
 }
 
+function overlayAddContact2() {
+    document.getElementById('MasterContainerDefaultPageId').innerHTML += generateOverlayAddContact2HTML();
+    document.getElementById('addcontactinputnameId').value = '';
+    document.getElementById('addcontactinputemailId').value = '';
+    document.getElementById('addcontactinputphoneId').value = '';
+}
 
 // NOTE -- cancel -- Addcontact
 
@@ -29,6 +35,14 @@ function AddContactCancel() {
     document.getElementById('overlayAddContactId').classList.remove('overlayAddContactincl');
     document.getElementById('overlayAddContactId').classList.add('overlayAddContactoutcl');
     setTimeout(function(){document.getElementById('overlayAddContactId').classList.add('d-none')}, 999);
+}
+
+function AddContactCancel2() {
+    document.getElementById('addcontactleft2Id').classList.remove('overlayAddContactincl');
+    document.getElementById('addcontactleft2Id').classList.add('overlayAddContactoutcl');
+    setTimeout(function(){document.getElementById('addcontactleft2Id').classList.add('d-none')}, 999);
+    // builddefaultcontactpage();
+    // showIndexContacts();
 }
 
 
