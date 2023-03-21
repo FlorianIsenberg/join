@@ -320,7 +320,7 @@
 }
 
 .showSuccessbuttonincl {
-    animation: toup .5s ease-in;
+    animation: toup 1s ease-in;
 }
 
 .showSuccessbuttonoutcl {
