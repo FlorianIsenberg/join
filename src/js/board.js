@@ -315,26 +315,12 @@ function openNote() {
     document.getElementById('note1').classList.remove('hide');
     document.getElementById('popupnoteid').classList.remove('hide');
 }
-
-function closetoDoForEdit() {
-  const closeButton = document.getElementById('close');
-  closeButton.addEventListener('click', function() {
-    const masterTaskContainer = document.getElementById('mastertaskcontainerid');
-    masterTaskContainer.classList.add('hide');
-   
-    document.getElementById('popupnotemastercontainerid').classList.remove('show');
-    document.getElementById('popupnoteid').classList.add('hide');
-  });
-  
-}
    
     
-  
 function editNote(id) {
     let element = todos.find(t=> t.id == id);
-    document.getElementById('popupnotemastercontainerid').classList.remove('hide');
-    document.getElementById('mastertaskcontainerid').classList.remove('show');
     document.getElementById('popupnotemastercontainerid').classList.add('hide');
+    document.getElementById('mastertaskcontainerid').classList.add('show');
     generateNotePagetwoHTML(element);
 }
 
