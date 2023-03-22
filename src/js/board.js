@@ -312,6 +312,50 @@ function priorityButtonChange(priority) {
   }
 }
 
+function priorityButtonChange2(priority) {
+  if (priority === 'urgent2') {
+    let urgentButton = document.getElementById('urgent2');
+    let mediumButton = document.getElementById('medium2');
+    let lowButton = document.getElementById('low2');
+    if (urgentButton.src === '../img/icons/urgent.svg') {
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/medium.svg';
+      lowButton.src = '../img/icons/low.svg';
+    } else {
+      urgentButton.src = '../img/icons/urgentbuttonorange.svg';
+      mediumButton.src = '../img/icons/medium.svg';
+      lowButton.src = '../img/icons/low.svg';
+    }
+  } else if (priority === 'medium2') {
+    let urgentButton = document.getElementById('urgent2');
+    let mediumButton = document.getElementById('medium2');
+    let lowButton = document.getElementById('low2');
+    if (mediumButton.src === '../img/icons/medium.svg') {
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/mediumbuttonyellow.svg';
+      lowButton.src = '../img/icons/low.svg';
+    } else {
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/mediumbuttonyellow.svg';
+      lowButton.src = '../img/icons/low.svg';
+    }
+  } else if (priority === 'low2') {
+    let urgentButton = document.getElementById('urgent2');
+    let mediumButton = document.getElementById('medium2');
+    let lowButton = document.getElementById('low2');
+    if (lowButton.src === '../img/icons/lowbuttongreen.svg') {
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/medium.svg';
+      lowButton.src = '../img/icons/lowbuttongreen.svg';
+    } else {
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/medium.svg';
+      lowButton.src = '../img/icons/lowbuttongreen.svg';
+    }
+  }
+}
+
+
 function opentoDoForEdit(id) {
     let element = todos.find(t=> t.id == id);
     document.getElementById('popupnotemastercontainerid').classList.add('show');

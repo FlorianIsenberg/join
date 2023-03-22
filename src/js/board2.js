@@ -25,9 +25,9 @@ function generateNotePagetwoHTML(task) {
               <span class="prio">Prio</span>
             </div>
             <div class="prio-selections">
-              <img src="../img/icons/urgent.svg" alt="urgent priority symbol" onclick="priorityButtonChange('urgent')" class="urgentpriority ${task.priority === 'urgent' ? 'active' : ''}" id="urgent">
-              <img src="../img/icons/medium.svg" alt="medium priority symbol" onclick="priorityButtonChange('medium')" class="mediumpriority ${task.priority === 'medium' ? 'active' : ''}" id="medium">
-              <img src="../img/icons/low.svg" alt="low priority symbol" onclick="priorityButtonChange('low')" class="lowpriority ${task.priority === 'low' ? 'active' : ''}" id="low">
+              <img src="../img/icons/urgent.svg" alt="urgent priority symbol" onclick="priorityButtonChange2('urgent2')" class="urgentpriority" value="${task.priority === 'urgent' ? 'active' : ''}" id="urgent2">
+              <img src="../img/icons/medium.svg" alt="medium priority symbol" onclick="priorityButtonChange2('medium2')" class="mediumpriority" value="${task.priority === 'medium' ? 'active' : ''}" id="medium2">
+              <img src="../img/icons/low.svg" alt="low priority symbol" onclick="priorityButtonChange2('low2')" class="lowpriority" value="${task.priority === 'low' ? 'active' : ''}" id="low2">
             </div>
             <div class="assignedto">
               <span class="assignedto">Assigned to</span>
