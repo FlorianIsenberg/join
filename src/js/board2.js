@@ -25,9 +25,9 @@ function generateNotePagetwoHTML(task) {
               <span class="prio">Prio</span>
             </div>
             <div class="prio-selections">
-              <img src="../img/icons/urgent.svg" alt="urgent priority symbol" onclick="urgentButtonChange()" class="urgentpriority ${task.priority === 'urgent' ? 'active' : ''}" id="urgent">
-              <img src="../img/icons/medium.svg" alt="medium priority symbol" onclick="mediumButtonChange()" class="mediumpriority ${task.priority === 'medium' ? 'active' : ''}" id="medium">
-              <img src="../img/icons/low.svg" alt="low priority symbol" onclick="lowButtonChange()" class="lowpriority ${task.priority === 'low' ? 'active' : ''}" id="low">
+              <img src="../img/icons/urgent.svg" alt="urgent priority symbol" onclick="priorityButtonChange('urgent')" class="urgentpriority ${task.priority === 'urgent' ? 'active' : ''}" id="urgent">
+              <img src="../img/icons/medium.svg" alt="medium priority symbol" onclick="priorityButtonChange('medium')" class="mediumpriority ${task.priority === 'medium' ? 'active' : ''}" id="medium">
+              <img src="../img/icons/low.svg" alt="low priority symbol" onclick="priorityButtonChange('low')" class="lowpriority ${task.priority === 'low' ? 'active' : ''}" id="low">
             </div>
             <div class="assignedto">
               <span class="assignedto">Assigned to</span>
@@ -99,10 +99,11 @@ function addTask() {
                         </div>
                                
                       <div class="dropdownmenucategory">
-                        <div class="onclickcategory" id="clickcategory" onclick="toggleCategory()">
+                        <div class="onclickcategory" id="clickcategory">
                           <span class="category">Category</span>
+                          <img src="../img/icons/dropdowncategory.svg" alt="arrow down black" class="arrowdropdown" onclick="showCategory()">
                         </div>
-                        <div class="dropdownc hide" id="categoryhideid">
+                        <div class="dropdownc dnone" id="categoryhideid" >
                           <label for="category" disabled selected class="categoryselect">Select task category:</label>
                           <label for="new-category">
                             <span>New category</span>
@@ -132,9 +133,10 @@ function addTask() {
                       </div> 
                   <div class="assignedto">
                   <span>Assigned to</span>
-                    <label for="inputselection" class="dropdownassignedto hide" id="assignetoid" onclick="hideAssignedTo()">Assigned to:</label>
-                    <select class="inputfieldandimage" id="inputselection" multiple>
-                      <option disabled selected>Select contacts to assign</option> 
+                  <img onclick="showAssignetTo()" src="../img/icons/dropdowncategory.svg" alt="arrow down black" class="arrowdropdown">
+                    <label for="inputselection" class="dropdownassignedto dnone" id="assignetoid" onclick="hideAssignedTo()">Assigned to:</label>
+                    <select class="inputfieldandimage dnone" id="inputselection" multiple>
+                      <option disabled selected class="select">Select contacts to assign</option> 
                       <option>Anton Meyer</option>
                       <option>Anja Schulz</option>
                       <option>David EIsenberg</option>
@@ -157,9 +159,9 @@ function addTask() {
                                 <span class="prio">Prio</span>
                             </div>
                                 <div class="prio-selections">
-                                    <img src="../img/icons/urgent.svg" alt="urgent priority symbol" onclick="urgentButtonChange()" class="urgentpriority" id="urgent">
-                                    <img src="../img/icons/medium.svg" alt="medium priority symbol" onclick="mediumButtonChange()" class="mediumpriority" id="medium">  
-                                    <img src="../img/icons/low.svg" alt="low priority symbol" onclick="lowButtonChange()" class="lowpriority" id="low">   
+                                    <img src="../img/icons/urgent.svg" alt="urgent priority symbol" onclick="priorityButtonChange('urgent')" class="urgentpriority" id="urgent">
+                                    <img src="../img/icons/medium.svg" alt="medium priority symbol" onclick="priorityButtonChange('medium')" class="mediumpriority" id="medium">  
+                                    <img src="../img/icons/low.svg" alt="low priority symbol" onclick="priorityButtonChange('low')" class="lowpriority" id="low">   
                                 </div>
                                 <div class="subtasks-selection">
                                     <span class="subtasktitle">Subtasks</span>
@@ -182,19 +184,7 @@ function addTask() {
     `;
 }
 
-function toggleCategory() {
-    const dropdown = document.getElementById("categoryhideid");
-    if (dropdown.classList.contains("hide")) {
-      dropdown.classList.remove("hide");
-    } else {
-      dropdown.classList.add("hide");
-    }
-  }
-
-  function hideAssignedTo() {
-    document.getElementById('assignetoid').classList.remove('hide');
-
-  }
+ 
   
   function addNewTask() {
       
@@ -241,6 +231,7 @@ function toggleCategory() {
     
     alert('Neues To-Do wurde erstellt!');
     generateNewTask(newNote); 
+    closeTask();
   }
   
 
@@ -349,4 +340,20 @@ document.getElementById('todo').innerHTML = `
 `;
 }
 
+function showCategory() {
+  const category = document.getElementById('categoryhideid');
+  if (category.classList.contains('dnone')) {
+    category.classList.remove('dnone');
+  } else {
+    category.classList.add('dnone');
+  }
+}
 
+function showAssignetTo() {
+  const category = document.getElementById('inputselection');
+  if (category.classList.contains('dnone')) {
+    category.classList.remove('dnone');
+  } else {
+    category.classList.add('dnone');
+  }
+}
