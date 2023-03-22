@@ -208,13 +208,8 @@ function generateOverlayShowContact2HTML(showId){
 
     <div id="subbuttoncontainer2Id" class="subbuttoncontainer2cl">
 
-        <div id="subbuttoncreate2Id" class="subbuttoncreate2cl" onclick="AddCreateContact2()"> 
-            <div id="addcontactcreatetext2Id" class="addcontactcreatetextcl">Create contact</div>
-             <div id="addcontactcreateok2Id" class="addcontactcreateok2cl">
-                <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 7.5L7 13.5L17 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>                            
-            </div>
+        <div id="subbuttoncreate2Id" class="subbuttoncreate2cl" onclick="EditSaveContact(showId)"> 
+            <div id="addcontactcreatetext2Id" class="addcontactcreatetextcl">Save</div>
         </div>
     </div>
 </div>

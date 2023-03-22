@@ -1,19 +1,19 @@
 @media screen and (min-width: 349px) and (max-width: 999px) {
 
-    .mobile-header {
+    /* .mobile-header {
         display: none;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 20px 25px;
         /* position: fixed; */
-        height: 80px;
+        /* height: 80px;
         top: 0;
         left: 0;
         right: 0;
         background: #FFFFFF;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-    }
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); */
+    } */
 
 .MasterContainerDefaultPagecl {
 
@@ -332,6 +332,38 @@
     /* border: 1px solid green; */
     z-index: 5;
     background-color: white;
+}
+
+
+.subbuttoncreate2cl {
+    /* Property 1=Default */
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 18px 10px;
+    gap: 10px;
+    /* Addition Input */
+    margin-left: 35px;
+    width: 193px;
+    height: 61px;
+    background: #2A3647;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.subbuttoncreate2cl:hover {
+    cursor: pointer;
+    background-color: #29ABE2;
+    border-color: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 }
