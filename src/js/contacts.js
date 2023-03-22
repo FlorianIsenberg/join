@@ -1,8 +1,6 @@
 
+
 // NOTE -- Default page content
-
-// builddefaultcontactpage();
-
 
 function builddefaultcontactpage() {
     document.getElementById('contactrightframeId').innerHTML += generateContactHTML();
@@ -28,10 +26,9 @@ function overlayAddContact2() {
     document.getElementById('addcontactinputnameId').value = '';
     document.getElementById('addcontactinputemailId').value = '';
     document.getElementById('addcontactinputphoneId').value = '';
-    document.getElementById('overlayAddContact2Id').classList.remove('overlayAddContactout2cl');
+    // document.getElementById('overlayAddContact2Id').classList.remove('overlayAddContactout2cl');
     document.getElementById('overlayAddContact2Id').classList.remove('d-none');
-    document.getElementById('overlayAddContact2Id').classList.add('overlayAddContactin2cl');
-
+    document.getElementById('addcontactleft3Id').classList.add('overlayAddContactin2cl');
 }
 
 // NOTE -- cancel -- Addcontact
@@ -43,9 +40,9 @@ function AddContactCancel() {
 }
 
 function AddContactCancel2() {
-    document.getElementById('overlayAddContact2Id').classList.remove('overlayAddContactin2cl');
-    document.getElementById('overlayAddContact2Id').classList.add('overlayAddContactout2cl');
-    setTimeout(function(){document.getElementById('overlayAddContact2Id').classList.add('d-none')}, 999);
+    document.getElementById('addcontactleft3Id').classList.remove('overlayAddContactin2cl');
+    document.getElementById('addcontactleft3Id').classList.add('overlayAddContactout2cl');
+    setTimeout(function(){document.getElementById('addcontactleft3Id').classList.add('d-none')}, 999);
     // builddefaultcontactpage();
     // showIndexContacts();
 }

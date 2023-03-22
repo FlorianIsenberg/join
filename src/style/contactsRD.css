@@ -126,30 +126,32 @@
 
 
 .overlayAddContactin2cl {
-    animation: toup 3s linear;
+    animation: toupRD 1s linear;
 }
 
 .overlayAddContactout2cl {
-    animation: torightout 1s linear;
+    animation: todownRD 1s linear;
 }
 
-@keyframes toup {
+@keyframes toupRD {
     0% {
-        transform: translatey(00px)
+        transform: translatey(1080px);
+        /* transform: translatey(410px); */
     }
 
     100% {
-        transform: translatey(500px);
+        transform: translatey(0px);
+        /* transform: translatey(410px); */
     }
 }
 
-@keyframes torightout {
+@keyframes todownRD {
     0% {
-        transform: translatex(0px)
+        transform: translatey(0px);
     }
 
     100% {
-        transform: translatex(1870px);
+        transform: translatey(1080px);
     }
 }
 
