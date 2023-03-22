@@ -1,19 +1,22 @@
-/* .contactleftframecl { */
-    /* position: absolute; */
-    /* width: 453px; */
-    /* height: 798px; */
-    /* height: 90vh; */
-    /* left: 232px; */
-    /* top: 89px; */
-    /* white */
-    /* background: #FFFFFF;
-    box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.08); */
-/* } */
+@media screen and (min-width: 349px) and (max-width: 999px) {
+
+    /* .mobile-header {
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 25px;
+        /* position: fixed; */
+        /* height: 80px;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); */
+    } */
 
 .MasterContainerDefaultPagecl {
-    /* position: unset; */
-    display: flex;
-    /* flex-direction: column; */
+
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -25,33 +28,26 @@
     position:absolute;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
+    top: 0px;
     left: 0px;
     width: 100%;
-    height: 100vh;
-    
-    border: 1px solid green;
+    height:100vh;
+    /* border: 1px solid green; */
     z-index: 4;
     background-color: white;
-    /* Version 2/ main color */
-    
-
 }
 
 .helpcontainer2cl {
+
+
     width: 90%;
-    /* left: 50px;  */
     height: 400px;
     background: #2A3647;
     border: 30px;
     margin-top: 2em;
     border-top-left-radius: 30px;
-    /* border-bottom-left-radius: 30px; */
     border-top-right-radius: 30px;
-    /* border-bottom-right-radius: 30px; */
-
-    
 }
 
 
@@ -105,28 +101,16 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-    /* gap: 29px; */
-    /* position: absolute;
-    width: 422px;
-    height: 271px;
-    left: 737px;
-    top: 139px; */
-    /* top: 159px; */
 }
 
 .subbuttoncreate2cl {
-    /* Property 1=Default */
-    /* box-sizing: border-box; */
-    /* Auto layout */
+
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 18px 10px;
-    /* gap: 10px; */
-    /* Addition Input */
     margin-left: 35px;
-
     left: 10px;
     top: 250px;
     width: 193px;
@@ -134,7 +118,6 @@
     background: #2A3647;
     border: 1px solid #2A3647;
     border-radius: 10px;
-    /* Inside auto layout */
     z-index: 4;
 }
 
@@ -146,15 +129,241 @@
 }
 
 .subbuttoncontainer2cl {
-    /* Frame 35 */
-    /* Auto layout */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* justify-content: flex-end; */
-    /* align-items: center; */
     padding: 0px;
     margin-top: 4em;
 
+
+}
+
+.overlayAddContact2cl {
+    display: contents; 
+    background: #FFFFFF;   
+    border-radius: 30px;
+    z-index: 3;
+}
+
+
+/* NOTE Edit contact - show page */
+
+.overlayShowContact2cl {
+    /* padding-left: 40px; */
+    /* padding-right: 40px; */
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    /* align-items: flex-end; */
+    /* padding-right: 7em; */
+    padding-top: 35em;
+}
+
+.showcontactmain2cl {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* left: 110px; */
+    left: 0px;
+    top: 90px;
+    max-width: 100%;
+    width: 100%;
+    height: 80vh;
+    /* padding-top: 1em; */
+    /* margin-left: 2.5em;
+    padding-left: 2.5em; */
+    z-index: 4;
+    /* z-index: 12; */
+    background-color: white;
+}
+
+.headslogancl {
+    margin-left: 3em;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #000000;
+}
+
+.pagesigncl {
+    margin-left: 1em;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 47px;
+    line-height: 120%;
+    margin-top: .5em;
+}
+
+.subtextcl {
+    margin-left: 2.5em;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.subtextcl span {
+    padding-bottom: 21px;
+    border-bottom: #29ABE2 solid 4px;
+}
+
+.showbothcl {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.backarrowcl {
+    align-items: baseline;
+    padding-top: 1em;
+}
+
+.showcontacttop2cl {
+    margin-left: 3em;
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.showcontactname2cl {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 47px;
+    line-height: 120%;
+    margin-left: .5em;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+
+.help2maincl {
+    display: flex;
+    padding-right: 5em;
+    /* width: 100%; */
+}
+
+.showcontactmiddlecl {
+    margin-left: 3em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 59px;
+    margin-top: 2em;
+    width: 392.85px;
+    height: 74px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.showcontactbottomcl {
+    margin-left: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    margin-top: 2em;
+    gap: 22px;
+    /* width: 140px; */
+    height: 128px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+
+
+
+
+.showcontactaddtask2cl {
+    margin-left: 1.5em;
+    margin-top: 13px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    color: #29ABE2;
+    flex: none;
+    order: 1;
+}
+
+.showcontacteditcontact2cl {
+    /* margin-left: 25em; */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    /* gap: 5px; */
+    display: flex;
+    color: #2A3647;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    z-index: 4;
+}
+
+.showcontacteditcontact2cl:hover {
+    cursor: pointer;
+}
+
+
+.addcontactleft3cl {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    /* border: 1px solid green; */
+    z-index: 5;
+    background-color: white;
+}
+
+
+.subbuttoncreate2cl {
+    /* Property 1=Default */
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 18px 10px;
+    gap: 10px;
+    /* Addition Input */
+    margin-left: 35px;
+    width: 193px;
+    height: 61px;
+    background: #2A3647;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.subbuttoncreate2cl:hover {
+    cursor: pointer;
+    background-color: #29ABE2;
+    border-color: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 
 }

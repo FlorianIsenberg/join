@@ -3,7 +3,7 @@ let notes = [];
 function generateNotePagetwoHTML(task) {
     document.getElementById('mastertaskcontainerid').innerHTML = `
           <div class="containeropennote">
-            <img src="../img/icons/closecross.svg" alt="close x button" onclick="closetoDoForEdit(${task['id']})" id="close" class="closebuttonx">
+            <img src="../img/icons/closecross.svg" alt="close x button" onclick="closeBig(${task['id']})" id="close" class="closebuttonx">
             <div class="title">
               <span class="title">Titel</span>
             </div>
@@ -39,7 +39,7 @@ function generateNotePagetwoHTML(task) {
               </select>
             </div>
                     <div class="iconsfromusers"></div>
-                    <img src="../img/icons/okbutton.svg" alt="button ok" onclick="editedNote()" class="okbutton" id="okbuttonsafe">
+                    <img src="../img/icons/okbutton.svg" alt="button ok" onclick="editedNote(${task.id})" class="okbutton" id="okbuttonsafe">
                     </div>
             </div>`;
 }
@@ -249,7 +249,7 @@ function toggleCategory() {
     document.getElementById('todo').innerHTML += `
   <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
     <div class="notesection">
-    <span class="departmentdesign">${element.department}</span>
+    <span class="departmentdesign">${element.category}</span>
     </div>
     <div class="noteheadlinecontainer">
     <h2 class="noteheadline">${element.title}</h2>
@@ -272,34 +272,30 @@ function toggleCategory() {
 `;
 }
 
- 
+
 function editedNote() {
   let title = document.getElementById('titleinput').value;
   let description = document.getElementById('descriptioninput').value;
   let category = document.querySelector('input[type="checkbox"]:checked');
-  let assignedTo = Array.from(document.getElementById('inputselection').options)
-                         .filter(option => option.selected)
-                         .map(option => option.text);
-  let dueDate = document.getElementById('dateinput').value;
+  let dueDate = document.getElementById('inputdate').value;
   let priorityImg = document.querySelector('.prioritys img.selected');
   let priority = priorityImg ? priorityImg.alt : '';
   let subtasks = Array.from(document.querySelectorAll('.rectangleandsubtask1 span'))
                         .map(span => span.textContent);
-
+  
   let newNote2 = {
     title,
     description,
     category,
-    assignedTo,
     dueDate,
     priority,
     subtasks,
-    department,
+    categorys,
   };
 
   notes.push(newNote2);
 
-  let inputFields = document.querySelectorAll('#titleinput, #descriptioninput, .checkbox1, .checkbox2, .checkbox3, .checkbox4, .checkbox5, .checkbox6, #inputselection, #dateinput, .prioritys img, .rectangleandsubtask1 span');
+  let inputFields = document.querySelectorAll('#titleinput, #descriptioninput, .checkbox1, .checkbox2, .checkbox3, .checkbox4, .checkbox5, .checkbox6, #inputselection, #inputdate, .prioritys img, .rectangleandsubtask1 span');
   inputFields.forEach(field => {
     if (field.type === 'checkbox' || field.tagName === 'IMG') {
       field.checked = false;
@@ -310,27 +306,37 @@ function editedNote() {
     }
   });
 
-alert('To-Do wurde verändert gespeichert!');
+alert('To-Do wurde erfolgreich geändert!');
+closeBig();
 generateEditedNote(newNote2); 
 }
 
-
+function closeBig(i) {
+document.getElementById('mastertaskcontainerid').classList.add('show');
+document.getElementById('mastertaskcontainerid').classList.remove('show');
+closeBigPopup();
+}
+  
+function closeBigPopup(){
+  document.getElementById('popupnotemastercontainerid').classList.remove('show');
+  document.getElementById('popupnoteid').classList.add('hide');
+}
 
 function generateEditedNote(element) {
-document.getElementById('todo').innerHTML += `
+document.getElementById('todo').innerHTML = `
 <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
 <div class="notesection">
 <span class="departmentdesign">${element.department}</span>
 </div>
 <div class="noteheadlinecontainer">
-<h2 class="noteheadline"></h2>
+<h2 class="noteheadline">${element.title}</h2>
 </div>
 <div class="note">
-<span class="tmodifythecontents"></span> 
+<span class="tmodifythecontents">${element.description}</span> 
 <div class="loadingbarandspan">
   <div class="progressloadingbar">
   <img class="progressloadingbarimage" src="../img/icons/progress.svg" alt="Progressbar">
-  <span class="halfdone"></span>
+  <span class="halfdone">${element.subtasksDone}</span>
   </div>    
 </div>
 </div>
@@ -344,4 +350,3 @@ document.getElementById('todo').innerHTML += `
 }
 
 
-    

@@ -10,6 +10,18 @@
         display: none;
     } */
 
+    .d-none {
+        display: none
+    }
+    
+    .mobile-header, .mobile-navbar {
+        display: none !important;
+    }
+
+    .showcontactmaincl {
+        display: none;
+    }
+
     .contactrightframecl {
         display: none;
     } 
@@ -113,8 +125,41 @@
 /* NOTE -- Overlay add contact Card */
 
 
+.overlayAddContactin2cl {
+    animation: toup 3s linear;
+}
+
+.overlayAddContactout2cl {
+    animation: torightout 1s linear;
+}
+
+@keyframes toup {
+    0% {
+        transform: translatey(00px)
+    }
+
+    100% {
+        transform: translatey(500px);
+    }
+}
+
+@keyframes torightout {
+    0% {
+        transform: translatex(0px)
+    }
+
+    100% {
+        transform: translatex(1870px);
+    }
+}
 
 }
+
+
+
+
+
+
 
 @media screen and (min-width: 0px) and (max-width: 349px) {
 

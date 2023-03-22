@@ -172,7 +172,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 25px;
-    position: fixed;
+    /* position: fixed; */
     height: 80px;
     top: 0;
     left: 0;
@@ -308,6 +308,7 @@ color: #CDCDCD;
     }
     .mobile-header {        
         display: flex;
+        padding: 20px 25px;
         /* max-width: 89%; */
         box-sizing: border-box;         
     }
