@@ -2,7 +2,7 @@ let currentDraggedElement;
 let searchedTaskArray = [];
 let tasks = [];
 let colors = [];
-let categorys = ['marketing', 'sales', 'design', 'media' , 'backoffice' ,];
+let categorys = ['Marketing', 'Sales', 'Design', 'Media' , 'Backoffice' ,];
 let newTask = [];
 
 
@@ -73,14 +73,14 @@ let todos = [{
     category: 'done',
 },
 {
-id: 5,
+    id: 5,
     title: '',
     description: '',
     date: '',
     priority: '',
     priorityimg: ['../img/icons/greenarrowsdown.svg' , '../img/icons/urgentorangenote.svg' , '../img/icons/mediumbuttonyellow.svg'],
     assignedTo: [''],
-    department: '',
+    department: [],
     taskimage: '',
     subtasks: [],
     subtasksDone: [],

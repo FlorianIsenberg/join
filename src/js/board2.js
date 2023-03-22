@@ -107,27 +107,27 @@ function addTask() {
                           <label for="category" disabled selected class="categoryselect">Select task category:</label>
                           <label for="new-category">
                             <span>New category</span>
-                            <input type="checkbox" id="new-category" class="checkbox1"> 
+                            <input type="checkbox" id="checkbox1" class="checkbox1"> 
                           </label>
                           <label for="sales">
                             <span>Sales</span>
-                            <input type="checkbox" id="sales" class="checkbox2">
+                            <input type="checkbox" id="checkbox2" class="checkbox2">
                           </label>
                           <label for="backoffice">
                             <span>Backoffice</span>
-                            <input type="checkbox" id="backoffice" class="checkbox3">
+                            <input type="checkbox" id="checkbox3" class="checkbox3">
                           </label>
                           <label for="marketing">
                             <span>Marketing</span>
-                            <input type="checkbox" id="marketing" class="checkbox4">
+                            <input type="checkbox" id="checkbox4" class="checkbox4">
                           </label>
                           <label for="design">
                             <span>Design</span>
-                            <input type="checkbox" id="design" class="checkbox5">
+                            <input type="checkbox" id="checkbox5" class="checkbox5">
                           </label>
                           <label for="media">
                             <span>Media</span>
-                            <input type="checkbox" id="media" class="checkbox6">
+                            <input type="checkbox" id="checkbox6" class="checkbox6">
                           </label>
                         </div>
                       </div> 
@@ -171,12 +171,12 @@ function addTask() {
                                         <img src="../img/icons/Vectorplusblack.svg" alt="blackplusbutton" class="blackplusbuttonsubtasks">
                                     </div>
                                     <div class="rectangleandsubtask1">
-                                        <input type="checkbox" alt="rectangle">
+                                        <input type="checkbox" alt="rectangle" class="rectangle">
                                         <span class="subtask1">Subtask 1</span>
                                     </div>
                                         <div class="clearandcreatetask">
                                             <img src="../img/icons/clearx.svg" alt="clear x button" onclick="clearTask(id)" id="clear" class="clearxbutton">
-                                            <img src="../img/icons/createtaskbutton.svg" alt="button create task" id="newnote" onclick="addNewTask()">
+                                            <img src="../img/icons/createtaskbutton.svg" alt="button create task" id="newnote" onclick="addNewTask(id)" class="createtaskbutton">
                                         </div>
                 </div>
             </div>
@@ -186,16 +186,12 @@ function addTask() {
 
  
   
-  function addNewTask() {
+ async function addNewTask(id) {
       
       let title = document.getElementById('titleinput').value;
       let description = document.getElementById('descriptioninput').value;
-      let department = document.getElementById('sales').value = "Sales";
-      document.getElementById('marketing').value = "Marketing";
-      document.getElementById('backoffice').value = "Backoffice";
-      document.getElementById('media').value = "Media";
-      document.getElementById('design').value = "Design";
-      let category = document.querySelector('input[type="checkbox"]:checked').nextSibling.textContent.trim();
+      let department = document.getElementById(`${todos.department}`);
+      let category = document.getElementById(`${todos.category}`);
       let assignedTo = Array.from(document.getElementById('inputselection').options)
                              .filter(option => option.selected)
                              .map(option => option.text);
@@ -206,6 +202,7 @@ function addTask() {
                             .map(span => span.textContent);
     
       let newNote = {
+        id,
         title,
         description,
         category,
@@ -217,7 +214,7 @@ function addTask() {
       };
     
       notes.push(newNote);
-    
+      await backend.setItem('notes', JSON.stringify(notes));
       let inputFields = document.querySelectorAll('#titleinput, #descriptioninput, .checkbox1, .checkbox2, .checkbox3, .checkbox4, .checkbox5, .checkbox6, #inputselection, #dateinput, .prioritys img, .rectangleandsubtask1 span');
       inputFields.forEach(field => {
         if (field.type === 'checkbox' || field.tagName === 'IMG') {
@@ -240,7 +237,7 @@ function addTask() {
     document.getElementById('todo').innerHTML += `
   <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
     <div class="notesection">
-    <span class="departmentdesign">${element.category}</span>
+    <span class="departmentdesign" value="">${element.category}</span>
     </div>
     <div class="noteheadlinecontainer">
     <h2 class="noteheadline">${element.title}</h2>
@@ -264,10 +261,11 @@ function addTask() {
 }
 
 
-function editedNote() {
+async function editedNote(id) {
   let title = document.getElementById('titleinput').value;
   let description = document.getElementById('descriptioninput').value;
-  let category = document.querySelector('input[type="checkbox"]:checked');
+  let category = document.getElementById(`${todos.category}`);
+  let department = document.getElementById(`${todos.id}`);
   let dueDate = document.getElementById('inputdate').value;
   let priorityImg = document.querySelector('.prioritys img.selected');
   let priority = priorityImg ? priorityImg.alt : '';
@@ -275,17 +273,18 @@ function editedNote() {
                         .map(span => span.textContent);
   
   let newNote2 = {
+    id,
     title,
     description,
     category,
     dueDate,
     priority,
     subtasks,
-    categorys,
+    department,
   };
 
   notes.push(newNote2);
-
+  await backend.setItem('notes', JSON.stringify(notes));
   let inputFields = document.querySelectorAll('#titleinput, #descriptioninput, .checkbox1, .checkbox2, .checkbox3, .checkbox4, .checkbox5, .checkbox6, #inputselection, #inputdate, .prioritys img, .rectangleandsubtask1 span');
   inputFields.forEach(field => {
     if (field.type === 'checkbox' || field.tagName === 'IMG') {
@@ -296,6 +295,7 @@ function editedNote() {
       field.value = '';
     }
   });
+ 
 
 alert('To-Do wurde erfolgreich geändert!');
 closeBig();
@@ -314,10 +314,10 @@ function closeBigPopup(){
 }
 
 function generateEditedNote(element) {
-document.getElementById('todo').innerHTML = `
+document.getElementById(`${element['id']}`).innerHTML = +`
 <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
 <div class="notesection">
-<span class="departmentdesign">${element.department}</span>
+<span class="departmentdesign" value="${element['department']}">${element.department}</span>
 </div>
 <div class="noteheadlinecontainer">
 <h2 class="noteheadline">${element.title}</h2>

@@ -23,8 +23,9 @@ body {
 .closebuttonclassaddtask {
     width: 30px;
     height: 30px;
-    
+    cursor: pointer; 
 }
+
 
 .container-selections {
     display: flex;
@@ -445,6 +446,10 @@ label:hover {
     
 }
 
+.arrowdropdown {
+    cursor: pointer;
+}
+
 .blackarrowdown {
     padding-left: 100px;
 }
@@ -522,7 +527,7 @@ label:hover {
     outline:none;
     padding-left: 20px;
     padding-right: 20px;
-    
+    cursor: pointer;
 }
 
 .datecalendarsymbol {
@@ -530,7 +535,17 @@ label:hover {
     padding-right: 12px
 }
 
+.clearxbutton {
+    cursor: pointer;
+}
 
+.createtaskbutton {
+    cursor: pointer;
+}
+
+.rectangle {
+    cursor: pointer;
+}
 .prio {
     font-family: 'Inter';
     font-style: normal;
@@ -634,7 +649,7 @@ label:hover {
     background-color: #FFFFFF;
     width: 1154px;
     height: 914px;
-    top: 184px;
+    top: 144px;
     left:250px;
     animation: toleft 1s linear;
     border-radius: 30px;
