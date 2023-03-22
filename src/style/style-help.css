@@ -24,11 +24,9 @@
     color: #000000;
 }
 .help-arrow {
-    /* position: absolute; */
-    width: 37px;
-    height: 37px;
-    left: 1281px;
-    top: 165px;
+    position: absolute;
+    /* width: 37px; */
+    left: 578px;
     /* position: absolute;
     left: 16.67%;
     right: 16.67%;

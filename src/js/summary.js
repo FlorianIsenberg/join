@@ -38,7 +38,7 @@ function genaretDropDownMobile() {
     }
     
     function toPageBoard(){
-            window.location.href = './board-complete.html'
+            window.location.href = '/src/temmplates/board-complete.html'
         }
     // function renderWelcomeGuest() {
     //         return `
