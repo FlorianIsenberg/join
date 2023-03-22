@@ -1,5 +1,9 @@
 
-    /**
+ 
+
+ 
+ 
+ /**
  * This function is used to drop down navbar after click on avatar.
  */
     
@@ -38,7 +42,7 @@ function genaretDropDownMobile() {
     }
     
     function toPageBoard(){
-            window.location.href = './board-complete.html'
+            window.location.href = './board.html'
         }
     // function renderWelcomeGuest() {
     //         return `

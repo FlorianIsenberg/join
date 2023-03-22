@@ -1,4 +1,4 @@
-let users = [];
+
 
 setURL('https://gruppe-07i.developerakademie.net/smallest_backend_ever');
 

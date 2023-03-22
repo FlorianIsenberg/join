@@ -260,7 +260,6 @@ function closeTask(){
     document.getElementById('mastercontainerid').classList.add('hide');
 }
 
-
 function openNewTask() {
     document.getElementById('mastercontainerid').classList.remove('hide');
 }
@@ -270,38 +269,90 @@ function closepopupcontainer() {
 }
 
 
-function urgentButtonChange() {
-    if (document.getElementById("urgent").src == "../img/icons/urgentbuttonorange.svg") {
-        document.getElementById("urgent").src = "../img/icons/urgent.svg";
+function priorityButtonChange(priority) {
+  if (priority === 'urgent') {
+    let urgentButton = document.getElementById('urgent');
+    let mediumButton = document.getElementById('medium');
+    let lowButton = document.getElementById('low');
+    if (urgentButton.src === '../img/icons/urgent.svg') {
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/medium.svg';
+      lowButton.src = '../img/icons/low.svg';
     } else {
-        document.getElementById("urgent").src = "../img/icons/urgentbuttonorange.svg";
+      urgentButton.src = '../img/icons/urgentbuttonorange.svg';
+      mediumButton.src = '../img/icons/medium.svg';
+      lowButton.src = '../img/icons/low.svg';
     }
+  } else if (priority === 'medium') {
+    let urgentButton = document.getElementById('urgent');
+    let mediumButton = document.getElementById('medium');
+    let lowButton = document.getElementById('low');
+    if (mediumButton.src === '../img/icons/medium.svg') {
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/mediumbuttonyellow.svg';
+      lowButton.src = '../img/icons/low.svg';
+    } else {
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/mediumbuttonyellow.svg';
+      lowButton.src = '../img/icons/low.svg';
+    }
+  } else if (priority === 'low') {
+    let urgentButton = document.getElementById('urgent');
+    let mediumButton = document.getElementById('medium');
+    let lowButton = document.getElementById('low');
+    if (lowButton.src === '../img/icons/lowbuttongreen.svg') {
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/medium.svg';
+      lowButton.src = '../img/icons/lowbuttongreen.svg';
+    } else {
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/medium.svg';
+      lowButton.src = '../img/icons/lowbuttongreen.svg';
+    }
+  }
 }
 
-
-function returnUrgentButtonChange() {
-    if (document.getElementById("urgent").src == "../img/icons/urgent.svg") {
-        document.getElementById("urgent").src = "../img/icons/urgentbuttonorange.svg";
+function priorityButtonChange2(priority) {
+  if (priority === 'urgent2') {
+    let urgentButton = document.getElementById('urgent2');
+    let mediumButton = document.getElementById('medium2');
+    let lowButton = document.getElementById('low2');
+    if (urgentButton.src === '../img/icons/urgent.svg') {
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/medium.svg';
+      lowButton.src = '../img/icons/low.svg';
     } else {
-        document.getElementById("urgent").src = "../img/icons/urgent.svg";
+      urgentButton.src = '../img/icons/urgentbuttonorange.svg';
+      mediumButton.src = '../img/icons/medium.svg';
+      lowButton.src = '../img/icons/low.svg';
     }
-}
-
-
-function mediumButtonChange() {
-    if (document.getElementById("medium").src == "../img/icons/mediumbuttonyellow.svg") {
-        document.getElementById("medium").src = "../img/icons/medium.svg";
+  } else if (priority === 'medium2') {
+    let urgentButton = document.getElementById('urgent2');
+    let mediumButton = document.getElementById('medium2');
+    let lowButton = document.getElementById('low2');
+    if (mediumButton.src === '../img/icons/medium.svg') {
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/mediumbuttonyellow.svg';
+      lowButton.src = '../img/icons/low.svg';
     } else {
-        document.getElementById("medium").src = "../img/icons/mediumbuttonyellow.svg";
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/mediumbuttonyellow.svg';
+      lowButton.src = '../img/icons/low.svg';
     }
-}
-
-function lowButtonChange() {
-    if (document.getElementById("low").src == "../img/icons/lowbuttongreen.svg") {
-        document.getElementById("low").src = "../img/icons/low.svg";
+  } else if (priority === 'low2') {
+    let urgentButton = document.getElementById('urgent2');
+    let mediumButton = document.getElementById('medium2');
+    let lowButton = document.getElementById('low2');
+    if (lowButton.src === '../img/icons/lowbuttongreen.svg') {
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/medium.svg';
+      lowButton.src = '../img/icons/lowbuttongreen.svg';
     } else {
-        document.getElementById("low").src = "../img/icons/lowbuttongreen.svg";
+      urgentButton.src = '../img/icons/urgent.svg';
+      mediumButton.src = '../img/icons/medium.svg';
+      lowButton.src = '../img/icons/lowbuttongreen.svg';
     }
+  }
 }
 
 
@@ -315,8 +366,7 @@ function openNote() {
     document.getElementById('note1').classList.remove('hide');
     document.getElementById('popupnoteid').classList.remove('hide');
 }
-   
-    
+      
 function editNote(id) {
     let element = todos.find(t=> t.id == id);
     document.getElementById('popupnotemastercontainerid').classList.add('hide');
@@ -365,9 +415,9 @@ function hideCategory() {
     <span class="prio">Prio</span>
   </div>
   <div class="prio-selections">
-    <img src="../img/icons/urgent.svg" alt="urgent priority symbol" onclick="urgentButtonChange()" class="urgentpriority ${todos.priority === 'urgent' ? 'active' : ''}" id="urgent">
-    <img src="../img/icons/medium.svg" alt="medium priority symbol" onclick="mediumButtonChange()" class="mediumpriority ${todos.priority === 'medium' ? 'active' : ''}" id="medium">
-    <img src="../img/icons/low.svg" alt="low priority symbol" onclick="lowButtonChange()" class="lowpriority ${todos.priority === 'low' ? 'active' : ''}" id="low">
+    <img src="../img/icons/urgent.svg" alt="urgent priority symbol" onclick="urgentButtonChange('urgent')" class="urgentpriority ${todos.priority === 'urgent' ? 'active' : ''}" id="urgent">
+    <img src="../img/icons/medium.svg" alt="medium priority symbol" onclick="mediumButtonChange('medium')" class="mediumpriority ${todos.priority === 'medium' ? 'active' : ''}" id="medium">
+    <img src="../img/icons/low.svg" alt="low priority symbol" onclick="lowButtonChange('low')" class="lowpriority ${todos.priority === 'low' ? 'active' : ''}" id="low">
   </div>
   <div class="assignedto">
     <span class="assignedto">Assigned to</span>
