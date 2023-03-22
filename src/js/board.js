@@ -16,7 +16,7 @@ let todos = [{
     department: 'Design',
     taskimage: '../img/icons/design.svg',
     subtasks: [],
-    subtasksDone: 1 / 2,
+    subtasksDone: "0/2 Done",
     category: 'todo'
 },
 {
@@ -29,7 +29,7 @@ let todos = [{
     department: 'Sales',
     taskimage: '../img/icons/sales.svg',
     subtasks: [],
-    subtasksDone: [],
+    subtasksDone: "2/3 Done",
     category: 'inprogress',
 },
 {
@@ -42,7 +42,7 @@ let todos = [{
     department: 'Backoffice',
     taskimage: '../img/icons/backoffice.svg',
     subtasks: [],
-    subtasksDone: [],
+    subtasksDone: "1/2 Done",
     category: 'awaitingfeedback',
 },
 {
@@ -55,7 +55,7 @@ let todos = [{
     department: 'Media',
     taskimage: '../img/icons/media.svg',
     subtasks: [],
-    subtasksDone: [],
+    subtasksDone: "0/1 Done",
     category: 'awaitingfeedback',
 },
 {
@@ -69,7 +69,7 @@ let todos = [{
     department: 'Marketing',
     taskimage: '../img/icons/marketing.svg',
     subtasks: [],
-    subtasksDone: [],
+    subtasksDone: "5/5 Done",
     category: 'done',
 },
 {
@@ -177,7 +177,7 @@ function generateTodoHTML(element) {
     return `
     <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit(${element['id']})">
       <div class="notesection">
-      <span class="departmentdesign">${element.department} ${element.taskimage}</span>
+      <span class="departmentdesign" id="departmentdesign"> ${element.department}</span>
       </div>
       <div class="noteheadlinecontainer">
       <h2 class="noteheadline">${element.title}</h2>

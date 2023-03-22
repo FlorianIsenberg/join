@@ -323,7 +323,7 @@ function closeBigPopup(){
 
 function generateEditedNote(element) {
 document.getElementById('todo').innerHTML += `
-<div class="notesmain member" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
+<div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
 <div class="notesection">
 <span class="departmentdesign member" id="departmentstyle" value="${element['department']}">${element.department}</span>
 </div>
@@ -377,13 +377,13 @@ function fetchColor() {
   }
 }
 
-function fetchColor(element) {
+function fetchColortwo(element) {
   let color = generateRandomColor();
   element.style.backgroundColor = color;
   coloredElements.push(element);
 }
 
-let elements = document.getElementsByClassName('departmentstyle');
+let elements = document.getElementsByClassName('departmentdesign');
 let coloredElements = [];
 
 for (let i = 0; i < elements.length; i++) {
