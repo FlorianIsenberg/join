@@ -1,5 +1,6 @@
 let notes = [];
 
+
 function generateNotePagetwoHTML(task) {
     document.getElementById('mastertaskcontainerid').innerHTML = `
           <div class="containeropennote">
@@ -38,7 +39,7 @@ function generateNotePagetwoHTML(task) {
                 <option>${task.assignedTo}</option>
               </select>
             </div>
-                    <div class="iconsfromusers"></div>
+                    <div class="iconsfromusers member"></div>
                     <img src="../img/icons/okbutton.svg" alt="button ok" onclick="editedNote(${task.id})" class="okbutton" id="okbuttonsafe">
                     </div>
             </div>`;
@@ -139,7 +140,7 @@ function addTask() {
                       <option disabled selected class="select">Select contacts to assign</option> 
                       <option>Anton Meyer</option>
                       <option>Anja Schulz</option>
-                      <option>David EIsenberg</option>
+                      <option>David Eisenberg</option>
                       <option>Eva Fischer</option>
                       <option>Marius Müller</option>
                       <option>Peter Jackson</option>
@@ -234,10 +235,19 @@ function addTask() {
 
 
   function generateNewTask(element) {
+      
+  let colorIndex = 4;
+  let color = contactdata[colorIndex];
+
+ 
+  let designStyles = document.querySelectorAll('#departmentstyle');
+  for (let i = 0; i < designStyles.length; i++) {
+    designStyles[i].classList.add(color);
+  }
     document.getElementById('todo').innerHTML += `
   <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
     <div class="notesection">
-    <span class="departmentdesign" value="">${element.category}</span>
+    <span class="departmentdesign member" id ="departmentstyle" value="">${element.category}</span>
     </div>
     <div class="noteheadlinecontainer">
     <h2 class="noteheadline">${element.title}</h2>
@@ -252,9 +262,7 @@ function addTask() {
     </div>
   </div>
     <div class="usericons">
-    <img src="../img/icons/sm.svg" alt="User SM">
-    <img src="../img/icons/mv.svg" alt="User MV" class="iconsinicons">
-    <img src="../img/icons/ef.svg" alt="User EF" class="iconsinicons">
+    <div class="member" id="memberszone" onkeydown="fetchColor()">HA</div>
     <img class="greenarrowdown" src="../img/icons/greenarrowsdown.svg" value="${element.priorityImg}"alt="doublea arrow green down">
     </div>
 `;
@@ -314,10 +322,10 @@ function closeBigPopup(){
 }
 
 function generateEditedNote(element) {
-document.getElementById(`${element['id']}`).innerHTML = +`
-<div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
+document.getElementById('todo').innerHTML += `
+<div class="notesmain member" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
 <div class="notesection">
-<span class="departmentdesign" value="${element['department']}">${element.department}</span>
+<span class="departmentdesign member" id="departmentstyle" value="${element['department']}">${element.department}</span>
 </div>
 <div class="noteheadlinecontainer">
 <h2 class="noteheadline">${element.title}</h2>
@@ -355,5 +363,32 @@ function showAssignetTo() {
     category.classList.remove('dnone');
   } else {
     category.classList.add('dnone');
+  }
+}
+
+
+function fetchColor() {
+  document.getElementById('member');
+
+  for (let i = 0; i < contactdata.length; i += 5) {
+    let color = contactdata[i];
+    
+     document.getElementById('member').style.backgroundColor = color;
+  }
+}
+
+function fetchColor(element) {
+  let color = generateRandomColor();
+  element.style.backgroundColor = color;
+  coloredElements.push(element);
+}
+
+let elements = document.getElementsByClassName('departmentstyle');
+let coloredElements = [];
+
+for (let i = 0; i < elements.length; i++) {
+  
+  if (!coloredElements.includes(elements[i])) {
+    fetchColor(elements[i]);
   }
 }

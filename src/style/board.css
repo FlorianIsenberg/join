@@ -196,6 +196,10 @@ body {
     color: #A8A8A8;
 }
 
+.noteheadlinecontainer {
+    padding-top: 10px;
+}
+
 .tmodifythecontents {
     font-family: 'Inter';
     font-style: normal;
@@ -228,8 +232,18 @@ body {
     height: 35px;
 }
 
+.member {
+    width: 80px;
+    border-radius: 100px;
+    background-color: #FF7A00;
+    color: #FFFFFF;
+    padding: 6px;
+    font-size: 15px;
+}
+
+
 .greenarrowdown {
-    padding-left: 100px;
+    padding-left: 180px;
 }
 
 .greenarrowdown2 {
