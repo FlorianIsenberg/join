@@ -174,7 +174,7 @@ function AddCreateContact2() {    // open overlay addcontact
 }
 
 
-//NOTE -- 
+//NOTE -- Write Data and go on
 
 function addUser(cname, cmail, cphone) {
     let cfirstLetter = allFirstLetter(cname);
@@ -184,5 +184,31 @@ function addUser(cname, cmail, cphone) {
     writeIntoBackend(contactdata); // <- save array data into backend;
     AddContactCancel(); // <- After Input an Create Button, slide overlay out;
     AddCreateContact(); // <- shows Successbutton;
+    sortedListbyName(); // <- shows sorted NamesList;
+}
+
+
+// NOTE -- for second line RD ------------
+
+// NOTE -- Save Button 3
+
+function AddCreateContact3() {    // open overlay addcontact
+    let cname = document.getElementById('addcontactinputnameId').value;
+    let cmail = document.getElementById('addcontactinputemailId').value;
+    let cphone = document.getElementById('addcontactinputphoneId').value;
+    addUser3(cname, cmail, cphone);
+}
+
+
+//NOTE -- Write Data and go on 3
+
+function addUser3(cname, cmail, cphone) {
+    let cfirstLetter = allFirstLetter(cname);
+    let ccolorNr = randomColor();
+
+    contactdata.push(cname, cmail, cphone, ccolorNr, cfirstLetter);
+    writeIntoBackend(contactdata); // <- save array data into backend;
+    AddContactCancel2(); // <- After Input an Create Button, slide overlay out;
+    AddCreateContact4(); // <- shows Successbutton;
     sortedListbyName(); // <- shows sorted NamesList;
 }

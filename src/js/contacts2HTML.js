@@ -76,7 +76,7 @@ function generateOverlayAddContact2HTML() {
 
             <div id="subbuttoncontainer2Id" class="subbuttoncontainer2cl">
         
-                <div id="subbuttoncreate2Id" class="subbuttoncreate2cl" onclick="AddCreateContact2()"> 
+                <div id="subbuttoncreate2Id" class="subbuttoncreate2cl" onclick="AddCreateContact3()"> 
                     <div id="addcontactcreatetext2Id" class="addcontactcreatetextcl">Create contact</div>
                      <div id="addcontactcreateok2Id" class="addcontactcreateok2cl">
                         <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +97,7 @@ function generateOverlayShowContact2HTML(showId){
             <div id="headsloganId" class="headslogancl">Kanban Project Management Tool</div>
             <div id="showbothId" class="showbothcl">
                 <div id="pagesignId" class="pagesigncl">Contacts</div>
-                <div id="backarrowId" class="backarrowcl">
+                <div id="backarrowId" class="backarrowcl" onclick="EditContactCancel3()">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.828 7.00017H15C15.5523 7.00017 16 7.44788 16 8.00017C16 8.55245 15.5523 9.00017 15 9.00017H3.828L8.485 13.6572C8.87547 14.0476 8.87547 14.6807 8.485 15.0712C8.09453 15.4616 7.46147 15.4616 7.071 15.0712L0.707106 8.70727C0.316582 8.31675 0.316582 7.68359 0.707107 7.29306L7.071 0.929168C7.46147 0.538702 8.09453 0.538703 8.485 0.929168C8.87547 1.31963 8.87547 1.9527 8.485 2.34317L3.828 7.00017Z" fill="black"/>
                     </svg>
@@ -152,43 +152,43 @@ function generateOverlayShowContact2HTML(showId){
 
     function generateOverlayEditContact2HTML(showId) {
         return /*html*/`
-        <div id="addcontactleft2Id" class="addcontactleft2cl"> <!-- Frame 194 -->
+        <div id="editcontactleft2Id" class="editcontactleft2cl"> <!-- Frame 194 -->
 
-<div id="helpcontainer2Id" class="helpcontainer2cl">
-    <div id="closecross2Id" class="closecross2cl"  onclick="AddContactCancel2()">
-        <!-- NOTE -- Close Cross -->
-        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.9629 7.6543L7.65513 22.9621" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <path d="M22.8184 23.1064L7.5106 7.79868" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+        <div id="helpcontainer3Id" class="helpcontainer3cl">
+            <div id="closecross2Id" class="closecross2cl"  onclick="AddContactCancel3()">
+                <!-- NOTE -- Close Cross -->
+                <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.9629 7.6543L7.65513 22.9621" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M22.8184 23.1064L7.5106 7.79868" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
 
-    </div>
-    <div id="addcontactheader2Id" class="addcontactheader2cl">Edit contact</div>
-    <div id="addcontactsecheader2Id" class="addcontactsecheader2cl"><span>Task are</span> better with a team!</div>
-</div> 
+            </div>
+            <div id="addcontactheader2Id" class="addcontactheader2cl">Edit contact</div>
+            <div id="addcontactsecheader2Id" class="addcontactsecheader2cl"><span>Task are</span> better with a team!</div>
+        </div> 
 
-<!-- NOTE -- Avatar -->
-<div id="avatarpic2Id" class="avatarpic2cl">
-    <svg width="134" height="134" viewBox="0 0 134 134" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g filter="url(#filter0_d_576_4834)">
-            <rect x="7" y="7" width="120" height="120" rx="60" fill="white" />
-            <circle cx="67" cy="67" r="60" fill="#D1D1D1" />
-            <path d="M46.3333 92.8334C46.3333 87.3522 48.5107 82.0956 52.3865 78.2198C56.2622 74.3441 61.5189 72.1667 67 72.1667C72.4811 72.1667 77.7378 74.3441 81.6135 78.2198C85.4893 82.0956 87.6667 87.3522 87.6667 92.8334H82.5C82.5 88.7225 80.867 84.78 77.9602 81.8732C75.0533 78.9664 71.1109 77.3334 67 77.3334C62.8891 77.3334 58.9467 78.9664 56.0398 81.8732C53.133 84.78 51.5 88.7225 51.5 92.8334H46.3333ZM67 69.5834C58.4363 69.5834 51.5 62.6471 51.5 54.0834C51.5 45.5196 58.4363 38.5834 67 38.5834C75.5638 38.5834 82.5 45.5196 82.5 54.0834C82.5 62.6471 75.5638 69.5834 67 69.5834ZM67 64.4167C72.7092 64.4167 77.3333 59.7925 77.3333 54.0834C77.3333 48.3742 72.7092 43.75 67 43.75C61.2908 43.75 56.6667 48.3742 56.6667 54.0834C56.6667 59.7925 61.2908 64.4167 67 64.4167Z" fill="white" />
-            <rect x="5.5" y="5.5" width="123" height="123" rx="61.5" stroke="white" stroke-width="3" />
-        </g>
-        <defs>
-            <filter id="filter0_d_576_4834" x="0" y="0" width="134" height="134" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feflood flood-opacity="0" result="BackgroundImageFix" />
-                <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                <feoffset />
-                <fegaussianblur stdDeviation="2" />
-                <fecolormatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-                <feblend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_576_4834" />
-                <feblend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_576_4834" result="shape" />
-            </filter>
-        </defs>
-    </svg>
-</div>
+        <!-- NOTE -- Avatar -->
+        <div id="avatarpic2Id" class="avatarpic2cl">
+            <svg width="134" height="134" viewBox="0 0 134 134" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_576_4834)">
+                    <rect x="7" y="7" width="120" height="120" rx="60" fill="white" />
+                    <circle cx="67" cy="67" r="60" fill="#D1D1D1" />
+                    <path d="M46.3333 92.8334C46.3333 87.3522 48.5107 82.0956 52.3865 78.2198C56.2622 74.3441 61.5189 72.1667 67 72.1667C72.4811 72.1667 77.7378 74.3441 81.6135 78.2198C85.4893 82.0956 87.6667 87.3522 87.6667 92.8334H82.5C82.5 88.7225 80.867 84.78 77.9602 81.8732C75.0533 78.9664 71.1109 77.3334 67 77.3334C62.8891 77.3334 58.9467 78.9664 56.0398 81.8732C53.133 84.78 51.5 88.7225 51.5 92.8334H46.3333ZM67 69.5834C58.4363 69.5834 51.5 62.6471 51.5 54.0834C51.5 45.5196 58.4363 38.5834 67 38.5834C75.5638 38.5834 82.5 45.5196 82.5 54.0834C82.5 62.6471 75.5638 69.5834 67 69.5834ZM67 64.4167C72.7092 64.4167 77.3333 59.7925 77.3333 54.0834C77.3333 48.3742 72.7092 43.75 67 43.75C61.2908 43.75 56.6667 48.3742 56.6667 54.0834C56.6667 59.7925 61.2908 64.4167 67 64.4167Z" fill="white" />
+                    <rect x="5.5" y="5.5" width="123" height="123" rx="61.5" stroke="white" stroke-width="3" />
+                </g>
+                <defs>
+                    <filter id="filter0_d_576_4834" x="0" y="0" width="134" height="134" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feflood flood-opacity="0" result="BackgroundImageFix" />
+                        <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                        <feoffset />
+                        <fegaussianblur stdDeviation="2" />
+                        <fecolormatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                        <feblend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_576_4834" />
+                        <feblend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_576_4834" result="shape" />
+                    </filter>
+                </defs>
+            </svg>
+        </div>
 
 
 <!-- NOTE -- Input Fields -->
@@ -208,7 +208,7 @@ function generateOverlayShowContact2HTML(showId){
 
     <div id="subbuttoncontainer2Id" class="subbuttoncontainer2cl">
 
-        <div id="subbuttoncreate2Id" class="subbuttoncreate2cl" onclick="EditSaveContact(showId)"> 
+        <div id="subbuttoncreate2Id" class="subbuttoncreate2cl" onclick="EditSaveContact3(showId)"> 
             <div id="addcontactcreatetext2Id" class="addcontactcreatetextcl">Save</div>
         </div>
     </div>

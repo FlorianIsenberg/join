@@ -124,6 +124,7 @@
 
 /* NOTE -- Overlay add contact Card */
 
+/* NOTE -- Addcontact RD slide */
 
 .overlayAddContactin2cl {
     animation: toupRD 1s linear;
@@ -155,12 +156,135 @@
     }
 }
 
+
+
+/* NOTE -- Button RD slide */
+
+.successButtonmaincl {
+    position: unset;
+    z-index: 5;
+}
+
+.showSuccessbutton2incl {
+
+    animation: toupButton 1s ease-in;
+}
+
+.showSuccessbutton2outcl {
+    animation: todownButton 1s linear;
+}
+
+@keyframes toupButton {
+    0% {
+        transform: translatey(500px)
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+@keyframes todownButton {
+    0% {
+        transform: translatey(0px)
+    }
+
+    100% {
+        transform: translatey(500px);
+    }
+}
+
+
+/* NOTE -- EditContact RD slide */
+
+.editcontactleft2cl {
+    z-index: 5;
+    background: white;
+}
+
+.overlayEditContact2cl {
+    position: absolute;
+    display: flex;
+    top: 0px;
+    z-index: 5;
+}
+
+.overlayEditContactin2cl {
+    animation: toupRD 1s linear;
+}
+
+.overlayEditContactout2cl {
+    animation: todownRD 1s linear;
+}
+
+@keyframes toupRD {
+    0% {
+        transform: translatey(1080px);
+        /* transform: translatey(410px); */
+    }
+
+    100% {
+        transform: translatey(0px);
+        /* transform: translatey(410px); */
+    }
+}
+
+@keyframes todownRD {
+    0% {
+        transform: translatey(0px);
+    }
+
+    100% {
+        transform: translatey(1080px);
+    }
+}
+
+
+/* NOTE -- ShowContact slide in/out */
+
+.overlayShowContactIn3cl {
+    animation: showcontactToLeft3in 1s linear;
+}
+
+.overlayShowContactOut3cl {
+    animation: showcontactToRight3out 1s linear;
+}
+
+@keyframes showcontactToLeft3in {
+    0% {
+        transform: translate(999px, -135px)
+    }
+
+    100% {
+        transform: translate(0px, -135px);
+    }
+}
+
+@keyframes showcontactToRight3out {
+    0% {
+        transform: translate(0px, -135px)
+    }
+
+    100% {
+        transform: translate(999px, -135px);
+    }
 }
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+}
 
 
 @media screen and (min-width: 0px) and (max-width: 349px) {
@@ -169,3 +293,16 @@
         display: none
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

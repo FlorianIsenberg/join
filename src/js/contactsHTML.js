@@ -262,6 +262,16 @@ function generateSuccessbuttonHTML() {
  
 }
 
+function generateSuccessbutton2HTML() {
+    return /*html*/`
+    <div id="successButttonmainId" class="successButtonmaincl">
+    <div id="successButtoncontentId" class="successButtoncontentcl">Contact successfully created</div>
+    </div>
+    `;
+ 
+}
+
+
 
 // NOTE -- Show Contacts 
 

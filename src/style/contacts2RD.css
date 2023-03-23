@@ -26,9 +26,17 @@
 }
 
 .helpcontainer2cl {
-
-
     width: 90%;
+    height: 400px;
+    background: #2A3647;
+    border: 30px;
+    margin-top: 2em;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.helpcontainer3cl {
+    /* width: 90%;  */
     height: 400px;
     background: #2A3647;
     border: 30px;
@@ -72,6 +80,7 @@
     justify-content: flex-end;
     margin-right: 1em;
     margin-top: 2em;
+    padding-top: 2em;
 }
 
 .closecross2cl:hover {
@@ -79,9 +88,10 @@
 }
 
 .avatarpic2cl {
+    display: flex;
     margin-top: -70px;
+    justify-content: center;
 }
-
 
 .addcontactrightinputfields2cl {
     display: flex;
@@ -121,6 +131,7 @@
     justify-content: center;
     padding: 0px;
     margin-top: 4em;
+    align-items: center;
 
 
 }
@@ -152,17 +163,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    /* left: 110px; */
     left: 0px;
     top: 90px;
     max-width: 100%;
     width: 100%;
     height: 80vh;
-    /* padding-top: 1em; */
     /* margin-left: 2.5em;
     padding-left: 2.5em; */
     z-index: 4;
-    /* z-index: 12; */
     background-color: white;
 }
 
@@ -210,6 +218,10 @@
 .backarrowcl {
     align-items: baseline;
     padding-top: 1em;
+}
+
+.backarrowcl:hover {
+    cursor: pointer;
 }
 
 .showcontacttop2cl {
