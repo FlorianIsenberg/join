@@ -2,7 +2,7 @@ let currentDraggedElement;
 let searchedTaskArray = [];
 let tasks = [];
 let colors = [];
-let categorys = ['marketing', 'sales', 'design', 'media' , 'backoffice' ,];
+let categorys = ['Marketing', 'Sales', 'Design', 'Media' , 'Backoffice' ,];
 let newTask = [];
 
 
@@ -16,7 +16,7 @@ let todos = [{
     department: 'Design',
     taskimage: '../img/icons/design.svg',
     subtasks: [],
-    subtasksDone: [1 / 2],
+    subtasksDone: "0/2 Done",
     category: 'todo'
 },
 {
@@ -29,7 +29,7 @@ let todos = [{
     department: 'Sales',
     taskimage: '../img/icons/sales.svg',
     subtasks: [],
-    subtasksDone: [],
+    subtasksDone: "2/3 Done",
     category: 'inprogress',
 },
 {
@@ -42,7 +42,7 @@ let todos = [{
     department: 'Backoffice',
     taskimage: '../img/icons/backoffice.svg',
     subtasks: [],
-    subtasksDone: [],
+    subtasksDone: "1/2 Done",
     category: 'awaitingfeedback',
 },
 {
@@ -55,7 +55,7 @@ let todos = [{
     department: 'Media',
     taskimage: '../img/icons/media.svg',
     subtasks: [],
-    subtasksDone: [],
+    subtasksDone: "0/1 Done",
     category: 'awaitingfeedback',
 },
 {
@@ -69,18 +69,18 @@ let todos = [{
     department: 'Marketing',
     taskimage: '../img/icons/marketing.svg',
     subtasks: [],
-    subtasksDone: [],
+    subtasksDone: "5/5 Done",
     category: 'done',
 },
 {
-id: 5,
+    id: 5,
     title: '',
     description: '',
     date: '',
     priority: '',
     priorityimg: ['../img/icons/greenarrowsdown.svg' , '../img/icons/urgentorangenote.svg' , '../img/icons/mediumbuttonyellow.svg'],
     assignedTo: [''],
-    department: '',
+    department: [],
     taskimage: '',
     subtasks: [],
     subtasksDone: [],
@@ -177,7 +177,7 @@ function generateTodoHTML(element) {
     return `
     <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit(${element['id']})">
       <div class="notesection">
-      <span class="departmentdesign">${element.department}</span>
+      <span class="departmentdesign" id="departmentdesign"> ${element.department}</span>
       </div>
       <div class="noteheadlinecontainer">
       <h2 class="noteheadline">${element.title}</h2>
@@ -192,9 +192,7 @@ function generateTodoHTML(element) {
       </div>
     </div>
       <div class="usericons">
-      <img src="../img/icons/sm.svg" alt="User SM">
-      <img src="../img/icons/mv.svg" alt="User MV" class="iconsinicons">
-      <img src="../img/icons/ef.svg" alt="User EF" class="iconsinicons">
+      <div class="member departmentstyle" id="member">AS</div>
       <img class="greenarrowdown" src="../img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
       </div>
 `;
@@ -383,62 +381,7 @@ function hideCategory() {
     document.getElementById('categoryhideid').classList.add('hide');
 }
 
-  function generateNewNoteHTML() {
-    const title = document.getElementById('titleinput').value;
-    const description = document.getElementById('descriptioninput').value;
-    const date = document.getElementById('dateinput').value;
-    const priority = document.querySelector('.prio-selections .active').alt;
-    const assignedTo = document.getElementById('assignedto').value;
-
-  document.getElementById('draganddropsectionid').innerHTML = `
-  <div class="containeropennote">
-  <img src="../img/icons/closecross.svg" alt="close x button" onclick="closetoDoForEdit(${todos['id']})" id="close" class="closebuttonx">
-  <div class="title">
-    <span class="title">Titel</span>
-  </div>
-  <input class="titleinput" placeholder="Enter a title" type="text" id="titleinput" value="${todos['title']}">${todos['title']}
-  <div class="description">
-    <span class="description">Description</span>
-  </div>
-  <div class="descriptionandimage">
-    <input class="descriptioninput" placeholder="Enter a Description" text="text" id="descriptioninput" value="${todos['description']}">
-    <img src="../img/icons/Recurso11.svg" alt="three lines drop down" class="threelinesdropdown">
-  </div>
-  <div class="duedate">
-    <span class="duedate">Due date</span>
-  </div>
-  <div class="dateinputandimage">
-    <input class="dateinput" placeholder="dd/mm/yyyy" text="date" required id="dateinput" value="${todos.date}">
-    <img src="../img/icons/Vectorkalender.svg" alt="datecalendarsymbol" class="datecalendarsymbol">
-  </div>
-  <div class="Prioritys">
-    <span class="prio">Prio</span>
-  </div>
-  <div class="prio-selections">
-    <img src="../img/icons/urgent.svg" alt="urgent priority symbol" onclick="urgentButtonChange('urgent')" class="urgentpriority ${todos.priority === 'urgent' ? 'active' : ''}" id="urgent">
-    <img src="../img/icons/medium.svg" alt="medium priority symbol" onclick="mediumButtonChange('medium')" class="mediumpriority ${todos.priority === 'medium' ? 'active' : ''}" id="medium">
-    <img src="../img/icons/low.svg" alt="low priority symbol" onclick="lowButtonChange('low')" class="lowpriority ${todos.priority === 'low' ? 'active' : ''}" id="low">
-  </div>
-  <div class="assignedto">
-    <span class="assignedto">Assigned to</span>
-  </div>
-  <div class="inputfieldandimage" id="inputselection">
-    <select class="dropdownassignedto" id="assignedto">
-      <option disabled>Select contacts to assign</option>
-      <option>${todos.assignedTo}</option>
-      <option>${todos.assignedTo}</option>
-      <option>${todos.assignedTo}</option>
-      <option>${todos.assignedTo}</option>
-      <option>${todos.assignedTo}</option>
-      <option>${todos.assignedTo}</option>
-    </select>
-  </div>
-          <div class="iconsfromusers"></div>
-          <img src="../img/icons/okbutton.svg" alt="button ok" onclick="okButtonCloseAndSafeNote()"
-              class="okbutton" id="okbuttonsafe">
-          </div>
-  </div>`;
-}
+ 
 
 function searchNotesByTitle(id) {
     let notes = document.querySelectorAll(id);
