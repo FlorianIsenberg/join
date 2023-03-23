@@ -1,4 +1,5 @@
 let notes = [];
+let avatars = [];
 
 
 function generateNotePagetwoHTML(task) {
@@ -39,7 +40,7 @@ function generateNotePagetwoHTML(task) {
                 <option>${task.assignedTo}</option>
               </select>
             </div>
-                    <div class="iconsfromusers member"></div>
+                    <div class="iconsfromusers"></div>
                     <img src="../img/icons/okbutton.svg" alt="button ok" onclick="editedNote(${task.id})" class="okbutton" id="okbuttonsafe">
                     </div>
             </div>`;
@@ -80,6 +81,8 @@ function generateNoteHTML(element) {
         `;
 }
 
+let checkedPosition = ['New Category', 'Sales', 'Marketing', 'Backoffice', 'Media', 'Design']
+
 function addTask() {
     document.getElementById('mastercontainerid').classList.add('hide');
     document.getElementById('mastercontainerid').classList.remove('hide');
@@ -92,8 +95,8 @@ function addTask() {
             <div class="container-selections">
                 <div class="container-left">
                     <span class="title">Title</span>
-                    <input class="titleinput" placeholder="Enter a title" text="text" id="titleinput">
-                    <span class="description">Description</span>
+                    <input class="titleinput" placeholder="Enter a title" required text="text" value="" id="titleinput">
+                    <span class="description" required>Description</span>
                         <div class="descriptionandimage">
                             <input class="descriptioninput" placeholder="Enter a Description" text="text" id="descriptioninput">
                             <img src="../img/icons/Recurso11.svg" alt="three lines drop down" class="threelinesdropdown">
@@ -105,30 +108,30 @@ function addTask() {
                           <img src="../img/icons/dropdowncategory.svg" alt="arrow down black" class="arrowdropdown" onclick="showCategory()">
                         </div>
                         <div class="dropdownc dnone" id="categoryhideid" >
-                          <label for="category" disabled selected class="categoryselect">Select task category:</label>
-                          <label for="new-category">
+                          <label for="category" disabled required selected class="categoryselect">Select task category:</label>
+                          <label  for="new-category">
                             <span>New category</span>
-                            <input type="checkbox" id="checkbox1" class="checkbox1"> 
+                            <input  onclick="checkedBoxId(0)" type="checkbox" id="checkbox0" class="checkbox1"> 
                           </label>
                           <label for="sales">
                             <span>Sales</span>
-                            <input type="checkbox" id="checkbox2" class="checkbox2">
+                            <input onclick="checkedBoxId(1)" type="checkbox" id="checkbox1" class="checkbox2">
                           </label>
                           <label for="backoffice">
                             <span>Backoffice</span>
-                            <input type="checkbox" id="checkbox3" class="checkbox3">
+                            <input onclick="checkedBoxId(2)" type="checkbox" id="checkbox2" class="checkbox3">
                           </label>
                           <label for="marketing">
                             <span>Marketing</span>
-                            <input type="checkbox" id="checkbox4" class="checkbox4">
+                            <input onclick="checkedBoxId(3)" type="checkbox" id="checkbox3" class="checkbox4">
                           </label>
                           <label for="design">
                             <span>Design</span>
-                            <input type="checkbox" id="checkbox5" class="checkbox5">
+                            <input onclick="checkedBoxId(4)" type="checkbox" id="checkbox4" class="checkbox5">
                           </label>
                           <label for="media">
                             <span>Media</span>
-                            <input type="checkbox" id="checkbox6" class="checkbox6">
+                            <input onclick="checkedBoxId(5)" type="checkbox" id="checkbox5" class="checkbox6">
                           </label>
                         </div>
                       </div> 
@@ -137,7 +140,7 @@ function addTask() {
                   <img onclick="showAssignetTo()" src="../img/icons/dropdowncategory.svg" alt="arrow down black" class="arrowdropdown">
                     <label for="inputselection" class="dropdownassignedto dnone" id="assignetoid" onclick="hideAssignedTo()">Assigned to:</label>
                     <select class="inputfieldandimage dnone" id="inputselection" multiple>
-                      <option disabled selected class="select">Select contacts to assign</option> 
+                      <option disabled selected required class="select">Select contacts to assign</option> 
                       <option>Anton Meyer</option>
                       <option>Anja Schulz</option>
                       <option>David Eisenberg</option>
@@ -153,13 +156,13 @@ function addTask() {
                 <div class="container-right">
                     <span class="duedate">Due date</span>
                         <div class="dateinput">
-                        <input type="date" class="dateinputandimage4" value="2023-02-03" min="023-02-01" max="023-02-28" id="dateinput">
+                        <input type="date" required class="dateinputandimage4" value="2023-02-03" min="023-02-01" max="023-02-28" id="dateinput">
                         
                         </div>
                             <div class="Prioritys">
                                 <span class="prio">Prio</span>
                             </div>
-                                <div class="prio-selections">
+                                <div class="prio-selections required">
                                     <img src="../img/icons/urgent.svg" alt="urgent priority symbol" onclick="priorityButtonChange('urgent')" class="urgentpriority" id="urgent">
                                     <img src="../img/icons/medium.svg" alt="medium priority symbol" onclick="priorityButtonChange('medium')" class="mediumpriority" id="medium">  
                                     <img src="../img/icons/low.svg" alt="low priority symbol" onclick="priorityButtonChange('low')" class="lowpriority" id="low">   
@@ -226,6 +229,7 @@ function addTask() {
           field.value = '';
         }
       });
+      console.log(inputFields)
     
     alert('Neues To-Do wurde erstellt!');
     generateNewTask(newNote); 
@@ -247,7 +251,7 @@ function addTask() {
     document.getElementById('todo').innerHTML += `
   <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
     <div class="notesection">
-    <span class="departmentdesign member" id ="departmentstyle" value="">${element.category}</span>
+    <span class="${generateColor()}" id ="departmentstyle" value="">${element.category}</span>
     </div>
     <div class="noteheadlinecontainer">
     <h2 class="noteheadline">${element.title}</h2>
@@ -262,11 +266,13 @@ function addTask() {
     </div>
   </div>
     <div class="usericons">
-    <div class="member" id="memberszone" onkeydown="fetchColor()">HA</div>
+    <div class="" id="memberszone">HA</div>
     <img class="greenarrowdown" src="../img/icons/greenarrowsdown.svg" value="${element.priorityImg}"alt="doublea arrow green down">
     </div>
 `;
 }
+
+
 
 
 async function editedNote(id) {
@@ -299,7 +305,7 @@ async function editedNote(id) {
       field.checked = false;
     } else if (field.tagName === 'SELECT') {
       field.selectedIndex = 0;
-    } else {
+    } else { 
       field.value = '';
     }
   });
@@ -334,15 +340,15 @@ document.getElementById('todo').innerHTML += `
 <span class="tmodifythecontents">${element.description}</span> 
 <div class="loadingbarandspan">
   <div class="progressloadingbar">
-  <img class="progressloadingbarimage" src="../img/icons/progress.svg" alt="Progressbar">
+  <div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
   <span class="halfdone">${element.subtasksDone}</span>
   </div>    
 </div>
 </div>
 <div class="usericons">
-<img src="../img/icons/sm.svg" alt="User SM">
-<img src="../img/icons/mv.svg" alt="User MV" class="iconsinicons">
-<img src="../img/icons/ef.svg" alt="User EF" class="iconsinicons">
+<div class="members">MB</div>
 <img class="greenarrowdown" src="${element.priorityimg} alt="doublea arrow green down">
 </div>
 `;
@@ -367,7 +373,8 @@ function showAssignetTo() {
 }
 
 
-function fetchColor() {
+function fetchColor(i) {
+  let index = 
   document.getElementById('member');
 
   for (let i = 0; i < contactdata.length; i += 5) {
@@ -378,7 +385,7 @@ function fetchColor() {
 }
 
 function fetchColortwo(element) {
-  let color = generateRandomColor();
+  let color = generateColor();
   element.style.backgroundColor = color;
   coloredElements.push(element);
 }
@@ -391,4 +398,22 @@ for (let i = 0; i < elements.length; i++) {
   if (!coloredElements.includes(elements[i])) {
     fetchColor(elements[i]);
   }
+}
+
+function generateColor() {
+  for (let i = 0; i < contactdata.length; i++) {
+    return colors;
+  }
+}
+
+
+function checkedBoxId(id) {
+  let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach((checkbox, index) => {
+    if (index === id) {
+      checkbox.checked = true;
+    } else {
+      checkbox.checked = false;
+    }
+  });
 }

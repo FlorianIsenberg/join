@@ -1,11 +1,11 @@
 /* NOTE -- RGB Basisfarbraum */
 
-.MediumAquaMarine, .color0 {background-color: #66CDAA;}
-.Kastanienbraun, .color1 {background-color: #800000; }
-.Schwarz, .color2 {background-color: #000000; }
+.MediumAquaMarine, .color0, .sales {background-color: #66CDAA;}
+.Kastanienbraun, .color1, .marketing {background-color: #800000; }
+.Schwarz, .color2, .backoffice {background-color: #000000; }
 /* .blasgoldenerstab .color3 {color: #EEE8AA; } */
-.dunkelorange, .color3 {background-color: #FF8C00; }
-.Limette, .color4 {background-color: #00FF00; }
+.dunkelorange, .color3, .design {background-color: #FF8C00; }
+.Limette, .color4, .media {background-color: #00FF00; }
 .Blau, .color5 {background-color: #0000FF; }
 .Gelb, .color6 {background-color: #ea4cab; }
 .CyanAqua, .color7 {background-color: #00FFFF; }
