@@ -14,7 +14,7 @@ function logIn(event) {
   );
   if (user) {
     window.location.href = "./src/templates/summary-complete.html";
-    
+    getCurrentUser()
     
   } else {
     shakeInput();
@@ -23,7 +23,7 @@ function logIn(event) {
 
 function guestLogIn() {
   window.location.href = "./src/templates/summary-complete.html";
-  greetGuest()
+  // greetGuest()
 }
 
 function showSignUp() {
