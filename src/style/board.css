@@ -140,6 +140,19 @@ body {
     justify-content: center;
     align-items: center;
     padding-bottom: 23px;
+    cursor: pointer;
+}
+
+.progressbarline {
+    width:140px;
+    height: 10px;
+    background-color: #6600ff80;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.magnifier{
+    cursor: pointer;
 }
 
 .draganddrop {
@@ -447,6 +460,12 @@ body {
     }
 }
 
+.btnaddtask {
+    cursor: pointer;
+}
+.btnaddtask:hover {
+    background-color: rgba(2, 110, 234, 0.996);
+}
 
 .popupnotemastercontainer {
     display: none;

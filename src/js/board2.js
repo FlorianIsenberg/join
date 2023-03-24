@@ -260,7 +260,9 @@ function addTask() {
     <span class="tmodifythecontents">${element.description}</span> 
     <div class="loadingbarandspan">
       <div class="progressloadingbar">
-      <img class="progressloadingbarimage" src="../img/icons/progress.svg" alt="Progressbar">
+      <div class="progress">
+      <div class="progressbarline" role="progressbar" id="bar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
       <span class="halfdone">${element.subtasksDone}</span>
       </div>    
     </div>
@@ -348,7 +350,7 @@ document.getElementById('todo').innerHTML += `
 </div>
 </div>
 <div class="usericons">
-<div class="members">MB</div>
+<div class="${colorClass} members">MB</div>
 <img class="greenarrowdown" src="${element.priorityimg} alt="doublea arrow green down">
 </div>
 `;
@@ -373,18 +375,8 @@ function showAssignetTo() {
 }
 
 
-function fetchColor(i) {
-  let index = 
-  document.getElementById('member');
 
-  for (let i = 0; i < contactdata.length; i += 5) {
-    let color = contactdata[i];
-    
-     document.getElementById('member').style.backgroundColor = color;
-  }
-}
-
-function fetchColortwo(element) {
+function fetchColor(element) {
   let color = generateColor();
   element.style.backgroundColor = color;
   coloredElements.push(element);
@@ -407,7 +399,10 @@ function generateColor() {
 }
 
 
+let colorPos = ['newCategory','sales', 'backoffice', 'marketing', 'design', 'media']
+let colorClass;
 function checkedBoxId(id) {
+  colorClass = colorPos[id];
   let checkboxes = document.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach((checkbox, index) => {
     if (index === id) {
@@ -416,4 +411,13 @@ function checkedBoxId(id) {
       checkbox.checked = false;
     }
   });
+}
+
+
+function updateProgressBar() {
+  let progressBar = document.getElementById('bar');
+  let subtasksDone = todos[0].subtasksDone; 
+  let [completed, total] = subtasksDone.split('/').map(Number); 
+  let percentage = (completed / total) * 100; 
+  progressBar.style.width = percentage + '%'; 
 }

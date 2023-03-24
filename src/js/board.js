@@ -1,6 +1,5 @@
 let currentDraggedElement;
 let searchedTaskArray = [];
-let tasks = [];
 let colors = [];
 let categorys = ['Marketing', 'Sales', 'Design', 'Media' , 'Backoffice' ,];
 let newTask = [];
@@ -17,6 +16,7 @@ let todos = [{
     taskimage: '../img/icons/design.svg',
     subtasks: [],
     subtasksDone: "0/2 Done",
+    tasklength: "2",
     category: 'todo'
 },
 {
@@ -30,6 +30,7 @@ let todos = [{
     taskimage: '../img/icons/sales.svg',
     subtasks: [],
     subtasksDone: "2/3 Done",
+    tasklength: "3",
     category: 'inprogress',
 },
 {
@@ -43,6 +44,7 @@ let todos = [{
     taskimage: '../img/icons/backoffice.svg',
     subtasks: [],
     subtasksDone: "1/2 Done",
+    tasklength: "2",
     category: 'awaitingfeedback',
 },
 {
@@ -56,6 +58,7 @@ let todos = [{
     taskimage: '../img/icons/media.svg',
     subtasks: [],
     subtasksDone: "0/1 Done",
+    tasklength: "1",
     category: 'awaitingfeedback',
 },
 {
@@ -70,6 +73,7 @@ let todos = [{
     taskimage: '../img/icons/marketing.svg',
     subtasks: [],
     subtasksDone: "5/5 Done",
+    tasklength: "5",
     category: 'done',
 },
 {
@@ -84,6 +88,7 @@ let todos = [{
     taskimage: '',
     subtasks: [],
     subtasksDone: [],
+    tasklength: "",
     category: '',
 }
 ];
@@ -175,7 +180,9 @@ function generateTodoHTML(element) {
       <span class="tmodifythecontents">${element.description}</span> 
       <div class="loadingbarandspan">
         <div class="progressloadingbar">
-        <img class="progressloadingbarimage" src="../img/icons/progress.svg" alt="Progressbar">
+        <div class="progress">
+        <div class="progressbarline" id="bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
         <span class="halfdone">${element.subtasksDone}</span>
         </div>    
       </div>
