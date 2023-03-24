@@ -11,9 +11,10 @@ let todos = [{
     description: 'Modify the contents of the main website..',
     date: '14.03.2023',
     priority: 'low',
+    priorityimg: ['../img/icons/greenarrowsdown.svg', '../img/icons/urgentorangenote.svg', '../img/icons/mediumbuttonyellow.svg'],
     assignedTo: ['Sven Müller'],
     department: 'Design',
-    taskimage: '../img/icons/design.svg',
+    taskimage: ['../img/icons/design.svg'],
     subtasks: [],
     subtasksDone: "0/2 Done",
     tasklength: "2",
@@ -25,9 +26,10 @@ let todos = [{
     description: 'Make the product presentation to prospective buyers',
     date: '01.03.23',
     priority: 'high',
+    priorityimg: ['../img/icons/greenarrowsdown.svg', '../img/icons/urgentorangenote.svg', '../img/icons/mediumbuttonyellow.svg'],
     assignedTo: ['Alex Sam'],
     department: 'Sales',
-    taskimage: '../img/icons/sales.svg',
+    taskimage: ['../img/icons/sales.svg'],
     subtasks: [],
     subtasksDone: "2/3 Done",
     tasklength: "3",
@@ -39,9 +41,10 @@ let todos = [{
     description: 'Write open invoices for customer',
     date: '18.03.2023',
     priority: 'medium',
+    priorityimg: ['../img/icons/greenarrowsdown.svg', '../img/icons/urgentorangenote.svg', '../img/icons/mediumbuttonyellow.svg'],
     assignedTo: ['Mark Becker',], 
     department: 'Backoffice',
-    taskimage: '../img/icons/backoffice.svg',
+    taskimage: ['../img/icons/backoffice.svg'],
     subtasks: [],
     subtasksDone: "1/2 Done",
     tasklength: "2",
@@ -53,9 +56,10 @@ let todos = [{
     description: 'Edit the new company video',
     date: '',
     priority: 'medium',
+    priorityimg: ['../img/icons/greenarrowsdown.svg', '../img/icons/urgentorangenote.svg', '../img/icons/mediumbuttonyellow.svg'],
     assignedTo: ['Hans Kaiser'],
     department: 'Media',
-    taskimage: '../img/icons/media.svg',
+    taskimage: ['../img/icons/media.svg'],
     subtasks: [],
     subtasksDone: "0/1 Done",
     tasklength: "1",
@@ -67,10 +71,10 @@ let todos = [{
     description: 'Develop an ad campaign for brand positioning',
     date: '',
     priority: 'low',
-    priorityimg: ['../img/icons/greenarrowsdown.svg' , '../img/icons/urgentorangenote.svg' , '../img/icons/mediumbuttonyellow.svg'],
+    priorityimg: ['../img/icons/greenarrowsdown.svg', '../img/icons/urgentorangenote.svg', '../img/icons/mediumbuttonyellow.svg'],
     assignedTo: ['Bernd Ziegler'],
     department: 'Marketing',
-    taskimage: '../img/icons/marketing.svg',
+    taskimage: ['../img/icons/marketing.svg'],
     subtasks: [],
     subtasksDone: "5/5 Done",
     tasklength: "5",
@@ -82,7 +86,7 @@ let todos = [{
     description: '',
     date: '',
     priority: '',
-    priorityimg: ['../img/icons/greenarrowsdown.svg' , '../img/icons/urgentorangenote.svg' , '../img/icons/mediumbuttonyellow.svg'],
+    priorityimg: ['../img/icons/greenarrowsdown.svg', '../img/icons/urgentorangenote.svg', '../img/icons/mediumbuttonyellow.svg'],
     assignedTo: [''],
     department: [],
     taskimage: '',
@@ -109,8 +113,6 @@ async function includeHTML() {
 };
 
 setURL("https://gruppe-07i.developerakademie.net/smallest_backend_ever");
-
-
 
 
 async function init() {
@@ -175,7 +177,7 @@ function generateTodoHTML(element) {
     return `
     <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit(${element['id']})">
       <div class="notesection">
-      <span class="departmentdesign" id="departmentdesign"> ${element.department}</span>
+      <span class="${colorClass} departmentdesign" id="departmentdesign">${element.department}</span>
       </div>
       <div class="noteheadlinecontainer">
       <h2 class="noteheadline">${element.title}</h2>
@@ -192,7 +194,7 @@ function generateTodoHTML(element) {
       </div>
     </div>
       <div class="usericons">
-      <div class="member departmentstyle" id="member">AS</div>
+      <div class="${colorClass} member" id="member">AS</div>
       <img class="greenarrowdown" src="../img/icons/greenarrowsdown.svg" alt="doublea arrow green down">
       </div>
 `;

@@ -113,7 +113,7 @@ body {
 }
 
 .progress {
-width: 200px;
+width: 140px;
 
 }
 .severaltodosection {
@@ -252,11 +252,50 @@ width: 200px;
 .member {
     width: 80px;
     border-radius: 100px;
-    color: #FFFFFF;
+    color: #ffffff;
+    padding: 6px;
+    font-size: 15px;
+    background-color: #fb5dd9;
+}
+.backoffice {
+    width: 80px;
+    border-radius: 100px;
+    color: #ffffff;
     padding: 6px;
     font-size: 15px;
 }
 
+.sales {
+    width: 80px;
+    border-radius: 100px;
+    color: #ffffff;
+    padding: 6px;
+    font-size: 15px;
+}
+
+.marketing {
+    width: 80px;
+    border-radius: 100px;
+    color: #ffffff;
+    padding: 6px;
+    font-size: 15px;
+}
+
+.media {
+    width: 80px;
+    border-radius: 100px;
+    color: #ffffff;
+    padding: 6px;
+    font-size: 15px;
+}
+
+.design {
+    width: 80px;
+    border-radius: 100px;
+    color: #ffffff;
+    padding: 6px;
+    font-size: 15px;
+}
 
 .greenarrowdown {
     padding-left: 180px;

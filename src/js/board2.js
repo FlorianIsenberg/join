@@ -246,7 +246,7 @@ function addTask() {
     document.getElementById('todo').innerHTML += `
   <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
     <div class="notesection">
-    <span class="${generateColor()}" id ="departmentstyle" value="">${element.category}</span>
+    <span class="${generateColor()}" id ="departmentstyle">${element.category}</span>
     </div>
     <div class="noteheadlinecontainer">
     <h2 class="noteheadline">${element.title}</h2>
@@ -263,7 +263,7 @@ function addTask() {
     </div>
   </div>
     <div class="usericons">
-    <div class="" id="memberszone">HA</div>
+    <div class="${colorClass}" id="memberszone">HA</div>
     <img class="greenarrowdown" src="../img/icons/greenarrowsdown.svg" value="${element.priorityImg}"alt="doublea arrow green down">
     </div>
 `;
@@ -345,7 +345,7 @@ document.getElementById('todo').innerHTML += `
 </div>
 </div>
 <div class="usericons">
-<div class="${colorClass} members">MB</div>
+<div class="${colorClass} member">MB</div>
 <img class="greenarrowdown" src="${element.priorityimg} alt="doublea arrow green down">
 </div>
 `;
