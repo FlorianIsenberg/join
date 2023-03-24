@@ -63,16 +63,11 @@ function generateNoteHTML(element) {
         
         <div class="chosenuser">
             <div class="usericonsnote">
-                <img src="../img/icons/de2.svg" alt="usericon DE">
-                <img src="../img/icons/bz2.svg" alt="usericon BZ">
-                <img src="../img/icons/mb2.svg" alt="usericon MB">
-                <img src="../img/icons/sf.svg" alt="usericon SF">
+               <div class="membersinaction ${colorClass}"></div>
             </div>
             <div class="names">
-                <label>David Eisenberg</label>
-                <label>Benedikt Ziegler</label>
-                <label>Marcel Bauer</label>
-                <label>Stefanie Farber</label>
+                <label class="${colorClass} member">${element.assignedTo}</label>
+               
             </div>    
         </div>
         <img src="../img/icons/editbuttonpencil.svg" alt="edit button" onclick="editNote(${element.id})" class="editbutton" id="editbuttonid">
@@ -260,7 +255,9 @@ function addTask() {
     <span class="tmodifythecontents">${element.description}</span> 
     <div class="loadingbarandspan">
       <div class="progressloadingbar">
-      <img class="progressloadingbarimage" src="../img/icons/progress.svg" alt="Progressbar">
+      <div class="progress">
+      <div class="progressbarline" role="progressbar" id="bar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
       <span class="halfdone">${element.subtasksDone}</span>
       </div>    
     </div>
@@ -348,7 +345,7 @@ document.getElementById('todo').innerHTML += `
 </div>
 </div>
 <div class="usericons">
-<div class="members">MB</div>
+<div class="${colorClass} members">MB</div>
 <img class="greenarrowdown" src="${element.priorityimg} alt="doublea arrow green down">
 </div>
 `;
@@ -373,18 +370,8 @@ function showAssignetTo() {
 }
 
 
-function fetchColor(i) {
-  let index = 
-  document.getElementById('member');
 
-  for (let i = 0; i < contactdata.length; i += 5) {
-    let color = contactdata[i];
-    
-     document.getElementById('member').style.backgroundColor = color;
-  }
-}
-
-function fetchColortwo(element) {
+function fetchColor(element) {
   let color = generateColor();
   element.style.backgroundColor = color;
   coloredElements.push(element);
@@ -407,7 +394,10 @@ function generateColor() {
 }
 
 
+let colorPos = ['newCategory','sales', 'backoffice', 'marketing', 'design', 'media']
+let colorClass;
 function checkedBoxId(id) {
+  colorClass = colorPos[id];
   let checkboxes = document.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach((checkbox, index) => {
     if (index === id) {
@@ -417,3 +407,14 @@ function checkedBoxId(id) {
     }
   });
 }
+
+
+function updateProgressBar(element) {
+  let progressBar = document.getElementById(`bar${element.id}`);
+  let subtasksDone = element.subtasksDone; 
+  let [x, y] = subtasksDone.split(' ');
+  let [completed, total] = x.split('/').map(Number); 
+  let percentage = (completed / total) * 100; 
+  progressBar.style.width = percentage + '%'; 
+}
+

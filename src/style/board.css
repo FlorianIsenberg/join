@@ -112,6 +112,10 @@ body {
     height: 40px;
 }
 
+.progress {
+width: 200px;
+
+}
 .severaltodosection {
     display: flex;
     justify-content: center;
@@ -140,6 +144,19 @@ body {
     justify-content: center;
     align-items: center;
     padding-bottom: 23px;
+    cursor: pointer;
+}
+
+.progressbarline {
+    width:140px;
+    height: 10px;
+    background-color: #6600ff80;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.magnifier{
+    cursor: pointer;
 }
 
 .draganddrop {
@@ -235,7 +252,6 @@ body {
 .member {
     width: 80px;
     border-radius: 100px;
-    background-color: #FF7A00;
     color: #FFFFFF;
     padding: 6px;
     font-size: 15px;
@@ -447,6 +463,12 @@ body {
     }
 }
 
+.btnaddtask {
+    cursor: pointer;
+}
+.btnaddtask:hover {
+    background-color: rgba(2, 110, 234, 0.996);
+}
 
 .popupnotemastercontainer {
     display: none;
