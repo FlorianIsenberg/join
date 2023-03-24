@@ -1,8 +1,12 @@
 
   
 
-<body onload="includeHTML()">
+<body onload="includeHTML(); initSummary()">
     <!-- <header class="header" w3-include-html="src/templates/header.html"></header> -->
+    <div id="welcome-mobile" class="welcome-mobile welcome-mobile-fade d-none">
+      <span id="welcome-text-mobile"></span>
+      <span id="welcome-name-mobile"></span>
+    </div>
     <div class="summary">
         <div class="summary-header">
             <span class="summary-headline">Summary</span>
@@ -42,7 +46,7 @@
                     </div>
                     <div class="urgent-line"> </div>
                     <div class="deadline">
-                        <div  class="deadline-day" id="deadline-day" >October 16, 2022</div>
+                        <div  class="deadline-day" id="deadline-date" >October 16, 2022</div>
                         <span class="deadline-description">Upcoming Deadline</span>
                     </div>
                 </div>
@@ -64,14 +68,13 @@
                 </div>
             </div>
             <div class="summary-welcome-user"> 
-              <span class="good-morning">Hello,</span>
-              <span id="summary-userName" class="summary-userName"> test </span>
+              <span class="good-morning"  id="greet"> </span>
+              <span id="summary-userName" class="summary-userName"> </span>
+              <!-- <h1 class="summary-userName" id="summary-userName"></h1> -->
           </div>
         </div>
     </div>
     
 </body>
-<!-- <script>
-    document.getElementById("current_date").innerHTML = Date();
-  </script> -->
+
 </html>

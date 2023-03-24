@@ -14,7 +14,8 @@ function logIn(event) {
   );
   if (user) {
     window.location.href = "./src/templates/summary-complete.html";
-    greetUser();
+    
+    
   } else {
     shakeInput();
   }
