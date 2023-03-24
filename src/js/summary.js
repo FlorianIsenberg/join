@@ -5,9 +5,9 @@ async function initSummary() {
     await init();
     await dataFromServer();
     getCurrentDate();
-    greetUser1();
+    // greetUser1();
     // renderWelcome();
-    // setCurrentUser();
+    getCurrentUser();
     // returnUsersName()
 }
  
@@ -17,10 +17,14 @@ async function dataFromServer() {
     await downloadFromServer();
     tasks = JSON.parse(backend.getItem("keyTasks")) || [];
     users = JSON.parse(backend.getItem("users")) || [];
-    countStatus();
+    greetUser1();
+    countTaskStatus();
 }
 
-
+function getCurrentUser() {
+    let userName = JSON.parse(localStorage.getItem("currentUserName"));
+    document.getElementById('summary-userName').innerHTML = userName;
+}
 
 function greetUser1() {
     //gemacht
@@ -34,7 +38,7 @@ function greetUser1() {
         console.log(10);
     }
     else {
-        name.innerText= "GuestUser";
+        name.innerText= "GuestUser2";
         
     }
 }
@@ -126,10 +130,11 @@ function genaretDropDown() {
      //gemach
      document.getElementById('greet').innerHTML = getGreetings(hour);
      document.getElementById('deadline-date').innerHTML = getFullDate(month, day, year);
+     console.log(hour);
  }
  // ******* greetings change depending on the time of the day
  function getGreetings(hour) {
-    console.log(6);
+    console.log(hour);
      if (hour > 5 && hour < 11) return 'Good morning,';
      if (hour > 11 && hour < 18) return 'Good afternoon,';
      else  return 'Good evening,';
@@ -159,9 +164,7 @@ function genaretDropDown() {
 //     document.getElementById('summary-name').innerHTML = user.name; `
 // }
 
-// function getCurrentUser() {
-//     return JSON.parse(localStorage.getItem("currentUserName"));
-// }
+
 // /**
 //  * Checking if guest log in, else Loading currentUser and changing welcome message
 //  */

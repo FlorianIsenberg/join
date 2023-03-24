@@ -175,7 +175,7 @@ function addTask() {
                                     </div>
                                         <div class="clearandcreatetask">
                                             <img src="../img/icons/clearx.svg" alt="clear x button" onclick="clearTask(id)" id="clear" class="clearxbutton">
-                                            <img src="../img/icons/createtaskbutton.svg" alt="button create task" id="newnote" onclick="addNewTask(id); countTaskStatus()" class="createtaskbutton">
+                                            <img src="../img/icons/createtaskbutton.svg" alt="button create task" id="newnote" onclick="addNewTask(id)" class="createtaskbutton">
                                         </div>
                 </div>
             </div>
