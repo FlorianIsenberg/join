@@ -63,16 +63,11 @@ function generateNoteHTML(element) {
         
         <div class="chosenuser">
             <div class="usericonsnote">
-                <img src="../img/icons/de2.svg" alt="usericon DE">
-                <img src="../img/icons/bz2.svg" alt="usericon BZ">
-                <img src="../img/icons/mb2.svg" alt="usericon MB">
-                <img src="../img/icons/sf.svg" alt="usericon SF">
+               <div class="membersinaction ${colorClass}"></div>
             </div>
             <div class="names">
-                <label>David Eisenberg</label>
-                <label>Benedikt Ziegler</label>
-                <label>Marcel Bauer</label>
-                <label>Stefanie Farber</label>
+                <label class="${colorClass} member">${element.assignedTo}</label>
+               
             </div>    
         </div>
         <img src="../img/icons/editbuttonpencil.svg" alt="edit button" onclick="editNote(${element.id})" class="editbutton" id="editbuttonid">
@@ -414,10 +409,12 @@ function checkedBoxId(id) {
 }
 
 
-function updateProgressBar() {
-  let progressBar = document.getElementById('bar');
-  let subtasksDone = todos[0].subtasksDone; 
-  let [completed, total] = subtasksDone.split('/').map(Number); 
+function updateProgressBar(element) {
+  let progressBar = document.getElementById(`bar${element.id}`);
+  let subtasksDone = element.subtasksDone; 
+  let [x, y] = subtasksDone.split(' ');
+  let [completed, total] = x.split('/').map(Number); 
   let percentage = (completed / total) * 100; 
   progressBar.style.width = percentage + '%'; 
 }
+

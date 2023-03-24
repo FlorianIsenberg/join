@@ -134,24 +134,28 @@ function updateHTML() {
     for (let index = 0; index < todo.length; index++) {
         const element = todo[index];
         document.getElementById('todo').innerHTML += generateTodoHTML(element);
+        updateProgressBar(element);
     }
 
     document.getElementById('inprogress').innerHTML = '';
     for (let index = 0; index < inprogress.length; index++) {
         const element = inprogress[index];
         document.getElementById('inprogress').innerHTML += generateTodoHTML(element);
+        updateProgressBar(element);
     }
 
     document.getElementById('awaitingfeedback').innerHTML = '';
     for (let index = 0; index < awaitingfeedback.length; index++) {
         const element = awaitingfeedback[index];
         document.getElementById('awaitingfeedback').innerHTML += generateTodoHTML(element);
+        updateProgressBar(element);
     }
 
     document.getElementById('done').innerHTML = '';
     for (let index = 0; index < done.length; index++) {
         const element = done[index];
         document.getElementById('done').innerHTML += generateTodoHTML(element);
+        updateProgressBar(element);
     }
 }
 
@@ -181,7 +185,7 @@ function generateTodoHTML(element) {
       <div class="loadingbarandspan">
         <div class="progressloadingbar">
         <div class="progress">
-        <div class="progressbarline" id="bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progressbarline" id="bar${element.id}" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
         <span class="halfdone">${element.subtasksDone}</span>
         </div>    

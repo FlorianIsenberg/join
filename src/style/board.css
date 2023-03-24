@@ -112,6 +112,10 @@ body {
     height: 40px;
 }
 
+.progress {
+width: 200px;
+
+}
 .severaltodosection {
     display: flex;
     justify-content: center;
@@ -248,7 +252,6 @@ body {
 .member {
     width: 80px;
     border-radius: 100px;
-    background-color: #FF7A00;
     color: #FFFFFF;
     padding: 6px;
     font-size: 15px;
