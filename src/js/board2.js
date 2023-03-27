@@ -50,8 +50,7 @@ function generateNoteHTML(element) {
     document.getElementById('popupnoteid').innerHTML = `
     
         <img src="../img/icons/closecross.svg" alt="close x button" onclick="closeNoteForEdit()" id="closenote" class="closenotebuttonx">
-        <img src="${element.taskimage}" alt="label sale" class="labelimage">
-        <span class="departmentdesign2"></span>
+        <span class="departmentdesign2 ${colorClass}">${element.department}</span>
         <h2 class="noteheadline2">${element.title}</h2>
         <span class="tmodifythecontents2">${element.description}</span>
         <span class="duedate2" value="18-03-1987"><b>Due date: ${element.date}</b></span>
@@ -63,10 +62,10 @@ function generateNoteHTML(element) {
         
         <div class="chosenuser">
             <div class="usericonsnote">
-               <div class="membersinaction ${colorClass}"></div>
+               <div class="${colorClass}"></div>
             </div>
             <div class="names">
-                <label class="${colorClass} member">${element.assignedTo}</label>
+                <label class="">${element.assignedTo}</label>
                
             </div>    
         </div>
@@ -185,52 +184,51 @@ function addTask() {
 
  
   
- async function addNewTask(id) {
+async function addNewTask(id) {
       
-      let title = document.getElementById('titleinput').value;
-      let description = document.getElementById('descriptioninput').value;
-      let department = document.getElementById(`${todos.department}`);
-      let category = document.getElementById(`${todos.category}`);
-      let assignedTo = Array.from(document.getElementById('inputselection').options)
-                             .filter(option => option.selected)
-                             .map(option => option.text);
-      let dueDate = document.getElementById('dateinput').value;
-      let priorityImg = document.querySelector('.prioritys img.selected');
-      let priority = priorityImg ? priorityImg.alt : '';
-      let subtasks = Array.from(document.querySelectorAll('.rectangleandsubtask1 span'))
-                            .map(span => span.textContent);
+  let title = document.getElementById('titleinput').value;
+  let description = document.getElementById('descriptioninput').value;
+  let category = colorClass.toUpperCase();
+  let assignedTo = Array.from(document.getElementById('inputselection').options)
+                         .filter(option => option.selected)
+                         .map(option => option.text);
+  let dueDate = document.getElementById('dateinput').value;
+  let priorityImg = document.querySelector('.prioritys img.selected');
+  let priority = priorityImg ? priorityImg.alt : '';
+  let subtasks = Array.from(document.querySelectorAll('.rectangleandsubtask1 span'))
+                        .map(span => span.textContent);
+
+  let newNote = {
+    id,
+    title,
+    description,
+    category,
+    assignedTo,
+    dueDate,
+    priority,
+    subtasks,
     
-      let newNote = {
-        id,
-        title,
-        description,
-        category,
-        assignedTo,
-        dueDate,
-        priority,
-        subtasks,
-        department,
-      };
-    
-      notes.push(newNote);
-      await backend.setItem('notes', JSON.stringify(notes));
-      let inputFields = document.querySelectorAll('#titleinput, #descriptioninput, .checkbox1, .checkbox2, .checkbox3, .checkbox4, .checkbox5, .checkbox6, #inputselection, #dateinput, .prioritys img, .rectangleandsubtask1 span');
-      inputFields.forEach(field => {
-        if (field.type === 'checkbox' || field.tagName === 'IMG') {
-          field.checked = false;
-        } else if (field.tagName === 'SELECT') {
-          field.selectedIndex = 0;
-        } else {
-          field.value = '';
-        }
-      });
-      console.log(inputFields)
-    
-    alert('Neues To-Do wurde erstellt!');
-    generateNewTask(newNote); 
-    closeTask();
-  }
-  
+  };
+console.log(newNote)
+
+  notes.push(newNote);
+  await backend.setItem('notes', JSON.stringify(notes));
+  let inputFields = document.querySelectorAll('#titleinput, #descriptioninput, .checkbox1, .checkbox2, .checkbox3, .checkbox4, .checkbox5, .checkbox6, #inputselection, #dateinput, .prioritys img, .rectangleandsubtask1 span');
+  inputFields.forEach(field => {
+    if (field.type === 'checkbox' || field.tagName === 'IMG') {
+      field.checked = false;
+    } else if (field.tagName === 'SELECT') {
+      field.selectedIndex = 0;
+    } else {
+      field.value = '';
+    }
+  });
+  console.log(inputFields)
+
+alert('Neues To-Do wurde erstellt!');
+generateNewTask(newNote); 
+closeTask();
+}
 
 
   function generateNewTask(element) {
@@ -244,7 +242,7 @@ function addTask() {
     designStyles[i].classList.add(color);
   }
     document.getElementById('todo').innerHTML += `
-  <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
+  <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${todos.id})" onclick="opentoDoForEdit(${element['id']})">
     <div class="notesection">
     <span class="${generateColor()}" id ="departmentstyle">${element.category}</span>
     </div>
@@ -275,8 +273,7 @@ function addTask() {
 async function editedNote(id) {
   let title = document.getElementById('titleinput').value;
   let description = document.getElementById('descriptioninput').value;
-  let category = document.getElementById(`${todos.category}`);
-  let department = document.getElementById(`${todos.id}`);
+  let category = colorClass.toUpperCase();
   let dueDate = document.getElementById('inputdate').value;
   let priorityImg = document.querySelector('.prioritys img.selected');
   let priority = priorityImg ? priorityImg.alt : '';
@@ -291,7 +288,7 @@ async function editedNote(id) {
     dueDate,
     priority,
     subtasks,
-    department,
+    
   };
 
   notes.push(newNote2);
@@ -326,7 +323,7 @@ function closeBigPopup(){
 
 function generateEditedNote(element) {
 document.getElementById('todo').innerHTML += `
-<div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
+<div class="notesmain drag" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
 <div class="notesection">
 <span class="departmentdesign member" id="departmentstyle" value="${element['department']}">${element.department}</span>
 </div>
@@ -346,7 +343,7 @@ document.getElementById('todo').innerHTML += `
 </div>
 <div class="usericons">
 <div class="${colorClass} member">MB</div>
-<img class="greenarrowdown" src="${element.priorityimg} alt="doublea arrow green down">
+<img class="greenarrowdown" src="${element.priority} alt="doublea arrow green down">
 </div>
 `;
 }
@@ -418,3 +415,8 @@ function updateProgressBar(element) {
   progressBar.style.width = percentage + '%'; 
 }
 
+
+function checkBox() {
+  let sales = document.getElementById('checkbox0').value;
+  sales = `New Category`;
+}

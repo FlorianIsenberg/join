@@ -297,6 +297,14 @@ width: 140px;
     font-size: 15px;
 }
 
+.new-category {
+    width: 80px;
+    border-radius: 100px;
+    color: #ffffff;
+    padding: 6px;
+    font-size: 15px;
+}
+
 .greenarrowdown {
     padding-left: 180px;
 }
@@ -545,9 +553,16 @@ width: 140px;
 @media (max-width: 1435px) {
 
     .tasks {
-
         padding-left: 100px;
     }
+    
+.todoboard {
+    display: flex;
+}
+
+.masterboard {
+display: flex;
+}
 
 }
 
