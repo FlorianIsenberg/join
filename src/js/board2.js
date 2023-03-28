@@ -135,12 +135,21 @@ function addTask() {
                     <label for="inputselection" class="dropdownassignedto dnone" id="assignetoid" onclick="hideAssignedTo()">Assigned to:</label>
                     <select class="inputfieldandimage dnone" id="inputselection" multiple>
                       <option disabled selected required class="select">Select contacts to assign</option> 
-                      <option>Anton Meyer</option>
-                      <option>Anja Schulz</option>
-                      <option>David Eisenberg</option>
-                      <option>Eva Fischer</option>
-                      <option>Marius Müller</option>
-                      <option>Peter Jackson</option>
+                      <option class="${colorClass}" id="0">${contactdata[0]}</option>
+                      <option class="${colorClass}" id="1">${contactdata[5]}</option>
+                      <option class="${colorClass}" id="2">${contactdata[10]}</option>
+                      <option class="${colorClass}" id="3">${contactdata[15]}</option>
+                      <option class="${colorClass}" id="4">${contactdata[20]}</option>
+                      <option class="${colorClass}" id="5">${contactdata[25]}</option>
+                      <option class="${colorClass}" id="0">${contactdata[30]}</option>
+                      <option class="${colorClass}" id="1">${contactdata[35]}</option>
+                      <option class="${colorClass}" id="2">${contactdata[40]}</option>
+                      <option class="${colorClass}" id="3">${contactdata[45]}</option>
+                      <option class="${colorClass}" id="4">${contactdata[50]}</option>
+                      <option class="${colorClass}" id="5">${contactdata[55]}</option>
+                      <option class="${colorClass}" id="3">${contactdata[60]}</option>
+                      <option class="${colorClass}" id="4">${contactdata[65]}</option>
+                      <option class="${colorClass}" id="5">${contactdata[70]}</option>
                     </select>
                   </div>
                 </div>
@@ -244,7 +253,7 @@ closeTask();
     document.getElementById('todo').innerHTML += `
   <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${todos.id})" onclick="opentoDoForEdit(${element['id']})">
     <div class="notesection">
-    <span class="${generateColor()}" id ="departmentstyle">${element.category}</span>
+    <span class="${generateColor()} departmentdesign" id ="departmentstyle">${element.category}</span>
     </div>
     <div class="noteheadlinecontainer">
     <h2 class="noteheadline">${element.title}</h2>
@@ -256,12 +265,12 @@ closeTask();
       <div class="progress">
       <div class="progressbarline" role="progressbar" id="bar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-      <span class="halfdone">${element.subtasksDone}</span>
+      <span class="halfdone">${element.subtasks} / ${element.tasklength}</span>
       </div>    
     </div>
   </div>
     <div class="usericons">
-    <div class="${colorClass}" id="memberszone">HA</div>
+    <div class="${colorClass}" id="memberszone"></div>
     <img class="greenarrowdown" src="../img/icons/greenarrowsdown.svg" value="${element.priorityImg}"alt="doublea arrow green down">
     </div>
 `;
@@ -273,7 +282,8 @@ closeTask();
 async function editedNote(id) {
   let title = document.getElementById('titleinput').value;
   let description = document.getElementById('descriptioninput').value;
-  let category = colorClass.toUpperCase();
+  let category = colorClass;
+  let department = document.getElementById('departmentdesign');
   let dueDate = document.getElementById('inputdate').value;
   let priorityImg = document.querySelector('.prioritys img.selected');
   let priority = priorityImg ? priorityImg.alt : '';
@@ -288,6 +298,7 @@ async function editedNote(id) {
     dueDate,
     priority,
     subtasks,
+    department,
     
   };
 
@@ -325,7 +336,7 @@ function generateEditedNote(element) {
 document.getElementById('todo').innerHTML += `
 <div class="notesmain drag" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
 <div class="notesection">
-<span class="departmentdesign member" id="departmentstyle" value="${element['department']}">${element.department}</span>
+<span class="${generateColor()} departmentdesign2" id="departmentstyle">${element.category}</span>
 </div>
 <div class="noteheadlinecontainer">
 <h2 class="noteheadline">${element.title}</h2>
@@ -335,14 +346,14 @@ document.getElementById('todo').innerHTML += `
 <div class="loadingbarandspan">
   <div class="progressloadingbar">
   <div class="progress">
-  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">bar${element.id}</div>
 </div>
-  <span class="halfdone">${element.subtasksDone}</span>
+  <span class="halfdone">${element.subtasks} / ${element.tasklength}</span>
   </div>    
 </div>
 </div>
 <div class="usericons">
-<div class="${colorClass} member">MB</div>
+<div class="namelabels ${colorClass} member">MB</div>
 <img class="greenarrowdown" src="${element.priority} alt="doublea arrow green down">
 </div>
 `;
@@ -404,6 +415,7 @@ function checkedBoxId(id) {
     }
   });
 }
+
 
 
 function updateProgressBar(element) {

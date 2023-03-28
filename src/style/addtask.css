@@ -214,6 +214,7 @@ label {
     width: 518px;
     height: 50px;
     padding-left: 60px;
+    padding-bottom: 20px;
 }
 
 .labelimage {
@@ -232,6 +233,7 @@ label {
     line-height: 120%;
     color: #2A3647;
     padding-left: 60px;
+    padding-bottom: 30px;
 }
 
 .duedate2 {
@@ -310,6 +312,12 @@ checkbox {
     padding-top: 30px;
     font-size: 21px;
     font-family: 'Inter';
+
+}
+
+.namelabels {
+    border-radius: 100%;
+   
 }
 
 .urgentpriority2 {
