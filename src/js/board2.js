@@ -32,13 +32,28 @@ function generateNotePagetwoHTML(task) {
               <img src="../img/icons/low.svg" alt="low priority symbol" onclick="priorityButtonChange2('low2')" class="lowpriority" value="${task.priority === 'low' ? 'active' : ''}" id="low2">
             </div>
             <div class="assignedto">
-              <span class="assignedto">Assigned to</span>
-            </div>
-            <div class="inputfieldandimage2" id="inputselection">
-              <select class="dropdownassignedto" id="assignedto">
-                <option disabled>Select contacts to assign</option>
-                <option>${task.assignedTo}</option>
+            <span>Assigned to</span>
+            <img onclick="showAssignetTo()" src="../img/icons/dropdowncategory.svg" alt="arrow down black" class="arrowdropdown">
+              <label for="inputselection" class="dropdownassignedto dnone" id="assignetoid" onclick="hideAssignedTo()">Assigned to:</label>
+              <select class="inputfieldandimage dnone" id="inputselection" multiple>
+                <option disabled selected required class="select">Select contacts to assign</option> 
+                <option class="${colorClass}" id="0">${contactdata[0]}</option>
+                <option class="${colorClass}" id="1">${contactdata[5]}</option>
+                <option class="${colorClass}" id="2">${contactdata[10]}</option>
+                <option class="${colorClass}" id="3">${contactdata[15]}</option>
+                <option class="${colorClass}" id="4">${contactdata[20]}</option>
+                <option class="${colorClass}" id="5">${contactdata[25]}</option>
+                <option class="${colorClass}" id="0">${contactdata[30]}</option>
+                <option class="${colorClass}" id="1">${contactdata[35]}</option>
+                <option class="${colorClass}" id="2">${contactdata[40]}</option>
+                <option class="${colorClass}" id="3">${contactdata[45]}</option>
+                <option class="${colorClass}" id="4">${contactdata[50]}</option>
+                <option class="${colorClass}" id="5">${contactdata[55]}</option>
+                <option class="${colorClass}" id="3">${contactdata[60]}</option>
+                <option class="${colorClass}" id="4">${contactdata[65]}</option>
+                <option class="${colorClass}" id="5">${contactdata[70]}</option>
               </select>
+           
             </div>
                     <div class="iconsfromusers"></div>
                     <img src="../img/icons/okbutton.svg" alt="button ok" onclick="editedNote(${task.id})" class="okbutton" id="okbuttonsafe">
@@ -65,8 +80,7 @@ function generateNoteHTML(element) {
                <div class="${colorClass}"></div>
             </div>
             <div class="names">
-                <label class="">${element.assignedTo}</label>
-               
+                <label>${element.assignedTo}</label>    
             </div>    
         </div>
         <img src="../img/icons/editbuttonpencil.svg" alt="edit button" onclick="editNote(${element.id})" class="editbutton" id="editbuttonid">
@@ -193,7 +207,7 @@ function addTask() {
 
  
   
-async function addNewTask(id) {
+async function addNewTask() {
       
   let title = document.getElementById('titleinput').value;
   let description = document.getElementById('descriptioninput').value;
@@ -206,6 +220,7 @@ async function addNewTask(id) {
   let priority = priorityImg ? priorityImg.alt : '';
   let subtasks = Array.from(document.querySelectorAll('.rectangleandsubtask1 span'))
                         .map(span => span.textContent);
+                        let id = new Date().getTime();
 
   let newNote = {
     id,
@@ -270,7 +285,7 @@ closeTask();
     </div>
   </div>
     <div class="usericons">
-    <div class="${colorClass}" id="memberszone"></div>
+    <div class="${contactdata[4]}" id="memberszone">${contactdata[3]}</div>
     <img class="greenarrowdown" src="../img/icons/greenarrowsdown.svg" value="${element.priorityImg}"alt="doublea arrow green down">
     </div>
 `;
@@ -283,12 +298,12 @@ async function editedNote(id) {
   let title = document.getElementById('titleinput').value;
   let description = document.getElementById('descriptioninput').value;
   let category = colorClass;
-  let department = document.getElementById('departmentdesign');
   let dueDate = document.getElementById('inputdate').value;
   let priorityImg = document.querySelector('.prioritys img.selected');
   let priority = priorityImg ? priorityImg.alt : '';
   let subtasks = Array.from(document.querySelectorAll('.rectangleandsubtask1 span'))
                         .map(span => span.textContent);
+                       
   
   let newNote2 = {
     id,
@@ -298,7 +313,6 @@ async function editedNote(id) {
     dueDate,
     priority,
     subtasks,
-    department,
     
   };
 
@@ -333,8 +347,8 @@ function closeBigPopup(){
 }
 
 function generateEditedNote(element) {
-document.getElementById('todo').innerHTML += `
-<div class="notesmain drag" id="${element['id']}" draggable="true" ondragstart="startDragging(${element})" onclick="opentoDoForEdit(${element['id']})">
+document.getElementById('todo').innerHTML = `
+<div class="notesmain drag" id="${element['id']}" draggable="true" ondragstart="startDragging(${element.id})" onclick="opentoDoForEdit(${element['id']})">
 <div class="notesection">
 <span class="${generateColor()} departmentdesign2" id="departmentstyle">${element.category}</span>
 </div>
@@ -353,7 +367,10 @@ document.getElementById('todo').innerHTML += `
 </div>
 </div>
 <div class="usericons">
-<div class="namelabels ${colorClass} member">MB</div>
+<div class="namelabels ${contactdata[3]} ${colorClass} member">
+${contactdata[4]}
+
+</div>
 <img class="greenarrowdown" src="${element.priority} alt="doublea arrow green down">
 </div>
 `;
