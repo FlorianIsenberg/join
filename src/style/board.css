@@ -250,13 +250,27 @@ width: 140px;
     height: 35px;
 }
 
+.initials {
+
+  
+    border-radius: 100%;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    color: #ffffff;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+
 .member {
     width: 80px;
     border-radius: 100px;
     color: #ffffff;
     padding: 6px;
     font-size: 15px;
-    background-color: #fb5dd9;
+  
 }
 .backoffice {
     width: 80px;

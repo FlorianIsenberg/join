@@ -182,9 +182,9 @@ function dragStart(id){
 
 function generateTodoHTML(element) {
     return `
-    <div class="notesmain drag ${colorClass}" id="${element['id']}" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit(${element['id']})">
+    <div class="notesmain drag" id="${element['id']}" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit(${element['id']})">
       <div class="notesection">
-      <span class="departmentdesign ${colorClass}" id="departmentdesign">${element.department}</span>
+      <span class="departmentdesign" id="departmentdesign">${element.department}</span>
       </div>
       <div class="noteheadlinecontainer">
       <h2 class="noteheadline">${element.title}</h2>
@@ -455,4 +455,6 @@ function toggleCategory() {
     dropdown.classList.add("hide");
   }
 }
+
+
 

@@ -77,10 +77,10 @@ function generateNoteHTML(element) {
         
         <div class="chosenuser">
             <div class="usericonsnote">
-               <div class="${colorClass}"></div>
+               <div class="member${contactdata[4]} ${colorClass}">${contactdata[4]}</div>
             </div>
             <div class="names">
-                <label>${element.assignedTo}</label>    
+                   
             </div>    
         </div>
         <img src="../img/icons/editbuttonpencil.svg" alt="edit button" onclick="editNote(${element.id})" class="editbutton" id="editbuttonid">
@@ -149,21 +149,21 @@ function addTask() {
                     <label for="inputselection" class="dropdownassignedto dnone" id="assignetoid" onclick="hideAssignedTo()">Assigned to:</label>
                     <select class="inputfieldandimage dnone" id="inputselection" multiple>
                       <option disabled selected required class="select">Select contacts to assign</option> 
-                      <option class="${colorClass}" id="0">${contactdata[0]}</option>
-                      <option class="${colorClass}" id="1">${contactdata[5]}</option>
-                      <option class="${colorClass}" id="2">${contactdata[10]}</option>
-                      <option class="${colorClass}" id="3">${contactdata[15]}</option>
-                      <option class="${colorClass}" id="4">${contactdata[20]}</option>
-                      <option class="${colorClass}" id="5">${contactdata[25]}</option>
-                      <option class="${colorClass}" id="0">${contactdata[30]}</option>
-                      <option class="${colorClass}" id="1">${contactdata[35]}</option>
-                      <option class="${colorClass}" id="2">${contactdata[40]}</option>
-                      <option class="${colorClass}" id="3">${contactdata[45]}</option>
-                      <option class="${colorClass}" id="4">${contactdata[50]}</option>
-                      <option class="${colorClass}" id="5">${contactdata[55]}</option>
-                      <option class="${colorClass}" id="3">${contactdata[60]}</option>
-                      <option class="${colorClass}" id="4">${contactdata[65]}</option>
-                      <option class="${colorClass}" id="5">${contactdata[70]}</option>
+                      <option id="0">${contactdata[0]}</option>
+                      <option id="1">${contactdata[5]}</option>
+                      <option id="2">${contactdata[10]}</option>
+                      <option id="3">${contactdata[15]}</option>
+                      <option id="4">${contactdata[20]}</option>
+                      <option id="5">${contactdata[25]}</option>
+                      <option id="0">${contactdata[30]}</option>
+                      <option id="1">${contactdata[35]}</option>
+                      <option id="2">${contactdata[40]}</option>
+                      <option id="3">${contactdata[45]}</option>
+                      <option id="4">${contactdata[50]}</option>
+                      <option id="5">${contactdata[55]}</option>
+                      <option id="3">${contactdata[60]}</option>
+                      <option id="4">${contactdata[65]}</option>
+                      <option id="5">${contactdata[70]}</option>
                     </select>
                   </div>
                 </div>
@@ -235,8 +235,8 @@ async function addNewTask() {
   };
 console.log(newNote)
 
-  notes.push(newNote);
-  await backend.setItem('notes', JSON.stringify(notes));
+  todos.push(newNote);
+  await backend.setItem('todos', JSON.stringify(todos));
   let inputFields = document.querySelectorAll('#titleinput, #descriptioninput, .checkbox1, .checkbox2, .checkbox3, .checkbox4, .checkbox5, .checkbox6, #inputselection, #dateinput, .prioritys img, .rectangleandsubtask1 span');
   inputFields.forEach(field => {
     if (field.type === 'checkbox' || field.tagName === 'IMG') {
@@ -265,10 +265,10 @@ closeTask();
   for (let i = 0; i < designStyles.length; i++) {
     designStyles[i].classList.add(color);
   }
-    document.getElementById('todo').innerHTML += `
-  <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${todos.id})" onclick="opentoDoForEdit(${element['id']})">
+    document.getElementById('todo').innerHTML = `
+  <div class="notesmain" id="${element['id']}" draggable="true" ondragstart="startDragging(${element['id']})" onclick="opentoDoForEdit(${element['id']})">
     <div class="notesection">
-    <span class="${generateColor()} departmentdesign" id ="departmentstyle">${element.category}</span>
+    <span class="${contactdata[3]} departmentdesign" id ="departmentstyle">${element.category}</span>
     </div>
     <div class="noteheadlinecontainer">
     <h2 class="noteheadline">${element.title}</h2>
@@ -280,12 +280,12 @@ closeTask();
       <div class="progress">
       <div class="progressbarline" role="progressbar" id="bar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-      <span class="halfdone">${element.subtasks} / ${element.tasklength}</span>
+      <span class="halfdone">${element.subtasks[0]} / ${element.subtasks.length}</span>
       </div>    
     </div>
   </div>
     <div class="usericons">
-    <div class="${contactdata[4]}" id="memberszone">${contactdata[3]}</div>
+    <div class="${contactdata[4]}" id="memberszone">${contactdata[4]}</div>
     <img class="greenarrowdown" src="../img/icons/greenarrowsdown.svg" value="${element.priorityImg}"alt="doublea arrow green down">
     </div>
 `;
@@ -303,6 +303,9 @@ async function editedNote(id) {
   let priority = priorityImg ? priorityImg.alt : '';
   let subtasks = Array.from(document.querySelectorAll('.rectangleandsubtask1 span'))
                         .map(span => span.textContent);
+  let assignedTo = Array.from(document.getElementById('inputselection').options)
+                        .filter(option => option.selected)
+                        .map(option => option.text);
                        
   
   let newNote2 = {
@@ -310,14 +313,15 @@ async function editedNote(id) {
     title,
     description,
     category,
+    assignedTo,
     dueDate,
     priority,
     subtasks,
     
   };
 
-  notes.push(newNote2);
-  await backend.setItem('notes', JSON.stringify(notes));
+  todos.push(newNote2);
+  await backend.setItem('todos', JSON.stringify(todos));
   let inputFields = document.querySelectorAll('#titleinput, #descriptioninput, .checkbox1, .checkbox2, .checkbox3, .checkbox4, .checkbox5, .checkbox6, #inputselection, #inputdate, .prioritys img, .rectangleandsubtask1 span');
   inputFields.forEach(field => {
     if (field.type === 'checkbox' || field.tagName === 'IMG') {
@@ -347,10 +351,10 @@ function closeBigPopup(){
 }
 
 function generateEditedNote(element) {
-document.getElementById('todo').innerHTML = `
-<div class="notesmain drag" id="${element['id']}" draggable="true" ondragstart="startDragging(${element.id})" onclick="opentoDoForEdit(${element['id']})">
+document.getElementById('todo').innerHTML += `
+<div class="notesmain drag" id="${element.id}" draggable="true" ondragstart="startDragging(${element.id})" onclick="opentoDoForEdit(${element['id']})">
 <div class="notesection">
-<span class="${generateColor()} departmentdesign2" id="departmentstyle">${element.category}</span>
+<span class="${colorClass} departmentdesign2" id="departmentstyle">${element.category}</span>
 </div>
 <div class="noteheadlinecontainer">
 <h2 class="noteheadline">${element.title}</h2>
@@ -360,17 +364,14 @@ document.getElementById('todo').innerHTML = `
 <div class="loadingbarandspan">
   <div class="progressloadingbar">
   <div class="progress">
-  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">bar${element.id}</div>
+  <div class="progress-bar" id="bar${element.id}" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">bar${element.id}</div>
 </div>
   <span class="halfdone">${element.subtasks} / ${element.tasklength}</span>
   </div>    
 </div>
 </div>
 <div class="usericons">
-<div class="namelabels ${contactdata[3]} ${colorClass} member">
-${contactdata[4]}
-
-</div>
+<div class="namelabels ${contactdata[3]} ${colorClass} member"></div>
 <img class="greenarrowdown" src="${element.priority} alt="doublea arrow green down">
 </div>
 `;
@@ -434,7 +435,6 @@ function checkedBoxId(id) {
 }
 
 
-
 function updateProgressBar(element) {
   let progressBar = document.getElementById(`bar${element.id}`);
   let subtasksDone = element.subtasksDone; 
@@ -445,7 +445,3 @@ function updateProgressBar(element) {
 }
 
 
-function checkBox() {
-  let sales = document.getElementById('checkbox0').value;
-  sales = `New Category`;
-}
